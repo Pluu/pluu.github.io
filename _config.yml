@@ -1,0 +1,12 @@
+# Site settings
+title: 모든것은 음모다
+email: pluulove@gmail.com
+description: > # 
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+twitter_username: pluulove
+github_username:  pluulove
+
+# Build settings
+markdown: kramdown
+highlighter: false
