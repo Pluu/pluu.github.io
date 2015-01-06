@@ -7,6 +7,13 @@ tag:
 ---
 
 ## Ruby
+```ruby
+def foo
+  puts 'foo'
+end
+```
+
+## C++
 
 ```cpp
 #include <stdio.h>
@@ -18,7 +25,7 @@ int main(int argc, char* argv[]) {
 
 ## Groovy
 
-```Groovy
+```groovy
 subprojects {
     repositories {
         mavenCentral()
@@ -29,7 +36,7 @@ subprojects {
 
 ## Groovy2
 
-```Groovy
+```groovy
 apply plugin: 'com.android.application'
 
 android {
