@@ -14,8 +14,10 @@
 이전 블로그 링크 [네이버 블로그](http://blog.naver.com/pluulove84)
 
 ## Usage
-
+- Jekyll : http://jekyllrb.com/
 - Jekyll-Bootstrap : ver 0.3
+- SVG Icon : https://github.com/neilorangepeel/Free-Social-Icons
+ - width 60px -> 40px
 
 ## License
 

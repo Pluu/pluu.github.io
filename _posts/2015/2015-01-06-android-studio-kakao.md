@@ -13,21 +13,18 @@ Android Studio에 카카오 SDK를 Gradle 방식으로 작업시 간단한(?)처
 세션관리 등의 부분은 작성하지 않고, 기본적인 환경설정만 기술했습니다.
 
 ## 1. build.gradle
-<pre>
-    <code class="Groovy">
+{% highlight groovy linenos %}
 subprojects {
     repositories {
         mavenCentral()
         maven { url 'http://devrepo.kakao.com:8088/nexus/content/groups/public/' }
     }
 }
-  	</code>
-</pre>
+{% endhighlight %}
 카카오 Repogitories 추가
 
 ## 2. build.gradle
-<pre>
-    <code class="Groovy">
+{% highlight groovy linenos %}
 apply plugin: 'com.android.application'
 
 android {
@@ -48,41 +45,33 @@ android {
         }
     }
 
-    <font color="red"><strong>
     packagingOptions {
         exclude 'META-INF/LICENSE'
         exclude 'META-INF/NOTICE'
     }
-    </strong></font>
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:21.0.3'
-<font color="red"><strong>
     provided group: project.KAKAO_SDK_GROUP, name: 'usermgmt', version: project.KAKAO_SDK_VERSION
     provided group: project.KAKAO_SDK_GROUP, name: 'kakaolink', version: project.KAKAO_SDK_VERSION
-</strong></font>
 }
-    </code>
-</pre>
+{% endhighlight %}
 
 상단에 예제로 카카오 링크와 로그인관련 의존 처리 Gradle 코드를 추가 했습니다.
 
-<pre>
-	<code class="xml">
+{% highlight groovy %}
 project.KAKA_SDK_GROUP : com.kakao.sdk
-
 project.KAKAO_SDK_VERSION  : 1.0.46
-	</code>
-</pre>
+{% endhighlight %}
 
 추가적인 의존성 데이터
 
 ## 3. Manifest
-```
+{% highlight xml %}
 <meta-data android:name="com.kakao.sdk.AppKey" android:value="@string/kakao_app_key"/>
-```
+{% endhighlight %}
 
 카카오 Developer에서 발급받은 Key 반영한 부분입니다.
 

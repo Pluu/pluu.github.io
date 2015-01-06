@@ -1,42 +1,51 @@
 ---
 layout: post
-title: "POST TEST"
+title: "Pygments highlighter Test"
 date: 2001-01-01 01:01:00
 categories:
 tag:
 ---
 
 ## Ruby
-```ruby
+{% highlight ruby linenos %}
 def foo
   puts 'foo'
 end
-```
+{% endhighlight %}
+
+{% highlight ruby linenos %}
+def show
+  puts "Outputting a very lo-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-ong lo-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-ong line"
+  @widget = Widget(params[:id])
+  respond_to do |format|
+    format.html # show.html.erb
+    format.json { render json: @widget }
+  end
+end
+{% endhighlight %}
 
 ## C++
 
-```cpp
+{% highlight cpp linenos %}
 #include <stdio.h>
 int main(int argc, char* argv[]) {
     printf("Hello, world);
     return 0;
 }
-```
+{% endhighlight %}
 
 ## Groovy
 
-```groovy
+{% highlight groovy linenos %}
 subprojects {
     repositories {
         mavenCentral()
         maven { url 'http://devrepo.kakao.com:8088/nexus/content/groups/public/' }
     }
 }
-```
+{% endhighlight %}
 
-## Groovy2
-
-```groovy
+{% highlight groovy linenos %}
 apply plugin: 'com.android.application'
 
 android {
@@ -69,10 +78,10 @@ dependencies {
     provided group: project.KAKAO_SDK_GROUP, name: 'usermgmt', version: project.KAKAO_SDK_VERSION
     provided group: project.KAKAO_SDK_GROUP, name: 'kakaolink', version: project.KAKAO_SDK_VERSION
 }
-```
+{% endhighlight %}
 
 ## XML
 
-```xml
+{% highlight xml %}
 <meta-data android:name="com.kakao.sdk.AppKey" android:value="@string/kakao_app_key"/>
-```
+{% endhighlight %}
