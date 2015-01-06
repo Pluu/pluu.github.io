@@ -2,7 +2,7 @@
 layout: post
 title: "[Android] 기상청 프로그램 v1.1.1"
 date: 2012-04-16 16:24:00
-categories: owner-program
+categories: [owner program]
 tag: [기상청, Android, owner program]
 ---
 

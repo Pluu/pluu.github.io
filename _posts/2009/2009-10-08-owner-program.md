@@ -2,7 +2,7 @@
 layout: post
 title: "VB.NET 기반 화상키보드 만들기"
 date: 2009-10-08 18:25:00
-categories: owner-program
+categories: [owner program]
 tag: owner program
 ---
 

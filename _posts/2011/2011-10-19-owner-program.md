@@ -2,7 +2,7 @@
 layout: post
 title: "[Android] 기상청 동네예보/주간예보 어플"
 date: 2011-10-19 00:32:00
-categories: owner-program
+categories: [owner program]
 tag: [기상청, Android, owner program]
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: "최근 작업한 프로그램 [안드로이드] + 새로운 프로젝트"
 date: 2010-08-11 10:33:00
-categories: owner-program
+categories: [owner program]
 tag: owner program
 ---
 
