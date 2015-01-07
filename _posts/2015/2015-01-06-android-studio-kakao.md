@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Android Studio + 카카오 SDK"
+title: "Android Studio + 카카오 SDK [환경편]"
 date: 2015-01-06 16:01:00
 categories: [android studio]
-tag: [Android Studio, Kakao, 카카오]
+tag: [Android Studio, Kakao, 카카오, SDK]
 ---
 
 현재 이 포스트는 기존 네이버 블로그 포스트에 추가적으로 작성한 내용입니다.
