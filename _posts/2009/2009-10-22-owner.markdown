@@ -2,8 +2,8 @@
 layout: post
 title: "일본으로 갈준비를 합시다."
 date: 2009-10-22 14:31:00
-categories: owner
-tag: owner
+categories: [owner]
+tag: [주인장 프로그램, 일본]
 ---
 
 일본 인턴으로 확정받은 회사에서 재류자격인정증명서가 도착했다고 연락이왔다

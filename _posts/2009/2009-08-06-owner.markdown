@@ -2,8 +2,8 @@
 layout: post
 title: "요즘 근황"
 date: 2009-08-06 11:17:00
-categories: owner
-tag: owner
+categories: [owner program]
+tag: [주인장 이야기]
 ---
 
 ### 1. PHP + FLASH + PHP MING

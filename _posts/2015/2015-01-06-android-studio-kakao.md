@@ -2,8 +2,8 @@
 layout: post
 title: "Android Studio + 카카오 SDK [환경편]"
 date: 2015-01-06 16:01:00
-categories: [android studio]
-tag: [Android Studio, Kakao, 카카오, SDK]
+categories: [Android Studio]
+tag: [Android, Android Studio, Kakao, 카카오, SDK]
 ---
 
 현재 이 포스트는 기존 네이버 블로그 포스트에 추가적으로 작성한 내용입니다.
@@ -77,7 +77,7 @@ project.KAKAO_SDK_VERSION  : 1.0.46
 
 - - -
 
-## P.S.
+## P.S
 카카오에서 제공하는 Gradle Sample에 템플릿이 있지만
 
 샘플 모듈이 작동하기위해서는 샘플 모듈 + 템플릿 모듈 이렇게 한쌍으로 되어있어 오히려 복잡도만 크게 키운게 아닌가 싶습니다.

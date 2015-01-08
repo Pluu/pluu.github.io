@@ -3,7 +3,7 @@ layout: post
 title: "Visual C# + Flash + PHP"
 date: 2009-08-13 18:13:00
 categories: [owner program]
-tag: owner program
+tag: [주인장 프로그램]
 ---
 
 1. Visual C# + .NET Framework

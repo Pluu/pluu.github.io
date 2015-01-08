@@ -2,8 +2,8 @@
 layout: post
 title: "블로그 내용이 통째로 교육용 자료로 사용?..."
 date: 2010-04-21 17:35:00
-categories: owner
-tag: owner
+categories: [owner]
+tag: [주인장 이야기]
 ---
 
 잡소리로 들리실지도 모르겠지만,

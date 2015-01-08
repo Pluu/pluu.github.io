@@ -2,8 +2,8 @@
 layout: post
 title: "DJ MAX 3"
 date: 2010-05-26 02:17:00
-categories: owner
-tag: owner
+categories: [owner]
+tag: [주인장 이야기, DJ MAX3]
 ---
 
 ![]({{ site.url }} /assets/images/2010/2010-05-26-owner.jpg)

@@ -3,7 +3,7 @@ layout: post
 title: "Pluu Programming (이미지 캡쳐, 음성녹음, 그림판, SWF 제작)"
 date: 2009-09-02 15:49:00
 categories: [owner program]
-tag: owner program
+tag: [주인장 프로그램, ActiveX, 녹음기, PHP, MING]
 ---
 
 ![]({{ site.url }} /assets/images/2009/2009-09-02-owner-program.jpg)

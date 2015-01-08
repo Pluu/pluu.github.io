@@ -2,8 +2,8 @@
 layout: post
 title: "골든위크는 공부와 함께..."
 date: 2010-05-02 16:16:00
-categories: owner
-tag: owner
+categories: [owner]
+tag: [주인장 이야기]
 ---
 
 라는 제목을 썻지만...

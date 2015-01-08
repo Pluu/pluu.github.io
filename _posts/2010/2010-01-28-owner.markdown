@@ -2,8 +2,8 @@
 layout: post
 title: "뒹구르르르 일본생활"
 date: 2010-01-28 10:52:00
-categories: owner
-tag: owner
+categories: [owner]
+tag: [주인장 이야기, 일본]
 ---
 
 일본에 있는 한국계 SI업체에 들어와서

@@ -3,7 +3,7 @@ layout: post
 title: "[Windows Phone] Pluu Google Reader 기동 시작!!!"
 date: 2012-04-27 00:12:00
 categories: [owner program]
-tag: [Google-Reader, Window Phone, owner program]
+tag: [주인장 프로그램, Google-Reader, Window Phone]
 ---
 
 | Screenshot|

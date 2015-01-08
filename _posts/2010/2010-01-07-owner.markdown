@@ -2,8 +2,8 @@
 layout: post
 title: "새로운 프로젝트"
 date: 2010-01-07 21:43:00
-categories: owner
-tag: owner
+categories: [owner]
+tag: [주인장 프로그램, C#, ASP.NET, Sliverlight]
 ---
 
 SI업체에서

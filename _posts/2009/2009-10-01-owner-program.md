@@ -3,7 +3,7 @@ layout: post
 title: "RFID 물류 관리 시스템 + 소켓"
 date: 2009-10-01 12:04:00
 categories: [owner program]
-tag: owner program
+tag: [주인장 프로그램, RFID]
 ---
 
 ![]({{ site.url }} /assets/images/2009/2009-10-01-owner-program.jpg)
