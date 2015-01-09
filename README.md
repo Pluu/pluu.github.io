@@ -11,7 +11,11 @@
 
 - - -
 
-이전 블로그 링크 [네이버 블로그](http://blog.naver.com/pluulove84)
+# 블로그 링크
+
+현재 : http://pluu.github.io/
+
+이전 : [네이버 블로그](http://blog.naver.com/pluulove84)
 
 - - -
 
