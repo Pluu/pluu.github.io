@@ -13,6 +13,10 @@ tagline: Main page
 
 **GitHub Page 뒤죽박죽 작업중**
 
+**일부 이미지들은 갤러리 / Grid 표시 테스트로 아직 미표시 중입니다**
+
+**미표시 모드인 경우에는, `TODO` TAG가 들어가있습니다**
+
 - - -
 
 이전 블로그 링크 [네이버 블로그](http://blog.naver.com/pluulove84)
