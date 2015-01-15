@@ -6,7 +6,7 @@ categories: [Android Study]
 tag: [Android, PDF]
 ---
 
-{% highlight Java linenos %}
+{% highlight java linenos %}
 private File pdf = null;
 private final String PDF_PATH = "/sdcard/download/B.pdf";
 private Intent intent;

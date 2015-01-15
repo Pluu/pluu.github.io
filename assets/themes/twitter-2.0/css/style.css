@@ -62,3 +62,14 @@ html, body {
   border:1px solid #4C964D;
   color:#FFF;
 }
+
+/* Custom Table CSS ======================================================== */
+table {
+    width: 100%;
+}
+table, th, td {
+   border: 1px solid black;
+}
+th, td {
+    padding: 10px;
+}
