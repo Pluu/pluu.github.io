@@ -6,17 +6,27 @@ categories: [android study]
 tag: [Android, Picasso, Glide]
 ---
 
+Android에서 사용하는 ImageLoader Library중에서 편리중심이며 많이 사용하고 있는 Picasso와
+
+Google I/O 2014로 인해서 급부상항 Glide에 대해서 가벼운 정보를 작성했습니다.
+
 ## Picasso
 Square Inc 개발 Library
 
-http://square.github.io/picasso/
+- GitHub : http://square.github.io/picasso/
+- Wiki : http://square.github.io/picasso/
 
 최신버전 2.4.0
 
 ## Glide
-https://github.com/bumptech/glide/wiki
+Google I/O 2014 소스에 포함된후 급부상
+
+왠지모를 Picasso의 Copy & Paste ??
 
 최신버전 3.0
+
+- GitHub : https://github.com/bumptech/glide
+- Wiki : https://github.com/bumptech/glide/wiki
 
 - - -
 
@@ -99,15 +109,13 @@ Glide.with(this)
 {% highlight groovy %}
 dependencies {
    compile 'com.squareup.okhttp:okhttp:2.4.+'
+   compile 'com.squareup.okhttp:okhttp-urlconnection:+'
 }
 {% endhighlight %}
 
 {% highlight java %}
-private Picasso picasso;
-private OkHttpClient okHttpClient;
-
-okHttpClient = new OkHttpClient();
-picasso = new Picasso
+OkHttpClient okHttpClient = new OkHttpClient();
+Picasso picasso = new Picasso
    .Builder(this)
    .downloader(new OkHttpDownloader(okHttpClient)).build();
 {% endhighlight %}
@@ -146,12 +154,20 @@ Glide
 
 ## 비교
 
-|        비고       | Picasso | Glide |
-| :---------------: | :-----: | :---: |
-| Animated GIF 지원 |    X    |   O   |
-| Local video 지원  |    X    |   O   |
-| Thumbnail         |    X    |   O   |
-| Animation         |    X    |   O   |
+| 비고 | Picasso | Glide |
+| :-: | :-: | :--: |
+| Animated GIF 지원 | X | O |
+| Local video 지원 | X | O |
+| Thumbnail | X | O |
+| Animation | X | O |
+
+- - -
+
+Update
+
+- 2015년 1월 16일 오전 11시 25분
+ - Picasso, Glide 소개 페이지 Update
+ - Picasso + OkHttp 연계 수정
 
 - - -
 
