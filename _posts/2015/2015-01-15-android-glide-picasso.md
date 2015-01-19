@@ -30,6 +30,22 @@ Google I/O 2014 소스에 포함된후 급부상
 
 - - -
 
+## 기본 환경 구성 (Gradle Base)
+
+{% highlight groovy %}
+// Picasso
+dependencies {
+   compile 'com.squareup.picasso:picasso:2.4.0'
+}
+
+// Glide
+dependencies {
+   compile 'com.github.bumptech.glide:glide:3.4.+'
+}
+{% endhighlight %}
+
+- - -
+
 ## 사용방법 비교
 
 ### 기본
@@ -108,6 +124,7 @@ Glide.with(this)
 #### Picasso - OkHttp
 {% highlight groovy %}
 dependencies {
+   compile 'com.squareup.picasso:picasso:2.4.0'
    compile 'com.squareup.okhttp:okhttp:2.4.+'
    compile 'com.squareup.okhttp:okhttp-urlconnection:+'
 }
@@ -123,6 +140,7 @@ Picasso picasso = new Picasso
 #### Glide - Vollery
 {% highlight groovy %}
 dependencies {
+   compile 'com.github.bumptech.glide:glide:3.4.+'
    compile 'com.github.bumptech.glide:volley-integration:1.1.+'
    compile 'com.mcxiaoke.volley:library:1.0.+'
 }
@@ -139,6 +157,7 @@ Glide
 #### Glide - OkHttp
 {% highlight groovy %}
 dependencies {
+   compile 'com.github.bumptech.glide:glide:3.4.+'
    compile 'com.github.bumptech.glide:okhttp-integration:1.1.+'
    compile 'com.squareup.okhttp:okhttp:2.4.+'
 }
@@ -152,13 +171,17 @@ Glide
       new OkHttpUrlLoader.Factory(yourRequestQueue));
 {% endhighlight %}
 
-### Debug
+_ _ _
+
+## Debug
+
+### Picasso
 {% highlight java %}
 // Picasso
 Picasso.with(this).setLoggingEnabled(true);
 {% endhighlight %}
 
-### Example : Cache Log
+#### Picasso Example : Cache Log
 - created      [R1] Request{https://avatars2.githubusercontent.com/u/1534926?v=3&s=460}
 - completed    [R0]+780ms from NETWORK
 - completed    [R0]+362ms from DISK
@@ -170,6 +193,8 @@ Terminal에 다음을 입력
 
 `adb shell setprop log.tag.GenericRequest <-loglevel->`
 
+_ _ _
+
 ## Disk Cache
 
 ### Picasso
@@ -180,7 +205,7 @@ Terminal에 다음을 입력
 
 발번역
 - 메모리 캐쉬, 어플리케이션 RAM의 15%를 사용
-- 디스크 캐쉬, 전체 디스크의 최대 2%, 50MB 상한선 (API 14+, OkHttp Library 사용시)
+- 디스크 캐쉬, 전체 디스크의 최대 2%, 50MB 상한선 (API 14+ 혹은 OkHttp Library 사용시)
 
 {% highlight java %}
 new Picasso
