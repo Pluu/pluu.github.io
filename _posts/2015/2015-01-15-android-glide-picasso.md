@@ -178,6 +178,10 @@ Terminal에 다음을 입력
 - Disk cache of 2% storage space up to 50MB but no less than 5MB. (Note: this is only available on API 14+ or if you are using a standalone library that provides a disk cache on all API levels like OkHttp)
 - Three download threads for disk and network access.
 
+발번역
+- 메모리 캐쉬, 어플리케이션 RAM의 15%를 사용
+- 디스크 캐쉬, 전체 디스크의 최대 2%, 50MB 상한선 (API 14+, OkHttp Library 사용시)
+
 {% highlight java %}
 new Picasso
    .Builder(this)
@@ -190,21 +194,38 @@ Glide's disk cache is based on
 
 상세내용 : https://github.com/bumptech/glide/wiki/Configuration
 
-## 비교
+_ _ _
+
+### 비교
 
 | 비고 | Picasso | Glide |
 | :-: | :-: | :--: |
+| SDK Support | 9+ | 10+ |
+| Memory Cache | 기본 | 기본 |
+| Disk Cache | 선택 | 기본, 변경가능 |
+| 이미지 다운로드 | O | O |
+| 디코딩 | O | O |
+| 이미지 후처리 | O | O |
 | Animated GIF 지원 | X | O |
 | Local video 지원 | X | O |
 | Thumbnail | X | O |
 | Animation | X | O |
-| Memory Cache | 기본 | 기본 |
-| Disk Cache | 선택 | 기본, 변경가능 |
+
+_ _ _
+
+### 지원 데이터 모델
+
+| 비고 | conetnt:// | file:// | http:// | android.resource:// |
+| :-: | :-: | :-: | :-: | :-: |
+| Glide | O | O | O | O |
+| Picasso | O | O | O | O |
 
 - - -
 
 Update
 
+- 2015-01-19 14:58:00
+ - 비교내용 Update
 - 2015-01-16 11:25:00
  - Picasso, Glide 소개 페이지 Update
  - Picasso + OkHttp 연계 수정
@@ -217,3 +238,5 @@ Update
 1. http://vardhan-justlikethat.blogspot.kr/2014/09/android-image-loading-libraries-picasso.html
 2. http://qiita.com/hotchemi/items/33ebd5faa42d2d05c2b6
 3. http://qiita.com/hotchemi/items/375d63261f2eed2b18e1
+4. https://spoqa.github.io/2014/03/28/android-picasso.html
+5. http://helloworld.naver.com/helloworld/textyle/429368
