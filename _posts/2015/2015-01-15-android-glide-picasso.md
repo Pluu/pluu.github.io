@@ -3,7 +3,7 @@ layout: post
 title: "Android Picasso vs Glide"
 date: 2015-01-15 11:23:00
 categories: [android study]
-tag: [Android, Picasso, Glide]
+tag: [Android, Android-Library, Picasso, Glide]
 ---
 
 Android에서 사용하는 ImageLoader Library중에서 편리중심이며 많이 사용하고 있는 Picasso와
