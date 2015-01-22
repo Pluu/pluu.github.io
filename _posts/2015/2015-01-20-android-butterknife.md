@@ -1,12 +1,16 @@
 ---
 layout: post
-title: "Android Injection ButterKnife"
+title: "Android View Injection ButterKnife"
 date: 2015-01-20 13:10:00
 categories: [android study]
 tag: [Android, Android-Library, Dependency Injection, Injection, ButterKnife]
 ---
 
 ## 기본적으로 읽어볼 내용
+
+- 위키백과 [Dependency Injection](http://ko.wikipedia.org/wiki/%EC%9D%98%EC%A1%B4%EC%84%B1_%EC%A3%BC%EC%9E%85)
+
+- StackOverflow [What is dependency injection?](http://stackoverflow.com/questions/130794/what-is-dependency-injection)
 
 - Naver 개발자 블로그 hello world에 포스팅된 내용 [Android에서 @Inject, @Test](http://helloworld.naver.com/helloworld/textyle/342818)
 
@@ -220,4 +224,3 @@ public void pickDoor(DoorView door) {
 1. http://helloworld.naver.com/helloworld/textyle/342818
 2. http://jakewharton.github.io/butterknife/
 3. http://qiita.com/yyaammaa/items/cb52ad37309c2e195e56
-

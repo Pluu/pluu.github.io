@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[번역] Butter Knife 소개"
-date: 2015-01-20 13:10:00
+date: 2015-01-20 18:10:00
 categories: [android study]
 tag: [Android, Android-Library, Dependency Injection, Injection, ButterKnife]
 ---
