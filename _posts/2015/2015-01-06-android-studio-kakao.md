@@ -62,7 +62,7 @@ dependencies {
 상단에 예제로 카카오 링크와 로그인관련 의존 처리 Gradle 코드를 추가 했습니다.
 
 {% highlight groovy %}
-project.KAKA_SDK_GROUP : com.kakao.sdk
+project.KAKAO_SDK_GROUP : com.kakao.sdk
 project.KAKAO_SDK_VERSION  : 1.0.46
 {% endhighlight %}
 
