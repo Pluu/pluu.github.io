@@ -65,7 +65,7 @@ html, body {
 
 /* Custom Table CSS ======================================================== */
 table {
-    width: 100%;
+    width: auto;
 }
 table, th, td {
    border: 1px solid black;
