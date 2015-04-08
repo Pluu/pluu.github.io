@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "최근 Project 소개, ssumting"
+title: "Project 소개, ssumting"
 date: 2015-04-07 17:41:00
 ---
 
-##프로젝트명 : 실시간 데이팅 어플리케이션 개발
+##[Android] 프로젝트명 : 실시간 데이팅 어플리케이션 개발
 
 ##<font color="green">기간 : 2014.07 ~ 2015.02</font>
 

@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "최근 Project 소개, WebToon"
+title: "Project 소개, WebToon"
 date: 2015-04-07 17:41:00
 ---
 
-##프로젝트명 : 만화/소설 뷰어 어플리케이션 개발
+##[Android] 프로젝트명 : 만화/소설 뷰어 어플리케이션 개발
 
 ##<font color="green">기간 : 2015.03 ~ 2015.04</font>
 

@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "최근 Project 소개, 7score"
+title: "Project 소개, 7score"
 date: 2015-04-07 17:41:00
 ---
 
-##프로젝트명 : 스포츠 프로토, 토토, 토계부 개발
+##[Android] 프로젝트명 : 스포츠 프로토, 토토, 토계부 개발
 
 ##<font color="green">기간 : 2014.04 ~ 2014.06</font>
 
