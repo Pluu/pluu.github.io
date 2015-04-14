@@ -5,8 +5,7 @@ title: Project
 
 ## 회사 (최신 순서)
 
-### 1 [Android] 만화, 소설 뷰어 어플리케이션 개발 (2015.03 ~ 2015.04)
- - [링크](/project/project-webtoon.html) 
+### 1 [Android] 자사 만화 서비스 뷰어 어플리케이션 개발 (2015.04 ~ 미완료)
 
 ### 2 [Android] 실시간 데이팅 어플리케이션 개발 (2014.07 ~ 2015.02)
  - [링크](/project/project-ssumting.html) 
@@ -38,3 +37,10 @@ title: Project
 ### 13 [ASP.NET] SONY, 휴대폰 부품관리 시스템 (2010.05 ~ 2010.07)
 
 ### 14 [ASP.NET] 홍수 예측 시스템 (2010.01 ~ 2010.04)
+
+- - -
+
+## 개인 (최신 순서)
+
+### 1 [Android] 만화, 소설 뷰어 어플리케이션 개발 (2015.03 ~ 진행중)
+ - [링크](/project/project-webtoon.html) 

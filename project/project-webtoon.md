@@ -17,17 +17,21 @@ date: 2015-04-07 17:41:00
 
 ##지원 웹툰
 
-1. 네이버
-2. 다음
-3. 올레
+1. 네이버 웹툰
+2. 다음 웹툰
+3. 올레 웹툰
 4. 카카오 페이지 만화
+5. 네이트 웹툰
+6. T 스토어 웹툰
 
 ##사용 기술
 
 1. Jsoup
 2. Picasso
-3. sqlite3
-4. ViewPagerIndicator
+3. butterknife
+4. sqlbrite
+5. ViewPagerIndicator
+6. rxjava
 
 ##Screenshot
 
