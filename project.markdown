@@ -40,7 +40,10 @@ title: Project
 
 - - -
 
-## 개인 (최신 순서)
+## 개인
 
-### 1 [Android] 만화, 소설 뷰어 어플리케이션 개발 (2015.03 ~ 진행중)
+### 1 [Android] 만화, 소설 뷰어 App 개발 (2015.03 ~ 진행중)
  - [링크](/project/project-webtoon.html) 
+
+### 2 [Android] 기상청 단기 날씨 App 개발 (~진행중, 2015.04.20 v2.1.0)
+ - 상단메뉴 Tags > `기상청` TAG 선택
