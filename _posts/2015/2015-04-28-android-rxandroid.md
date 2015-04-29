@@ -3,7 +3,7 @@ layout: post
 title: "[번역] RxAndroid를 가볍게 써보자"
 date: 2015-04-28 23:30:00
 categories: [android study]
-tag: [Android, RxAndroid]
+tag: [Android, RxAndroid, RxJava]
 ---
 
 이 포스팅은 [RxAndroidをカジュアルに使ってみるとか](http://kirimin.hatenablog.com/entry/2015/02/11/221228) 을 기본으로 번역하여 작성했습니다
