@@ -1,0 +1,22 @@
+<div id="footerwrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <h4>About</h4>
+                <div class="hline-w"></div>
+                <p>{{ site.about }}</p>
+                <p>이전 블로그 링크 :<a href="{{ site.author.prev-link }}" class="btn btn-link" role="button">네이버 블로그</a></p>
+                <p>Using Theme :<a href="http://ojs.xyz/solid-jekyll/" class="btn btn-link" role="button">SOLID</a></p>
+            </div>
+            <div class="col-lg-5">
+                <h4>Social Links</h4>
+                <div class="hline-w"></div>
+                <p>
+                    {% for network in site.social %}
+                        <a href="{{ network.url }}" class="btn-social btn-outline"><i class="fa fa-{{ network.title }}"></i></a>
+                    {% endfor %}
+                </p>
+            </div>
+        </div><! --/row -->
+    </div><! --/container -->
+</div><! --/footerwrap -->

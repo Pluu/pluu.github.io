@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+{% include wrap.html %}
+
+<div class="container mt">
+    <div class="row">
+
+        {% include carousel.html assert="/assets/img/project/carousel/" %}
+
+        <div class="col-lg-5 col-lg-offset-1">
+            <div class="spacing"></div>
+
+            {{ content }}
+
+        </div>
+        <div class="col-lg-4 col-lg-offset-1">
+            <div class="spacing"></div>
+            <h4>Project Details</h4>
+            <div class="hline"></div>
+            <p><b>Date:</b> {{ page.date | date: "%b %-d, %Y" }}</p>
+            {% if page.author %}
+            <p><b>Author:</b> {{ page.author }}</p>
+            {% endif %}
+            <p><b>Categories:</b> {{ page.categories }}</p>
+            {% if page.client %}
+            <p><b>Client:</b> {{ page.client }}</p>
+            {% endif %}
+            {% if page.website %}
+            <p><b>Website:</b> <a href="{{ page.website }}">{{ page.website }}</a></p>
+            {% endif %}
+        </div>
+    </div><! --/row -->
+</div><! --/container -->
+	 
+{% include portfolio.html title="Related Works." limit=5 %}

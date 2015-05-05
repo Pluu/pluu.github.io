@@ -1,0 +1,27 @@
+---
+layout: project
+title: "Casio"
+date: 2015-04-08 15:15:00
+categories:
+- project
+img: casio.png
+carousel:
+- casio/casio_01.png
+- casio/casio_02.png
+---
+
+###홍보 어플리케이션 개발
+
+###<font color="green">기간 : 2010.09 ~ 2010.10</font>
+
+###Platform : Android
+
+###담당 업무 
+
+<ol>
+<li>회사 홍보물 APP 개발 (일본 CASIO사)</li>
+<li>Flip Clock과 같은 효과를 이용한 타이머</li>
+  <ul>
+    <li>이미지 핸들링으로 효과 표시</li>
+  </ul>
+</ol>

@@ -1,0 +1,31 @@
+---
+layout: post
+title: "ActivrX 버전 녹음기 완성 (90%)"
+date: 2009-08-23 02:58:00
+tag: [주인장 프로그램, ActiveX, 녹음기]
+categories:
+- blog
+- owner-program
+---
+
+ActivrX 버전 녹음기 완성 (90%)
+
+<!--more-->
+
+<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2009/2009-08-23-owner-program.jpg" }}" />
+<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2009/2009-08-23-owner-program2.jpg" }}" />
+<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2009/2009-08-23-owner-program3.jpg" }}" />
+
+위에 보이는것과 같지...ActiveX를 사용하는 것처럼했지만...
+
+실제로는 레지스터에 OCX 파일을 등록하는 걸로했음...
+
+MFC 버전으로 되어있는 녹음기를 이용해서 ActiveX에 적용시키는건...
+
+정말 힘들었다...ActiveX에 기본도 모르고...디스패치, wav 관련 함수들...
+
+머리가 아프고...스레드...포인터...
+
+=ㅅ= 힘들다!!!!
+
+이제 mp3로 컨버터하는 것과 FTP 서버로 올려주는 부분만 남았음.

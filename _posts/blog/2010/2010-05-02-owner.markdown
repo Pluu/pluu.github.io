@@ -1,0 +1,27 @@
+---
+layout: post
+title: "골든위크는 공부와 함께..."
+date: 2010-05-02 16:16:00
+tag: [주인장 이야기]
+categories:
+- blog
+- owner
+---
+
+라는 제목을 썻지만...
+
+쉬면서 뒹굴뒹굴 했다..
+
+<!--more-->
+
+앞으로 생활이랑 여러가지 생각하다가...
+
+동네 서점가서 편하게 읽을 책한권 구입...
+
+<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2010/2010-05-02-owner.jpg" }}" />
+
+<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2010/2010-05-02-owner2.jpg" }}" />
+
+내가 앞으로 해야할꺼 적어봤음...
+
+추가적으로 하면....리눅스 프로그래밍이랑 서버관련 정도일려나 ㅎㅎㅎ

@@ -1,0 +1,49 @@
+---
+layout: project
+title: "썸팅"
+date: 2015-04-07 17:41:00
+categories:
+- project
+img: ssumting.png
+carousel:
+- ssumting/ssumting_01.png
+- ssumting/ssumting_02.png
+- ssumting/ssumting_03.png
+- ssumting/ssumting_04.png
+---
+
+###실시간 데이팅 어플리케이션 개발
+
+###<font color="green">기간 : 2014.07 ~ 2015.02</font>
+
+###Platform : Android
+
+###담당 업무 
+
+<ol>
+<li>유틸리티 기능 개발</li>
+  <ul>
+    <li>어플리케이션 기본 다이얼로그</li>
+    <li>Base Class 작업</li>
+    <li>이미지 후처리, Picasso Transformation 기능 작업</li>
+    <li>어플리케이션 Base 통신 로직 작업 (Restful, Multipart)</li>
+  </ul>
+<li>서비스 UI 및 기능 구현</li>
+<li>Custom View 작업</li>
+<li>메인화면 애니메이션 처리</li>
+</ol>
+
+###사용 기술
+
+<ol>
+<li>Restful API</li>
+<li>Volley</li>
+<li>Picasso</li>
+<li>InApp 결제</li>
+</ol>
+
+###Youtube Link
+
+- ###[최초 로그인](https://youtu.be/tZxbLxS6gCY)
+
+- ###[자동 로그인](https://youtu.be/OJf5uI2oSc4)

@@ -1,5 +1,71 @@
 ---
 layout: default
 ---
-{% include JB/setup %}
-{% include themes/twitter-2.0/post.html %}
+
+{% include wrap.html %}
+
+<div class="container mtb">
+    <div class="row">
+
+        {% include carousel.html assert="/assets/img/blog/" %}
+
+        <! -- SINGLE POST -->
+        <div class="col-lg-8">
+            <! -- Blog Post  -->
+            {% if page.img %}
+            <p><img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ page.img }}"></p>
+            {% endif %}
+            <a href="{{ page.url | prepend: site.baseurl }}"><h3 class="ctitle">{{ page.title }}</h3></a>
+            <p><csmall>{{ page.date | date: "%b %-d, %Y" }}. | By:
+            {% if page.author %}
+            {{ page.author }}
+            {% else %} 
+            {{ site.author.name }}
+            {% endif %}
+            </csmall></p>
+              
+            {{ content }}
+
+            <div class="spacing"></div>
+
+            <p>
+            <ul class="pagination">
+                {% if page.previous %}
+                  <li class="prev"><a href="{{ page.previous.url | prepend: site.baseurl }}" title="{{ page.previous.title }}">&laquo; Previous</a></li>
+                {% else %}
+                  <li class="prev disabled"><a>&larr; Previous</a></li>
+                {% endif %}
+                  <li><a href="{{"/blog/" | prepend: site.baseurl }}">Blog</a></li>
+                {% if page.next %}
+                  <li class="next"><a href="{{ page.next.url | prepend: site.baseurl }}" title="{{ page.next.title }}">Next &raquo;</a></li>
+                {% else %}
+                  <li class="next disabled"><a>Next &rarr;</a>
+                {% endif %}
+                </ul>
+            </p>
+
+            <p>
+                {% include comments.html %}
+            </p>
+            <!-- <h6>SHARE:</h6>
+            <p class="share">
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-tumblr"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>		 		
+            </p> -->
+        </div><! --/col-lg-8 -->
+
+        <div class="col-lg-4">
+            <h4>Currnte Pages Tags</h4>
+            <div class="hline"></div>
+            <p>
+            {% for tag in page.tags %}
+                <a class="btn btn-theme" href="{{ '/tags.html#'  | prepend: site.baseurl  }}{{ tag }}-ref" role="button">{{ tag }}</a>             
+            {% endfor %}
+            </p>         
+        </div>
+        {% include sidebar.html %}
+
+    </div><! --/row -->
+</div><! --/container -->

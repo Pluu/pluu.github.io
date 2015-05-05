@@ -1,0 +1,58 @@
+---
+layout: project
+title: "7score"
+date: 2015-04-07 17:41:00
+categories:
+- project
+img: 7score.png
+carousel:
+- 7score/7score-livescorelivesports-162_1.jpg
+- 7score/7score-livescorelivesports-162_2.jpg
+- 7score/7score-livescorelivesports-162_3.jpg
+- 7score/7score-livescorelivesports-162_4.jpg
+- 7score/7score-livescorelivesports-162_5.jpg
+- 7score/7score-livescorelivesports-162_6.jpg
+- 7score/7score-livescorelivesports-162_7.jpg
+- 7score/protobook_01.jpg
+- 7score/protobook_02.jpg
+- 7score/protobook_03.jpg
+---
+
+###스포츠 프로토, 토토, 토계부 개발
+
+###<font color="green">기간 : 2014.04 ~ 2014.06</font>
+
+###Platform : Android
+
+###담당 업무 (7score, LiveSports)
+
+<ol>
+<li>서비스 UI 및 기능 구현</li>
+<li>Custom View 작업</li>
+<li>ListView 이미지 처리</li>
+<li>서비스 유지보수</li>
+</ol>
+
+###사용 기술
+
+<ol>
+<li>Restful API</li>
+<li>sqlite 3</li>
+</ol>
+
+- - -
+
+###담당 업무 (토계부)
+
+<ol>
+<li>서비스 UI 및 기능 구현</li>
+<li>Custom View 작업</li>
+<li>배당률 계산 로직 작업</li>
+</ol>
+
+###사용 기술
+
+<ol>
+<li>Restful API</li>
+<li>sqlite 3</li>
+</ol>
