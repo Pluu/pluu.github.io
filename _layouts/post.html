@@ -61,7 +61,7 @@ layout: default
             <div class="hline"></div>
             <p>
             {% for tag in page.tags %}
-                <a class="btn btn-theme" href="{{ '/tags.html#'  | prepend: site.baseurl  }}{{ tag }}-ref" role="button">{{ tag }}</a>             
+                <a class="btn btn-theme" href="{{ '/tags/#'  | prepend: site.baseurl  }}{{ tag }}" role="button">{{ tag }}</a>             
             {% endfor %}
             </p>         
         </div>
