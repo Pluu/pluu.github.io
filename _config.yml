@@ -5,7 +5,7 @@ title: Pluu Dev
 description: "Android Developer Site"
 analytics: #Google analytics code in the format XX-nnnnnnnn-n
 baseurl: "" #important: start with /
-url: #"http://yourdomain.com"
+url: "http://pluu.github.io"
 
 # Build settings
 markdown: redcarpet

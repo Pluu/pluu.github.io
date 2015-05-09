@@ -1,7 +1,7 @@
 ---
 layout: project
 title: "스마트 인사이드"
-date: 2015-04-07 17:41:00
+date: 2012-11-01 00:00:00
 categories:
 - project
 img: smart-inside.png

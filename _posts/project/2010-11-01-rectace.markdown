@@ -1,7 +1,7 @@
 ---
 layout: project
 title: "RectAce 스캐너"
-date: 2015-04-08 15:15:00
+date: 2010-11-01 00:00:00
 categories:
 - project
 img: rectace.png
