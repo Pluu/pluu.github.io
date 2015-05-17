@@ -5,8 +5,6 @@
 
 주로 안드로이드 관련으로 포스트할 예정입니다.
 
-**블로그 이전 작업중** ... 수동 이전이므로 다소 시간이 지연됨
-
 **GitHub Page 뒤죽박죽 작업중**
 
 - - -
@@ -20,10 +18,6 @@
 - - -
 
 ## Usage
-- Jekyll : http://jekyllrb.com/
-- Jekyll-Bootstrap : ver 0.3
-- SVG Icon : https://github.com/neilorangepeel/Free-Social-Icons (width 60px -> 40px)
+- SOLID : http://ojs.xyz/solid-jekyll/
 
-## License
-
-[MIT](http://opensource.org/licenses/MIT)
+- SOLID Github : https://github.com/st4ple/solid-jekyll
