@@ -2,7 +2,7 @@
 layout: post
 title: "[번역] Support Library rev.22.1 소개"
 date: 2015-05-17 23:00:00
-tag: [Android, SupportLibrary]
+tag: [Android, SupportLibrary, Support-V4, AppCompat, Leanback, RecyclerView, Palette, RenderScript]
 categories:
 - blog
 - Android-Study
