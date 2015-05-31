@@ -35,8 +35,6 @@ Android M Preview가 발표되고, Google은 `Android Design Support Library`을
 - Tabs
 - etc
 
-{% youtube https://www.youtube.com/watch?t=39&v=32i7ot0y78U %}
-
 ###Setup
 
 - - -
@@ -281,3 +279,4 @@ CollapsingToolbarLayout 와 Toolbar 함께 사용하는 경우 AppBarLayout 레�
 
 - [Pluu Android Design Support Library Sample](https://github.com/Pluu/DesignSupportSample)
 - [Android Design Support Library](http://android-developers.blogspot.jp/2015/05/android-design-support-library.html)
+- [Android Design Support Library を少しだけ触ってみました](http://qiita.com/ryugoo/items/db4404ee7b95f2f80d94)
