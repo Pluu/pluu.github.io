@@ -33,7 +33,7 @@ categories:
 
 Sonatype 의 JIRA 의 Community Support 에 티켓을 보낸다.
 
-[参考例](https://issues.sonatype.org/browse/OSSRH-8601)
+[참고예](https://issues.sonatype.org/browse/OSSRH-8601)
 
 필수인것은, GroupId, Project URL, SCM url, UserName。
 
@@ -49,11 +49,11 @@ UserName は은 deploy하는 사람의, Sonatype JIRA 계정명을 넣습니다.
 
 최초 Release 버전을 deploy하면 알려주세요라고 적혀있으므로, deploy하면 코멘트를 답시다.
 
-###3. Maven にデプロイする準備をする
+###3. Maven 에 Deploy할 준비하기
 
 - - -
 
-[Gradle のプラグイン](https://github.com/chrisbanes/gradle-mvn-push) 을 사용해서 준비합니다.
+[Gradle Plugin](https://github.com/chrisbanes/gradle-mvn-push) 을 사용해서 준비합니다.
 
 먼저, ~/.gradle/gradle.properties를 준비합니다. 없으면 만들어주세요.
 
