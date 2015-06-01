@@ -22,6 +22,10 @@ Android M Preview가 발표되고, Google은 `Android Design Support Library`을
 
 기존 표준 API나 Support Library API에서는 자동으로 구현되지않는 부분을 라이브러리화 한것입니다.
 
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://youtu.be/32i7ot0y78U"></iframe>
+</div>
+
 {% youtube 32i7ot0y78U %}
 
 ####Spec
