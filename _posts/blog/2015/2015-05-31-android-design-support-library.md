@@ -26,8 +26,6 @@ Android M Preview가 발표되고, Google은 `Android Design Support Library`을
   <iframe class="embed-responsive-item" src="https://youtu.be/32i7ot0y78U"></iframe>
 </div>
 
-{% youtube 32i7ot0y78U %}
-
 ####Spec
 
 - Android 2.1이상
