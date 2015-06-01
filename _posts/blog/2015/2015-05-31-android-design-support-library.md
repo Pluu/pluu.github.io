@@ -2,7 +2,7 @@
 layout: post
 title: "Android Design Support Library 사용하기"
 date: 2015-05-31 20:00:00
-tag: [Android, AndroidStudio, DesignSupportLibrary]
+tag: [Android, AndroidStudio, Design Support Library, Navigation View, Floating Action Button, Snackbar, Tabs]
 categories:
 - blog
 - Android-Studio
@@ -21,6 +21,8 @@ Android M Preview가 발표되고, Google은 `Android Design Support Library`을
 주된 내용은 Loolipop 발표시 `Material Design`을 소개하며 Design Guideline에 있는,
 
 기존 표준 API나 Support Library API에서는 자동으로 구현되지않는 부분을 라이브러리화 한것입니다.
+
+{% youtube http://youtu.be/32i7ot0y78U %}
 
 ####Spec
 
