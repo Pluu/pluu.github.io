@@ -49,9 +49,9 @@ compile 'com.android.support:design:22.2.0'
 
 간단하게 소개하면, [Navigation Drawer](http://www.google.com/design/spec/patterns/navigation-drawer.html?utm_campaign=io15&utm_source=dac&utm_medium=blog)의 메뉴 Layout 입니다.
 
-지금까지 개발자는 DrawerLayout의 메뉴 레이아웃을 RelativeLayout, ListView 등을 이용해서
+지금까지 개발자는 DrawerLayout의 메뉴 레이아웃을 RelativeLayout, ListView 등을 이용해서 커스텀하여 작업했습니다.
 
-각각의 메뉴 구조는 `menu resource`를 이용해서 작업합니다.
+대신, Navigation View 는 각각의 메뉴 구조를 `menu resource`를 이용해서 작업합니다.
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2015/2015-05-31-android-design-support-01.png" }}" />
 
@@ -275,8 +275,11 @@ CollapsingToolbarLayout 와 Toolbar 함께 사용하는 경우 AppBarLayout 레�
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2015/2015-05-31-android-design-support-07.png" }}" />
 
-###etc
+###샘플 소스
 
 - [Pluu Android Design Support Library Sample](https://github.com/Pluu/DesignSupportSample)
+
+###etc
+
 - [Android Design Support Library](http://android-developers.blogspot.jp/2015/05/android-design-support-library.html)
 - [Android Design Support Library を少しだけ触ってみました](http://qiita.com/ryugoo/items/db4404ee7b95f2f80d94)
