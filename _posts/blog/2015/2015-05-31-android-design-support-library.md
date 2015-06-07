@@ -2,10 +2,10 @@
 layout: post
 title: "Android Design Support Library 사용하기"
 date: 2015-05-31 20:00:00
-tag: [Android, AndroidStudio, Design Support Library, Navigation View, Floating Action Button, Snackbar, Tabs]
+tag: [Android, Design Support Library, Navigation View, Floating Action Button, Snackbar, Tabs]
 categories:
 - blog
-- Android-Studio
+- Android-Study
 ---
 
 <!--more-->
