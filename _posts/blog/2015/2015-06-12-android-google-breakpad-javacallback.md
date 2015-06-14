@@ -340,10 +340,10 @@ JNI 작업 순서
 
 해당 작업 완료 후, Crash 가 일어났을때 나타나는 로그
 
-1. NativeCrashCallback Called
-2. Dump FileName=/storage/emulated/0/Android/data/com.pluusystem.breakpadjavacall/cache/649a81f1-b6be-90fa-6532828a-0ce9ba0c.dmp
+1. `NativeCrashCallback Called`
+2. `Dump FileName=/storage/emulated/0/Android/data/com.pluusystem.breakpadjavacall/cache/649a81f1-b6be-90fa-6532828a-0ce9ba0c.dmp`
 
-Step2 소스 : [Step3 링크](https://github.com/Pluu/BreakpadJavaCall/tree/final)
+Step3 소스 : [Step3 링크](https://github.com/Pluu/BreakpadJavaCall/tree/final)
 
 ###추천 Android 관련 Crash Report Service
 
