@@ -183,7 +183,7 @@ Step1 소스 : [Step1 링크](https://github.com/Pluu/BreakpadJavaCall)
 ####Android.mk 파일 수정 (jni 하위)
 
 Google Breakpad 원본 - 현재 프로젝트 비교
-<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2015/2015-06-12-android-google-breakpad-javacallback-02.png" }}" />
+<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2015/2015-06-12-android-google-breakpad-javacallback-02.PNG" }}" />
 
 ```
 LOCAL_PATH := $(call my-dir)
@@ -213,10 +213,10 @@ endif
 Google Breakpad 원본 - 현재 프로젝트 비교
 
  * LOCAL PATH
-<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2015/2015-06-12-android-google-breakpad-javacallback-03.png" }}" />
+<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2015/2015-06-12-android-google-breakpad-javacallback-03.PNG" }}" />
 
  * LOCAL_SRC_FILES 추가
-<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2015/2015-06-12-android-google-breakpad-javacallback-04.png" }}" />
+<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2015/2015-06-12-android-google-breakpad-javacallback-04.PNG" }}" />
 
 ```
 src/client/linux/dump_writer_common/thread_info.cc \
