@@ -271,9 +271,11 @@ CollapsingToolbarLayout 의 `layout_collapseMode="pin"` 을 사용할 경우, �
 
 CollapsingToolbarLayout 와 Toolbar 함께 사용하는 경우 AppBarLayout 레이아웃 표시에 따라, 전체가 표시시 타이틀이 크게 표시되며, Collapsed 시 기본 사이즈로 변경됩니다.
 
-<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2015/2015-05-31-android-design-support-06.png" }}" />
+####enterAlwaysCollapsed
+<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2015/2015-05-31-android-design-support-exitUntilCollapsed.gif" }}" />
 
-<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2015/2015-05-31-android-design-support-07.png" }}" />
+####enterAlwaysCollapsed
+<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2015/2015-05-31-android-design-support-enterAlwaysCollapsed.gif" }}" />
 
 ###샘플 소스
 
