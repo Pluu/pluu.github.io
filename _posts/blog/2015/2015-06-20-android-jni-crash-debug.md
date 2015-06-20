@@ -287,7 +287,7 @@ Java_com_pluusystem_breakpadjavacall_MainActivity_crashService
 D:\GitHub\BreakpadJavaCall\app\src\main/jni/test_breakpad.cpp:65
 
 // 29줄, libtest_google_breakpad.so + 0x1a9a9
-local>arm-linux-androideabi-addr2line -C -fe x86\libtest_google_breakpad.so 0x1a9a9
+arm-linux-androideabi-addr2line -C -fe x86\libtest_google_breakpad.so 0x1a9a9
 Java_com_pluusystem_breakpadjavacall_MainActivity_crashService
 D:\GitHub\BreakpadJavaCall\app\src\main/jni/test_breakpad.cpp:61
 {% endhighlight %}
