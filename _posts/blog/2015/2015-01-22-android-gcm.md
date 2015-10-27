@@ -49,7 +49,7 @@ public class Main {
       obj.put("message", "ABCD");
 
       System.out.println(obj.toString());
-      sendPush(obj.toString());
+      sendPush(obj.toString(), REGISTER_DEVICE_ID);
    }
 
    /**
