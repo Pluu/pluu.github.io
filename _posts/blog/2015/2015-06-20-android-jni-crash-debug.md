@@ -5,8 +5,8 @@ date: 2015-06-20 22:00:00
 tag: [Android, NDK, Google Breakpad, Crash, JNI, Debug, addr2line, minidump_stackwalk]
 categories:
 - blog
-- Android-Study
-- JNI-Study
+- Android
+- Jni
 ---
 
 <!--more-->

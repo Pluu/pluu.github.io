@@ -5,8 +5,7 @@ date: 2015-05-17 23:00:00
 tag: [Android, SupportLibrary, Support-V4, AppCompat, Leanback, RecyclerView, Palette, RenderScript]
 categories:
 - blog
-- Android-Study
-- SupportLibrary
+- Android
 ---
 
 이 포스팅은 [Introduction to Support Library rev.22.1](http://qiita.com/KeithYokoma/items/ed241048be30698ebedb) 을 기본으로 번역하여 작성했습니다

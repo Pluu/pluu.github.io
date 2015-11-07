@@ -5,7 +5,7 @@ date: 2015-06-22 23:50:00
 tag: [Android, Gradle, Task]
 categories:
 - blog
-- Android-Study
+- Android
 - Gradle
 ---
 

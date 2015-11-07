@@ -5,6 +5,7 @@ date: 2015-08-19 01:30:00
 tag: [Android, Marshmallow, RuntimePermissions]
 categories:
 - blog
+- Android
 ---
 <!--more-->
 

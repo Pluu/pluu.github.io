@@ -5,6 +5,7 @@ date: 2015-08-14 23:50:00
 tag: [Android, Kakao, 카카오]
 categories:
 - blog
+- Android
 ---
 <!--more-->
 

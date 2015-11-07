@@ -5,16 +5,16 @@ date: 2010-12-22 14:32:00
 tag: [Android, Flip Clock]
 categories:
 - blog
-- Android-Study
+- Android
 ---
 
-이전에 Flip Clock의 이미지가 전부 존재할경우를 올렸는데 
+이전에 Flip Clock의 이미지가 전부 존재할경우를 올렸는데
 
 이번에는 각각 숫자마다 아래/위 이미지가 존재할 경우 사용가능에 대해서 올렸습니다.
 
 <!--more-->
 
-실제로 가장 중요한 부분은 setBounds 함수입니다. 
+실제로 가장 중요한 부분은 setBounds 함수입니다.
 
 이미지의 크기를 설정해서 보여주기때문에 눈의 착각으로 넘어가는 듯하게 보입니다.
 
@@ -260,14 +260,14 @@ public class parts_number extends View implements ServiceInfo {
       first_prevTop.setBounds(0, 0, first_prevTop_w, first_prevTop_h);
       first_prevBottom.setBounds(0, first_prevTop_h, first_prevBottom_w, first_prevTop_h + first_prevBottom_h);
       second_prevTop.setBounds(first_prevTop_w, 0, first_prevTop_w + second_prevTop_w, second_prevTop_h);
-      second_prevBottom.setBounds(first_prevTop_w, second_prevTop_h, 
+      second_prevBottom.setBounds(first_prevTop_w, second_prevTop_h,
          first_prevTop_w + second_prevBottom_w, second_prevTop_h + second_prevBottom_h);
 
       first_nowTop.setBounds(0, 0, first_nowTop_w, first_nowTop_h);
       first_nowBottom.setBounds(0, first_nowTop_h, first_nowBottom_w, first_nowTop_h + first_nowBottom_h);
       second_nowTop.setBounds(first_nowTop_w, 0, first_nowTop_w + second_nowTop_w, second_nowTop_h);
 
-      second_nowBottom.setBounds(first_nowTop_w, second_nowTop_h, 
+      second_nowBottom.setBounds(first_nowTop_w, second_nowTop_h,
          first_nowTop_w + second_nowBottom_w, second_nowTop_h + second_nowBottom_h);
 
       // VIEW 설정
@@ -392,7 +392,7 @@ public class parts_number extends View implements ServiceInfo {
       first_prevTop.setBounds(0, 0, first_prevTop_w, first_prevTop_h);
       first_prevBottom.setBounds(0, first_prevTop_h, first_prevBottom_w, first_prevTop_h + first_prevBottom_h);
       second_prevTop.setBounds(first_prevTop_w, 0, first_prevTop_w + second_prevTop_w, second_prevTop_h);
-      second_prevBottom.setBounds(first_prevTop_w, second_prevTop_h, 
+      second_prevBottom.setBounds(first_prevTop_w, second_prevTop_h,
          first_prevTop_w + second_prevBottom_w, second_prevTop_h + second_prevBottom_h);
 
       first_nowTop.setBounds(0, 0, first_nowTop_w, first_nowTop_h);

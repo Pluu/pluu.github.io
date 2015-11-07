@@ -5,7 +5,7 @@ date: 2010-09-04 16:05:00
 tag: [Android, Flip Clock]
 categories:
 - blog
-- Android-Study
+- Android
 ---
 
 회사내에서 어플만드는데,

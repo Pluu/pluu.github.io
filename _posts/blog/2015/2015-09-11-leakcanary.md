@@ -5,7 +5,7 @@ date: 2015-09-11 00:30:00
 tag: [Android, Square, LeakCanary]
 categories:
 - blog
-- square
+- Android
 ---
 <!--more-->
 

@@ -5,7 +5,7 @@ date: 2015-06-07 12:00:00
 tag: [Android, LifeCycle]
 categories:
 - blog
-- Android-Study
+- Android
 ---
 
 <!--more-->

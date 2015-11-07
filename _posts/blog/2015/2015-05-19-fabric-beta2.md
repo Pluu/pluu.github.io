@@ -5,7 +5,7 @@ date: 2015-05-19 02:00:00
 tag: [Android, Fabric.io, Fabric, beta]
 categories:
 - blog
-- Android-Study
+- Android
 - Fabric
 ---
 

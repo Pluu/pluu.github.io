@@ -5,7 +5,8 @@ date: 2015-04-28 23:30:00
 tag: [Android, RxAndroid, RxJava]
 categories:
 - blog
-- Android-Study
+- Android
+- Rx
 ---
 
 이 포스팅은 [RxAndroidをカジュアルに使ってみるとか](http://kirimin.hatenablog.com/entry/2015/02/11/221228) 을 기본으로 번역하여 작성했습니다
@@ -28,7 +29,7 @@ RxJava의 개요와 기본적인 사용방법에 대해서는 과거의 포스�
 
 RxJava는 다기능이며 FRP라는 새로운 개념에 근거해 설계되어, 자유자재로 쓰기에는 상당한 학습 시간이 필요하기때문에, 이용하기에는 진입장벽이 높다고 느끼지않을까요.
 
-하지만, 거기까지 RxJava를 깊게 이해하며 여러 함수를 이용하지않아도, RxAndroid는 마음편하게 이용할수 있지않는가라는 생각이 들었기때문에, RxAndroid의 활용 케이스를 고려해보자고 생각햇습니다. 
+하지만, 거기까지 RxJava를 깊게 이해하며 여러 함수를 이용하지않아도, RxAndroid는 마음편하게 이용할수 있지않는가라는 생각이 들었기때문에, RxAndroid의 활용 케이스를 고려해보자고 생각햇습니다.
 
 ## AsyncTask등 대체로 비동기 콜백처리를 이용하기
 
@@ -163,7 +164,7 @@ WidgetObservable.listScrollEvents(mListView)
         .subscribe(new Action1<OnListViewScrollEvent>() {
             @Override
             public void call(OnListViewScrollEvent onListViewScrollEvent) {
-                
+
             }
         });
 {% endhighlight %}

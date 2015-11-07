@@ -5,8 +5,8 @@ date: 2015-06-12 02:00:00
 tag: [Android, Google Breakpad, Crash, JNI, Java, Callback]
 categories:
 - blog
-- Android-Study
-- JNI-Study
+- Android
+- Jni
 ---
 
 <!--more-->

@@ -5,7 +5,7 @@ date: 2015-01-20 13:10:00
 tag: [Android, Android-Library, Dependency Injection, Injection, ButterKnife]
 categories:
 - blog
-- Android-Study
+- Android
 ---
 
 ## 기본적으로 읽어볼 내용

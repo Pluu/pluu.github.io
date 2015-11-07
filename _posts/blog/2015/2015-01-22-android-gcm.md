@@ -5,7 +5,7 @@ date: 2015-01-22 16:17:00
 tag: [Android, GCM]
 categories:
 - blog
-- Android-Study
+- Android
 ---
 
 안드로이드 개발시 GCM으로 Push 처리를 위하여 테스트용으로 만든것을 공유합니다.

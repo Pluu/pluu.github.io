@@ -5,7 +5,7 @@ date: 2015-05-19 00:30:00
 tag: [Android, SupportLibrary, ToolBar, SearchView]
 categories:
 - blog
-- Android-Study
+- Android
 ---
 
 이 포스팅은 [Toolbar に 13行で SearchView を実装する](http://qiita.com/suzukihr/items/9042ae3416ed5ae1cca2) 을 기본으로 번역하여 작성했습니다

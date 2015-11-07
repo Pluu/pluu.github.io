@@ -5,14 +5,14 @@ date: 2015-04-14 16:17:00
 tag: [Android, jsoup]
 categories:
 - blog
-- Android-Study
+- Android
 ---
 
 최근 만화/소설 뷰어 관련 개인 프로젝트 진행하면서
 
 HTML Parser Library로 jsoup을 사용후 관련 포스팅을 남깁니다.
 
-`Jericho`가 유명하지만, 2012년 10월 말 이후 업데이트가 없어서 ... 
+`Jericho`가 유명하지만, 2012년 10월 말 이후 업데이트가 없어서 ...
 
 [Jericho 다운로드 사이트](http://sourceforge.net/projects/jerichohtml/files/jericho-html/)
 

@@ -5,7 +5,7 @@ date: 2010-09-01 00:45:00
 tag: [Android, PDF]
 categories:
 - blog
-- Android-Study
+- Android
 ---
 
 {% highlight java linenos %}

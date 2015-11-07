@@ -5,7 +5,7 @@ date: 2015-01-20 18:10:00
 tag: [Android, Android-Library, Dependency Injection, Injection, ButterKnife]
 categories:
 - blog
-- Android-Study
+- Android
 ---
 
 이 포스팅은 [Butter Knifeの紹介](http://qiita.com/yyaammaa/items/cb52ad37309c2e195e56) 을 기본으로 번역하여 작성했습니다

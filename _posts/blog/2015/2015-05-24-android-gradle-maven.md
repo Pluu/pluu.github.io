@@ -5,7 +5,7 @@ date: 2015-05-24 18:00:00
 tag: [Android, Gradle, Maven]
 categories:
 - blog
-- Android-Studio
+- Android
 - Maven
 ---
 

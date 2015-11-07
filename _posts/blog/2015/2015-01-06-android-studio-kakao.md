@@ -5,7 +5,7 @@ date: 2015-01-06 16:01:00
 tag: [Android, Android Studio, Kakao, 카카오, SDK]
 categories:
 - blog
-- Android-Studio
+- Android
 ---
 
 현재 이 포스트는 기존 네이버 블로그 포스트에 추가적으로 작성한 내용입니다.

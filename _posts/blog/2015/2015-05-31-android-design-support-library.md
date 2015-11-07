@@ -5,7 +5,7 @@ date: 2015-05-31 20:00:00
 tag: [Android, Design Support Library, Navigation View, Floating Action Button, Snackbar, Tabs]
 categories:
 - blog
-- Android-Study
+- Android
 ---
 
 <!--more-->

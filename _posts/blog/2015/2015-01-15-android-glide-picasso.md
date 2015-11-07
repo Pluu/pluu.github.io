@@ -5,7 +5,7 @@ date: 2015-01-15 11:23:00
 tag: [Android, Android-Library, Picasso, Glide]
 categories:
 - blog
-- Android-Studio
+- Android
 ---
 
 Android에서 사용하는 ImageLoader Library중에서 편리중심이며 많이 사용하고 있는 Picasso와

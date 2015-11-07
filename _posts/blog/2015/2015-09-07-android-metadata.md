@@ -5,6 +5,7 @@ date: 2015-09-07 18:30:00
 tag: [Android, Manifest]
 categories:
 - blog
+- Android
 ---
 <!--more-->
 

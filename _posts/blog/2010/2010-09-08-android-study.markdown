@@ -5,10 +5,10 @@ date: 2010-09-08 23:14:00
 tag: [Android, Flip Clock, TODO]
 categories:
 - blog
-- Android-Study
+- Android
 ---
 
-안드로이드나 아이폰 시계관련 어플을 보다보면 종종 Flip Clock가 나옵니다. 
+안드로이드나 아이폰 시계관련 어플을 보다보면 종종 Flip Clock가 나옵니다.
 
 그래서 한번 구현해봤습니다.
 
@@ -21,7 +21,7 @@ categories:
 
 실제로 눈에 보이는것은 이미지가 계속 바뀌는 것뿐입니다. 눈의 착각입니다.
 
-- - - 
+- - -
 
 ### 이미지 작업중
 

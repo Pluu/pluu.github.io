@@ -12,16 +12,23 @@
             <p class="rss-subscribe">Subscribe to this blog <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a>.</p>
         </p>
     <div class="spacing"></div>
-    <h4>Categories</h4>
+    <h4>Tags</h4>
     <div class="hline"></div>
     <div class="spacing"></div>
+
+    {% capture site_tags %}{% for tag in site.tags %}{{ tag | first | downcase }}#{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+    {% assign tag_hashes = site_tags | split:',' | sort %}
     <div class="list-group">
-    {% for category in site.categories %}{% unless category.first == "blog" or category.first == "project" or category.first == "question" %}
-        <a class="list-group-item" href="{{ '/category/#'  | prepend: site.baseurl  }}{{ category | first }}">
-            {{ category | first | capitalize }}
-            <span class="badge badge-theme pull-right">{{ category | last | size }}</span>
-        </a>
-    {% endunless %}{% endfor %}
+    {% for hash in tag_hashes %}
+        {% assign keyValue = hash | split: '#' %}
+        {% capture tag_word %}{{ keyValue[1] | strip_newlines }}{% endcapture %}
+        {% if tag_word != '' %}
+            <a class="list-group-item" href="{{ '/tags/#'  | prepend: site.baseurl  }}{{ tag_word }}">
+                {{ tag_word }}
+                <span class="badge badge-theme pull-right">{{ site.tags[tag_word].size }}</span>
+            </a>
+        {% endif %}
+    {% endfor %}
     </div>
 
     <div class="spacing"></div>
