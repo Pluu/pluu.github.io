@@ -6,6 +6,7 @@ tag: [Android, Design Support Library, Navigation View, Floating Action Button, 
 categories:
 - blog
 - Android
+- Android-Study
 ---
 
 <!--more-->
