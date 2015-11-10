@@ -18,7 +18,6 @@ categories:
 - [Youtube, Google I/O 2015 - Android M Permissions](https://youtu.be/f17qe9vZ8RM)
 - [Android 6.0 APIs](http://developer.android.com/intl/ko/about/versions/marshmallow/android-6.0.html)
 - [Android 6.0 Changes](http://developer.android.com/intl/ko/about/versions/marshmallow/android-6.0-changes.html)
-- [Android 6.0 Samples](http://developer.android.com/intl/ko/about/versions/marshmallow/samples.html)
 - [Requesting Permissions at Run Time](https://developer.android.com/intl/ko/training/permissions/requesting.html)
 - [Youtube, Android Marshmallow 6.0: Introduction to Doze Mode](https://youtu.be/N72ksDKrX6c)
 - [Youtube, Android Marshmallow 6.0: Asking For Permission](https://youtu.be/iZqDdvhTZj0)
@@ -30,6 +29,11 @@ categories:
 - [ActivityCompat](http://developer.android.com/reference/android/support/v4/app/ActivityCompat.html)
 - [Manifest.permission](http://developer.android.com/reference/android/Manifest.permission.html)
 
+### Android Marshmallow Sample App
+- [Android 6.0 Samples](http://developer.android.com/intl/ko/about/versions/marshmallow/samples.html)
+- [Android RuntimePermissions Sample](https://github.com/googlesamples/android-RuntimePermissions)
+- [2015-10-21, 새로운 안드로이드 마시멜로 샘플 앱](http://googledevkr.blogspot.kr/2015/10/blog-post.html)
+
 ### Google Developer Korea Blog
 - [2015-08-30, 안드로이드 6.0 마시멜로 무엇을 테스트 할까요?](http://googledevkr.blogspot.kr/2015/08/testyourapponandroid60.html)
 
@@ -39,7 +43,6 @@ categories:
 - [2015-09-17, 여러분의 앱은 안드로이드 6.0 마시멜로에서 잘 동작하나요?](http://googledevkr.blogspot.kr/2015/09/testyourapponandroid60.html)
 - [2015-09-25, 안드로이드 6.0 런타임 권한과 Google Play 서비스 8.1](http://googledevkr.blogspot.kr/2015/09/playservice81android60.html)
 - [2015-10-13, 안드로이드 6.0 마시멜로의 Doze 모드에서 GCM 메시지가 어떻게 동작할까요?](http://googledevkr.blogspot.kr/2015/10/gcmonandroid-doze.html)
-- [2015-10-21, 새로운 안드로이드 마시멜로 샘플 앱](http://googledevkr.blogspot.kr/2015/10/blog-post.html)
 
 ### Yang Chansuk 님 발표 자료
 - [안드로이드 M의 주요 변경 사항 ](http://www.slideshare.net/chansukyang/m-50490336)
@@ -56,3 +59,6 @@ categories:
 - [2015-07-01, Android M Preview 앱 관리 살펴보기](http://thdev.net/629)
 - [2015-07-16, Android M에 적용될 배터리 절약 모드 Doze! 어떻게 달라질까?](http://thdev.net/632)
 - [2015-10-12, 안드로이드 6.0 Marshmallow 권한 획득하기 API 사용하기](http://thdev.net/634)
+
+### Lee Jaehwan 님
+- [2015-08-20, Android M(Doze & App Standby) 관련 테스트 후기](http://jhlee8379.cafe24.com/archives/2268)
