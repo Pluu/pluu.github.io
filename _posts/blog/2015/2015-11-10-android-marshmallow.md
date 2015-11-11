@@ -15,13 +15,9 @@ categories:
 실제로 관련 대응을 하기위해서 개발관련 도움이 되는 사이트를 정리해보았습니다.
 
 ### Android 6.0 Marshmallow
-- [Youtube, Google I/O 2015 - Android M Permissions](https://youtu.be/f17qe9vZ8RM)
 - [Android 6.0 APIs](http://developer.android.com/intl/ko/about/versions/marshmallow/android-6.0.html)
 - [Android 6.0 Changes](http://developer.android.com/intl/ko/about/versions/marshmallow/android-6.0-changes.html)
 - [Requesting Permissions at Run Time](https://developer.android.com/intl/ko/training/permissions/requesting.html)
-- [Youtube, Android Marshmallow 6.0: Introduction to Doze Mode](https://youtu.be/N72ksDKrX6c)
-- [Youtube, Android Marshmallow 6.0: Asking For Permission](https://youtu.be/iZqDdvhTZj0)
-- [Youtube, Runtime Permissions in Android 6.0 Marshmallow (Android Development Patterns Ep 3)](https://youtu.be/C8lUdPVSzDk)
 
 ### Android Developer Reference
 - [PermissionChecker](http://developer.android.com/reference/android/support/v4/content/PermissionChecker.html)
@@ -33,6 +29,14 @@ categories:
 - [Android 6.0 Samples](http://developer.android.com/intl/ko/about/versions/marshmallow/samples.html)
 - [Android RuntimePermissions Sample](https://github.com/googlesamples/android-RuntimePermissions)
 - [2015-10-21, 새로운 안드로이드 마시멜로 샘플 앱](http://googledevkr.blogspot.kr/2015/10/blog-post.html)
+
+### Android Developers Youtube
+- [Google I/O 2015 - Android M Permissions](https://youtu.be/f17qe9vZ8RM)
+- [Android Marshmallow 6.0: Introduction to Doze Mode](https://youtu.be/N72ksDKrX6c)
+- [Android Marshmallow 6.0: Asking For Permission](https://youtu.be/iZqDdvhTZj0)
+- [Runtime Permissions in Android 6.0 Marshmallow (Android Development Patterns Ep 3)](https://youtu.be/C8lUdPVSzDk)
+- [2015-10-22, App Standby vs Doze: Understanding System Sleep (Big Android BBQ 2015)](https://www.youtube.com/watch?v=Rwshwq_vI1s)
+- [2015-10-23, Forget the Storage Permission: Alternatives for sharing and collaborating (Big Android BBQ 2015](https://www.youtube.com/watch?v=C28pvd2plBA) 
 
 ### Google Developer Korea Blog
 - [2015-08-30, 안드로이드 6.0 마시멜로 무엇을 테스트 할까요?](http://googledevkr.blogspot.kr/2015/08/testyourapponandroid60.html)
