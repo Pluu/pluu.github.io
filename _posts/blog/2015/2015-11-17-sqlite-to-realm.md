@@ -73,7 +73,9 @@ Sqlite에 저장되어있는 테이블의 데이터를 Realm으로 옮기는 작
 
 서론에 언급한것처럼 Realm 은 sqlite 와 호환되지 않는 데이터베이스입니다.
 
-sqlite 관련 로직 중 특히, `SQLiteOpenHelper` 를 상속받은 객체 소스를 지울 수 없습니다.
+SqliteToRealm 방법을 사용하는 경우,
+
+sqlite 관련 로직 중 `SQLiteOpenHelper` 를 상속받은 객체 소스를 지울 수 없습니다.
 
 **2. 어쩔 수 없다면 Rx + Preference 를 이용해보세요.**
 
