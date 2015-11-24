@@ -14,7 +14,7 @@ Android Studio 2.0 Preview 가 2015년 11월 24일 새벽에 발표했습니다.
 
 # Android Studio 2.0 의 특징
 - `Instant Run`
-- `Accelerated build and deployment sppeds`
+- `Accelerated build and deployment speeds`
 - `Next-generation Emulator`
 - New GPU profiler
 - IntelliJ 15
