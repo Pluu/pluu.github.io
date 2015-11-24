@@ -36,7 +36,7 @@ Android Studio 2.0 Preview 가 2015년 11월 24일 새벽에 발표했습니다.
 
 코드 및 레이아웃, values 관련 수정시 Application 처음부터 재시작 되지않고 해당 Activity 부터 재시작되어 적용되는 Run 기능입니다.
 
-해당 Activity 만 재 실행되므로 빌드 속도가 빨라지고 좀 더 빠르게 테스트 테스트가 가능해진듯 합니다.
+수정된 부분의 빌드에 대한 개선으로 인해 해당 Activity 만 재실행이 가능하게되어 좀 더 빠르게 테스트 테스트가 가능해진듯 합니다.
 
 ## Setting
 
@@ -55,7 +55,7 @@ Settings - Build, Execution, Deplyment - Instant Run 항목 진입시 `Update Pr
 
 ## Run
 
-Android Studio 2.0 에서는 기존 Run 과 달리 기본적으로 `Instant Run` 이 실행되며 IDE 도구 표시가 아래와 같이 바뀝니다.
+Android Studio 2.0 Preview 에서는 기존 Run 과 달리 기본적으로 `Instant Run` 이 실행되며 IDE 도구 표시가 아래와 같이 바뀝니다.
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2015/2015-11-24-AS-02.PNG" }}" />
 
@@ -105,7 +105,7 @@ Android Studio 2.0 에서는 기존 Run 과 달리 기본적으로 `Instant Run`
 
 ## Code Edit
 
-코드 수정은 아직 프리뷰 단계라서 이런 현상이 발생하는지는 모르겠지만, 코드 수정후 `Instant Run` 을 기대하고 실행하면 별 문제 없이 실행되기도 하지만 주로 다음과 같은 현상이 주로 발생했습니다.
+코드 수정은 아직 Preview 단계라서 이런 현상이 발생하는지는 모르겠지만, 코드 수정후 `Instant Run` 을 기대하고 실행하면 별 문제 없이 실행되기도 하지만 주로 다음과 같은 현상이 주로 발생했습니다.
 
 ### Restart Activity
 
@@ -129,7 +129,7 @@ You can also configure restarts to happen automatically. (Dismiss, Dismiss All)
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2015/2015-11-24-AS-06.PNG" }}" />
 
-아직 Android Studio 2.0인 관계상 나타나는 오류 일수도 있지만, 코드 수정시 빈번히 나오는 오류였습니다.
+아직 Android Studio 2.0 Preview 인 관계상 나타나는 오류 일수도 있지만, 코드 수정시 빈번히 나오는 오류였습니다.
 
 해당 에러가 나오는 경우에는 별 수 없이 올바르게 빌드 후 Application 자체를 재시작해야만 합니다.
 
