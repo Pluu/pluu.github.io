@@ -82,7 +82,7 @@ Android Studio 2.0 에서는 기존 Run 과 달리 기본적으로 `Instant Run`
   tools:text="Title"/>
 {% endhighlight %}
 
-<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2015/2015-11-24-AS-03-Sample1.png" }}" />
+<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2015/2015-11-24-AS-03-Sample1.PNG" }}" />
 
 수정 후
 {% highlight xml %}
