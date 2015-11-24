@@ -6,8 +6,8 @@
 	Project Name: SOLID - Bootstrap 3 Theme
 	Version: 1.0
 	URL: http://alvarez.is
-	
-################################################################# */ 
+
+################################################################# */
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,700,900);
 @import url(http://fonts.googleapis.com/css?family=Lato:400,900);
 @import url("prettyPhoto.css") screen;
@@ -16,10 +16,10 @@
 /*	################################################################
 	1. GENERAL STRUCTURES
 ################################################################# */
-	* { 
+	* {
 		margin: 0;
 		padding: 0px;
-	} 
+	}
 
 .jumbotron {
 	padding: 0px;
@@ -51,7 +51,7 @@ pre code { display: block; white-space: pre; overflow-x: auto; word-wrap: normal
 	font-size:36px;
 	-ms-transform: translate(0,-50%); /* IE 9 */
 	-webkit-transform: translate(0,-50%); /* Safari */
-	transform: translate(0,-50%);  
+	transform: translate(0,-50%);
 }
 
 #error h3, h5 {
@@ -64,10 +64,10 @@ pre code { display: block; white-space: pre; overflow-x: auto; word-wrap: normal
 	margin-bottom: 25px;
 }
 
-body { 
-	background: #ffffff; 
-	margin: 0; 
-	height: 100%; 
+body {
+	background: #ffffff;
+	margin: 0;
+	height: 100%;
 	color: {{ site.colors.secondary }};
 	font-family: 'Lato', sans-serif;
 	font-weight: 400;
@@ -78,15 +78,15 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 700;
 }
 
-p { 
-	padding: 0; 
-	margin-bottom: 12px; 
+p {
+	padding: 0;
+	margin-bottom: 12px;
 	font-family: 'Lato', sans-serif;
 	font-weight: 400;
-	font-size: 14px; 
+	font-size: 14px;
 	line-height: 24px;
-	color: {{ site.colors.secondary }}; 
-	margin-top: 10px; 
+	color: {{ site.colors.secondary }};
+	margin-top: 10px;
 }
 
 img {
@@ -104,11 +104,11 @@ ol {
     padding-left: 26px;
 }
 
-a { 
+a {
     color:{{ site.colors.link }};
     padding: 0;
 	margin: 0;
-	text-decoration: none; 
+	text-decoration: none;
 	-webkit-transition: background-color .4s linear, color .4s linear;
 	-moz-transition: background-color .4s linear, color .4s linear;
 	-o-transition: background-color .4s linear, color .4s linear;
@@ -368,7 +368,7 @@ a:focus {
 	background-position: center center;
 	min-height: 450px;
 	width: 100%;
-	
+
     -webkit-background-size: 100%;
     -moz-background-size: 100%;
     -o-background-size: 100%;
@@ -499,7 +499,7 @@ csmall {
 	background-position: center center;
 	min-height: 400px;
 	width: 100%;
-	
+
     -webkit-background-size: 100%;
     -moz-background-size: 100%;
     -o-background-size: 100%;
@@ -512,27 +512,27 @@ csmall {
 }
 
 /* Blog Page */
-.popular-posts { 
+.popular-posts {
 	margin: 0px;
 	padding-left: 0px;
 	}
-	
+
 .popular-posts li {
-	list-style: none; 
-	margin-bottom: 20px; 
+	list-style: none;
+	margin-bottom: 20px;
 	min-height: 70px;
 }
-.popular-posts li a, 
+.popular-posts li a,
 .popular-posts li a:hover {
-	color:#2f2f2f; 
+	color:#2f2f2f;
 	text-decoration: none;
 	}
-	
+
 .popular-posts li img {
-	float: left; 
+	float: left;
 	margin-right: 20px;
 	}
-	
+
 .popular-posts li em {
 	font-family: 'Lato', sans-serif;
 	font-size: 12px;
@@ -542,7 +542,7 @@ csmall {
 .popular-posts p {
 	line-height: normal;
 	margin-bottom: auto;
-}	
+}
 
 .share i {
 	padding-right: 15px;
@@ -550,8 +550,33 @@ csmall {
 }
 
 a.anchor{
-    display: block; 
-    position: relative; 
-    top: -80px; 
+    display: block;
+    position: relative;
+    top: -80px;
     visibility: hidden;
+}
+
+th, td {
+   border: 1px solid #D4D4D4;
+}
+
+table {
+	display: block;
+	background: #ffffff;
+	border-collapse: collapse;
+}
+
+th {
+	background: #0e83cd;
+	color: #fff;
+	padding: 8px 10px;
+	text-align: center;
+}
+
+td {
+  padding: 8px 10px;
+  color: black;
+}
+tr:nth-child(2n) {
+  background: #f7f7f7;
 }

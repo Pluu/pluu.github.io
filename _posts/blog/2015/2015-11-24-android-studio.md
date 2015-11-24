@@ -133,6 +133,32 @@ You can also configure restarts to happen automatically. (Dismiss, Dismiss All)
 
 해당 에러가 나오는 경우에는 별 수 없이 올바르게 빌드 후 Application 자체를 재시작해야만 합니다.
 
+## Instant Run 지원 항목
+
+| Code Change | Instant Run Support |
+| ----------- |---------------------|
+| Change instance method implementation | Supported |
+| Change static method implementation | Supported |
+| Add or remove a class | Supported |
+| Add, remove, or change a string resource | Supported but requires an Activity restart. |
+
+## Instant Run 미지원
+
+- Add/remove/change annotations
+- Add/remove/change an instance field
+- Add/remove/change a static field
+- Add/remove a static method signature
+- Change a static method signature
+- Add/remove an instance method
+- Change an instance method signature
+- Changing which parent class the current class inherits from
+- Change the list of implemented interfaces
+- Changing static initializer of a class
+
+## Instant Run 기술 내용
+
+- [Instant Run Documents](http://tools.android.com/tech-docs/instant-run)
+
 # 추가적인 변경 사항
 
 ## Resource XML Depth 표시
