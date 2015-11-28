@@ -114,9 +114,6 @@ List<String> list 의 데이터가 존재시 `list.fori` 관련 로 코드 작�
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2015/2015-11-28-AS-04.PNG" }}" />
 
 - `logt` : Log 의 TAG 관련도 클래스 변수에 자동 완성
-
-<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2015/2015-11-28-AS-04.PNG" }}" />
-
 - `logm` : 현재 함수의 매개변수의 자동 완성
 - `logr` : 리턴 값의 자동 완성
 
