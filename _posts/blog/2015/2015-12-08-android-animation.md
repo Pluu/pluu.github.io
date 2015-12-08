@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Android Animation, Animator"
+title: "Android Animation, Animator 잡담"
 date: 2015-12-08 23:30:00
 tag: [Android, Animation, Animator]
 categories:
