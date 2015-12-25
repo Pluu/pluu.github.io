@@ -2,7 +2,7 @@
 layout: post
 title: "[번역] Pluggable Annotation Processing API 사용방법 메모"
 date: 2015-12-24 13:30:00
-tag: [Android, ADT]
+tag: [Android, APT]
 categories:
 - blog
 - Android
