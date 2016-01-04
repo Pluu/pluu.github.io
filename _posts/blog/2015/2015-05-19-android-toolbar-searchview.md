@@ -34,7 +34,8 @@ onQueryTextSubmit, onQueryTextChange 설명은 이쪽
 
 [http://developer.android.com/reference/android/support/v7/widget/SearchView.OnQueryTextListener.html](http://developer.android.com/reference/android/support/v7/widget/SearchView.OnQueryTextListener.html)
 
-{% highlight java %}
+
+```java
 Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
 toolbar.inflateMenu(R.menu.search);
 
@@ -49,9 +50,10 @@ mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
         return false;
     }
 });
-{% endhighlight %}
+```
 
-{% highlight xml %}
+
+```xml
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
@@ -61,7 +63,7 @@ mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
         app:actionViewClass="android.support.v7.widget.SearchView"
         app:showAsAction="always" />
 </menu>
-{% endhighlight %}
+```
 
 ### 보충설명
 
@@ -69,29 +71,32 @@ mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 
 #### 메뉴를 프로그램으로 작성
 
-{% highlight java %}
+
+```java
 Menu menu = toolbar.getMenu();
 MenuItem item = menu.add("検索");
 item.setIcon(R.drawable.ic_menu_search);
 item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 item.setActionView(mSearchView);
-{% endhighlight %}
+```
 
 #### SearchView 를 알린 상태로 한다
 
 [http://developer.android.com/reference/android/widget/SearchView.html#setIconified(boolean)](http://developer.android.com/reference/android/widget/SearchView.html#setIconified(boolean))
 
-{% highlight java %}
+
+```java
 mSearchView.setIconfied(false);
-{% endhighlight %}
+```
 
 #### SearchView 에서 포커스를 제거하기（소프트웨어 키보드를 닫기）
 
 [http://developer.android.com/reference/android/view/ViewGroup.html#clearFocus()](http://developer.android.com/reference/android/view/ViewGroup.html#clearFocus())
 
-{% highlight java %}
+
+```java
 mSearchView.clearFocus();
-{% endhighlight %}
+```
 
 #### QueryHint를 표시
 

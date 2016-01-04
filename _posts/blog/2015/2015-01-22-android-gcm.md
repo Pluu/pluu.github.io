@@ -39,7 +39,8 @@ GCM 전송으로 위한 기본적인 필요한 Library 파일
 
 ## 단일 단말 전송
 
-{% highlight java linenos %}
+
+```java 
 public class Main {
    private final static String API_KEY = "API_KEY";
    private final static String REGISTER_DEVICE_ID = "DEVICE_GCM_ID";
@@ -88,7 +89,7 @@ public class Main {
       }
    }
 }
-{% endhighlight %}
+```
 
 - - -
 
@@ -96,7 +97,8 @@ public class Main {
 
 단일 단말 전송 코드와 Sender 객체의 send함수에 전달하는 파라매터만 다른정도일뿐 기본적인 코드는 동일합니다.
 
-{% highlight java linenos %}
+
+```java 
 public class Main {
    private final static String API_KEY = "API_KEY";
 
@@ -153,7 +155,7 @@ public class Main {
       }
    }
 }
-{% endhighlight %}
+```
 
 - - -
 

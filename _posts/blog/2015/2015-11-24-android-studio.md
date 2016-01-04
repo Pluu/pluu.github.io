@@ -68,7 +68,8 @@ Android Studio 2.0 Preview 에서는 기존 Run 과 달리 기본적으로 `Inst
 변경 점 : `텍스트 색상`
 
 수정 전
-{% highlight xml %}
+
+```xml
 <TextView
   android:id="@android:id/text1"
   android:layout_width="match_parent"
@@ -80,12 +81,13 @@ Android Studio 2.0 Preview 에서는 기존 Run 과 달리 기본적으로 `Inst
   android:singleLine="true"
   android:textStyle="bold"
   tools:text="Title"/>
-{% endhighlight %}
+```
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2015/2015-11-24-AS-03-Sample1.PNG" }}" />
 
 수정 후
-{% highlight xml %}
+
+```xml
 <TextView
   android:id="@android:id/text1"
   android:layout_width="match_parent"
@@ -97,7 +99,7 @@ Android Studio 2.0 Preview 에서는 기존 Run 과 달리 기본적으로 `Inst
   android:singleLine="true"
   android:textStyle="bold"
   tools:text="Title"/>
-{% endhighlight %}
+```
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2015/2015-11-24-AS-03-Sample2.png" }}" />
 

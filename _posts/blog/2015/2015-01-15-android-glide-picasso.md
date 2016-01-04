@@ -36,7 +36,8 @@ Google I/O 2014 소스에 포함된후 급부상
 
 ## 기본 환경 구성 (Gradle Base)
 
-{% highlight groovy %}
+
+```groovy
 // Picasso
 dependencies {
    compile 'com.squareup.picasso:picasso:2.4.0'
@@ -46,14 +47,15 @@ dependencies {
 dependencies {
    compile 'com.github.bumptech.glide:glide:3.4.+'
 }
-{% endhighlight %}
+```
 
 - - -
 
 ## 사용방법 비교
 
 ### 기본
-{% highlight java %}
+
+```java
 // Picasso
 Picasso.with(this)
    .load(URL)
@@ -63,57 +65,63 @@ Picasso.with(this)
 Glide.with(this)
    .load(URL)
    .into(ImageView imageView);
-{% endhighlight %}
+```
 
 이후는 해당 함수만 표기합니다.
 
 ### Resize Image
-{% highlight java %}
+
+```java
 // Picasso
 .resize(200, 200)
 
 // Glide
 .override(200, 200)
-{% endhighlight %}
+```
 
 ### Callback or Listener
-{% highlight java %}
+
+```java
 // Picasso
 .into(ImageView imageView, Callback arg1);
 
 // Glide
 .listener(RequestListener<String, GlideDrawable> requestListener)
-{% endhighlight %}
+```
 
 ### Transform
-{% highlight java %}
+
+```java
 // Picasso
 .transform(new CircleTransform())
 
 // Glide
 .transform(new CircleTransform(context))
-{% endhighlight %}
+```
 
 ### Thumbnail
-{% highlight java %}
+
+```java
 // Picasso
 // No Support
 
 // Glide
 .thumbnail(0.1f)
-{% endhighlight %}
+```
 
 ### Animation
-{% highlight java %}
+
+```java
 // Picasso
 // No Support
 
 // Glide
 .animate(anim)
-{% endhighlight %}
+```
 
 ### Placeholders
-{% highlight java %}
+
+```java
 // Picasso
 .placeholder(drawable/resourceid)
 .error(drawable/resourceid)
@@ -121,69 +129,76 @@ Glide.with(this)
 // Glide
 .placeholder(drawable/resourceid)
 .error(drawable/resourceid)
-{% endhighlight %}
+```
 
 ### 외부 통신 Library 연계
 
 #### Picasso - OkHttp
-{% highlight groovy %}
+
+```groovy
 dependencies {
    compile 'com.squareup.picasso:picasso:2.4.0'
    compile 'com.squareup.okhttp:okhttp:2.4.+'
    compile 'com.squareup.okhttp:okhttp-urlconnection:+'
 }
-{% endhighlight %}
+```
 
-{% highlight java %}
+
+```java
 OkHttpClient okHttpClient = new OkHttpClient();
 Picasso picasso = new Picasso
    .Builder(this)
    .downloader(new OkHttpDownloader(okHttpClient)).build();
-{% endhighlight %}
+```
 
 #### Glide - Vollery
-{% highlight groovy %}
+
+```groovy
 dependencies {
    compile 'com.github.bumptech.glide:glide:3.4.+'
    compile 'com.github.bumptech.glide:volley-integration:1.1.+'
    compile 'com.mcxiaoke.volley:library:1.0.+'
 }
-{% endhighlight %}
+```
 
-{% highlight java %}
+
+```java
 Glide
    .get(this)
    .register(GlideUrl.class,
       InputStream.class,
       new VolleyUrlLoader.Factory(yourRequestQueue));
-{% endhighlight %}
+```
 
 #### Glide - OkHttp
-{% highlight groovy %}
+
+```groovy
 dependencies {
    compile 'com.github.bumptech.glide:glide:3.4.+'
    compile 'com.github.bumptech.glide:okhttp-integration:1.1.+'
    compile 'com.squareup.okhttp:okhttp:2.4.+'
 }
-{% endhighlight %}
+```
 
-{% highlight java %}
+
+```java
 Glide
    .get(this)
    .register(GlideUrl.class,
       InputStream.class,
       new OkHttpUrlLoader.Factory(yourRequestQueue));
-{% endhighlight %}
+```
 
 _ _ _
 
 ## Debug
 
 ### Picasso
-{% highlight java %}
+
+```java
 // Picasso
 Picasso.with(this).setLoggingEnabled(true);
-{% endhighlight %}
+```
 
 #### Picasso Example : Cache Log
 - created      [R1] Request{https://avatars2.githubusercontent.com/u/1534926?v=3&s=460}
@@ -211,11 +226,12 @@ _ _ _
 - 메모리 캐쉬, 어플리케이션 RAM의 15%를 사용
 - 디스크 캐쉬, 전체 디스크의 최대 2%, 50MB 상한선 (API 14+ 혹은 OkHttp Library 사용시)
 
-{% highlight java %}
+
+```java
 new Picasso
    .Builder(this)
    .downloader(new OkHttpDownloader(okHttpClient)).build();
-{% endhighlight %}
+```
 
 ### Glide
 

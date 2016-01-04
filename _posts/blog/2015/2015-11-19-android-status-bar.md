@@ -18,15 +18,17 @@ categories:
 
 ##Theme Style
 
-{% highlight xml %}
+
+```xml
 <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
 	<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
 </style>
-{% endhighlight %}
+```
 
 ##Code
 
-{% highlight java %}
+
+```java
 public static void setStatusBarColor(Activity activity, int color) {
 	if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 		Window window = activity.getWindow();
@@ -35,7 +37,7 @@ public static void setStatusBarColor(Activity activity, int color) {
 		window.setStatusBarColor(color);
 	}
 }
-{% endhighlight %}
+```
 
 적용 화면
 

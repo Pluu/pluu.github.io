@@ -23,9 +23,10 @@ Square 회사가 개발한 Memory Leak 을 알려주는 라이브러리.
 
 적용은 굉장히 심플.
 
-{% highlight java %}
+
+```java
 LeakCanary.install(this);
-{% endhighlight %}
+```
 
 이것만으로 Memory Leak 이 발생했을때 통지해준다. 편리.
 
@@ -41,7 +42,8 @@ LeakCanary.install(this);
 
 [ActivityLifecycleCallbacks](http://developer.android.com/reference/android/app/Application.html#registerActivityLifecycleCallbacks(android.app.Application.ActivityLifecycleCallbacks)) 을 Application에 등록하는 것으로 어플리케이션 내에 등록된 Activity의 onXXX 를 Listen 하도록 한다.
 
-{% highlight java linenos %}
+
+```java 
 private final Application.ActivityLifecycleCallbacks lifecycleCallbacks =
       new Application.ActivityLifecycleCallbacks() {
 
@@ -55,7 +57,7 @@ private final Application.ActivityLifecycleCallbacks lifecycleCallbacks =
 void onActivityDestroyed(Activity activity) {
     refWatcher.watch(activity);
 }
-{% endhighlight %}
+```
 
 위를 보면, Activity 가 파기될 순간에 RefWatcher Class 의 watch 메소드가 불려지고 있다.
 
@@ -73,7 +75,8 @@ void onActivityDestroyed(Activity activity) {
 
 watch 에서는 어떤 처리가 실행되고 있을까.
 
-{% highlight java linenos %}
+
+```java 
 /**
    * Watches the provided references and checks if it can be GCed. This method is non blocking,
    * the check is done on the {@link Executor} this {@link RefWatcher} has been constructed with.
@@ -99,20 +102,22 @@ watch 에서는 어떤 처리가 실행되고 있을까.
       }
     });
   }
-{% endhighlight %}
+```
 
-{% highlight java %}
+
+```java
 final KeyedWeakReference reference =
         new KeyedWeakReference(watchedReference, key, referenceName, queue);
-{% endhighlight %}
+```
 
-{% highlight java linenos %}
+
+```java 
 watchExecutor.execute(new Runnable() {
       @Override public void run() {
         ensureGone(reference, watchStartNanoTime);
       }
 });
-{% endhighlight %}
+```
 
 ensureGone 메소드에서 전달되는 참조가 GC에 의해 파기되는가를 확인하고있는 느낌.
 
@@ -128,7 +133,8 @@ KeyedWeakReference Class 가 활약하는것은 이제부터다.
 
 ####ensureGone
 
-{% highlight java linenos %}
+
+```java 
 void ensureGone(KeyedWeakReference reference, long watchStartNanoTime) {
     long gcStartNanoTime = System.nanoTime();
 
@@ -173,7 +179,7 @@ void ensureGone(KeyedWeakReference reference, long watchStartNanoTime) {
       retainedKeys.remove(ref.key);
     }
   }
-{% endhighlight %}
+```
 
 대략 이런 흐름은
 
@@ -210,11 +216,12 @@ removeWeaklyReachableReferences 에서 KeyedWeakReference Class가 활약한다.
 
 이것을 근거로, 재차 removeWeaklyReachableReferences 를 보자.
 
-{% highlight java linenos %}
+
+```java 
 while ((ref = (KeyedWeakReference) queue.poll()) != null) {
       retainedKeys.remove(ref.key);
 }
-{% endhighlight %}
+```
 
 WeakReference 를 만들때 ReferenceQueue 를 전달하면, GC 가 실행될때에 ReferenceQueue 에 참조 (여기에서 말하는것은 KeyedWeakReference) 가 들어간다
 

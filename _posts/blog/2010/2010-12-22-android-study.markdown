@@ -36,7 +36,8 @@ categories:
 ViewFlipper 안에 필요한 이미지 수만큼 ImageView를 추가합니다.
 
 
-{% highlight Java linenos %}
+
+```java 
 import java.util.ArrayList;
 import android.content.Context;
 import android.content.res.Resources;
@@ -524,4 +525,4 @@ public class parts_number extends View implements ServiceInfo {
    }
 }
 
-{% endhighlight %}
+```

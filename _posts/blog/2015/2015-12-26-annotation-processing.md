@@ -88,7 +88,8 @@ Android Gradle Plugin에 포함되면 좋을 텐라고 하는 사람도 상당�
 이런 느낌으로 사용합니다.
 
 build.gradle
-{% highlight groovy %}
+
+```groovy
 buildscript {
     repositories {
         jcenter()
@@ -99,10 +100,11 @@ buildscript {
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
     }
 }
-{% endhighlight %}
+```
 
 app/build.gradle
-{% highlight groovy %}
+
+```groovy
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt' // android-apt를 지정
 
@@ -136,7 +138,7 @@ dependencies {
     provided 'com.github.shiraji:kenkenpa:1.0.3'
     apt 'com.github.shiraji:kenkenpa-compiler:1.0.3' // apt지정이 가능하도록 한다.
 }
-{% endhighlight %}
+```
 
 build.gradle 지정 이외에는 특히 아무것도 하지 않아도 되므로, 사용이 편리합니다.
 
@@ -202,7 +204,8 @@ AA는 역사가 길고, 2010년부터 개발되어왔고, [eBusinessInformation]
 현재 AA의 최신 버전은 3.3.2이므로, 그것을 이용합니다.
 
 MainActivity.java
-{% highlight java %}
+
+```java
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -219,10 +222,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
-{% endhighlight %}
+```
 
 AAActivity.java
-{% highlight java %}
+
+```java
 @EActivity(R.layout.aaactivity_layout)
 public class AAActivity extends AppCompatActivity {
     @ViewById(R.id.textView)
@@ -250,17 +254,19 @@ public class AAActivity extends AppCompatActivity {
         Log.i("AAActivity", "TextView: " + mTextView.getText());
     }
 }
-{% endhighlight %}
+```
 
 AAFragment
-{% highlight java %}
+
+```java
 @EFragment(R.layout.aafragment_layout)
 public class AAFragment extends Fragment {
 }
-{% endhighlight %}
+```
 
 aaactivity_layout.xml
-{% highlight xml %}
+
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -281,10 +287,11 @@ aaactivity_layout.xml
         android:layout_height="wrap_content" />
 
 </LinearLayout>
-{% endhighlight %}
+```
 
 AndroidManifest.xml
-{% highlight java %}
+
+```java
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.github.shiraji.aa_sample">
@@ -308,10 +315,11 @@ AndroidManifest.xml
     </application>
 
 </manifest>
-{% endhighlight %}
+```
 
 app/build.gradle
-{% highlight diff %}
+
+```diff
 apply plugin: 'com.android.application'
 +apply plugin: 'android-apt'
 +
@@ -350,12 +358,13 @@ dependencies {
 +        androidManifestFile variant.outputs[0]?.processResources?.manifestFile
 +    }
 +}
-{% endhighlight %}
+```
 
 생성된 코드
 
 AAActivity_.java
-{% highlight java %}
+
+```java
 public final class AAActivity_
     extends AAActivity
     implements HasViews, OnViewChangedListener
@@ -503,10 +512,11 @@ public final class AAActivity_
     }
 
 }
-{% endhighlight %}
+```
 
 AAFragment_.java
-{% highlight java %}
+
+```java
 public final class AAFragment_
     extends com.github.shiraji.aa_sample.AAFragment
     implements HasViews
@@ -574,7 +584,7 @@ public final class AAFragment_
     }
 
 }
-{% endhighlight %}
+```
 
 어떻게 하면 Background 처리를 실행할지 등을 생각할 필요가 없습니다. Background에서의 처리인가, UiThread인가 등을 메소드에서 명확하게 나누는 것도 코드를 읽기 쉽게 합니다.
 
@@ -623,7 +633,8 @@ sonatype 설정을 추가해서, AutoValue의 SNAPSHOT을 사용하도록 합니
 조금 전 기재한, android-apt도 사용하도록 합니다.
 
 build.gradle
-{% highlight diff %}
+
+```diff
 @@ -3,10 +3,14 @@
  buildscript {
      repositories {
@@ -649,12 +660,13 @@ build.gradle
 +        }
      }
  }
-{% endhighlight %}
+```
 
 AutoValue과 확장 라이브러리를 임포트합니다.
 
 app/build.gradle
-{% highlight diff %}
+
+```diff
 apply plugin: 'com.android.application'
 +apply plugin: 'com.neenbedankt.android-apt'
 
@@ -668,14 +680,15 @@ android {
 +    provided 'com.google.auto.value:auto-value:1.2-SNAPSHOT'
 +    apt 'com.ryanharter.auto.value:auto-value-parcel:0.2-SNAPSHOT'
 }
-{% endhighlight %}
+```
 
 이걸로 설정 부분은 완료.
 
 String foo와 int bar를 가지는 Parcelable Class를 만들고싶어서, 실제 코드를 적어봅니다.
 
 AutoValueParcelSample.java
-{% highlight java %}
+
+```java
 @AutoValue
 public abstract class AutoValueParcelSample implements Parcelable {
 
@@ -687,21 +700,23 @@ public abstract class AutoValueParcelSample implements Parcelable {
         return new AutoValue_AutoValueParcelSample(bar, foo);
     }
 }
-{% endhighlight %}
+```
 
 이 클래스를 이용하려면 아래와 같이 코드를 적습니다.
 
 MainActivity.java
-{% highlight java %}
+
+```java
 AutoValueParcelSample sample = AutoValueParcelSample.create("baaaar", 100);
 Log.d("MainActivity", sample.toString());
-{% endhighlight %}
+```
 
 이걸로 run 해봅니다.
 
-{% highlight bash %}
+
+```bash
 D/MainActivity: AutoValueParcelSample{bar=baaaar, foo=100}
-{% endhighlight %}
+```
 
 AutoValueParcelSample@1234a5 등이 아니라, 제대로 된 `toString()`이 작동하고 있습니다.
 
@@ -717,7 +732,8 @@ AutoValue에서는, 반드시 생성된 Class는 AutoValue_라는 prefix가 붙�
 
 파일은 `app/build/generated/source/apt`아래에 있습니다.
 
-{% highlight java %}
+
+```java
 final class AutoValue_AutoValueParcelSample extends $AutoValue_AutoValueParcelSample {
   private static final ClassLoader CL = AutoValue_AutoValueParcelSample.class.getClassLoader();
 
@@ -754,13 +770,14 @@ final class AutoValue_AutoValueParcelSample extends $AutoValue_AutoValueParcelSa
     return 0;
   }
 }
-{% endhighlight %}
+```
 
 Parcelable에 대한 처리가 기재되어 있습니다.
 
 새로운 Class인 $AutoValue_AutoValueParcelSample를 확인할 수 있습니다.
 
-{% highlight java %}
+
+```java
 abstract class $AutoValue_AutoValueParcelSample extends AutoValueParcelSample {
 
   private final String bar;
@@ -818,16 +835,17 @@ abstract class $AutoValue_AutoValueParcelSample extends AutoValueParcelSample {
   }
 
 }
-{% endhighlight %}
+```
 
 이 Class에서는, 기존의 AutoValue가 제공하는 `toString()`/`equals()`/`hashCode()`의 자동생성한 코드가 포함되어 있습니다. Class 구성은 이런 느낌입니다.
 
-{% highlight bash %}
+
+```bash
 Parcelable
    └── AutoValueParcelSample // 작성한 코드
         └── $AutoValue_AutoValueParcelSample // 자동 생성된 auto-value가 제공하는 구현 코드
              └── AutoValue_AutoValueParcelSample // 자동 생성된 Parcelable의 구현 코드
-{% endhighlight %}
+```
 
 전부 갖춘 [소스](https://github.com/shiraji/auto-value-parcel-sample)도 확인해주세요.
 

@@ -19,7 +19,8 @@ Android Studio 에서 자주 사용하는 Gradle Task 정리
 
 - ndk.debug = true or false
 
-{% highlight groovy %}
+
+```groovy
 import org.apache.tools.ant.taskdefs.condition.Os
 
 // NDK Build
@@ -48,13 +49,14 @@ tasks.withType(JavaCompile) {
     compileTask -> compileTask.dependsOn ndkBuild
 }
 
-{% endhighlight %}
+```
 
 ###NDK Result File (.a) Copy
 
 - - -
 
-{% highlight groovy %}
+
+```groovy
 // NDK 결과물 App Module 쪽 JNI 폴더로 복사
 task ndkResultCopy(type: Copy, dependsOn: 'ndkBuild') {
     from('src/main/obj/local') {
@@ -64,7 +66,7 @@ task ndkResultCopy(type: Copy, dependsOn: 'ndkBuild') {
 
     into('../app/src/main/jni')
 }
-{% endhighlight %}
+```
 
 ###Make JAR
 
@@ -73,7 +75,8 @@ task ndkResultCopy(type: Copy, dependsOn: 'ndkBuild') {
 - ARTIFACT_ID = ARTIFACT_NAME
 - VERSION_NAME = 1_0
 
-{% highlight groovy %}
+
+```groovy
 task clearJar(type: Delete) {
     delete 'build/libs/' + ARTIFACT_ID + '_' + VERSION_NAME + '.jar'
 }
@@ -86,4 +89,4 @@ task makeJar(type: Copy) {
 }
 
 makeJar.dependsOn(clearJar, build)
-{% endhighlight %}
+```

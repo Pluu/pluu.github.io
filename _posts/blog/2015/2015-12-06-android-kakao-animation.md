@@ -28,7 +28,8 @@ categories:
 6. View 데이터 갱신
 
 #### MAdapter.java
-{% highlight java %}
+
+```java
 public class MAdapter extends BaseAdapter {
 
     // Offset Position
@@ -191,10 +192,11 @@ public class MAdapter extends BaseAdapter {
         }
     }
 }
-{% endhighlight %}
+```
 
 #### item_list.xml
-{% highlight xml %}
+
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -210,10 +212,11 @@ public class MAdapter extends BaseAdapter {
         layout="@layout/merge_list_item" />
 
 </FrameLayout>
-{% endhighlight %}
+```
 
 #### merge_list_item.xml
-{% highlight xml %}
+
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -275,10 +278,11 @@ public class MAdapter extends BaseAdapter {
         android:src="@mipmap/ic_launcher" />
 
 </RelativeLayout>
-{% endhighlight %}
+```
 
 #### slide_in_up.xml
-{% highlight xml %}
+
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <set
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -293,10 +297,11 @@ public class MAdapter extends BaseAdapter {
         android:fromAlpha="0.0"
         android:toAlpha="1.0" />
 </set>
-{% endhighlight %}
+```
 
 #### slide_out_up.xml
-{% highlight xml %}
+
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <set
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -311,14 +316,15 @@ public class MAdapter extends BaseAdapter {
         android:fromAlpha="1.0"
         android:toAlpha="0.0" />
 </set>
-{% endhighlight %}
+```
 
 #### custom_decelerate_interpolator.xml
-{% highlight xml %}
+
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <decelerateInterpolator
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:factor="1.5"/>
-{% endhighlight %}
+```
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2015/2015-12-06-android-kakao-android.gif" }}" />

@@ -15,11 +15,12 @@ categories:
 
 `Fabric` 을 사용하는 경우 아래와 같이 메타 데이터를 사용하고 있습니다.
 
-{% highlight xml %}
+
+```xml
 <meta-data
     android:name="io.fabric.ApiKey"
     android:value="<!-- Key Value -->" />
-{% endhighlight %}
+```
 
 위의 값을 취득하기 위해서는 아래와 같이 진행하시면 됩니다.
 
@@ -28,7 +29,8 @@ categories:
 3. ApplicationInfo 의 `metaData` 값을 취득
 4. Bundle 형인 `metaData` 가 null 이 아닌 경우, 실제 원하는 meta-data 의 name 을 이용해서 값을 취득
 
-{% highlight java linenos %}
+
+```java 
 public static String getApiKeyFromManifest(Context context) {
 		String apiKey = null;
 
@@ -47,7 +49,7 @@ public static String getApiKeyFromManifest(Context context) {
 
 		return apiKey;
 	}
-{% endhighlight %}
+```
 
 - - -
 

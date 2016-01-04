@@ -40,11 +40,12 @@ ButterKnife는 위의 항목을 심플하게 사용을 목적으로 두며, Anno
 
 ### Gradle 설정
 
-{% highlight groovy %}
+
+```groovy
 dependencies {
    compile 'com.jakewharton:butterknife:6.0.0'
 }
-{% endhighlight %}
+```
 
 ### 지원 기능
 
@@ -87,7 +88,8 @@ Activity의 onCreate함수에서 setContentView 호출후 `ButterKnife.inject(Ac
 
 ### Activity에서의 View Injection
 
-{% highlight java %}
+
+```java
 class ExampleActivity extends Activity {
   @InjectView(R.id.title) TextView title;
   @InjectView(R.id.subtitle) TextView subtitle;
@@ -100,11 +102,12 @@ class ExampleActivity extends Activity {
     // TODO Use "injected" views...
   }
 }
-{% endhighlight %}
+```
 
 ### Fragment에서의 View Injection
 
-{% highlight java %}
+
+```java
 public class FancyFragment extends Fragment {
   @InjectView(R.id.button1) Button button1;
   @InjectView(R.id.button2) Button button2;
@@ -116,20 +119,22 @@ public class FancyFragment extends Fragment {
     return view;
   }
 }
-{% endhighlight %}
+```
 
 ### Fragment에서의 Injection Reset
 
-{% highlight java %}
+
+```java
 @Override void onDestroyView() {
   super.onDestroyView();
   ButterKnife.reset(this);
 }
-{% endhighlight %}
+```
 
 ### Adapter에서의 ViewHolder
 
-{% highlight java %}
+
+```java
 public class MyAdapter extends BaseAdapter {
   @Override public View getView(int position, View view, ViewGroup parent) {
     ViewHolder holder;
@@ -156,18 +161,20 @@ public class MyAdapter extends BaseAdapter {
     }
   }
 }
-{% endhighlight %}
+```
 
 ### View Lists
 
-{% highlight java %}
+
+```java
 @InjectViews({ R.id.first_name, R.id.middle_name, R.id.last_name })
 List<EditText> nameViews;
-{% endhighlight %}
+```
 
 ### Custom Action
 
-{% highlight java %}
+
+```java
 ButterKnife.apply(nameViews, DISABLE);
 ButterKnife.apply(nameViews, ENABLED, false);
 
@@ -181,17 +188,19 @@ static final Setter<View, Boolean> ENABLED = new Setter<>() {
     view.setEnabled(value);
   }
 }
-{% endhighlight %}
+```
 
 ### Property Apply
 
-{% highlight java %}
+
+```java
 ButterKnife.apply(nameViews, View.ALPHA, 0);
-{% endhighlight %}
+```
 
 ### OnClickListener
 
-{% highlight java %}
+
+```java
 @OnClick(R.id.submit)
 public void submit(View view) {
   // TODO submit data to server...
@@ -215,7 +224,7 @@ public void pickDoor(DoorView door) {
     Toast.makeText(this, "Try again", LENGTH_SHORT).show();
   }
 }
-{% endhighlight %}
+```
 
 - - -
 

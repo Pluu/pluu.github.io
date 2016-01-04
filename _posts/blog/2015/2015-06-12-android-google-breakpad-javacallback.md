@@ -29,7 +29,8 @@ Crash 가 일어난 원인 체크 및 추가적으로 `레드마인`, `JIRA`, `G
 
 Android 개발시 Java의 Crash 로그 수집의 기본처리는 아래와 같습니다.
 
-{% highlight java %}
+
+```java
 public class MyUncaughtExceptionHandler
 	implements Thread.UncaughtExceptionHandler {
 
@@ -44,7 +45,7 @@ public class MyUncaughtExceptionHandler
 
 // reportHandler 는 Thread.UncaughtExceptionHandler 를 상속받은 클래스의 인스턴스
 Thread.setDefaultUncaughtExceptionHandler(new MyUncaughtExceptionHandler());
-{% endhighlight %}
+```
 
 위의 소스처럼 기본적인 Thread의 에러처리 핸들러를 `UncaughtExceptionHandler` 상속받은 클래스의 인스턴스를 적용하는것으로 끝이다.
 
@@ -83,15 +84,17 @@ Google Breakpad는 Cross Platform을 지원하며 이미 여러 프로그램에�
 ####Activity 설정
 
 * Native Load
-{% highlight java %}
+
+```java
 System.loadLibrary("test_google_breakpad");
-{% endhighlight %}
+```
 
 * Native Call Method
-{% highlight java %}
+
+```java
 native void initNative(String path);
 native void crashService();
-{% endhighlight %}
+```
 
 `initNative` 메소드는 추후 DUMP 파일이 저장될 곳을 지정하기위해 path 를 매개변수로 받도록 정의했습니다.
 
@@ -99,7 +102,8 @@ native void crashService();
 
 기존 Eclipse 에서는 Command 창에서 `ndk-build` 를 입력해서 빌드 처리나 별도 작업했는데, Gradle 관련은 아래 Task 를 build.gradle 파일에 등록해줍니다.
 
-{% highlight groovy %}
+
+```groovy
 task ndkBuild(type: Exec, description:'Compile JNI source via NDK') {
     Properties properties = new Properties()
     properties.load(project.rootProject.file('local.properties').newDataInputStream())
@@ -124,11 +128,12 @@ task ndkBuild(type: Exec, description:'Compile JNI source via NDK') {
 tasks.withType(JavaCompile) {
     compileTask -> compileTask.dependsOn ndkBuild
 }
-{% endhighlight %}
+```
 
 ####JNI 초기파일 설정
 
-{% highlight cpp %}
+
+```cpp
 #include <jni.h>
 #include <stdio.h>
 #include <android/log.h>
@@ -144,7 +149,7 @@ extern "C" {
         __android_log_print(ANDROID_LOG_DEBUG, "PluuSystem", "crashService call");
     }
 }
-{% endhighlight %}
+```
 
 JNI 호출시 해당 C, C++ 파일의 함수 정의 양식은 `Java_JNI 호출 패키지_호출 패키지_호출 함수`과 같습니다.
 
@@ -229,7 +234,8 @@ src/client/linux/microdump_writer/microdump_writer.cc \
 
 DUMP 파일 수집을 위해 Google Breakpad 관련 내용을 적용합니다.
 
-{% highlight cpp %}
+
+```cpp
 #include <jni.h>
 #include <android/log.h>
 #include <stdio.h>
@@ -268,7 +274,7 @@ extern "C" {
         Crash();
     }
 }
-{% endhighlight %}
+```
 
 앱 실행 후 NATIVE CRASH 버튼을 선택하면 다음 로그가 출력됩니다.
 
@@ -285,7 +291,8 @@ Step2 소스 : [Step2 링크](https://github.com/Pluu/BreakpadJavaCall/tree/step
 
 * NativeController.java
 
-{% highlight java %}
+
+```java
 public class NativeController {
 	public static int NativeCrashCallback(String fileName) {
 
@@ -296,10 +303,11 @@ public class NativeController {
 	}
 }
 
-{% endhighlight %}
+```
 
 * test_breakpad.cpp
-{% highlight cpp %}
+
+```cpp
 bool DumpCallback(const google_breakpad::MinidumpDescriptor& descriptor,
                   void* context,
                   bool succeeded) {
@@ -328,7 +336,7 @@ bool DumpCallback(const google_breakpad::MinidumpDescriptor& descriptor,
 
     return succeeded;
 }
-{% endhighlight %}
+```
 
 최초 `Java_com_pluusystem_breakpadjavacall_MainActivity_initNative` 호출시 전달받은 `JNIEnv* env` 객체를 이용해서 다음 로직을 호출하여 자바의 함수를 호출합니다.
 

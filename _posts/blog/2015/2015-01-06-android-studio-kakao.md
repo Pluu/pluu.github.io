@@ -17,18 +17,20 @@ Android Studio에 카카오 SDK를 Gradle 방식으로 작업시 간단한(?)처
 <!--more-->
 
 ## 1. build.gradle
-{% highlight groovy linenos %}
+
+```groovy
 subprojects {
     repositories {
         mavenCentral()
         maven { url 'http://devrepo.kakao.com:8088/nexus/content/groups/public/' }
     }
 }
-{% endhighlight %}
+```
 카카오 Repogitories 추가
 
 ## 2. build.gradle
-{% highlight groovy linenos %}
+
+```groovy
 apply plugin: 'com.android.application'
 
 android {
@@ -61,21 +63,23 @@ dependencies {
     provided group: project.KAKAO_SDK_GROUP, name: 'usermgmt', version: project.KAKAO_SDK_VERSION
     provided group: project.KAKAO_SDK_GROUP, name: 'kakaolink', version: project.KAKAO_SDK_VERSION
 }
-{% endhighlight %}
+```
 
 상단에 예제로 카카오 링크와 로그인관련 의존 처리 Gradle 코드를 추가 했습니다.
 
-{% highlight groovy %}
+
+```groovy
 project.KAKAO_SDK_GROUP : com.kakao.sdk
 project.KAKAO_SDK_VERSION  : 1.0.46
-{% endhighlight %}
+```
 
 추가적인 의존성 데이터
 
 ## 3. Manifest
-{% highlight xml %}
+
+```xml
 <meta-data android:name="com.kakao.sdk.AppKey" android:value="@string/kakao_app_key"/>
-{% endhighlight %}
+```
 
 카카오 Developer에서 발급받은 Key 반영한 부분입니다.
 
@@ -86,4 +90,4 @@ project.KAKAO_SDK_VERSION  : 1.0.46
 
 샘플 모듈이 작동하기위해서는 샘플 모듈 + 템플릿 모듈 이렇게 한쌍으로 되어있어 오히려 복잡도만 크게 키운게 아닌가 싶습니다.
 
-```Android Studio, Gradle``` 도입이 시작되었으니, 좀더 나은 작업방법이 생기길 바램입니다.
+`Android Studio, Gradle` 도입이 시작되었으니, 좀더 나은 작업방법이 생기길 바램입니다.

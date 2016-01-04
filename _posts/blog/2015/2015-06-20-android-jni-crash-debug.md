@@ -40,7 +40,8 @@ categories:
 
 #### 기본 테스트 소스
 
-{% highlight java linenos %}
+
+```java 
 #include <jni.h>
 #include <android/log.h>
 #include <stdio.h>
@@ -107,7 +108,7 @@ extern "C" {
         Crash();
     }
 }
-{% endhighlight %}
+```
 
 ###Logcat 결과 체크
 
@@ -115,7 +116,8 @@ extern "C" {
 
 사전 작업 : 51번째 줄을 false 처리하여 Logcat 에 Crash Log 가 나오도록 수정
 
-{% highlight console linenos %}
+
+```console 
 I/DEBUG﹕ *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
 I/DEBUG﹕ Build fingerprint: 'generic/vbox86p/vbox86p:4.3/JLS36G/eng.buildbot.20150609.213200:userdebug/test-keys'
 I/DEBUG﹕ Revision: '0'
@@ -186,7 +188,7 @@ I/DEBUG﹕ memory map around fault addr 00006147:
 I/DEBUG﹕ (no map below)
 I/DEBUG﹕ (no map for address)
 I/DEBUG﹕ 96e9e000-97223000 rw- /dev/ashmem/gralloc-buffer (deleted)
-{% endhighlight %}
+```
 
 Logcat 에서 확인 할 사항은 JNI Module 명과 관련된 11, 12번째 줄에 내용입니다.
 
@@ -202,7 +204,8 @@ arm-linux-androideabi-addr2line 를 사용하는 옵션은 아래와 같습니�
 - e : 타겟 .so 설정
 - f : 함수 출력
 
-{% highlight console %}
+
+```console
 // 11줄, 00000861  /data/app-lib/com.pluusystem.breakpadjavacall-2/libtest_google_breakpad.so (Crash()+22)
 arm-linux-androideabi-addr2line -C -fe x86\libtest_google_breakpad.so 00000861
 Crash()
@@ -212,7 +215,7 @@ D:\GitHub\BreakpadJavaCall\app\src\main/jni/test_breakpad.cpp:43
 arm-linux-androideabi-addr2line -C -fe x86\libtest_google_breakpad.so 00000915
 Java_com_pluusystem_breakpadjavacall_MainActivity_crashService
 D:\GitHub\BreakpadJavaCall\app\src\main/jni/test_breakpad.cpp:64
-{% endhighlight %}
+```
 
 실제로 Crash 가 발생한 Stack 을 체크할수 있습니다.
 
@@ -226,13 +229,15 @@ Crash로 생성된 dump 파일 (예, 53cf87db-0429-1cbf-3cd576a2-2b42c50d.dmp) �
 
 `minidump_stackwalk <minidumo-file> [symbol-path ...]`
 
-{% highlight console %}
+
+```console
 minidump_stackwalk 53cf87db-0429-1cbf-3cd576a2-2b42c50d.dmp > 53cf87db-0429-1cbf-3cd576a2-2b42c50d.dmp.txt
-{% endhighlight %}
+```
 
 해당 파일을 내용을 간략하게 표시하면 아래와 같습니다.
 
-{% highlight console linenos %}
+
+```console 
 Operating system: Android
                   0.0.0 Linux 3.4.67-qemu+ #13 SMP PREEMPT Thu Mar 19 15:12:39 CET 2015 i686
 CPU: x86
@@ -269,13 +274,14 @@ Thread 0 (crashed)
     Found by: stack scanning
 
 ...생략...
-{% endhighlight %}
+```
 
 관련 .so 파일에 해당하는 라인을 검색해서 해당내용을 추적할 수 있습니다.
 
 추적방법은 위의 Logcat 에 적혀있는 방법과 동일합니다.
 
-{% highlight console %}
+
+```console
 // 12줄, libtest_google_breakpad.so + 0x1a827
 arm-linux-androideabi-addr2line -C -fe x86\libtest_google_breakpad.so 0x1a827
 Crash()
@@ -290,7 +296,7 @@ D:\GitHub\BreakpadJavaCall\app\src\main/jni/test_breakpad.cpp:65
 arm-linux-androideabi-addr2line -C -fe x86\libtest_google_breakpad.so 0x1a9a9
 Java_com_pluusystem_breakpadjavacall_MainActivity_crashService
 D:\GitHub\BreakpadJavaCall\app\src\main/jni/test_breakpad.cpp:61
-{% endhighlight %}
+```
 
 ###P.S.
 

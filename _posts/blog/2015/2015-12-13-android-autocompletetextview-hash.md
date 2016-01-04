@@ -24,7 +24,8 @@ categories:
 
 살펴보면, [yanzm씨의 기사](http://y-anz-m.blogspot.jp/2013/02/androidautocompletetextview.html)에 소개된 AutoCompleteTextView를 사용해서 구현할 수 있을 것입니다. [AutoCompleteTextView의 Reference](http://developer.android.com/intl/ja/reference/android/widget/AutoCompleteTextView.html)를 보면 아래와 같은 샘플코드가 소개되어 있습니다.
 
-{% highlight java %}
+
+```java
 public class CountriesActivity extends Activity {
     protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -41,24 +42,26 @@ public class CountriesActivity extends Activity {
             "Belgium", "France", "Italy", "Germany", "Spain"
     };
 }
-{% endhighlight %}
+```
 
 AutoCompleteTextView에 단어 리스트를 가지는 Adapter를 설정함으로, 처리됩니다. 단어를 해시 태그같이 해서 우선 작동해 보세요.
 
-{% highlight java %}
+
+```java
 private static final String[] COUNTRIES = new String[] {
     "#Belgium", "#France", "#Italy", "#Germany", "#Spain"
 };
-{% endhighlight %}
+```
 
 또, layout은 아래와 같이 정의합니다.
 
-{% highlight xml %}
+
+```xml
 <AutoCompleteTextView
     android:id="@+id/countries_list"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" />
-{% endhighlight %}
+```
 
 어플리케이션을 빌드해서 입력해보면, 아래와 같이 입력에 맞춰 팝업이 나타나 단어가 표시됩니다. 복수 해시 태그가 있는 경우에는 자동 완성이 안되지만, 이것으로 자동 완성을 하기 위해서 필요한 최소한의 방법을 배웠습니다.
 
@@ -86,7 +89,8 @@ private static final String[] COUNTRIES = new String[] {
 
 ArrayAdapter를 상속한 커스텀 Adapter를 작성해, getFilter로 반환할 filter는 Filter 클래스를 상속한 HashTagFilter 클래스로 대체합니다.
 
-{% highlight java %}
+
+```java
 public class HashTagSuggestAdapter extends ArrayAdapter<String> {
 
     private HashTagFilter filter;
@@ -117,7 +121,7 @@ public class HashTagSuggestAdapter extends ArrayAdapter<String> {
         }
     }
 }
-{% endhighlight %}
+```
 
 ### Filter의 performFiltering과 publishResults를 구현
 
@@ -127,7 +131,8 @@ performFiltering과 publishResults를 구현하겠습니다.
 
 publishResults에서는, Adapter의 갱신 처리를 적는데, ArrayAdapter의 코드와 같이 results가 있는 경우에 notifyDataSetChanged를 실행하게 합니다. results가 없다면 Adapter에 갱신이 없으므로 notifyDataSetInvalidated를 호출하도록 합니다.
 
-{% highlight java %}
+
+```java
 @Override
 protected void publishResults(CharSequence constraint, FilterResults results) {
     if (results != null && results.count > 0) {
@@ -136,7 +141,7 @@ protected void publishResults(CharSequence constraint, FilterResults results) {
         notifyDataSetInvalidated();
     }
 }
-{% endhighlight %}
+```
 
 #### performFiltering
 
@@ -150,15 +155,17 @@ performFiltering에서 필터링 처리를 구현합니다. 먼저, 복수 해�
 
 해시 태그를 추출되면, Adapter에 적용된 데이터들과 비교합니다. 데이터는 COUNTRIES입니다.
 
-{% highlight java %}
+
+```java
 private static final String[] COUNTRIES = new String[]{
         "#Belgium", "#France", "#Italy", "#Germany", "#Spain"
 };
-{% endhighlight %}
+```
 
 COUNTRIES를 toLowerCase한 문자열과 추출한 해시 태그를 startsWith로 비교해서 매칭되는 경우, 미리 준비한 suggests 리스트에 추가합니다. 그리고, filterResults.values에는 suggests 리스트를, filterResults.count에는 suggests리스트의 사이즈를 대입합니다. 이외에 Adapter의 getCount 함수와 getItem 함수를 Override해서 suggests 리스트 사이즈와 아이템을 반환하도록 합니다.
 
-{% highlight java %}
+
+```java
 public class HashTagSuggestAdapter extends ArrayAdapter<String> {
 
     private HashTagFilter filter;
@@ -237,7 +244,7 @@ public class HashTagSuggestAdapter extends ArrayAdapter<String> {
         }
     }
 }
-{% endhighlight %}
+```
 
 이걸로 해시 태그가 복수가 있는 경우에도 자동 완성 후보들이 표시 됩니다.
 
@@ -247,7 +254,8 @@ public class HashTagSuggestAdapter extends ArrayAdapter<String> {
 
 위의 Gif에서는 완성 리스트에 표시된 #Spain를 선택하면, 입력 전체가 교체되어버립니다. 이 경우 #s가 #Spain으로 교체되는 것이 올바른 동작일 터입니다. 후보 단어를 선택해서 입력을 교체하는 처리는, AutoCompleteTextView의 [replaceText](http://tools.oesf.biz/android-6.0.0_r1.0/xref/frameworks/base/core/java/android/widget/AutoCompleteTextView.java#replaceText)에서 일어나므로 AutoCompleteTextView를 상속해서 Override합니다.
 
-{% highlight java %}
+
+```java
 public class HashTagAutoCompleteTextView extends AutoCompleteTextView {
 
     public HashTagAutoCompleteTextView(Context context, AttributeSet attrs) {
@@ -263,19 +271,21 @@ public class HashTagAutoCompleteTextView extends AutoCompleteTextView {
         // replace 처리
     }
 }
-{% endhighlight %}
+```
 
 replace할 때에 필요로 하는 것은, 입력 문자열의 몇 번째 문자에서 몇 번째 문자까지가 입력 중인 해시 태그인가? 라는 정보입니다. 커서 위치를 취득하면, 사용자가 지금 입력하고 있는 부분이 어디 있는지 알 수 있으므로, HashTagSuggestAdapter에 다음 interface를 추가합니다.
 
-{% highlight java %}
+
+```java
 public interface CursorPositionListener {
     int currentCursorPosition();
 }
-{% endhighlight %}
+```
 
 그리고, Activity에 interface를 구현해서 커서 위치를 반환하도록 합니다.
 
-{% highlight java %}
+
+```java
 final AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.input_form);
 
 HashTagSuggestAdapter adapter = new HashTagSuggestAdapter(this, android.R.layout.simple_dropdown_item_1line, COUNTRIES);
@@ -285,11 +295,12 @@ adapter.setCursorPositionListener(new HashTagSuggestAdapter.CursorPositionListen
         return textView.getSelectionStart();
     }
 });
-{% endhighlight %}
+```
 
 이걸로 커서 위치를 취득할 수 있게 되었으므로, 해시 태그의 추출 부분을 수정합니다. 매칭된 입력된 해시 태그의 start, end와 커서 위치를 비교해 현재 입력 중인 해시 태그에 대한 것만을 목록 리스트를 나오도록 합니다. 또한, start와 end를 보관해둬서 입력 문자열의 몇 번째 문자에서 몇 번째 문자까지가 입력 중인 해시 태그인가를 판별할 수 있도록 합니다.
 
-{% highlight java %}
+
+```java
 int cursorPosition = listener.currentCursorPosition();
 
 Matcher m = pattern.matcher(constraint.toString());
@@ -314,11 +325,12 @@ while (m.find()) {
          }
      }
 }
-{% endhighlight %}
+```
 
 HashTagFilter의 start와 end를 보면, 입력 문자열의 몇 번째부터 몇 번째까지가 입력 중인 해시 태그인가를 알 수 있으므로, replaceText를 아래와 같이 구현합니다.
 
-{% highlight java %}
+
+```java
 public class HashTagAutoCompleteTextView extends AutoCompleteTextView {
     public HashTagAutoCompleteTextView(Context context) {
         this(context, null);
@@ -347,7 +359,7 @@ public class HashTagAutoCompleteTextView extends AutoCompleteTextView {
         span.replace(filter.start, filter.end, text);
     }
 }
-{% endhighlight %}
+```
 
 이걸로 올바르게 교체할 수 있게 되었습니다.
 
@@ -363,7 +375,8 @@ public class HashTagAutoCompleteTextView extends AutoCompleteTextView {
 
 정의한 keyword로부터 iQON에 사용된 태그를 취득하는 API가 딱 있었기때문에 그것을 사용합니다. 응답은 아래와 같은 형식입니다.
 
-{% highlight json %}
+
+```json
 {
     results: [
         {
@@ -380,13 +393,14 @@ public class HashTagAutoCompleteTextView extends AutoCompleteTextView {
         }
     ]
 }
-{% endhighlight %}
+```
 
 #### API에 요청
 
 [Retrofit](http://square.github.io/retrofit/)를 사용해서 요청합니다. 아래와 같이 Service와 데이터 클래스를 준비합니다.
 
-{% highlight java %}
+
+```java
 public interface SuggestService {
     @GET("적절하게 고쳐 써주세요")
     Call<SuggestResponse> listHashTags(@Query("keyword") String keyword);
@@ -409,22 +423,24 @@ public class HashTag {
         this.count = count;
     }
 }
-{% endhighlight %}
+```
 
 SuggestService의 구현을 취득합니다.
 
-{% highlight java %}
+
+```java
 Retrofit retrofit = new Retrofit.Builder()
         .baseUrl("적절하게 고쳐 써주세요")
         .addConverterFactory(GsonConverterFactory.create())
         .build();
 
 SuggestService service = retrofit.create(SuggestService.class);
-{% endhighlight %}
+```
 
 다음은 service를 사용해서 API에 요청해서, 응답을 suggests 리스트에 추가하면 동적으로 완성 후보애 표시됩니다. API의 기능상 keyword에는, m.start() + 1해서 #을 제거한 문자열을 지정합니다.
 
-{% highlight java %}
+
+```java
 String keyword = constraint.subSequence(m.start() + 1, m.end()).toString();
 Call<SuggestResponse> call = service.listHashTags(keyword);
 try {
@@ -435,7 +451,7 @@ try {
 } catch (IOException e) {
     e.printStackTrace();
 }
-{% endhighlight %}
+```
 
 실제 움직여보면 이런 느낌입니다.
 
@@ -445,7 +461,8 @@ try {
 
 이번에 사용한 API에는, 태그명 이외에, 그 태그의 투고수를 취득할 수 있습니다. 앞의 예에 추가한 태그명에 투고수를 표시해 보려고합니다. 방법은 간단해서, getView를 Override해서 커스텀하면 OK입니다.
 
-{% highlight java %}
+
+```java
 @Override
 public View getView(int position, View convertView, ViewGroup parent) {
 
@@ -468,11 +485,12 @@ public View getView(int position, View convertView, ViewGroup parent) {
 
     return convertView;
 }
-{% endhighlight %}
+```
 
 또, API에서 응답을 받은 부분을 변경해서, suggests를 List<HashTag>로 변경해서 results를 그대로 대입합니다.
 
-{% highlight java %}
+
+```java
 String keyword = constraint.subSequence(m.start() + 1, m.end()).toString();
 Call<SuggestResponse> call = service.listHashTags(keyword);
 try {
@@ -480,16 +498,17 @@ try {
 } catch (IOException e) {
     e.printStackTrace();
 }
-{% endhighlight %}
+```
 
 자동 완성 단어를 선택했을 때에 tag명만을 replaceText에 전달할 필요가 있으므로, Filter클래스의 convertResultToString를 Override합니다.
 
-{% highlight java %}
+
+```java
 @Override
 public CharSequence convertResultToString(Object resultValue) {
     return String.format("#%s ", ((HashTag) resultValue).tag);
 }
-{% endhighlight %}
+```
 
 이걸로 태그명과 투고수를 표시하게 됩니다.
 

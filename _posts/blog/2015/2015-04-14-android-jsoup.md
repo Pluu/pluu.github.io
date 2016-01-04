@@ -24,21 +24,24 @@ HTML Parser Library로 jsoup을 사용후 관련 포스팅을 남깁니다.
 
 ## Android Studio Gradle dependencies
 
-{% highlight Groovy %}
+
+```groovy
 compile 'org.jsoup:jsoup:1.8.2'
-{% endhighlight %}
+```
 
 - - -
 
 ## Simple jsoup
 
-{% highlight java linenos %}
+
+```java
 Document doc = Jsoup.connect(url).get();
-{% endhighlight %}
+```
 
 ## 간단한 HTML Parse (GET, POST)
 
-{% highlight java linenos %}
+
+```java
 Document doc = null;
 
 // GET 방식
@@ -46,13 +49,14 @@ doc = Jsoup.connect(url).data("data", data).get();
 
 // POST 방식
 doc = Jsoup.connect(url).data("data", data).post();
-{% endhighlight %}
+```
 
 ## JSON 데이터 취득
 
-{% highlight java linenos %}
+
+```java
 String jsonData = Jsoup.connect(url).ignoreContentType(true).execute().body();
-{% endhighlight %}
+```
 
 - - -
 

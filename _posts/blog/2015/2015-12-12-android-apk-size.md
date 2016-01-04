@@ -65,14 +65,15 @@ categories:
 > Android에서는, 데이터가 4바이트 단위로 정렬되어 있을 때에 효율적으로 데이터에 접근할 수 있습니다.
 > 역으로 정렬되어 있지 않은 경우, 그 정렬되지 않은 데이터를 올바르고 읽기 위해 느리게 되고, 또 많은 메모리를 소비하게 됩니다.
 
-{% highlight groovy %}
+
+```groovy
 buildTypes {
     release {
         debuggable false
         zipAlignEnabled true
      }
 }
-{% endhighlight %}
+```
 
 ### ProGuard를 적용
 
@@ -84,7 +85,8 @@ ProGuard는 난독화뿐만아니라, 사용하지않은 메소드나 변수를 
 
 저도 설정 파일의 도입까지는 상당히 시간을 뺏긴 일이 많았지만, [이 사이트](http://www.andr0o0id.com/?p=5340)를 참고했습니다.
 
-{% highlight groovy %}
+
+```groovy
 buildTypes {
     release {
         minifyEnabled true
@@ -92,7 +94,7 @@ buildTypes {
         proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
 }
-{% endhighlight %}
+```
 
 
 ### 이미지를 아이콘 폰트로 변경
@@ -109,7 +111,8 @@ ProGuard 다음으로 감소 효과가 있습니다.
 
 자체 ttf를 사용할 때는 아래 코드를 사용하고 있습니다.
 
-{% highlight groovy %}
+
+```groovy
 public enum AnimalIcons implements Icon {
     dog('\ue100'),
     cat('\ue101');
@@ -134,9 +137,10 @@ public enum AnimalIcons implements Icon {
         return "{" + key() + "}";
     }
 }
-{% endhighlight %}
+```
 
-{% highlight java %}
+
+```java
 public class AnimalIconModule implements IconFontDescriptor {
 
     @Override
@@ -149,11 +153,12 @@ public class AnimalIconModule implements IconFontDescriptor {
         return AnimalIcons.values();
     }
 }
-{% endhighlight %}
+```
 
-{% highlight java %}
+
+```java
 iconTextView.setText(AnimalIcons.dog.icon());
-{% endhighlight %}
+```
 
 라이브러리에 따라서 구현 방법이 다르므로, 여러 사람이 개발하고 있는 프로젝트에서는 취향이 다를 가능성이 있습니다.
 

@@ -37,7 +37,8 @@ RxAndroid를 사용하면, 비동기 처리를 간단하게 기술할 수가 있
 
 onCompleted나 onError등의 구조가 정의되어있기때문에 사용하기 쉽습니다.
 
-{% highlight java %}
+
+```java
 Observable
         .create(new Observable.OnSubscribe<Integer>() {
             @Override
@@ -66,7 +67,7 @@ Observable
             public void onNext(Integer progress) {
             }
         });
-{% endhighlight %}
+```
 
 포인트는 subscribeOn 메소드와 observeOn 메소드에서, 각각의 처리와 콜백을 어떤 스레드에서 실행할건지 지정할 수 있습니다.
 
@@ -78,7 +79,8 @@ Observable
 
 우선 APi 통신 처리를 정의합니다.(예시이므로 세심한 부분은 생략합니다만, 문자열배열을 반환하는 API 형태입니다.)
 
-{% highlight java %}
+
+```java
 class SampleApi {
 
     public static Observable<String> request() {
@@ -94,11 +96,12 @@ class SampleApi {
         });
     }
 }
-{% endhighlight %}
+```
 
 API를 이용하는 쪽은, 위에서 정의한 메소드를 단순하게 호출하는 것으로 간단하게 비동기 콜백처리가 이루어집니다.
 
-{% highlight java %}
+
+```java
 SampleApi.request()
         .subscribeOn(Schedulers.newThread())
         .observeOn(AndroidSchedulers.mainThread())
@@ -115,11 +118,12 @@ SampleApi.request()
             public void onNext(String s) {
             }
         });
-{% endhighlight %}
+```
 
 또한, Observable로 랩핑함으로, 통신과 콜백의 사이에 여러가지 함수 처리를 두는것이 가능하여 매우 편리합니다. 아래의 예는 「공백 결과는 생략하고, 모두 대문자로 변환하고, 최초 10건만 처리」를 onNext에 전달하도록 처리를 추가한것입니다.
 
-{% highlight java %}
+
+```java
 SampleApi.request()
         .subscribeOn(Schedulers.newThread())
         .observeOn(AndroidSchedulers.mainThread())
@@ -149,7 +153,7 @@ SampleApi.request()
             public void onNext(String s) {
             }
         });
-{% endhighlight %}
+```
 
 그외에도 Observable를 합성하는것도 가능함으로, 복수의 API가 엮인 처리도 간결하게 작성할수 있습니다.
 
@@ -159,7 +163,8 @@ RxAndroid에는 View의 이벤트 수신만을 위한 Observable를 생성하는
 
 클릭 이벤트를 취득하기위해 ViewObservable.clicks 등, TextView의 변경을 취득하는 WidgetObservable.text, ListView의 onScroll를 취득하기위한 listScrollEvents 등이 있습니다.
 
-{% highlight java %}
+
+```java
 WidgetObservable.listScrollEvents(mListView)
         .subscribe(new Action1<OnListViewScrollEvent>() {
             @Override
@@ -167,7 +172,7 @@ WidgetObservable.listScrollEvents(mListView)
 
             }
         });
-{% endhighlight %}
+```
 
 이런 이벤트도 여러가지 필터 처리를 사용하거나 복수 이벤트를 사용하는것도 가능하여, 복잡한 요건에 대해서 유연하게 대응할 수 있습니다.
 
@@ -181,7 +186,8 @@ RxJAva에는 Subscription(subscribe 메소드를 호출할때의 반환값)에 �
 
 게다가 CompositeSubscription라는 클래스는 복수의 Subscription를 모아두어 한번에 해제 할수가 있기때문에, 아래와 같이 화면이 파기될 순간에 unsubscribe를 처리함으로, 안심하고 콜백을 받을 수 있습니다.
 
-{% highlight java %}
+
+```java
 public class MainFragment extends Fragment {
 
     private CompositeSubscription subscriptions = new CompositeSubscription();
@@ -220,7 +226,7 @@ public class MainFragment extends Fragment {
         super.onDestroyView();
     }
 }
-{% endhighlight %}
+```
 
 아무래도 제대로 unsubscribe하지 않으면 메모리 릭이 일어남으로, 좌우간 전부 unsubscribe 하는편이 좋습니다.
 

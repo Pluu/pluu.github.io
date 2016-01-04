@@ -31,7 +31,8 @@ Java 1.5에서 Annotation이 추가될 때에, Annotation을 컴파일시에 처
 ### 프로세서를 구현
 
 MyAnnotationProcessor.java
-{% highlight java %}
+
+```java
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.RoundEnvironment;
 
@@ -65,12 +66,13 @@ public class MyAnnotationProcessor extends AbstractProcessor {
         return SourceVersion.RELEASE_8;
     }
 }
-{% endhighlight %}
+```
 
 ### 처리대상 소스를 만들기
 
 Hoge.java
-{% highlight java %}
+
+```java
 public class Hoge {
     @Deprecated
     public void deprecatedMethod() {}
@@ -80,22 +82,24 @@ public class Hoge {
         return "hoge";
     }
 }
-{% endhighlight %}
+```
 
 ### 프로세서를 컴파일
 
-{% highlight bash %}
+
+```bash
 > javac MyAnnotationProcessor.java
 
 > dir /b
 MyAnnotationProcessor.class
 MyAnnotationProcessor.java
 Hoge.java
-{% endhighlight %}
+```
 
 ### 프로세서를 지정해서 코드를 컴파일
 
-{% highlight bash %}
+
+```bash
 > javac -processor MyAnnotationProcessor Hoge.java
 Round : 1
 java.lang.Deprecated
@@ -107,18 +111,19 @@ Hoge.class
 Hoge.java
 MyAnnotationProcessor.class
 MyAnnotationProcessor.java
-{% endhighlight %}
+```
 
 ### 설명
 
 #### 프로세서 작성
 
 MyAnnotationProcessor.java
-{% highlight java %}
+
+```java
 import javax.annotation.processing.AbstractProcessor;
 
 public class MyAnnotationProcessor extends AbstractProcessor {
-{% endhighlight %}
+```
 
 - Annotation Processor를 만들기 위해서는, [Processor](http://docs.oracle.com/javase/jp/8/docs/api/javax/annotation/processing/Processor.html)를 구현한 Class를 준비한다.
 - 표준 `Processor`를 구현한 추상 클래스 [AbstractProcessor](http://docs.oracle.com/javase/jp/8/docs/api/javax/annotation/processing/AbstractProcessor.html) 가 준비되어 있기 때문에, 보통은 그것을 상속해서 만든다.
@@ -126,7 +131,8 @@ public class MyAnnotationProcessor extends AbstractProcessor {
 #### 처리대상을 정의한다
 
 MyAnnotationProcessor.java
-{% highlight java %}
+
+```java
 @Override
 public Set<String> getSupportedAnnotationTypes() {
     Set<String> supportedAnnotationTypes = new HashSet<>();
@@ -139,7 +145,7 @@ public Set<String> getSupportedAnnotationTypes() {
 public SourceVersion getSupportedSourceVersion() {
     return SourceVersion.RELEASE_8;
 }
-{% endhighlight %}
+```
 
 - `getSupportedAnnotationTypes()`로 처리하는 Annotation을 정의한다.
  - 반환 값 `Set<String>`은, 처리 대상이 되는 Annotation 패턴을 반환하도록 한다.
@@ -151,27 +157,30 @@ public SourceVersion getSupportedSourceVersion() {
  - 지원 버전보다 새로운 JDK 를 사용하면, 경고 메시지가 표시된다.
 
 SourceVersion.RELEASE_7를 반환하도록 한 경우의 경고 메시지
-{% highlight bash %}
+
+```bash
 경고: Annotation Processor 'MyAnnotationProcessor'에서 -source '1.8'보다 낮은 소스 버전 'RELEASE_7'가 지원되고 있다.
-{% endhighlight %}
+```
 
 #### 컴파일 시에 프로세서를 지정
 
-{% highlight bash %}
+
+```bash
 > javac -processor MyAnnotationProcessor Hoge.java
-{% endhighlight %}
+```
 
 - `-processor` 옵션으로 사용하는 프로세서를 지정한다.
 
 #### Around
 
 실행경과
-{% highlight bash %}
+
+```bash
 Round : 1
 java.lang.Deprecated
 java.lang.Override
 Round : 2
-{% endhighlight %}
+```
 
 - 프로세서에 의한 처리 (process) 의 호출은 여러 번 진행된다.
 - 각각의 처리를 **Around** 라고 부른다
@@ -181,7 +190,8 @@ Round : 2
 ## 지원 버전과 처리 대상 제한을 Annotation으로 지정
 
 MyAnnotationProcessor.java
-{% highlight java %}
+
+```java
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.RoundEnvironment;
 import javax.annotation.processing.SupportedAnnotationTypes;
@@ -205,14 +215,15 @@ public class MyAnnotationProcessor extends AbstractProcessor {
         return true;
     }
 }
-{% endhighlight %}
+```
 
 - 함수 대신에, `@SupportedSourceVersion`과 `@SupportedAnnotationTypes` Annotation으로 정의할 수 있다.
 
 ## Annotation 정보 취득
 
 MyAnnotationProcessor.java
-{% highlight java %}
+
+```java
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.RoundEnvironment;
 import javax.annotation.processing.SupportedAnnotationTypes;
@@ -246,13 +257,14 @@ public class MyAnnotationProcessor extends AbstractProcessor {
         return true;
     }
 }
-{% endhighlight %}
+```
 
 동작 확인
-{% highlight bash %}
+
+```bash
 > javac -processor MyAnnotationProcessor Hoge.java
 @Override at toString()
-{% endhighlight %}
+```
 
 - `RoundEnvironment#getElementsAnnotatedWith(TypeElement)` 함수에서, 실제로 Annotate 되는 장소를 나타내는 Element 의 Set 을 얻을 수 있다.
 - `Element#getAnnotation(Class)` 함수에서, 실제 Annotation을 얻을 수 있다.
@@ -262,7 +274,8 @@ public class MyAnnotationProcessor extends AbstractProcessor {
 ### 기본
 
 MyAnnotationProcessor.java
-{% highlight java %}
+
+```java
 import java.util.Set;
 
 import javax.annotation.processing.AbstractProcessor;
@@ -291,10 +304,11 @@ public class MyAnnotationProcessor extends AbstractProcessor {
         return true;
     }
 }
-{% endhighlight %}
+```
 
 컴파일 실행 결과
-{% highlight bash %}
+
+```bash
 Note:Other
 Note:Note
 Warning: Warning
@@ -307,7 +321,7 @@ Warning: Mandatory Warning
 Error: Error
 Error 2개
 Warning 4개
-{% endhighlight %}
+```
 
 - ※ 2개씩 출력되는 것은, Around가 2회 실행되어 있기 때문에
 - `AbstractProcessor` 클래스가 가지는 `processingEnv` 라는 필드로부터, `getMessager()` 함수를 사용해서 [Messager](http://docs.oracle.com/javase/jp/8/docs/api/javax/annotation/processing/Messager.html) 의 인스턴스를 취득한다.
@@ -319,7 +333,8 @@ Warning 4개
 ### Annotate 된 코드상의 위치정보를 출력
 
 MyAnnotationProcessor.java
-{% highlight java %}
+
+```java
 import java.util.Set;
 
 import javax.annotation.processing.AbstractProcessor;
@@ -349,21 +364,23 @@ public class MyAnnotationProcessor extends AbstractProcessor {
         return true;
     }
 }
-{% endhighlight %}
+```
 
 컴파일 실행 결과
-{% highlight bash %}
+
+```bash
 Hoge.java:5: 注意:hogehoge
     public String toString() {
                   ^
-{% endhighlight %}
+```
 
 - `Messager#printMessage()` 함수의 세 번째 인수로 `Element`를 전달하면, 그 요소의 코드상 위치 정보가 같이 출력된다.
 
 ### Annotation 위치 정보를 출력
 
 MyAnnotationProcessor.java
-{% highlight java %}
+
+```java
 import java.util.Set;
 
 import javax.annotation.processing.AbstractProcessor;
@@ -395,14 +412,15 @@ public class MyAnnotationProcessor extends AbstractProcessor {
         return true;
     }
 }
-{% endhighlight %}
+```
 
 컴파일 실행 결과
-{% highlight bash %}
+
+```bash
 Hoge.java:4: 注意:hogehoge
     @Override
     ^
-{% endhighlight %}
+```
 
 - `Messager#printMessage()` 함수의 네 번째 인수로 AnnotationMirror를 전달하면, 그 Annotation의 코드상 위치정보가 같이 출력된다.
 - 다섯 번째 인수로 `AnnotationValue`를 전달하면, Annotation 인수의 위치 정보도 출력 가능할 듯하다 (테스트해보지 않음).
@@ -410,7 +428,8 @@ Hoge.java:4: 注意:hogehoge
 ## Annotate 된 요소 정보 취득
 
 MyAnnotation.java
-{% highlight java %}
+
+```java
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Target;
 
@@ -422,10 +441,11 @@ public @interface MyAnnotation {
 
     String value();
 }
-{% endhighlight %}
+```
 
 MyAnnotationProcessor.java
-{% highlight java %}
+
+```java
 import java.util.Set;
 
 import javax.annotation.processing.AbstractProcessor;
@@ -464,10 +484,11 @@ public class MyAnnotationProcessor extends AbstractProcessor {
         return true;
     }
 }
-{% endhighlight %}
+```
 
 Hoge.java
-{% highlight java %}
+
+```java
 @MyAnnotation("클래스")
 public class Hoge<@MyAnnotation("Generic 인수") T> {
 
@@ -480,10 +501,11 @@ public class Hoge<@MyAnnotation("Generic 인수") T> {
         String str;
     }
 }
-{% endhighlight %}
+```
 
 컴파일 실행 결과
-{% highlight bash %}
+
+```bash
 <<@MyAnnotation("클래스")>>
   Kind : CLASS
   SimpleName : Hoge
@@ -528,7 +550,7 @@ public class Hoge<@MyAnnotation("Generic 인수") T> {
   EnclosedElements :
   EnclosingElement : method(int)
   AnnotationMirrors : @MyAnnotation("\u5f15\u6570")
-{% endhighlight %}
+```
 
 - [Element](http://docs.oracle.com/javase/jp/8/docs/api/javax/lang/model/element/Element.html)  인스턴스로부터, Annotate된 여러 가지 요소 정보를 취득할 수 있다.
 
@@ -541,7 +563,8 @@ Annotation Processor를 소정의 방법으로 jar에 패키징하면, 컴파일
 ### 프로세서를 포함한 jar을 작성
 
 MyOverrideProcessor.java
-{% highlight java %}
+
+```java
 package sample.processor;
 
 import java.util.Set;
@@ -563,45 +586,49 @@ public class MyOverrideProcessor extends AbstractProcessor {
         return true;
     }
 }
-{% endhighlight %}
+```
 
 `@Override` Annotation 을 처리하는 프로세서.
 
 이것을 아래의 구성과 같이 jar에 패키징한다.
 
-{% highlight bash %}
+
+```bash
 |-sample/processor/
 |  `-MyOverrideProcessor.class
 `-META-INF/services/
    `-javax.annotation.processing.Processor
-{% endhighlight %}
+```
 
 `META-INF/services/javax.annotation.processing.Processor`는 단순한 테스트 파일로, 내용은 아래와 같이 사용하는 프로세서의 FQCN을 기술합니다.
 
 javax.annotation.processing.Processor
-{% highlight bash %}
+
+```bash
 sample.processor.MyOverrideProcessor
-{% endhighlight %}
+```
 
 이 jar 을 `processor.jar` 로 합니다.
 
 ### 실행
 
 Hoge.java
-{% highlight java %}
+
+```java
 public class Hoge {
     @Override
     public String toString() {
         return super.toString();
     }
 }
-{% endhighlight %}
+```
 
-{% highlight bash %}
+
+```bash
 > javac -cp processor.jar Hoge.java
 Override!!
 Override!!
-{% endhighlight %}
+```
 
 ### 설명
 
@@ -620,7 +647,8 @@ Override!!
 <img src="https://qiita-image-store.s3.amazonaws.com/0/28302/81c13173-2a46-ae32-2555-dffbaa3ffc9c.jpeg" />
 
 MyAnnotationProcessor.java
-{% highlight java %}
+
+```java
 package sample.processor;
 
 import java.util.Set;
@@ -646,12 +674,13 @@ public class MyAnnotationProcessor extends AbstractProcessor {
         return true;
     }
 }
-{% endhighlight %}
+```
 
 javax.annotation.processing.Processor
-{% highlight bash %}
+
+```bash
 sample.processor.MyAnnotationProcessor
-{% endhighlight %}
+```
 
 - 일반적인 java 프로젝트를 만든다.
 - ServiceLoader를 이용하는 형식으로 한다(`javax.annotation.processing.Processor`).
@@ -667,7 +696,8 @@ sample.processor.MyAnnotationProcessor
 <img src="https://qiita-image-store.s3.amazonaws.com/0/28302/fa4fe36a-3112-06d4-3d7b-ef76184dd9ce.jpeg" />
 
 Hoge.java
-{% highlight java %}
+
+```java
 public class Hoge {
 
     @Override
@@ -675,7 +705,7 @@ public class Hoge {
         return super.toString();
     }
 }
-{% endhighlight %}
+```
 
 평소같이 java 프로젝트를 만든다.
 
@@ -709,7 +739,8 @@ public class Hoge {
 ### 경고나 에러 메시지는 Editor 상에 표시
 
 MyAnnotationProcessor.java
-{% highlight java %}
+
+```java
 package sample.processor;
 
 import java.util.Set;
@@ -741,7 +772,7 @@ public class MyAnnotationProcessor extends AbstractProcessor {
         return true;
     }
 }
-{% endhighlight %}
+```
 
 **이용 측의 모습**
 
@@ -756,7 +787,8 @@ Editor 상에 에러가 표시된다
 #### 폴더 구성
 
 폴더 구성
-{% highlight bash %}
+
+```bash
 |-settings.gradle
 |-build.gradle
 |-processor/
@@ -770,7 +802,7 @@ Editor 상에 에러가 표시된다
    |-build.gradle
    `-src/main/java/sample/processor/
       `-Hoge.java
-{% endhighlight %}
+```
 
 
 - 멀티 프로젝트 구성.
@@ -781,26 +813,30 @@ Editor 상에 에러가 표시된다
 #### 구현 이외
 
 settings.gradle
-{% highlight groovy %}
+
+```groovy
 include 'processor', 'client'
-{% endhighlight %}
+```
 
 build.gradle
-{% highlight groovy %}
+
+```groovy
 subprojects {
     apply plugin: 'java'
 }
-{% endhighlight %}
+```
 
 client/build.gradle
-{% highlight groovy %}
+
+```groovy
 dependencies {
     compile project(':processor')
 }
-{% endhighlight %}
+```
 
 MyAnnotationProcessor.java
-{% highlight java %}
+
+```java
 package sample.processor;
 
 import java.util.Set;
@@ -822,10 +858,11 @@ public class MyAnnotationProcessor extends AbstractProcessor {
         return true;
     }
 }
-{% endhighlight %}
+```
 
 Hoge.java
-{% highlight java %}
+
+```java
 package sample.processor;
 
 public class Hoge {
@@ -834,11 +871,12 @@ public class Hoge {
         return "hoge";
     }
 }
-{% endhighlight %}
+```
 
 #### 동작 확인
 
-{% highlight bash %}
+
+```bash
 > gradle compileJava
 :processor:compileJava
 :processor:processResources
@@ -851,7 +889,7 @@ Hello!!
 BUILD SUCCESSFUL
 
 Total time: 3.423 secs
-{% endhighlight %}
+```
 
 - ServiceLoader를 사용하는 형식으로 하면, 이용할 수 있습니다.
 
@@ -862,20 +900,22 @@ Total time: 3.423 secs
 #### 폴더 구성
 
 폴더 구성
-{% highlight bash %}
+
+```bash
 |-build.gradle
 |-lib/
 |  `-processor.jar
 `-src/main/java/sample/processor/
    `-Hoge.java
-{% endhighlight %}
+```
 
 프로세서를 패키징한 jar 파일은, `lib` 폴더의 아래에 배치해둡니다
 
 #### build.gradle
 
 client/build.gradle
-{% highlight groovy %}
+
+```groovy
 apply plugin: 'java'
 apply plugin: 'eclipse'
 
@@ -921,7 +961,7 @@ cleanEclipse << {
     file(eclipseAptPrefsFile).delete()
     file(eclipseFactoryPathFile).delete()
 }
-{% endhighlight %}
+```
 
 #### 설명
 
@@ -929,7 +969,8 @@ cleanEclipse << {
 
 **org.eclipse.jdt.apt.core.prefs 작성**
 
-{% highlight groovy %}
+
+```groovy
 ext {
     eclipseAptPrefsFile = '.settings/org.eclipse.jdt.apt.core.prefs'
     ...
@@ -946,11 +987,12 @@ eclipseJdt << {
         |""".stripMargin()
 
 ...
-{% endhighlight %}
+```
 
 **.factorypath 작성**
 
-{% highlight groovy %}
+
+```groovy
 ext {
     eclipseFactoryPathFile = '.factorypath'
     ...
@@ -968,11 +1010,12 @@ eclipseJdt << {
         |</factorypath>
         |""".stripMargin()
 }
-{% endhighlight %}
+```
 
 **.classpath vuswlwq **
 
-{% highlight groovy %}
+
+```groovy
 eclipse {
     ...
 
@@ -982,11 +1025,12 @@ eclipse {
 
     ...
 }
-{% endhighlight %}
+```
 
 **org.eclipse.jdt.core.prefs 편집**
 
-{% highlight groovy %}
+
+```groovy
 eclipse {
     ...
 
@@ -994,11 +1038,12 @@ eclipse {
         properties.put 'org.eclipse.jdt.core.compiler.processAnnotations', 'enabled'
     }
 }
-{% endhighlight %}
+```
 
 **cleanEclipse 에 삭제 대상을 추가**
 
-{% highlight groovy %}
+
+```groovy
 ext {
     eclipseAptPrefsFile = '.settings/org.eclipse.jdt.apt.core.prefs'
     eclipseFactoryPathFile = '.factorypath'
@@ -1011,7 +1056,7 @@ cleanEclipse << {
     file(eclipseAptPrefsFile).delete()
     file(eclipseFactoryPathFile).delete()
 }
-{% endhighlight %}
+```
 
 ## Java 소스 코드를 만들기
 
@@ -1020,7 +1065,8 @@ Annotation Processor 처리 중, 소스 코드를 동적으로 만들어 보자.
 ### 구현
 
 MyAnnotation.java
-{% highlight java %}
+
+```java
 package sample.processor;
 
 import java.lang.annotation.ElementType;
@@ -1030,19 +1076,21 @@ import java.lang.annotation.Target;
 public @interface MyAnnotation {
     boolean value() default false;
 }
-{% endhighlight %}
+```
 
 Hoge.java
-{% highlight java %}
+
+```java
 package sample.processor;
 
 @MyAnnotation(true)
 public class Hoge {
 }
-{% endhighlight %}
+```
 
 MyAnnotationProcessor.java
-{% highlight java %}
+
+```java
 package sample.processor;
 
 import java.io.IOException;
@@ -1113,20 +1161,22 @@ public class MyAnnotationProcessor extends AbstractProcessor {
         return true;
     }
 }
-{% endhighlight %}
+```
 
 ### 동작 확인
 
 컴파일 실행 결과
-{% highlight bash %}
+
+```bash
 Warring:Hoge class is annotated by @MyAnnotation.
 Warring:generate source code!!
 Warring:Fuga class is annotated by @MyAnnotation.
 Warring:@MyAnnotation value is false. no generate.
-{% endhighlight %}
+```
 
 자동 생성된 Fuga Class
-{% highlight java %}
+
+```java
 package sample.processor.generated;
 import sample.processor.MyAnnotation;
 @MyAnnotation
@@ -1135,24 +1185,26 @@ public class Fuga {
         System.out.println("Hello World!!");
     }
 }
-{% endhighlight %}
+```
 
 - `Fuga.java`는 `.class` 파일이 출력된 폴더의 Root에 출력됩니다.
 -` Fuga.class`는 동일하게 `.class` 파일의 출력 저장소에 `package` 선언에서 정의한 위치에 출력된다.
 
 출력된 파일 상태
-{% highlight bash %}
+
+```bash
 |-Fuga.java
 `-sample/processor/
    |-Hoge.class
    `-generated/
       `-Fuga.class
-{% endhighlight %}
+```
 
 #### 설명
 
 MyAnnotationProcessor.java(일부)
-{% highlight java %}
+
+```java
 try {
     Filer filer = super.processingEnv.getFiler();
     JavaFileObject javaFile = filer.createSourceFile("Fuga");
@@ -1165,7 +1217,7 @@ try {
 } catch (IOException e) {
     e.printStackTrace();
 }
-{% endhighlight %}
+```
 
 - Java 소스 코드를 생성하기 위해서는 먼저 다음 방법으로  [JavaFileObject](http://docs.oracle.com/javase/jp/8/docs/api/javax/tools/JavaFileObject.html) 를 취득한다.
  - `AbstractProcessor#processingEnv`의 `getFiler()` 함수에서 [Filer](http://docs.oracle.com/javase/jp/8/docs/api/javax/annotation/processing/Filer.html) 의 인스턴스를 취득한다
@@ -1177,13 +1229,14 @@ try {
  - 따라서, 처리해야하는 Annotation이 남아있지 않은가를 확인하고, 없다면 바로 처리를 종료시킨다. (판정에는, `process()` 함수의 첫 번째 인수의 Size를 이용한다).
 
 처리해야 하는 Annotation이 남아 있지 않다면, 바로 처리를 종료시키는 부분
-{% highlight java %}
+
+```java
 @Override
 public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
     if (annotations.size() == 0) {
         return true;
     }
-{% endhighlight %}
+```
 
 ## 참고
 

@@ -16,22 +16,24 @@ categories:
 
 ### Completion (Ctrl + Space)
 
-{% highlight java %}
+
+```java
 public boolean completion(String first, String second) {
   return first.contains(second);
 }
-{% endhighlight %}
+```
 
 `contains` 에서 `contentEquals` 로 변경시 뒤의 `contains` 내용을 지웠어야 하지만 Code Completion 에서 해당 함수 위치에서 `TAB` 입력지 자동 변환
 
 ### Completion 2 (SmartType, Ctrl + Shift + Space)
 
-{% highlight java %}
+
+```java
 public void completion2(Context context) {
   Bitmap bitmap = null;
   Drawable drawable = null;
 }
-{% endhighlight %}
+```
 
 - 객체 인스턴스 생성시, 코드를 직접 입력해야했지만 이부분을 지원가능한 기능
 - `Ctrl + Shift + Space 을 2번`의 경우, 현재 함수가 위치한 `클래스의 변수` 및 `파라매터` 를 이용하여 인스턴스 생성할지를 지원 (자세한건 아래 그림 참조)
@@ -44,16 +46,18 @@ public void completion2(Context context) {
 
 ### Initiablize Fields (Alt + Enter, Bind constructor parameters to fileds 선택)
 
-{% highlight java %}
+
+```java
 public static class InitiablizeFields {
   InitiablizeFields(int first, boolean second, boolean third) {
   }
 }
-{% endhighlight %}
+```
 
 파라매터 first, second, third 에 해당하는 내부 변수를 final로 정의
 
-{% highlight java %}
+
+```java
 public static class InitiablizeFields {
   private final int first;
   private final boolean second;
@@ -65,35 +69,38 @@ public static class InitiablizeFields {
     this.third = third;
   }
 }
-{% endhighlight %}
+```
 
 ### Instance Check (Alt + Endter, Insert declaration 선택)
 
-{% highlight java %}
+
+```java
 public void instanceCheck(Object parameter) {
   if (parameter instanceof Context) {
   }
 }
-{% endhighlight %}
+```
 
 Object형 parameter 가 정상적인 Context 데이터인 경우 캐스팅 코드 작성을 자동 완성
 
-{% highlight java %}
+
+```java
 public void instanceCheck(Object parameter) {
   if (parameter instanceof Context) {
     Context context = (Context) parameter;
   }
 }
-{% endhighlight %}
+```
 
 ### Suppress Statements (Alt + Enter, 관련 Lint 하위 메뉴)
 
-{% highlight java %}
+
+```java
 public int suppressStatements() {
   int result = 0;
   return result;
 }
-{% endhighlight %}
+```
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2015/2015-11-28-AS-02.PNG" }}" />
 
@@ -121,35 +128,40 @@ List<String> list 의 데이터가 존재시 `list.fori` 관련 로 코드 작�
 
 프로젝트 내부의 문법에 맞는 데이터의 일부를 변경시 사용 가능
 
-{% highlight xml %}
-<string name="name" translation_description="description">value</string>
-{% endhighlight %}
 
-{% highlight xml %}
+```xml
+<string name="name" translation_description="description">value</string>
+```
+
+
+```xml
 <string name="name">value</string>
-{% endhighlight %}
+```
 
 적용 문법
 
-{% highlight xml %}
+
+```xml
 // Search
 <string name="$name$" translation_description="$des$">$text$</string>
 
 // Replacement
 <string name="$name$">$text$</string>
-{% endhighlight %}
+```
 
 ### Structural Search
 
-{% highlight java %}
+
+```java
 Thread.sleep(500);
-{% endhighlight %}
+```
 
 위와 같은 코드가 duration 이 다르지만, 해당 기능을 쓰는 곳을 찾을때
 
-{% highlight java %}
+
+```java
 Thread.sleep($duration$);
-{% endhighlight %}
+```
 
 ### Layout Tools
 
@@ -164,28 +176,31 @@ Thread.sleep($duration$);
 
 설정 : build.gradle
 
-{% highlight groovy %}
+
+```groovy
 android {
   ...
   resourcePrefix 'ccl_'
 }
-{% endhighlight %}
+```
 
 ### Resource public
 
 현재 모듈 이외에 일부의 Resource 값만 공개할 경우 사용 가능
 
-{% highlight xml %}
+
+```xml
 <resources>
   <public name="name" type="string" />
 </resources>
-{% endhighlight %}
+```
 
 ### Resource Shrinking
 
 불필요한 리소스 제거
 
-{% highlight groovy %}
+
+```groovy
 android {
   ...
   buildTypes {
@@ -196,4 +211,4 @@ android {
     }
   }
 }
-{% endhighlight %}
+```

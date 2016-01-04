@@ -39,9 +39,10 @@ Android M Preview가 발표되고, Google은 `Android Design Support Library`을
 
 - - -
 
-{% highlight groovy %}
+
+```groovy
 compile 'com.android.support:design:22.2.0'
-{% endhighlight %}
+```
 
 ###Navigation View
 
@@ -55,7 +56,8 @@ compile 'com.android.support:design:22.2.0'
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2015/2015-05-31-android-design-support-01.png" }}" />
 
-{% highlight xml %}
+
+```xml
 <android.support.v4.widget.DrawerLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -74,7 +76,7 @@ compile 'com.android.support:design:22.2.0'
 		app:menu="@menu/main_drawer"/>
 
 </android.support.v4.widget.DrawerLayout>
-{% endhighlight %}
+```
 
 #### 주요내용
 
@@ -86,7 +88,8 @@ compile 'com.android.support:design:22.2.0'
 
 - group의 `checkableBehavior` 프로퍼티의 `single`값을 이용해서 사용자 선택시 하나의 메뉴의 체크값만 유지하도록 지정합니다.
 
-{% highlight xml %}
+
+```xml
 <group
 	android:checkableBehavior="single">
 	<item
@@ -100,13 +103,14 @@ compile 'com.android.support:design:22.2.0'
 		android:title="Floating Label for EditText"/>
 	<!-- etc -->
 </group>
-{% endhighlight %}
+```
 
 #### Sub Menu 구성방법
 
 - Item별 Group 메뉴의 Sub Header를 구성하는것도 가능합니다.
 
-{% highlight xml %}
+
+```xml
 <item
 	android:id="@+id/navigation_subheader"
 	android:title="Sub Header">
@@ -121,14 +125,15 @@ compile 'com.android.support:design:22.2.0'
 			android:title="Sub Label2"/>
 	</menu>
 </item>
-{% endhighlight %}
+```
 
 #### Item Select Listener
 
 - `OnNavigationItemSelectedListener` 을 이용하여 `setNavigationItemSelectedListener` 에 설정으로 선택시 이벤트 처리가 가능
 - Click된 MenuItem을 제공하고, 프로그래밍 코드로 NavigationDrawer를 닫거나 임의의 액션 처리가능
 
-{% highlight java %}
+
+```java
 NavigationView navigationView = (NavigationView) findViewById(R.id.main_drawer_view);
 navigationView.setNavigationItemSelectedListener(this);
 
@@ -137,7 +142,7 @@ public boolean onNavigationItemSelected(MenuItem item) {
     // Your Self
     return super.onOptionsItemSelected(item);
 }
-{% endhighlight %}
+```
 
 ###Floating labels for editing text
 
@@ -149,7 +154,8 @@ public boolean onNavigationItemSelected(MenuItem item) {
 
 Floating 되는 Label 은 `android:hint` 에 적용된 문자열이 표시됩니다.
 
-{% highlight xml %}
+
+```xml
 <android.support.design.widget.TextInputLayout
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
@@ -160,7 +166,7 @@ Floating 되는 Label 은 `android:hint` 에 적용된 문자열이 표시됩니
 		android:layout_height="wrap_content"
 		android:hint="@string/floating_hint"/>
 </android.support.design.widget.TextInputLayout>
-{% endhighlight %}
+```
 
 ###Floating Action Button
 
@@ -174,7 +180,8 @@ Action 버튼을 표현하기 위한 둥근원형의 버튼입니다.
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2015/2015-05-31-android-design-support-03.png" }}" />
 
-{% highlight xml %}
+
+```xml
 <android.support.design.widget.FloatingActionButton
 	android:id="@+id/actionButton"
 	android:layout_width="wrap_content"
@@ -184,7 +191,7 @@ Action 버튼을 표현하기 위한 둥근원형의 버튼입니다.
 	android:src="@drawable/ic_android_white_24dp"
 	app:borderWidth="0dp"
 	app:rippleColor="@color/color_ripple_color"/>
-{% endhighlight %}
+```
 
 ####Shadow Problem
 
@@ -202,12 +209,13 @@ Floating Action Button 을 사용시 문제가 되는것을 발견했습니다.
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2015/2015-05-31-android-design-support-04.png" }}" />
 
-{% highlight java %}
+
+```java
 Snackbar
   .make(parentLayout, R.string.snackbar_text, Snackbar.LENGTH_LONG)
   .setAction(R.string.snackbar_action, myOnClickListener)
   .show(); // Don’t forget to show!
-{% endhighlight %}
+```
 
 ###Tabs
 
@@ -215,10 +223,11 @@ Snackbar
 
 DesignSupportLibrary 의 [TabLayout](http://developer.android.com/reference/android/support/design/widget/TabLayout.html?utm_campaign=io15&utm_source=dac&utm_medium=blog) 은, TAB 의 폭을 일정하게 혹은 일정하지않는 스크롤이 가능한 TAB 으로 구현가능합니다.
 
-{% highlight java %}
+
+```java
 TabLayout tabLayout = ...;
 tabLayout.addTab(tabLayout.newTab().setText("Tab 1"));
-{% endhighlight %}
+```
 
 [ViewPager](http://developer.android.com/reference/android/support/v4/view/ViewPager.html?utm_campaign=io15&utm_source=dac&utm_medium=blog) 를 사용하는 경우, [PagerAdapter](http://developer.android.com/reference/android/support/v4/view/PagerAdapter.html?utm_campaign=io15&utm_source=dac&utm_medium=blog)의 [getPageTitle()](http://developer.android.com/reference/android/support/v4/view/PagerAdapter.html?utm_campaign=io15&utm_source=dac&utm_medium=blog#getPageTitle(int))으로부터 직접 TAB 이 작성됩니다.
 
@@ -251,7 +260,8 @@ the AppBarLayout can respond to those events by using the children’s scroll fl
 
 기존에 화면을 스크롤시 남은 스크롤 부분과 특정 뷰의 외관을 커스터마이징을 원하는 경우  AppBarLayout 을 사용하면, Toolbar 와 필요한 View 가 `ScrollingViewBehavior` 로 마킹되고, 해당 View 들은 스크롤에 반응합니다.
 
-{% highlight xml %}
+
+```xml
 <android.support.design.widget.AppBarLayout
 	android:layout_height="192dp"
 	android:layout_width="match_parent">
@@ -265,7 +275,7 @@ the AppBarLayout can respond to those events by using the children’s scroll fl
 			app:layout_collapseMode="pin"/>
 	</android.support.design.widget.CollapsingToolbarLayout>
 </android.support.design.widget.AppBarLayout>
-{% endhighlight %}
+```
 
 CollapsingToolbarLayout 의 `layout_collapseMode="pin"` 을 사용할 경우, 스크롤시 Toolbar 가 화면 상단에 고정되는 것을 지원합니다.
 

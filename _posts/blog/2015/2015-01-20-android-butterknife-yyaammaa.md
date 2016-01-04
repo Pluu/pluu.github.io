@@ -33,7 +33,8 @@ Butter Knife은 [ActionBarSherlock](http://actionbarsherlock.com/)등 [square](h
 
 라는 심플한것이므로, 간단하게 이해되리라고 생각합니다. 아래는 익숙한 Activity 코드입니다.
 
-{% highlight java %}
+
+```java
 public class MainActivity extends Activity {
 
   TextView mTextView;
@@ -46,13 +47,14 @@ public class MainActivity extends Activity {
     mTextView = (TextView) findViewById(R.id.activity_main_textview);
   }
 }
-{% endhighlight %}
+```
 
 View가 한두개라면 좋지만, 늘어갈수록 setContentView 이후에 findViewById가 길게 나열되어 보기어려운 코드가 됩니다.
 
 이것을 아래와 같이 작성하는 것이 됩니다.
 
-{% highlight java %}
+
+```java
 public class MainActivity extends Activity {
 
   @InjectView(R.id.activity_main_textview)
@@ -67,13 +69,14 @@ public class MainActivity extends Activity {
     // 아래에 mTextView를 사용한 코드 (mTextView.setText() 등)
   }
 }
-{% endhighlight %}
+```
 
 `@InjectView(int id)`으로 View의 Resource Id를 지정하면  `ButterKnife.inject(Activity)`에서 `mTextView = (TextView) findViewById(R.id.activity_main_textview)`와 같은 처리가 이루어집니다.
 
 또한,
 
-{% highlight java %}
+
+```java
 public class MainActivity extends Activity {
 
   Button mButton;
@@ -97,11 +100,12 @@ public class MainActivity extends Activity {
     // 버튼을 눌렀을때의 처리
   }
 }
-{% endhighlight %}
+```
 
 findViewById하여, OnClickListener를 설정하고... 이런 ButtonButton처리도, Button의 수가 늘어갈수록 대단히 보기어려운 코드가 됩니다만, 이것을
 
-{% highlight java %}
+
+```java
 public class MainActivity extends Activity {
 
   @OnClick(R.id.activity_main_button)
@@ -117,13 +121,14 @@ public class MainActivity extends Activity {
     ButterKnife.inject(this);
   }
 }
-{% endhighlight %}
+```
 
 Button의 onClick시에 호출되는 메소드에 `@OnClick(int id)`으로 View의 Resource Id를 지정하는 것만으로도 좋게됩니다.
 
 복수의 Button의 onClick 이벤트 공통처리를 작성하고 싶을때에도,
 
-{% highlight java %}
+
+```java
 @OnClick({ R.id.activity_main_button1,
            R.id.activity_main_button2,
            R.id.activity_main_button3 })
@@ -132,13 +137,14 @@ void onClickButton(CustomButton button) {
     // ...
   }
 }
-{% endhighlight %}
+```
 
 이렇게 작성할수 있으므로 편리합니다. `@InjectView`도 `@OnClick`도 View를 상속받은 클래스에서도 사용가능하므로 커스텀 View도 가능합니다.
 
 또한, Injection의 대상인 View를 지정할수 있으므로, Fragment에서도,
 
-{% highlight java %}
+
+```java
 public class MainFragment extends Fragment {
 
   @InjectView(R.id.fragment_main_textview)
@@ -160,13 +166,14 @@ public class MainFragment extends Fragment {
     ButterKnife.reset(this);
   }
 }
-{% endhighlight %}
+```
 
 와 같이 사용할수 있습니다. (Fragment의 경우 onDestroyView에서 ButterKnife.reset를 호출해주세요).
 
 이것과 같이, ListView등에서 사용하는 ViewHolder 패턴도 아래와 같이 간결하게 작성할수 있습니다.
 
-{% highlight java %}
+
+```java
 public class MyListAdapter extends BaseAdapter {
 
   @Override
@@ -202,7 +209,7 @@ public class MyListAdapter extends BaseAdapter {
   }
 
 }
-{% endhighlight %}
+```
 
 이밖에도 아래 내용을 사용할수 있습니다.
 
@@ -217,12 +224,13 @@ public class MyListAdapter extends BaseAdapter {
 
 같은 코드를 BaseActvity나 HogeUtil 안에 적는 사람들도 많을것입니다. `View#findViewById(int id)`나 `Activity#findViewById(int id)`의 Helper도 있습니다.
 
-{% highlight java %}
+
+```java
 View childView = getLayoutInflater().inflate(R.layout.child, null);
 
 TextView childText = ButterKnife.findById(childView, R.id.child_text);
 ImageView childImage = ButterKnife.findById(childeView, R.id.child_image);
-{% endhighlight %}
+```
 
 - - -
 

@@ -34,16 +34,18 @@ AndroidStudio의 기본이 되고있는 IntelliJ Idea에는 Postfix Completion�
 
 평소같이 대입해서도 사용가능하지만, 이것은 1행이 길어졌을때에 변수에 대입해서 알기쉽게 할수 있습니다.
 
-{% highlight java %}
+
+```java
 Toast.makeText(context, context.getString(R.string.app_name), Toast.LENGTH_SHORT).show();
-{% endhighlight %}
+```
 
 ↓
 
-{% highlight java %}
+
+```java
 final String name = context.getString(R.string.app_name);
 Toast.makeText(context, name, Toast.LENGTH_SHORT).show();
-{% endhighlight %}
+```
 
 <img class="img-responsive" src="https://qiita-image-store.s3.amazonaws.com/0/27388/6db3c5b5-fa40-5f90-bf59-0895c6dc16ad.gif" />
 

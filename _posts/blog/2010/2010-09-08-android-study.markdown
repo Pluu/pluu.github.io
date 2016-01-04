@@ -34,7 +34,8 @@ categories:
 ViewFlipper 안에 필요한 이미지 수만큼 ImageView를 추가합니다.
 
 
-{% highlight Java linenos %}
+
+```java 
 private ViewFlipper viewFlipper;
 private final int DELAY_TIME = 50;
 
@@ -64,7 +65,7 @@ private void Flipping() {
    viewFlipper.showNext();
 }
 
-{% endhighlight %}
+```
 
 보시는것과 같이 ViewFlipper를 클릭했을 경우에 이미지가 바뀌도록 만들었습니다.
 

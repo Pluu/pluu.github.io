@@ -22,7 +22,8 @@ categories:
 4. ViewPager 의 `onDraw` 에서 전후 Background View 의 Drawable 를 `Canvas` 에 그림
 
 ####pager_item.xml
-{% highlight xml %}
+
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
@@ -44,10 +45,11 @@ categories:
 		android:layout_centerVertical="true"
 		tools:background="@drawable/emp_friends_01"/>
 </RelativeLayout>
-{% endhighlight %}
+```
 
 ####CrossFadeAdapter.java
-{% highlight java %}
+
+```java
 public class CrossFadeAdapter extends PagerAdapter {
 
 	private final List<CrossFadeItem> list;
@@ -92,10 +94,11 @@ public class CrossFadeAdapter extends PagerAdapter {
 		return view == object;
 	}
 }
-{% endhighlight %}
+```
 
 ####CrossFadeViewPager.java
-{% highlight java %}
+
+```java
 public class CrossFadeViewPager extends ViewPager {
 
 	private int alpha;
@@ -176,7 +179,7 @@ public class CrossFadeViewPager extends ViewPager {
 		ltr = (l - oldl >= 0);
 	}
 }
-{% endhighlight %}
+```
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2015/2015-08-14-CrossFadeViewPager.gif" }}" />
 

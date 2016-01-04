@@ -9,6 +9,7 @@ url: "http://pluu.github.io"
 
 # Build settings
 markdown: redcarpet
+highlighter : pygments
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "strikethrough", "superscript", "with_toc_data"]
 permalink: /:categories/:year/:month/:day/:title

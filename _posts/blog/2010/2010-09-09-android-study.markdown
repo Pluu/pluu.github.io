@@ -8,7 +8,8 @@ categories:
 - Android
 ---
 
-{% highlight java linenos %}
+
+```java 
 private File pdf = null;
 private final String PDF_PATH = "/sdcard/download/B.pdf";
 private Intent intent;
@@ -26,4 +27,4 @@ protected void onCreate(Bundle savedInstanceState) {
       startActivity(intent);
    }
 }
-{% endhighlight %}
+```

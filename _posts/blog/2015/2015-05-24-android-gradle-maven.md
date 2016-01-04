@@ -125,9 +125,10 @@ PACKAGING 을 aar 하는것으로, Android 의 각종 Library 결과물을 aar �
 
 Library Module의 `build.gradle`에 아래 행을 기술합니다.
 
-{% highlight groovy %}
+
+```groovy
 apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
-{% endhighlight %}
+```
 
 이걸로 준비 완료입니다.
 
@@ -162,8 +163,9 @@ Close 가 끝나면, Refresh 버튼으로 목록이 갱신되고, 다시한번 �
 
 Javadoc 이 어딘가에서 실패한다면, 아래의 Script를 Module의 build.gradle에 기술합니다.
 
-{% highlight groovy %}
+
+```groovy
 afterEvaluate {
     javadocs.classpath += files(android.plugin.runtimeJarList)
 }
-{% endhighlight %}
+```

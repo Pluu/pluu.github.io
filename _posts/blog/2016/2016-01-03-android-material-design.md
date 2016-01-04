@@ -89,11 +89,12 @@ ImageView 등의 View를 Overlay 시키고 싶은 경우에는, OnClickListener�
 '?android:attr/selectableItemBackground'를 설정 시 Ripple Effect (API 레벨 21 이상)의 색과 'colorControlHighlight'의 색은 연동하고 있으므로, 기본으로 사용하고 있는 style에 'colorControlHighlight' item을 추가합니다.
 
 styles.xml
-{% highlight xml %}
+
+```xml
 <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
     <item name="colorControlHighlight">@color/color_control_highlight</item>
 </style>
-{% endhighlight %}
+```
 
 ### API 레벨 21 미만의 Pressed시를 위해 styles.xml를 버전별로 나누기
 
@@ -102,7 +103,8 @@ API 레벨 21 미만의 Press의 Touch Feedback을 Ripple Effect과 같은 색�
 그러나, 이걸로는 API 레벨 21 이상도 영향을 받으므로 Ripple Effect가 표시되지 않으므로, 'android:selectableItemBackground' item을 추가하지 않은 'v21/styles.xml'을 작성해서 넣을 필요가 있습니다 (더 나은 방법이 없는가).
 
 styles.xml
-{% highlight xml %}
+
+```xml
 <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
     <item name="colorPrimary">@color/color_primary</item>
     <item name="colorPrimaryDark">@color/color_primary_dark</item>
@@ -110,25 +112,27 @@ styles.xml
     <item name="colorControlHighlight">@color/color_control_highlight</item>
     <item name="android:selectableItemBackground">@drawable/pre_lollipop_selectable_item</item>
 </style>
-{% endhighlight %}
+```
 
 pre_lollipop_selectable_item.xml
-{% highlight xml %}
+
+```xml
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@color/color_control_highlight" android:state_pressed="true" />
     <item android:drawable="@android:color/transparent" />
 </selector>
-{% endhighlight %}
+```
 
 v21/styles.xml
-{% highlight xml %}
+
+```xml
 <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
     <item name="colorPrimary">@color/color_primary</item>
     <item name="colorPrimaryDark">@color/color_primary_dark</item>
     <item name="colorAccent">@color/color_accent</item>
     <item name="colorControlHighlight">@color/color_control_highlight</item>
 </style>
-{% endhighlight %}
+```
 
 ## 샘플 코드
 

@@ -45,7 +45,8 @@ GitHub에 샘플도 공개되어 있습니다.
 
 간단하지만, 소스 코드상의 흐름은 다음과 같습니다.
 
-{% highlight java %}
+
+```java
 public class SampleActivity extends Activity {
 
     private static final int REQUEST_CAMERA = 0;
@@ -80,7 +81,7 @@ public class SampleActivity extends Activity {
         // 사용이 거부된 경우의 대응
     }
 }
-{% endhighlight %}
+```
 
 ####유틸리티 도입
 
@@ -92,7 +93,8 @@ public class SampleActivity extends Activity {
 
 유틸리티를 사용해도 큰 변화는 없지만, 가독성 향상, 하위호환 (정식판 릴리스에 수정될지도) 에 대응하고 있습니다.
 
-{% highlight java %}
+
+```java
 import static com.example.android.Permission.hasSelfPermission;
 import static com.example.android.Permission.requestAllPermissions;
 import static com.example.android.Permission.asArray;
@@ -137,7 +139,7 @@ public class SampleActivity extends Activity {
         // 사용이 거부된 경우의 대응
     }
 }
-{% endhighlight %}
+```
 
 런타임 퍼미션의 대응이 필요한 퍼미션이 무엇인가 헤매지않도록, 필요한 것만 뽑아서 정리했습니다.
 
@@ -149,16 +151,18 @@ public class SampleActivity extends Activity {
 
 하위호환으로 제1 변수에 Context 를 전달하지않으면 않된다고 생각하신 분은, Kotlin이라면 확장함수로 괜찮은 느낌으로 작성할 수 있습니다.
 
-{% highlight java %}
+
+```java
 public fun Context.hasSelfPermission(permission: String): Boolean
     = Permission.hasSelfPermission(this, permission)
 public fun Context.hasSelfPermissions(permissions: Array<String>): Boolean
     = Permission.hasSelfPermissions(this, permissions)
-{% endhighlight %}
+```
 
 사용방법은 다음과 같습니다.
 
-{% highlight java %}
+
+```java
 public class TestActivity: Activity() {
 
     companion object {
@@ -182,6 +186,6 @@ public class TestActivity: Activity() {
       // Permission#asArray는 내부 arrayOf 함수가 있으므로 사용하지않음
       requestPermissions(arrayOf(Permission.ACCESS_COARSE_LOCATION, Permission.ACCESS_FINE_LOCATION), REQUEST_CODE)
     }
-{% endhighlight %}
+```
 
 이상입니다.
