@@ -14,6 +14,8 @@ redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "strikethrough", "superscript", "with_toc_data"]
 permalink: /:categories/:year/:month/:day/:title
 excerpt_separator: <!--more--> #use this in posts to define how long the excerpt of the post (that is shown on the Blog page) is
+paginate: 10
+paginate_path: "/blog/page:num/"
 
 colors:  #in hex code if not noted else
   primary: "#00b3fe" #"#F70031"
