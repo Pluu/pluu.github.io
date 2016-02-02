@@ -17,6 +17,14 @@
 
 - - -
 
+실행 순서
+
+1. gem install bundler
+2. bundle install
+3. bundle exec jekyll serve --watch --skip-initial-build
+
+- - -
+
 ## Usage
 - SOLID : http://ojs.xyz/solid-jekyll/
 

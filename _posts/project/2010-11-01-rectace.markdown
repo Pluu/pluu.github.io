@@ -12,20 +12,16 @@ carousel:
 - rectace/rectace_04.png
 ---
 
-###RectAce 스캐너
+### RectAce 스캐너
 
-###<font color="green">기간 : 2010.11 ~ 2010.12</font>
+### <font color="green">기간 : 2010.11 ~ 2010.12</font>
 
-###Platform : iPhone
+### Platform : iPhone
 
-###담당 업무 
+### 담당 업무
 
-<ol>
-<li>자사 라이브러리를 이용해 이미지 처리 APP 개발 (일본 Rivac)</li>
-</ol>
+1. 자사 라이브러리를 이용해 이미지 처리 APP 개발 (일본 Rivac)
 
-###사용 기술
+### 사용 기술
 
-<ol>
-<li>Rivac 자사 이미지 처리 라이브러리</li>
-</ol>
+1. Rivac 자사 이미지 처리 라이브러리

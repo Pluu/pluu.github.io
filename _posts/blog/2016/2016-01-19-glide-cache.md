@@ -24,15 +24,15 @@ private final static int cacheSize = maxMemory / 8;
 private final static int DISK_CACHE_SIZE = 1024 * 1024 * 10;
 
 Glide.setup(new GlideBuilder(this)
-			.setMemoryCache(new LruResourceCache(cacheSize))
-			.setDiskCache(new DiskCache.Factory() {
-				@Override
-				public DiskCache build() {
-					File cacheLocation = new File(getExternalCacheDir(), "cache");
-					cacheLocation.mkdirs();
-					return DiskLruCacheWrapper.get(cacheLocation, DISK_CACHE_SIZE);
-				}
-			}));
+  .setMemoryCache(new LruResourceCache(cacheSize))
+  .setDiskCache(new DiskCache.Factory() {
+    @Override
+    public DiskCache build() {
+      File cacheLocation = new File(getExternalCacheDir(), "cache");
+      cacheLocation.mkdirs();
+      return DiskLruCacheWrapper.get(cacheLocation, DISK_CACHE_SIZE);
+    }
+  }));
 ```
 
 기존에는 GlideBuilder를 이용하여 캐시 작업이 이루어졌습니다.
