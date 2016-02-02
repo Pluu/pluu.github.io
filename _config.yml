@@ -8,10 +8,10 @@ baseurl: "" #important: start with /
 url: "http://pluu.github.io"
 
 # Build settings
-markdown: redcarpet
-highlighter : pygments
-redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "strikethrough", "superscript", "with_toc_data"]
+kramdown:
+  input: GFM
+# redcarpet:
+#   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "strikethrough", "superscript", "with_toc_data"]
 permalink: /:categories/:year/:month/:day/:title
 excerpt_separator: <!--more--> #use this in posts to define how long the excerpt of the post (that is shown on the Blog page) is
 paginate: 10
@@ -44,3 +44,5 @@ author :
 
 # Short text about your company. Shown in footer on every page and also separately on Home and Contact page.
 about: "Pluu, Android Developer Blog Site"
+
+gems: [jekyll-paginate]
