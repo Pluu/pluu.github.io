@@ -30,7 +30,7 @@ categories:
 4. Bundle 형인 `metaData` 가 null 이 아닌 경우, 실제 원하는 meta-data 의 name 을 이용해서 값을 취득
 
 
-```java 
+```java
 public static String getApiKeyFromManifest(Context context) {
 		String apiKey = null;
 
@@ -53,7 +53,7 @@ public static String getApiKeyFromManifest(Context context) {
 
 - - -
 
-####PackageManager
+#### PackageManager
 
 **public abstract [ApplicationInfo](http://developer.android.com/reference/android/content/pm/ApplicationInfo.html) getApplicationInfo ([String](http://developer.android.com/reference/java/lang/String.html) packageName, int flags)**
 

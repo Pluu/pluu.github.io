@@ -9,19 +9,19 @@ categories:
 ---
 <!--more-->
 
-###카카오톡 광고 배너 UI
+### 카카오톡 광고 배너 UI
 
 카카오톡에서 사용하는 복수개의 광고 배너의 기본 샘플을 만들겠습니다
 
 기본적으로 Custom ViewPager + Item Layout 의 조합입니다.
 
-####개발 프로세스
+#### 개발 프로세스
 1. Item Layout 에는 기본 표시 View + ViewPager의 Background View 의 조합으로 구성
 2. ViewPager 의 `instantiateItem` 의 View 생성시 Background View 의 `Alpha 0`으로 설정
 3. ViewPager 의 `onPageScrolled`, `onScrollChanged` 를 이용해 투명도 계산
 4. ViewPager 의 `onDraw` 에서 전후 Background View 의 Drawable 를 `Canvas` 에 그림
 
-####pager_item.xml
+#### pager_item.xml
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -47,7 +47,7 @@ categories:
 </RelativeLayout>
 ```
 
-####CrossFadeAdapter.java
+#### CrossFadeAdapter.java
 
 ```java
 public class CrossFadeAdapter extends PagerAdapter {
@@ -96,7 +96,7 @@ public class CrossFadeAdapter extends PagerAdapter {
 }
 ```
 
-####CrossFadeViewPager.java
+#### CrossFadeViewPager.java
 
 ```java
 public class CrossFadeViewPager extends ViewPager {

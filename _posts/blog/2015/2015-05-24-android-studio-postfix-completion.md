@@ -22,7 +22,7 @@ AndroidStudio의 기본이 되고있는 IntelliJ Idea에는 Postfix Completion�
 
 이것을 이용해서 고속 코딩을 해봅시다.
 
-###.var
+### .var
 
 - - -
 
@@ -49,7 +49,7 @@ Toast.makeText(context, name, Toast.LENGTH_SHORT).show();
 
 <img class="img-responsive" src="https://qiita-image-store.s3.amazonaws.com/0/27388/6db3c5b5-fa40-5f90-bf59-0895c6dc16ad.gif" />
 
-###.field
+### .field
 
 - - -
 
@@ -57,7 +57,7 @@ Toast.makeText(context, name, Toast.LENGTH_SHORT).show();
 
 <img class="img-responsive" src="https://qiita-image-store.s3.amazonaws.com/0/27388/7e33ea47-bd34-960a-fbe7-832ba2a4aa28.gif" />
 
-###.notnull (.nn도 가능)
+### .notnull (.nn도 가능)
 
 - - -
 
@@ -65,7 +65,7 @@ NULL 체크의 if문을 만들어준다.
 
 <img class="img-responsive" src="https://qiita-image-store.s3.amazonaws.com/0/27388/1ef1ef4b-13d0-0fa8-978b-60c060c9d285.gif" />
 
-###.for
+### .for
 
 - - -
 
@@ -77,7 +77,7 @@ List의 인스턴스로부터 for문을 만들어준다.
 
 <img class="img-responsive" src="https://qiita-image-store.s3.amazonaws.com/0/27388/1c5fd4ba-e462-7acf-4cc1-4b18c6584ce2.png" />
 
-###Android특화 Postfix Completion
+### Android특화 Postfix Completion
 
 - - -
 

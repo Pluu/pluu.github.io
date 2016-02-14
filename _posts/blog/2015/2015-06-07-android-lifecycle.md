@@ -28,7 +28,7 @@ categories:
 
 lauchMode 를 바꾸거나, AppcompatActivity 로 해보거나, 이외에도 누락된 콜백이 있거나, 즉시 추가할 예정입니다.
 
-###설정
+### 설정
 - - -
 
 검증단말은 Nexus5
@@ -51,10 +51,10 @@ Fragment는 supportFragment을 사용
 
 View는 FrameLayout에 TextView를 1개 추가
 
-###이하 로그
+### 이하 로그
 - - -
 
-####Activity立ち上げ
+#### Activity立ち上げ
 
 - D/U_16_main﹕ onContentChanged
 - D/U_16_main﹕ oncreate
@@ -65,7 +65,7 @@ View는 FrameLayout에 TextView를 1개 추가
 - D/U_16_main﹕ onPostResume
 - D/U_16_main﹕ onAttachedToWindow
 
-####Activity 이동
+#### Activity 이동
 
 - D/U_16_main﹕ onUserInteraction
 - D/U_16_main﹕ onUserInteraction
@@ -82,7 +82,7 @@ View는 FrameLayout에 TextView를 1개 추가
 - D/U_16_main﹕ onSaveInstanceState
 - D/U_16_main﹕ onStop
 
-####Backkey 로 복귀
+#### Backkey 로 복귀
 
 - D/U_16_sub﹕ onUserInteraction
 - D/U_16_sub﹕ onKeyDown
@@ -97,7 +97,7 @@ View는 FrameLayout에 TextView를 1개 추가
 - D/U_16_sub﹕ onStop
 - D/U_16_sub﹕ onDestroy
 
-####Recent 버튼 / HomeButton / 다른 어플리케이션으로 이동
+#### Recent 버튼 / HomeButton / 다른 어플리케이션으로 이동
 
 - D/U_16_main﹕ onUserInteraction
 - D/U_16_main﹕ onUserLeaveHint
@@ -106,13 +106,13 @@ View는 FrameLayout에 TextView를 1개 추가
 - D/U_16_main﹕ onSaveInstanceState
 - D/U_16_main﹕ onStop
 
-####슬립모드
+#### 슬립모드
 
 - D/U_16_main﹕ onPause
 - D/U_16_main﹕ onSaveInstanceState
 - D/U_16_main﹕ onStop
 
-####Recent로부터 복귀
+#### Recent로부터 복귀
 
 - D/U_16_main﹕ onRestart
 - D/U_16_main﹕ onStart
@@ -120,7 +120,7 @@ View는 FrameLayout에 TextView를 1개 추가
 - D/U_16_main﹕ onResumeFragments
 - D/U_16_main﹕ onPostResume
 
-####Fragment 을 동적으로 추가
+#### Fragment 을 동적으로 추가
 
 - D/U_16_main﹕ onUserInteraction
 - D/U_16_fragment﹕ onAttach
@@ -133,7 +133,7 @@ View는 FrameLayout에 TextView를 1개 추가
 - D/U_16_fragment﹕ onStart
 - D/U_16_fragment﹕ onResume
 
-####Fragment 가 있는 경우의 back → fore
+#### Fragment 가 있는 경우의 back → fore
 
 - D/U_16_main﹕ onUserInteraction
 - D/U_16_main﹕ onUserLeaveHint
@@ -149,7 +149,7 @@ View는 FrameLayout에 TextView를 1개 추가
 - D/U_16_main﹕ onResumeFragments
 - D/U_16_main﹕ onPostResume
 
-####Fragment 가 있는 경우 화면회전
+#### Fragment 가 있는 경우 화면회전
 
 - D/U_16_fragment﹕ onPause
 - D/U_16_main﹕ onPause
@@ -177,7 +177,7 @@ View는 FrameLayout에 TextView를 1개 추가
 - D/U_16_main﹕ onPostResume
 - D/U_16_main﹕ onAttachedToWindow
 
-####onCreate에 addFragment + addView 를 넣은 경우의 로그
+#### onCreate에 addFragment + addView 를 넣은 경우의 로그
 
 - D/U_16_main﹕ onContentChanged
 - D/U_16_main﹕ oncreate
@@ -205,7 +205,7 @@ View는 FrameLayout에 TextView를 1개 추가
 - D/U_16_View﹕ onMeasure
 - D/U_16_View﹕ onLayout
 
-####fragment + view + Menu 있는 경우
+#### fragment + view + Menu 있는 경우
 
 - D/U_16_main﹕ oncreate
 - D/U_16_main﹕ onContentChanged

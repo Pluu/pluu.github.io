@@ -11,7 +11,7 @@ categories:
 
 <!--more-->
 
-###Crash Log 수집
+### Crash Log 수집
 
 - - -
 
@@ -23,7 +23,7 @@ Android 개발하면서 이것저것 죽어버리는 오류를 개발중에는 `
 
 Crash 가 일어난 원인 체크 및 추가적으로 `레드마인`, `JIRA`, `GitLab` 등 이슈 트래킹에 도움이 됩니다.
 
-###Java Crash 처리
+### Java Crash 처리
 
 - - -
 
@@ -53,7 +53,7 @@ Thread.setDefaultUncaughtExceptionHandler(new MyUncaughtExceptionHandler());
 
 기본적으로 `stacktrace` 등의 정보를 수집하면 됩니다.
 
-###그래서 JNI ... 대안은 Google Breakpad
+### 그래서 JNI ... 대안은 Google Breakpad
 
 - - -
 
@@ -67,7 +67,7 @@ Google Breakpad는 Cross Platform을 지원하며 이미 여러 프로그램에�
 
 추후 Google Code 접근 종료시 제 개인 GitHub Repository를 이용하시길 바랍니다.
 
-###Step1. 기본 설정
+### Step1. 기본 설정
 
 - - -
 
@@ -81,7 +81,7 @@ Google Breakpad는 Cross Platform을 지원하며 이미 여러 프로그램에�
  * Application 파일 생성
  * JNI 파일 생성 (예, test_breakpad.cpp)
 
-####Activity 설정
+#### Activity 설정
 
 * Native Load
 
@@ -98,7 +98,7 @@ native void crashService();
 
 `initNative` 메소드는 추후 DUMP 파일이 저장될 곳을 지정하기위해 path 를 매개변수로 받도록 정의했습니다.
 
-####Gradle 설정
+#### Gradle 설정
 
 기존 Eclipse 에서는 Command 창에서 `ndk-build` 를 입력해서 빌드 처리나 별도 작업했는데, Gradle 관련은 아래 Task 를 build.gradle 파일에 등록해줍니다.
 
@@ -130,7 +130,7 @@ tasks.withType(JavaCompile) {
 }
 ```
 
-####JNI 초기파일 설정
+#### JNI 초기파일 설정
 
 
 ```cpp
@@ -162,7 +162,7 @@ JNI 호출시 해당 C, C++ 파일의 함수 정의 양식은 `Java_JNI 호출 �
 
 Step1 소스 : [Step1 링크](https://github.com/Pluu/BreakpadJavaCall)
 
-###Step2. Google Breakpad & Crash
+### Step2. Google Breakpad & Crash
 
 - - -
 
@@ -172,7 +172,7 @@ Step1 소스 : [Step1 링크](https://github.com/Pluu/BreakpadJavaCall)
 2. Google Breakpad 관련 JNI 설정
 3. Crash 연결
 
-####Android Stuido JNI 폴더 구조
+#### Android Stuido JNI 폴더 구조
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2015/2015-06-12-android-google-breakpad-javacallback-01.png" }}" />
 
 - jni - 하위 구조
@@ -185,7 +185,7 @@ Step1 소스 : [Step1 링크](https://github.com/Pluu/BreakpadJavaCall)
  * Application.mk
      * Google Breakpad - android - sample_app - jni - Application.mk 파일
 
-####Android.mk 파일 수정 (jni 하위)
+#### Android.mk 파일 수정 (jni 하위)
 
 Google Breakpad 원본 - 현재 프로젝트 비교
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2015/2015-06-12-android-google-breakpad-javacallback-02.PNG" }}" />
@@ -213,7 +213,7 @@ else
 endif
 ```
 
-####Android.mk 파일 수정 (jni - google_breakpad 하위)
+#### Android.mk 파일 수정 (jni - google_breakpad 하위)
 
 Google Breakpad 원본 - 현재 프로젝트 비교
 
@@ -230,7 +230,7 @@ src/client/linux/dump_writer_common/ucontext_reader.cc \
 src/client/linux/microdump_writer/microdump_writer.cc \
 ```
 
-####test_breakpad.cpp 파일 수정
+#### test_breakpad.cpp 파일 수정
 
 DUMP 파일 수집을 위해 Google Breakpad 관련 내용을 적용합니다.
 
@@ -284,7 +284,7 @@ extern "C" {
 
 Step2 소스 : [Step2 링크](https://github.com/Pluu/BreakpadJavaCall/tree/step2)
 
-###Step3. Crash Java Function Call
+### Step3. Crash Java Function Call
 
 1. JNI 에서 호출 할 Java Ntive Interface Class 생성
 2. JNI 에서 호출
@@ -365,7 +365,7 @@ Step3 소스 : [Step3 링크](https://github.com/Pluu/BreakpadJavaCall/tree/fina
 | JNI | X | X | O | O |
 | JNI Module | - | - | Google Breakpad | Google Breakpad |
 
-###etc
+### etc
 
 - - -
 

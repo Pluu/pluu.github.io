@@ -13,7 +13,7 @@ categories:
 
 Android Studio 에서 자주 사용하는 Gradle Task 정리
 
-###NDK Build
+### NDK Build
 
 - - -
 
@@ -51,7 +51,7 @@ tasks.withType(JavaCompile) {
 
 ```
 
-###NDK Result File (.a) Copy
+### NDK Result File (.a) Copy
 
 - - -
 
@@ -68,7 +68,7 @@ task ndkResultCopy(type: Copy, dependsOn: 'ndkBuild') {
 }
 ```
 
-###Make JAR
+### Make JAR
 
 - - -
 

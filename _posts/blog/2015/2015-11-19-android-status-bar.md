@@ -16,7 +16,7 @@ categories:
 
 `Code`로 적용한다면 앱의 컨텐츠에 맞게 변경도 가능합니다.
 
-##Theme Style
+## Theme Style
 
 
 ```xml
@@ -25,7 +25,7 @@ categories:
 </style>
 ```
 
-##Code
+## Code
 
 
 ```java

@@ -11,7 +11,7 @@ categories:
 
 <!--more-->
 
-###Intro
+### Intro
 
 - - -
 
@@ -21,7 +21,7 @@ categories:
 
 이번 포스팅에서는 JNI 관련 Crash 발생시 원인이 되는 곳을 찾는법에 대해서 포스팅을 작성하겠습니다.
 
-###사전작업
+### 사전작업
 
 - - -
 
@@ -41,7 +41,7 @@ categories:
 #### 기본 테스트 소스
 
 
-```java 
+```java
 #include <jni.h>
 #include <android/log.h>
 #include <stdio.h>
@@ -110,14 +110,14 @@ extern "C" {
 }
 ```
 
-###Logcat 결과 체크
+### Logcat 결과 체크
 
 - - -
 
 사전 작업 : 51번째 줄을 false 처리하여 Logcat 에 Crash Log 가 나오도록 수정
 
 
-```console 
+```console
 I/DEBUG﹕ *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
 I/DEBUG﹕ Build fingerprint: 'generic/vbox86p/vbox86p:4.3/JLS36G/eng.buildbot.20150609.213200:userdebug/test-keys'
 I/DEBUG﹕ Revision: '0'
@@ -219,7 +219,7 @@ D:\GitHub\BreakpadJavaCall\app\src\main/jni/test_breakpad.cpp:64
 
 실제로 Crash 가 발생한 Stack 을 체크할수 있습니다.
 
-###Google Breakpad Dump 체크
+### Google Breakpad Dump 체크
 
 - - -
 
@@ -237,7 +237,7 @@ minidump_stackwalk 53cf87db-0429-1cbf-3cd576a2-2b42c50d.dmp > 53cf87db-0429-1cbf
 해당 파일을 내용을 간략하게 표시하면 아래와 같습니다.
 
 
-```console 
+```console
 Operating system: Android
                   0.0.0 Linux 3.4.67-qemu+ #13 SMP PREEMPT Thu Mar 19 15:12:39 CET 2015 i686
 CPU: x86
@@ -298,7 +298,7 @@ Java_com_pluusystem_breakpadjavacall_MainActivity_crashService
 D:\GitHub\BreakpadJavaCall\app\src\main/jni/test_breakpad.cpp:61
 ```
 
-###P.S.
+### P.S.
 
 Google Breakpad 를 이용해서 덤프를 취득하여 디버그해본 결과, 기존 breakpad 의 샘플로는 올바른 덤프 취득을 할 수 없었습니다.
 
@@ -306,7 +306,7 @@ Google Breakpad 를 이용해서 덤프를 취득하여 디버그해본 결과, 
 
 좀 더 정확한 디버그를 아시는분은 알려주시면 추가 포스팅을 하겠습니다.
 
-###etc
+### etc
 
 - - -
 

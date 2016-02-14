@@ -17,7 +17,7 @@ RxJava, RxAndroid, Realm 관련 작업을 반영해보기로 했습니다
 
 Rx 자체는 별로 어려운 문제없이 진행했지만, Realm 이 가장 큰 문제였습니다.
 
-##Realm
+## Realm
 
 [Ream 공식 사이트](https://realm.io/kr/)
 
@@ -26,7 +26,7 @@ Rx 자체는 별로 어려운 문제없이 진행했지만, Realm 이 가장 큰
 
 별도의 설명은 Realm 공식 사이트를 참조하시면 됩니다.
 
-####Realm 으로 바꾸게 된 이유는
+#### Realm 으로 바꾸게 된 이유는
 
 1. 그냥... 그냥... 그냥...
 2. Sqlbrite 도 써봤으니 이것도 써보자
@@ -34,7 +34,7 @@ Rx 자체는 별로 어려운 문제없이 진행했지만, Realm 이 가장 큰
 
 별 이유없이 그냥 바꿔보자하는 마음이였습니다.
 
-##Sqlbrite
+## Sqlbrite
 
 Sqlbrite 는 Square 사에서 발표한 SQLiteOpenHelper 를 Rx 스타일로 Wrapper 한 DB 사용 라이브러리입니다.
 
@@ -49,7 +49,7 @@ Sqlbrite 는 Square 사에서 발표한 SQLiteOpenHelper 를 Rx 스타일로 Wra
 - Rx 스타일 작업 지원
 - 믿고 쓰는 Square 라이브러리
 
-##Sqlite to Realm
+## Sqlite to Realm
 
 DB 의 주체를 바꾸는 작업이였기때문에, 몇가지 고려해야할 사항이 있습니다.
 
@@ -67,7 +67,7 @@ DB 의 주체를 바꾸는 작업이였기때문에, 몇가지 고려해야할 �
 
 Sqlite에 저장되어있는 테이블의 데이터를 Realm으로 옮기는 작업을 볼 수 있습니다.
 
-##추천하는 방법
+## 추천하는 방법
 
 **1. 처음부터 Realm 을 쓰세요.**
 

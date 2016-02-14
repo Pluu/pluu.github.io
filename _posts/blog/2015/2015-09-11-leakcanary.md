@@ -15,7 +15,7 @@ categories:
 
 <!--more-->
 
-###LeakCanary 란 무엇인가
+### LeakCanary 란 무엇인가
 
 [https://corner.squareup.com/2015/05/leak-canary.html](https://corner.squareup.com/2015/05/leak-canary.html)
 
@@ -34,7 +34,7 @@ LeakCanary.install(this);
 
 궁금해서 읽어봤다.
 
-###어느 타이밍에 Memory Leak 유무 확인을 실행하고 있는가?
+### 어느 타이밍에 Memory Leak 유무 확인을 실행하고 있는가?
 
 열쇠는 ActivityRefWatcher 에 있다
 
@@ -43,7 +43,7 @@ LeakCanary.install(this);
 [ActivityLifecycleCallbacks](http://developer.android.com/reference/android/app/Application.html#registerActivityLifecycleCallbacks(android.app.Application.ActivityLifecycleCallbacks)) 을 Application에 등록하는 것으로 어플리케이션 내에 등록된 Activity의 onXXX 를 Listen 하도록 한다.
 
 
-```java 
+```java
 private final Application.ActivityLifecycleCallbacks lifecycleCallbacks =
       new Application.ActivityLifecycleCallbacks() {
 
@@ -67,16 +67,16 @@ void onActivityDestroyed(Activity activity) {
 
 자세히 봐보자.
 
-###RefWatcher Class 역할
+### RefWatcher Class 역할
 
 [https://github.com/square/leakcanary/blob/master/leakcanary-watcher/src/main/java/com/squareup/leakcanary/RefWatcher.java](https://github.com/square/leakcanary/blob/master/leakcanary-watcher/src/main/java/com/squareup/leakcanary/RefWatcher.java)
 
-####watch
+#### watch
 
 watch 에서는 어떤 처리가 실행되고 있을까.
 
 
-```java 
+```java
 /**
    * Watches the provided references and checks if it can be GCed. This method is non blocking,
    * the check is done on the {@link Executor} this {@link RefWatcher} has been constructed with.
@@ -111,7 +111,7 @@ final KeyedWeakReference reference =
 ```
 
 
-```java 
+```java
 watchExecutor.execute(new Runnable() {
       @Override public void run() {
         ensureGone(reference, watchStartNanoTime);
@@ -131,10 +131,10 @@ KeyedWeakReference Class 가 활약하는것은 이제부터다.
 
 우선은, ensureGone 메소드를 보자.
 
-####ensureGone
+#### ensureGone
 
 
-```java 
+```java
 void ensureGone(KeyedWeakReference reference, long watchStartNanoTime) {
     long gcStartNanoTime = System.nanoTime();
 
@@ -217,7 +217,7 @@ removeWeaklyReachableReferences 에서 KeyedWeakReference Class가 활약한다.
 이것을 근거로, 재차 removeWeaklyReachableReferences 를 보자.
 
 
-```java 
+```java
 while ((ref = (KeyedWeakReference) queue.poll()) != null) {
       retainedKeys.remove(ref.key);
 }

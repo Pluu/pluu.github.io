@@ -10,7 +10,7 @@ categories:
 
 <!--more-->
 
-###Android Design Support Library
+### Android Design Support Library
 
 - - -
 
@@ -22,11 +22,11 @@ Android M Preview가 발표되고, Google은 `Android Design Support Library`을
 
 기존 표준 API나 Support Library API에서는 자동으로 구현되지않는 부분을 라이브러리화 한것입니다.
 
-####Spec
+#### Spec
 
 - Android 2.1이상
 
-####Support
+#### Support
 
 - Navigation View
 - Foating labels for editing text
@@ -35,7 +35,7 @@ Android M Preview가 발표되고, Google은 `Android Design Support Library`을
 - Tabs
 - etc
 
-###Setup
+### Setup
 
 - - -
 
@@ -44,7 +44,7 @@ Android M Preview가 발표되고, Google은 `Android Design Support Library`을
 compile 'com.android.support:design:22.2.0'
 ```
 
-###Navigation View
+### Navigation View
 
 - - -
 
@@ -144,7 +144,7 @@ public boolean onNavigationItemSelected(MenuItem item) {
 }
 ```
 
-###Floating labels for editing text
+### Floating labels for editing text
 
 - - -
 
@@ -168,7 +168,7 @@ Floating 되는 Label 은 `android:hint` 에 적용된 문자열이 표시됩니
 </android.support.design.widget.TextInputLayout>
 ```
 
-###Floating Action Button
+### Floating Action Button
 
 - - -
 
@@ -193,7 +193,7 @@ Action 버튼을 표현하기 위한 둥근원형의 버튼입니다.
 	app:rippleColor="@color/color_ripple_color"/>
 ```
 
-####Shadow Problem
+#### Shadow Problem
 
 Floating Action Button 을 사용시 문제가 되는것을 발견했습니다.
 
@@ -201,7 +201,7 @@ Floating Action Button 을 사용시 문제가 되는것을 발견했습니다.
 
 해결방법 `borderWidth="0dp"` 을 적용하시면됩니다.
 
-###Snackbar
+### Snackbar
 
 - - -
 
@@ -217,7 +217,7 @@ Snackbar
   .show(); // Don’t forget to show!
 ```
 
-###Tabs
+### Tabs
 
 - - -
 
@@ -233,7 +233,7 @@ tabLayout.addTab(tabLayout.newTab().setText("Tab 1"));
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2015/2015-05-31-android-design-support-05.png" }}" />
 
-###CoordinatorLayout 과 floating action buttons
+### CoordinatorLayout 과 floating action buttons
 
 - - -
 
@@ -243,7 +243,7 @@ layout_anchorGravity 을 이용해서 뷰를 상대적으로 배치가능하도�
 
 `Android 3.0 이상`을 지원합니다.
 
-###CoordinatorLayout and the app bar
+### CoordinatorLayout and the app bar
 
 - - -
 
@@ -254,7 +254,7 @@ the AppBarLayout can respond to those events by using the children’s scroll fl
 - enterAlwaysCollapsed: collapsed (minHeight) 상태로 화면 상단밖으로 사라지고 다시 나타나는 형태를 지원
 - exitUntilCollapsed: collapsed (minHeight) 까지 스크롤이 발생
 
-###Collapsing Toolbars
+### Collapsing Toolbars
 
 - - -
 
@@ -281,17 +281,17 @@ CollapsingToolbarLayout 의 `layout_collapseMode="pin"` 을 사용할 경우, �
 
 CollapsingToolbarLayout 와 Toolbar 함께 사용하는 경우 AppBarLayout 레이아웃 표시에 따라, 전체가 표시시 타이틀이 크게 표시되며, Collapsed 시 기본 사이즈로 변경됩니다.
 
-####exitUntilCollapsed
+#### exitUntilCollapsed
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2015/2015-05-31-android-design-support-exitUntilCollapsed.gif" }}" />
 
-####enterAlwaysCollapsed
+#### enterAlwaysCollapsed
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2015/2015-05-31-android-design-support-enterAlwaysCollapsed.gif" }}" />
 
-###샘플 소스
+### 샘플 소스
 
 - [Pluu Android Design Support Library Sample](https://github.com/Pluu/DesignSupportSample)
 
-###etc
+### etc
 
 - [Android Design Support Library](http://android-developers.blogspot.jp/2015/05/android-design-support-library.html)
 - [Android Design Support Library を少しだけ触ってみました](http://qiita.com/ryugoo/items/db4404ee7b95f2f80d94)

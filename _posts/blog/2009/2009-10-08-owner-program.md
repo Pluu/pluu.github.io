@@ -32,9 +32,9 @@ VB.NET 기반 화상키보드 만들기
 추가메뉴가격 부분 : 숫자 등록 OK, 통화표시 OK
 
 
-###<font color="orange">한글 작업만 남았다...역시나 화상키보드하면</font>
+### <font color="orange">한글 작업만 남았다...역시나 화상키보드하면</font>
 
-###<font color="orange">한글 연결부분에서 머리가 아프죠!!!</font>
+### <font color="orange">한글 연결부분에서 머리가 아프죠!!!</font>
 
 
 * * *
@@ -43,9 +43,9 @@ PM 07:48
 
 음........
 
-###<font color="blue">후킹 메세지에서 예전 퍼온 코드를 고치니..</font>
+### <font color="blue">후킹 메세지에서 예전 퍼온 코드를 고치니..</font>
 
-###<font color="blue">한글도 된다...</font>
+### <font color="blue">한글도 된다...</font>
 
 
 ㅡ_ㅡ 화상키보드는 종료 / 전역으로 하면 더 미치겠지?....

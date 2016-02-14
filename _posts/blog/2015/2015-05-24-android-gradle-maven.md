@@ -19,7 +19,7 @@ categories:
 
 5개의 Step으로 진행되고, Maven Central 에 Library를 deploy합니다.
 
-###1. Sonatype 의 JIRA 에 SignUp
+### 1. Sonatype 의 JIRA 에 SignUp
 
 - - -
 
@@ -27,7 +27,7 @@ categories:
 
 계정 ID와 Pass 는 이후도 사용하므로 잃어버리지 말아주세요.
 
-###2. Sonatype 의 JIRA 에, Deploy설정 의뢰 보내기
+### 2. Sonatype 의 JIRA 에, Deploy설정 의뢰 보내기
 
 - - -
 
@@ -49,7 +49,7 @@ UserName は은 deploy하는 사람의, Sonatype JIRA 계정명을 넣습니다.
 
 최초 Release 버전을 deploy하면 알려주세요라고 적혀있으므로, deploy하면 코멘트를 답시다.
 
-###3. Maven 에 Deploy할 준비하기
+### 3. Maven 에 Deploy할 준비하기
 
 - - -
 
@@ -132,14 +132,14 @@ apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn
 
 이걸로 준비 완료입니다.
 
-###4. Deploy
+### 4. Deploy
 - - -
 
 ```
 ./gradlew clean build uploadArchives
 ```
 
-###5. Release 작업
+### 5. Release 작업
 - - -
 
 Deploy는 Staging Server에서 실행됩니다. 이대로라면 Release 되지않습니다.
@@ -158,7 +158,7 @@ Close 가 끝나면, Refresh 버튼으로 목록이 갱신되고, 다시한번 �
 
 이걸로 Release 작업이 종료됩니다.
 
-###appendix. Deploy 실패했다면
+### appendix. Deploy 실패했다면
 - - -
 
 Javadoc 이 어딘가에서 실패한다면, 아래의 Script를 Module의 build.gradle에 기술합니다.
