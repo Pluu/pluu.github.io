@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[번역] DroidKaigi 2016 ~ Android Lint로 정답을 배우자"
+title: "[번역] DroidKaigi 2016 ~ Android Lint로 올바름을 배우자"
 date: 2016-02-26 20:25:00 +09:00
 tag: [Android, DroidKaigi, Lint]
 categories:
