@@ -81,7 +81,7 @@ Java의 경우는?
 **Gategory**
 
 | 카테고리명 | 체크 내용|
-| :=: | :=: |
+| :-: | :-: |
 | Correctness | 올바른 SDK 사용법 |
 | Correctness:Messages | Correctness 중에서 메세지 |
 | Security | Security |
@@ -98,7 +98,7 @@ Java의 경우는?
 **Severity**
 
 | Level | 의미 | 어플리케이션의 영향 |
-| :=: | :=: | :=: |
+| :-: | :-: | :-: |
 | Fatal | 치명적 | 빌드나 실행에 반드시 실패한다 |
 | Error | 에러 | 빌드는 되지만 실행 시 에러를 일으킬 가능성이 크다 |
 | Warning | 경고 | 동작은 하지만 수정하는편이 보다 좋은 어플리케이션이 된다 |
