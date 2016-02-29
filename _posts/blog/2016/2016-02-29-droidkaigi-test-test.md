@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[번역] DroidKaigi 2016 ~ 내가 테스트 써라고 말하는 아저씨가 된 경위와 그 과정에서 한 일"
-date: 2016-02-29 21:40:00 +09:00
+date: 2016-02-29 21:00:00 +09:00
 tag: [Android, DroidKaigi, Test]
 categories:
 - blog
