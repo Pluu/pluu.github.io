@@ -420,7 +420,7 @@ ExportedContentProvider
 왜 안되는가?
 
 - 실은 <provider>에는 exported라는 파라매터가 있고, 디폴트는 true
-- 외부 어플리케이션에서도 __content://hogeoge__ 와 같은 URI로 데이터에 접근할 수 있다
+- 외부 어플리케이션에서도 <u>content://hogeoge</u> 와 같은 URI로 데이터에 접근할 수 있다
 - Dropbox가 2011년에 저질렀다 [http://codezine.jp/article/detail/6286](http://codezine.jp/article/detail/6286)
 
 ## 63p
@@ -483,7 +483,7 @@ IconColors
 - 머티리얼 디자인의 등장도 있고, StatusBar이나 ActionBar의 색은 어플리케이션마다 또렷하게 바뀌게 되었다
 - 아이콘과 동일 계열 색상의 배경이 되었을 때에 보기 어렵게 된다
 - Notification 아이콘은 흰색, Action Icon은 회색으로 해두면, 대체로 대부분 색에 맞는다
-- 이런 이야기가 __developer.android.com/design__ 에 게재되어 있었던 것 같지만, __www.google.com/design__ 에 이동되었을 때에 이 이야기가 사라졌던 것 같습니다
+- 이런 이야기가 <u>developer.android.com/design</u> 에 게재되어 있었던 것 같지만, <u>www.google.com/design</u> 에 이동되었을 때에 이 이야기가 사라졌던 것 같습니다
 
 ## 73p
 
