@@ -275,7 +275,8 @@ Android 6.0 저전력 대책
 
 - Doze시 통상적인 GCM은 어플에 도달하지 못한다
 - Doze시에도 처리되도록, 우선도를 올리는 Flag가 GCM에 추가되어 있다
-- ```
+
+```
 {
   "to" : "...",
   "priority" : "hight",
@@ -522,20 +523,24 @@ public class Myservice extends JobService {
 
 - 순서
   - 배터리 모드를 시뮬레이터
-  - ```
+
+```
 $ adb shell dumpsys battery unplug
 ```
+
   - 화면을 Off로 해서 deviceidle을 IDLE로 이행
-  - ```
+
+```
 $ adb shell dumpsys deviceidle step
 ```  
 
     - 몇번인가 IDLE이 표시될때까지 호출
     - 이후, step으로 IDLE/IDLE_MAINTENANCE로 변화시키므로 maintenance windows 동작확인도 가능
   - 또는 강제적으로 deviceidle에 이행 (화면 ON인채로)
-  - ```
-  $ adb shell dumpsys deviceidle force-idle
-  ```
+
+```
+$ adb shell dumpsys deviceidle force-idle
+```
 
 ## 44p
 
@@ -543,7 +548,8 @@ $ adb shell dumpsys deviceidle step
 
 - 원래대로 복원하는 방법
   - 전원접속 상태를 이전으로 돌린다
-  - ```
+
+```
 $ adb shell dumpsys battery reset
 ```
 
@@ -554,11 +560,14 @@ $ adb shell dumpsys battery reset
 - 비슷하게 App Standby도 시뮬레이터 가능
 - 순서
   - 배터리 모드를 시뮬레이터
-  - ```
+
+```
 $ adb shell dumpsys battery unplug
 ```
+
   - 지정한 패키지 어플을 Standby 상태로 변경
-  - ```
+
+```
 $ adb shell am set-inactive <packageName> true
 ```
 
@@ -568,10 +577,13 @@ $ adb shell am set-inactive <packageName> true
 
 - 원래대로 복원하는 방법
   - Standby 상태를 해제한다
-  - ```
+
+```
 $ adb shell am set-inactive <packageName> false
 ```
+
   - 전원 연결 상태를 이전으로 돌린다
-  -  ```
+
+```
 $ adb shell dumpsys battery reset
 ```
