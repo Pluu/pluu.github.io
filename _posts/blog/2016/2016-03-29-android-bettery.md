@@ -501,7 +501,8 @@ public class Myservice extends JobService {
 
 - SystemUI내의 DozeParameters.java가 참조하는 conig.xml에서의 파라매터 설정으로 조정이 가능
   - AOSP에서 일부 발췌하여 아래에 표시
-  - ```
+
+```
 <!-- Doze: check proximity sensor before pulsing? -->
 <bool name="doze_proximity_check_before_pulse">true</bool>
 
