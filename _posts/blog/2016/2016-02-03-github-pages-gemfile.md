@@ -12,6 +12,8 @@ GitHub가 어제 GitHub Pages에서 사용하는 Jekyll 3.0으로 업그레이�
 
 <!--more-->
 
+- - -
+
 ## Change
 
 상세내용은 [GitHub Pages now faster and simpler with Jekyll 3.0](https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0) 을 참고해주세요.

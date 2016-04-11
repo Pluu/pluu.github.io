@@ -16,6 +16,8 @@ categories:
 
 <!--more-->
 
+- - -
+
 DroidKaigi 공식 어플 아이콘을 VectorDrawable로 하여 각 해상도의 png 파일을 대부분 제거 가능했으므로, 대응한 내용을 정리해보려고 합니다
 
 [Suppoort vector drawable #345](https://github.com/konifar/droidkaigi2016/pull/345)
