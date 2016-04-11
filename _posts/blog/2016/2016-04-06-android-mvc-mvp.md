@@ -8,8 +8,6 @@ categories:
 - Android
 ---
 
-<!--more-->
-
 본 포스팅은 [AndroidではMVCよりMVPの方がいいかもしれない
 ](http://konifar.hatenablog.com/entry/2015/04/17/010606) 을 기본으로 번역하여 작성했습니다
 

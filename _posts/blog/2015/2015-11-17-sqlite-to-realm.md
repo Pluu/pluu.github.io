@@ -9,13 +9,15 @@ categories:
 - Realm
 ---
 
-<!--more-->
-
 최근 안드로이드 웹툰 프로젝트를 GitHub에 완전 공개하면서
 
 RxJava, RxAndroid, Realm 관련 작업을 반영해보기로 했습니다
 
 Rx 자체는 별로 어려운 문제없이 진행했지만, Realm 이 가장 큰 문제였습니다.
+
+<!--more-->
+
+- - -
 
 ## Realm
 

@@ -7,6 +7,7 @@ categories:
 - blog
 - Android
 ---
+
 <!--more-->
 
 ### 카카오톡 광고 배너 UI

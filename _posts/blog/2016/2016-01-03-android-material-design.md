@@ -8,8 +8,6 @@ categories:
 - Android
 ---
 
-<!--more-->
-
 본 포스팅은 [Material Design度が高まるRipple Effect対応](http://qiita.com/nissiy/items/bf2742ffb990e3c8f875) 을 기본으로 번역하여 작성했습니다
 
 제 일본어 실력으로 인하여 오역이나 오타가 발생할 수 있습니다.

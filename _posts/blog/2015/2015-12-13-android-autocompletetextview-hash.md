@@ -8,13 +8,13 @@ categories:
 - Android
 ---
 
-<!--more-->
-
 본 포스팅은 [AutoCompleteTextViewでハッシュタグの補完を実装してみる](http://qiita.com/Horie1024/items/545659072250ca0b24ed) 을 기본으로 번역하여 작성했습니다
 
 제 일본어 실력으로 인하여 오역이나 오타가 발생할수 있습니다.
 
 <!--more-->
+
+- - -
 
 트위터에 투고할 때이나 Instagram에 설명을 적을 때 해시 태그를 입력하면 단어 목록이 표시되고 쉽게 해시태그를 입력할 수 있습니다. 제가 개발하고 있는 어플리케이션 [iQON](https://play.google.com/store/apps/details?id=jp.vasily.iqon&hl=ja)에도 작성한 코디를  게시할 때 등 해시 태그를 붙일 수 있습니다만, 자동완성이 구현되어 있지않습니다.
 

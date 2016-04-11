@@ -8,8 +8,6 @@ categories:
 - Android
 ---
 
-<!--more-->
-
 본 포스팅은 [VectorDrawable対応まとめ](http://qiita.com/konifar/items/bf581b8f23dea7b30f85) 을 기본으로 번역하여 작성했습니다
 
 제 일본어 실력으로 인하여 오역이나 오타가 발생할 수 있습니다.

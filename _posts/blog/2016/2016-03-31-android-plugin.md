@@ -9,8 +9,6 @@ categories:
 - DroidKaigi
 ---
 
-<!--more-->
-
 본 포스팅은 [実践！Android Studioプラグイン開発
 ](https://speakerdeck.com/konifar/shi-jian-android-studiopuraguinkai-fa) 을 기본으로 번역하여 작성했습니다
 

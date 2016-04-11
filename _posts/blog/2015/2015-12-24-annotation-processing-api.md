@@ -8,13 +8,13 @@ categories:
 - Android
 ---
 
-<!--more-->
-
 본 포스팅은 [Pluggable Annotation Processing API 使い方メモ](http://qiita.com/opengl-8080/items/beda51fe4f23750c33e9) 을 기본으로 번역하여 작성했습니다
 
 제 일본어 실력으로 인하여 오역이나 오타가 발생할수 있습니다.
 
 <!--more-->
+
+- - -
 
 ## Pluggable Annotation Processing API 란?
 

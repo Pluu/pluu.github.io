@@ -9,13 +9,13 @@ categories:
 - DroidKaigi
 ---
 
-<!--more-->
-
 본 포스팅은 [droidkaigi-rxjava](http://www.slideshare.net/KazukiYoshida/droidkaigi-rxjava) 을 기본으로 번역하여 작성했습니다
 
 제 일본어 실력으로 인하여 오역이나 오타가 발생할 수 있습니다.
 
 코드는 생략하고 `슬라이드의 일본어 부분만 번역` 했다는 점 양해바랍니다.
+
+<!--more-->
 
 - - -
 
@@ -24,8 +24,6 @@ categories:
 - `待ち合わせ処理`는 "그룹핑한 병렬처리가 완료시 후 처리" 으로 번역했습니다만, Promise의 all과 같은 느낌이라고 이해하시면 됩니다.
 
 - - -
-
-<!--more-->
 
 ## 1p
 

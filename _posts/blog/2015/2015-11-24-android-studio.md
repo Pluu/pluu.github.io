@@ -8,9 +8,9 @@ categories:
 - Android
 ---
 
-<!--more-->
-
 Android Studio 2.0 Preview 가 2015년 11월 24일 새벽에 발표했습니다.
+
+<!--more-->
 
 # Android Studio 2.0 의 특징
 - `Instant Run`

@@ -9,8 +9,6 @@ categories:
 - DroidKaigi
 ---
 
-<!--more-->
-
 본 포스팅은 [DroidKaigi 2016 Androidの省電力を考える
 ](https://speakerdeck.com/ynakanishi/droidkaigi-2016-androidfalsesheng-dian-li-wokao-eru) 을 기본으로 번역하여 작성했습니다
 

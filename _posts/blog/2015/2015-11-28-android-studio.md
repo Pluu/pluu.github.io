@@ -8,9 +8,11 @@ categories:
 - Android
 ---
 
+본 포스팅은 [Android Studio for Experts (Android Dev Summit 2015)](https://www.youtube.com/watch?v=Y2GC6P5hPeA) 중  `Tor Norbye`씨의 발표 세션을 정리한 내용입니다.
+
 <!--more-->
 
-본 포스팅은 [Android Studio for Experts (Android Dev Summit 2015)](https://www.youtube.com/watch?v=Y2GC6P5hPeA) 중  `Tor Norbye`씨의 발표 세션을 정리한 내용입니다.
+- - -
 
 # Code Completion
 

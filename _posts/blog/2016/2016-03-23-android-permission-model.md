@@ -9,8 +9,6 @@ categories:
 - DroidKaigi
 ---
 
-<!--more-->
-
 본 포스팅은 [パーミッションモデルの過渡期への対応
 ](http://www.slideshare.net/ak_shio_555/ss-58412835) 을 기본으로 번역하여 작성했습니다
 

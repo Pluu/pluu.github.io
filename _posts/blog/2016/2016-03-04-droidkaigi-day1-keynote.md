@@ -9,8 +9,6 @@ categories:
 - DroidKaigi
 ---
 
-<!--more-->
-
 본 포스팅은 [Day1 Keynote in DroidKaigi 2016](https://speakerdeck.com/wasabeef/day1-keynote-in-droidkaigi-2016) 과 발표영상 [主催者挨拶 + 基調講演: OSSの動向を捉えた実装方針 by CyberAgent wasabeef at DroidKaigi 2016 ](https://www.youtube.com/watch?v=kArtZzDz1xU&t=7m)을 기본으로 번역하여 작성했습니다
 
 자료와 연관된 발표 영상은 8분 30분부터 보시면 됩니다.

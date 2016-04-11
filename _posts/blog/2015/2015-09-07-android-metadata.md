@@ -7,14 +7,16 @@ categories:
 - blog
 - Android
 ---
-<!--more-->
 
 여러 3rd Party 라이브러리를 사용하면 `AndroidManifest.xml`에 `meta-data` 를 추가하라는 항목이 가끔씩 나옵니다.
 
 추가는 쉽지만, 실제 Android Java 파일에서 어떻게 값을 취득하는가에 대해서 간단하게 설명을 적겠습니다.
 
-`Fabric` 을 사용하는 경우 아래와 같이 메타 데이터를 사용하고 있습니다.
+<!--more-->
 
+- - -
+
+`Fabric` 을 사용하는 경우 아래와 같이 메타 데이터를 사용하고 있습니다.
 
 ```xml
 <meta-data

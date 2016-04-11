@@ -7,13 +7,14 @@ categories:
 - blog
 - Android
 ---
-<!--more-->
 
 이 포스팅은 [LeakCanaryの仕組みをある程度理解したいマン](http://hogehuga.com/post-696/) 을 기본으로 번역하여 작성했습니다
 
 제 일본어 실력으로 인하여 오역이나 오타가 발생할수 있습니다.
 
 <!--more-->
+
+- - -
 
 ### LeakCanary 란 무엇인가
 
@@ -202,17 +203,12 @@ removeWeaklyReachableReferences 에서 KeyedWeakReference Class가 활약한다.
 
 [http://www.ne.jp/asahi/hishidama/home/tech/java/weak.html](http://www.ne.jp/asahi/hishidama/home/tech/java/weak.html)
 
-```bash
-복수 WeakReference 를 사용하는 경우, 어떤것이 사라졌는지 알기위해서는 모든 WeakReference 를 리스트 혹은 어떤 것에 넣어두고 하나하나 get() 해서 null 이 반환되는지를 체크하면 좋을듯하다.
-
-하지만 이건 낭비가 심하다.
-
-그래서, 아주 조금 세련된 방법이 사용되고있다.
-
-참조 Queue (ReferenceQueueクラス) 라는 것을 사용해서, WeakReference 의 생성자의 파라매터로 전달한다.
-
-그러면, WeakReference 로부터 값이 사라지면, 참조 Queue 에 그 WeakReference 가 추가된다.
-```
+> 복수 WeakReference 를 사용하는 경우, 어떤것이 사라졌는지 알기위해서는 모든 WeakReference 를 리스트 혹은 어떤 것에 넣어두고 하나하나 get() 해서 null 이 반환되는지를 체크하면 좋을듯하다.
+> 하지만 이건 낭비가 심하다.
+>
+> 그래서, 아주 조금 세련된 방법이 사용되고있다.
+> 참조 Queue (ReferenceQueue Class) 라는 것을 사용해서, WeakReference 의 생성자의 파라매터로 전달한다.
+> 그러면, WeakReference 로부터 값이 사라지면, 참조 Queue 에 그 WeakReference 가 추가된다.
 
 이것을 근거로, 재차 removeWeaklyReachableReferences 를 보자.
 

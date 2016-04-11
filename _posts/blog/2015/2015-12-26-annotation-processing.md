@@ -8,13 +8,13 @@ categories:
 - Android
 ---
 
-<!--more-->
-
 본 포스팅은 [Annotation Processing(apt)のまとめ＋AndroidAnnotations(AA)とAutoValueのサンプルコード書いてみた。](http://qiita.com/shiraji/items/ed674c5883ed0520791b) 을 기본으로 번역하여 작성했습니다
 
 제 일본어 실력으로 인하여 오역이나 오타가 발생할수 있습니다.
 
 <!--more-->
+
+- - -
 
 ## 서론
 

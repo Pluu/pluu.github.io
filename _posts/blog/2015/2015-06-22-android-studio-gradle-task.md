@@ -9,9 +9,9 @@ categories:
 - Gradle
 ---
 
-<!--more-->
-
 Android Studio 에서 자주 사용하는 Gradle Task 정리
+
+<!--more-->
 
 ### NDK Build
 

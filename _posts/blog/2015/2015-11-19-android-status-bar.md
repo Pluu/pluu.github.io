@@ -8,9 +8,9 @@ categories:
 - Android
 ---
 
-<!--more-->
-
 앱 제작시 다양한 테마를 적용해서 StatusBar 를 바꾸는 방법이 있습니다.
+
+<!--more-->
 
 `style.xml`를 수정하는 방법은 앱 전체 테마에 고정적으로 적용되며,
 
