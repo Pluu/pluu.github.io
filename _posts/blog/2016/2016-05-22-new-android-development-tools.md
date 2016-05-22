@@ -16,7 +16,7 @@ Android Studio 2.1의 첫 Preview가 2016년 3월 10일에 발표되었고, 정�
 
 - - -
 
-<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2016/2016-05-22-new-android-development-tools-01.png" }}" />
+<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2016/2016-05-22-new-android-development-tools-01.PNG" }}" />
 
 ## Coponent Installer
 
@@ -30,7 +30,7 @@ APK 내에서 사용되고 있는 `리소스, 클래스` 등의 내용의 `Raw F
 
 APK를 리팩키징을 하여 보여줘, 라이브러리/클래스/이미지 하나하나 단위로 나타내므로, 현재 APK의 분석 및 APK 디컴파일용으로도 유용해 보입니다.
 
-<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2016/2016-05-22-new-android-development-tools-03.png" }}" />
+<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2016/2016-05-22-new-android-development-tools-03.PNG" }}" />
 
 > 샘플 이미지는 WebToon APK로 큰 기능은 없기에 리소스는 적게 차지하고, Realm 라이브러리, Class 순으로 비중을 차지하고 있었습니다.
 
@@ -38,7 +38,7 @@ APK를 리팩키징을 하여 보여줘, 라이브러리/클래스/이미지 하
 
 애플리케이션을 만들면서 여러 조합으로 애플리케이션은 만들어집니다. 이때 Manifest의 전체 결과는 자동으로 정리되었지만, Permission, Activity 등의 Manifest 정보가 결과적으로 어떻게 만들어지며, 해당 내용의 사용 출처를 알려줍니다.
 
-<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2016/2016-05-22-new-android-development-tools-04.png" }}" />
+<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2016/2016-05-22-new-android-development-tools-04.PNG" }}" />
 
 > 샘플 이미지는 WebToon 소스의 Manifest로 LeakCanary 관련 service를 선택한 상태 표시입니다.
 
@@ -107,7 +107,7 @@ Android Studio 2.2 Preview 1에는 `IntelliJ & CLion 2016.1`이 포함되어 더
 
 ## Firebase
 
-<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2016/2016-05-22-new-android-development-tools-15.png" }}" />
+<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2016/2016-05-22-new-android-development-tools-15.PNG" }}" />
 
 이번 Google I/O 2016에서 핫한 Firebase 기능이 Android Studio에도 포함되었습니다.
 
@@ -117,9 +117,9 @@ Android Studio 2.2 Preview 1에는 `IntelliJ & CLion 2016.1`이 포함되어 더
 
 [Firebase](https://firebase.google.com/?utm_source=studio)
 
-<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2016/2016-05-22-new-android-development-tools-16.png" }}" />
+<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2016/2016-05-22-new-android-development-tools-16.PNG" }}" />
 
-<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2016/2016-05-22-new-android-development-tools-17.png" }}" />
+<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2016/2016-05-22-new-android-development-tools-17.PNG" }}" />
 
 위 그림은 `Firebase > Cloud Messaging`을 선택했을 때 설정 화면입니다.
 
@@ -143,7 +143,7 @@ RuntimePermission은 마시멜로부터 중요한 체크 사항이지만, 작업
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2016/2016-05-22-new-android-development-tools-19.png" }}" />
 
-<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2016/2016-05-22-new-android-development-tools-20.png" }}" />
+<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2016/2016-05-22-new-android-development-tools-20.PNG" }}" />
 
 Test Target으로 `Cloud Testing`도 보이네요.
 
