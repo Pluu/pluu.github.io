@@ -14,7 +14,9 @@ Android Studio 2.1의 첫 Preview가 2016년 3월 10일에 발표되었고, 정�
 
 2.0부터는 새로운 버전 출시 주기가 상당히 빨라진 것으로 보입니다.
 
-- - -
+<!--more-->
+
+- -  -
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2016/2016-05-22-new-android-development-tools-01.PNG" }}" />
 
