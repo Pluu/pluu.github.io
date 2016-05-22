@@ -17,11 +17,17 @@
 
 - - -
 
-실행 순서
+실행 순서 (1)
 
 1. gem install bundler
 2. bundle install
 3. bundle exec jekyll serve --watch --skip-initial-build
+
+- - -
+
+실행 순서 (2)
+
+1. gem install github-pages
 
 - - -
 
