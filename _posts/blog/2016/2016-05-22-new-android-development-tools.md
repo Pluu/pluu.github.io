@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Android Studio 2.2 Preview 1"
-date: 2016-05-22 12:00:00 +09:00
+date: 2016-05-22 16:30:00 +09:00
 tag: [Android, Android-Studio]
 categories:
 - blog
