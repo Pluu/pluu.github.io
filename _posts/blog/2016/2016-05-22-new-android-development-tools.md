@@ -66,7 +66,7 @@ APK를 리팩키징을 하여 보여줘, 라이브러리/클래스/이미지 하
 
 Dependency의 `Scopes / Build Types / Product Flavor` 선택 가능
 
-## Cnhanced C++ (CMake and NDK-Build, 출시예정)
+## Enhanced C++ (CMake and NDK-Build, 출시예정)
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2016/2016-05-22-new-android-development-tools-09.png" }}" />
 
