@@ -20,7 +20,7 @@ Android Studio 2.1의 첫 Preview가 2016년 3월 10일에 발표되었고, 정�
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2016/2016-05-22-new-android-development-tools-01.PNG" }}" />
 
-## Coponent Installer
+## Component Installer
 
 Background 실행 기능 추가
 
