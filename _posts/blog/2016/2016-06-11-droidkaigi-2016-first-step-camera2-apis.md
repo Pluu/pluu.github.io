@@ -140,7 +140,7 @@ Camera2 API Overview
 
 | | 파이프라인 | |
 | :-: | :-: | :-: |
-| Request | > Request Queue > Camera Device > Image Buffer > | Surface |
+| Request → | Request Queue → Camera Device → Image Buffer | → Surface |
 
 ## 13p
 
@@ -150,8 +150,8 @@ Camera2 API Overview
 
 | | 파이프라인 | |
 | :-: | :-: | :-: |
-| Request | > Request Queue > Camera Device > Image Buffer > | Surface |
-| Request | Result | Surface |
+| Request → | Request Queue → Camera Device → Image Buffer | → Surface |
+| Request ↗ | Result | ↘ Surface |
 
 ## 14p
 
@@ -171,10 +171,10 @@ Camera Device에 대해서 CaptureRequest와 Session을 발행. Request가 조�
 - Camera Preview의 경우
   - ※ Preview안의 정지 촬영은 일단 Preview를 멈춰서 실행한다
 
-  | :- | :- |
-  | Request | 조작. `Camera Preview 지정` |
-  | Session | 실행단위. 동시 Preview를 하기 위해서 Request를 `Repeat 실행` |
-  | Camera Devices | 처리. 결과는 TextureView로 |
+| :- | :- |
+| Request | 조작. `Camera Preview 지정` |
+| Session | 실행단위. 동시 Preview를 하기 위해서 Request `Repeat 실행` |
+| Camera Devices | 처리. 결과는 TextureView로 |
 
 ## 16p
 
@@ -302,7 +302,9 @@ public class BasicCamera{
   private Semaphore mCameraOpenCloseLock= new Semaphore(1);
   private CameraDevicemCameraDevice;
   ...생략...
-  public final CameraDevice.StateCallbackstateCallback= new CameraDevice.StateCallback() {
+  public final CameraDevice.StateCallbackstateCallback =
+    new CameraDevice.StateCallback() {
+
     @Override
     public void onOpened(CameraDevicecameraDevice) {
       // 카메라가 사용가능 상태가 됨
@@ -349,18 +351,24 @@ Request > Session > Camera Device
 ## 29p ~ 30p
 
 ```
-mCameraDevice.createCaptureSession(Arrays.asList(surface, imageRenderSurface), new CameraCaptureSession.StateCallback() {
+mCameraDevice.createCaptureSession(Arrays.asList(surface, imageRenderSurface),
+  new CameraCaptureSession.StateCallback() {
+
   @Override
   public void onConfigured(CameraCaptureSessioncameraCaptureSession) {
     // Preview 준비가 완료되었으므로 카메라의 AF, AE 제어를 지정한다
     mCaptureSession= cameraCaptureSession;
     try {
       // Preview가 흐릿해서는 안되므로 오토 포커스를 사용한다
-      mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_MODE, CaptureRequest.CONTROL_AF_MODE_CONTINUOUS_PICTURE);
-      // 노출, 플래시는 자동 모드를 사용한다 mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AE_MODE, CaptureRequest.CONTROL_AE_MODE_ON_AUTO_FLASH);
+      mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_MODE,
+        CaptureRequest.CONTROL_AF_MODE_CONTINUOUS_PICTURE);
+      // 노출, 플래시는 자동 모드를 사용한다
+      mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AE_MODE,
+        CaptureRequest.CONTROL_AE_MODE_ON_AUTO_FLASH);
       // 카메라 Preview를 시작한다 (여기에서는 시작 요청만)
       mPreviewRequest= mPreviewRequestBuilder.build();
-      mCaptureSession.setRepeatingRequest(mPreviewRequest, mCaptureCallback, mInterface.getBackgroundHandler());
+      mCaptureSession.setRepeatingRequest(mPreviewRequest,
+        mCaptureCallback, mInterface.getBackgroundHandler());
     } catch (CameraAccessExceptione) {
       e.printStackTrace();
     }
@@ -415,15 +423,19 @@ onCaptureProgressed 메서드는 Request 내용에 반응해서 여러 번 호�
 ## 34p
 
 ```
-private CameraCaptureSession.CaptureCallbackmCaptureCallback = new CameraCaptureSession.CaptureCallback() {
+private CameraCaptureSession.CaptureCallbackmCaptureCallback
+  = new CameraCaptureSession.CaptureCallback() {
+
   @Override
-  public void onCaptureProgressed(CameraCaptureSessionsession, CaptureRequestrequest, CaptureResultpartialResult) {
+  public void onCaptureProgressed(CameraCaptureSessionsession,
+    CaptureRequestrequest, CaptureResultpartialResult) {
     // Capture 진척상황 (즉시 호출된다)
     process(partialResult);
   }
 
   @Override
-  public void onCaptureCompleted(CameraCaptureSessionsession, CaptureRequestrequest, TotalCaptureResultresult) {
+  public void onCaptureCompleted(CameraCaptureSessionsession,
+    CaptureRequestrequest, TotalCaptureResultresult) {
     // Capture 완료 (Preview의 경우, Preview 상태가 지속）
     process(result);
   }
@@ -444,6 +456,7 @@ private CameraCaptureSession.CaptureCallbackmCaptureCallback = new CameraCapture
 
 **프로그램 표현**
 
+```
 STATE_PREVIEW
 ↓
 ↓ Request: CONTROL_AF_TRIGGER_START
@@ -472,6 +485,7 @@ STATEU_PICTURE_TAKEN
 ↓ Request: CONTROL_AF_TRIGGER_CANCEL, TEMPLATE_PREVIEW
 ↓
 STATE_PREVIEW
+```
 
 ## 37p
 
@@ -503,16 +517,20 @@ private void process(CaptureResultresult) {
 private void captureStillPicture() {
   try {
     // 정지 영상 촬영을 시작한다
-    final CaptureRequest.BuildercaptureBuilder= mCameraDevice. createCaptureRequest(CameraDevice.TEMPLATE_STILL_CAPTURE);
+    final CaptureRequest.BuildercaptureBuilder = mCameraDevice.
+      createCaptureRequest(CameraDevice.TEMPLATE_STILL_CAPTURE);
     captureBuilder.addTarget(mInterface.getImageRenderSurface());
 
     // 정지 영상 촬영 모드를 지정 (AF,AE)
-    captureBuilder.set(CaptureRequest.CONTROL_AF_MODE, CaptureRequest.CONTROL_AF_MODE_CONTINUOUS_PICTURE);
-    captureBuilder.set(CaptureRequest.CONTROL_AE_MODE, CaptureRequest.CONTROL_AE_MODE_ON_AUTO_FLASH);
+    captureBuilder.set(CaptureRequest.CONTROL_AF_MODE,
+      CaptureRequest.CONTROL_AF_MODE_CONTINUOUS_PICTURE);
+    captureBuilder.set(CaptureRequest.CONTROL_AE_MODE,
+      CaptureRequest.CONTROL_AE_MODE_ON_AUTO_FLASH);
 
     // 현재 카메라 방향을 지정한다 (0~270도)
     introtation = mInterface.getRotation();
-    captureBuilder.set(CaptureRequest.JPEG_ORIENTATION, ORIENTATIONS.get(rotation));
+    captureBuilder.set(CaptureRequest.JPEG_ORIENTATION,
+      ORIENTATIONS.get(rotation));
 ```
 
 ## 40p
@@ -534,9 +552,11 @@ private void captureStillPicture() {
 ```
 private void captureStillPicture() {
   try {
-    ...이전 리스트부터 계속... CameraCaptureSession.CaptureCallbackCaptureCallback = new CameraCaptureSession.CaptureCallback() {
+    ...이전 리스트부터 계속... CameraCaptureSession.CaptureCallbackCaptureCallback
+      = new CameraCaptureSession.CaptureCallback() {
       @Override
-      public void onCaptureCompleted(CameraCaptureSessionsession, CaptureRequestrequest, TotalCaptureResultresult) {
+      public void onCaptureCompleted(CameraCaptureSessionsession,
+        CaptureRequestrequest, TotalCaptureResultresult) {
         // 정지 영상 촬영이 완료될 때에 호출되는 콜백
         Log.e(TAG, "onCaptureCompletedPicture Saved");
         // Preview용 설정으로 복원
@@ -551,13 +571,17 @@ private void captureStillPicture() {
 private void unlockFocus() {
   try {
     // AF Lock을 해제한다 (Trigger를 취소한다)
-    mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_TRIGGER, CameraMetadata.CONTROL_AF_TRIGGER_CANCEL);
-    mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AE_MODE, CaptureRequest.CONTROL_AE_MODE_ON_AUTO_FLASH);
+    mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_TRIGGER,
+      CameraMetadata.CONTROL_AF_TRIGGER_CANCEL);
+    mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AE_MODE,
+      CaptureRequest.CONTROL_AE_MODE_ON_AUTO_FLASH);
     // AF 트리거의 취소를 실행한다
-    mCaptureSession.capture(mPreviewRequestBuilder.build(), mCaptureCallback, mInterface.getBackgroundHandler());
+    mCaptureSession.capture(mPreviewRequestBuilder.build(),
+      mCaptureCallback, mInterface.getBackgroundHandler());
     // Preview를 유지하기위해 setRepeatingRequest 함수를 실행한다
     mState= STATE_PREVIEW;
-    mCaptureSession.setRepeatingRequest(mPreviewRequest, mCaptureCallback, mInterface.getBackgroundHandler());
+    mCaptureSession.setRepeatingRequest(mPreviewRequest, mCaptureCallback,
+      mInterface.getBackgroundHandler());
   } catch (CameraAccessExceptione) {
     e.printStackTrace();
   }
@@ -604,12 +628,12 @@ METADATA : 색 공간이나 휘도 등 카메라의 파라매터
 
 **HAL subsystem**
 
+<img src="https://source.android.com/devices/camera/images/camera_model.png" />
+
 - 하드웨어를 추상화
   - 렌즈, 센서 플래시
   - 동작 모드
   - YUV 변환
-
-<img src="https://source.android.com/devices/camera/images/camera_model.png" />
 
 > [https://source.android.com/devices/camera/camera3_requests_hal.html](https://source.android.com/devices/camera/camera3_requests_hal.html)
 
