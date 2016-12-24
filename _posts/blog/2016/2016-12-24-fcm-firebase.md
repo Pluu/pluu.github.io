@@ -2,7 +2,7 @@
 layout: post
 title: "[번역] FCM(API)을 이용해서 푸시 알림용 사내 라이브러리를 만들었습니다"
 date: 2016-12-24 18:00:00 +09:00
-tag: [Android, Fireabase]
+tag: [Android, Firebase]
 categories:
 - blog
 - Android
@@ -58,7 +58,7 @@ categories:
 채용 방침은 아래와 같이되어 있습니다.
 
 | OS | paylaod 이용 | 이유 |
-| :-- | :-- | :-- | 
+| :-- | :-- | :-- |
 | Android | data만 | notification 지정하고 background일 때, 알림이 자동으로 System tray에 들어가서 수신 시 자체 구현할 수 없으므로 |
 | iOS | notification, data | background에서 수신하기 위해 notification 지정이 필요하다 |
 
@@ -67,7 +67,7 @@ categories:
 공식 문서 [Handling messages](https://firebase.google.com/docs/cloud-messaging/android/receive)에 다음 내용이 적혀있고, 실제 기술 검증도 확인할 수 있습니다.
 
 | App state | Notification | Data | Both |
-| :-- | :-- | :-- | :-- | 
+| :-- | :-- | :-- | :-- |
 | Foreground | onMessageReceived | onMessageReceived | onMessageReceived |
 | Background | System tray | onMessageReceived | Notification: system tray Data: in extras of the intent. |
 
