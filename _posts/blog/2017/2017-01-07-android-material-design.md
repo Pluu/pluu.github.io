@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[번역] 너무 세세해서 전해되지 않는 Material Design 구현"
+title: "[번역] 너무 세세해서 전해지지 않는 Material Design 구현"
 date: 2017-01-07 18:00:00 +09:00
 tag: [Android, Material Design]
 categories:
