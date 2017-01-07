@@ -106,7 +106,7 @@ Drawable itemBackground = new LayerDrawable(new Drawable[]{back, top});
 
 이거라면 선택 색 부분의 StateListDrawable을 만들면 되네요.
 
-덧붙여서 NavigationView는 ForegroundDrawable에 대응 한 LinearLayout을 구현하고 foreground에 `?attr/selectableItemBackground`, background에는 위와 같은 StateListDrawable을 설정했습니다. 게다가 StateListDrawable은 `?attr/colorControlHighlight`을 참조하기 위해서 Java로 억지로 만듭니다. 과연!
+덧붙여서 NavigationView는 ForegroundDrawable에 대응 한 LinearLayout을 구현하고 foreground에 `?attr/selectableItemBackground`, background에는 위와 같은 StateListDrawable을 설정했습니다. 게다가 StateListDrawable은 `?attr/colorControlHighlight`을 참조하기 위해서 Java로 억지로 만듭니다. 역시!
 
 ## Auto Loading
 
