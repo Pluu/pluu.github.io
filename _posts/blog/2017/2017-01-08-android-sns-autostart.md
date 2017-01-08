@@ -71,6 +71,7 @@ public static boolean isWifi(@NonNull Context context) {
 간단하네요.
 
 ## 2. 자동 재생은 스크린에 들어갔을 때에 한다
+
 ## 3. 여러 개있는 경우, 점유 면적이 큰 하나만 재생
 
 정책은 RecyclerView.OnScrollLister에서 화면에 표시되는 각 콘텐츠(ViewHolder)의 position을 얻어 동영상을 시작시킬 position인지 여부를 결정합니다.
