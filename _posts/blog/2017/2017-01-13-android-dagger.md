@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[번역] 착한 Dagger2"
+title: "[번역] 쉬운 Dagger2"
 date: 2017-01-13 00:15:00 +09:00
 tag: [Android]
 categories:
