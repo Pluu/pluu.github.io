@@ -102,7 +102,7 @@ DroidKaigi 2017은 3번째 공식적인 행사인데, 신청자가 총 `800명`�
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2017/2017-03-26-droidkaigi-13.JPG" }}" />
 
-Cyber Agent 사에서 진행한 투표 사진이다. 실제로 이 아이디어를 DroidKnights에서 그대로 인용해서 사용했다. 참석하는 사람들의 현재 프로그래밍하고 있는 환경 투표라서 다들 어떤 것을 쓰고 있는지 알 수 있는 순간이었다.
+Cyber Agent 사에서 진행한 투표 사진이다. 실제로 이 아이디어를 DroidKnights 이벤트의 아이디어로 사용했다. 참석하는 사람들의 현재 프로그래밍하고 있는 환경 투표라서 다들 어떤 것을 쓰고 있는지 알 수 있는 순간이었다.
 
 투표 항목은 `minSdkVersion, 어플 아키텍쳐, 이미지 로더, DB/ORMapper, 다음에 사용하고 싶은 기술` 이다.
 
@@ -110,7 +110,7 @@ Cyber Agent 사에서 진행한 투표 사진이다. 실제로 이 아이디어�
 
 | <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2017/2017-03-26-droidkaigi-15.JPG" }}" /> | <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2017/2017-03-26-droidkaigi-23.JPG" }}" /> |
 
-애프터 파티는 둘째 날 모든 세션이 끝나고 이루어졌으며, `도쿄 도청 24층 전망대`에서 했다. 그 시간대의 전망대 층 자체를 대관해서 `DroidKaigi` 만을 위한 공간으로 사용했던 점에서 엄청난 충격이었다.
+애프터 파티는 둘째 날 모든 세션이 끝나고 이루어졌으며, `도쿄 도청 45층 전망대`에서 했다. 그 시간대의 전망대 층 자체를 대관해서 `DroidKaigi` 만을 위한 공간으로 사용했던 점에서 엄청난 충격이었다.
 
 컨퍼런스 장소에서 애프터 파티하는 장소까지는 도보 10분 정도로 이동해야 했으며, 각 세션 룸에 남아있는 멤버들끼리 한 번에 이동했다.
 
