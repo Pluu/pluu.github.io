@@ -144,6 +144,8 @@ DroidKaigi 운영 스태프 중 유일하게 자주 트위터로 이야기하던
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2017/2017-03-26-droidkaigi-21.PNG" }}" />
 
-## 내년의 DroidKaigi
+## P.S
 
 내년에도 참가한다.
+
+이제부터 번역을 시작해볼까.
