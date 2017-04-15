@@ -9,7 +9,7 @@ categories:
 - DroidKaigi
 ---
 
-본 포스팅은 [DroidKaigi 2016 How to apply DDD to Android Application Development](http://y-anz-m.blogspot.kr/2017/03/droidkaigi-2017_9.html) 을 기본으로 번역하여 작성했습니다
+본 포스팅은 [DroidKaigi 2017 ~ How to apply DDD to Android Application Development](http://y-anz-m.blogspot.kr/2017/03/droidkaigi-2017_9.html) 을 기본으로 번역하여 작성했습니다
 
 제 일본어 실력으로 인하여 오역이나 오타가 발생할 수 있습니다.
 
