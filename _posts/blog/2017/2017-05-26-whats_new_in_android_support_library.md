@@ -10,8 +10,11 @@ categories:
 - io17
 ---
 
-
 # What's New in Android Support Library (Google I/O '17)
+
+<!--more-->
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/V6-roIeNUY0" frameborder="0" allowfullscreen></iframe>
 
 Support Library 26.0 Beta 1에 대한 이야기이다.
 
