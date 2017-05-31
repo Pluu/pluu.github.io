@@ -77,7 +77,7 @@ repositories {
 }  
   
 dependencies {
-    compile 'com.android.support:appcopmat-v7:26.0.0-beta1'
+    compile 'com.android.support:appcompat-v7:26.0.0-beta1'
     ...
 }  
 ```
