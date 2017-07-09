@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[번역] DroidKaigi 2017 ~ 검사 및 Android Lint Custome Rule에 따른 단일 책임 원칙의 실천"
+title: "[번역] DroidKaigi 2017 ~ Inspection 및 Android Lint Custome Rule에 따른 단일 책임 원칙의 실천"
 date: 2017-07-09 21:50:00 +09:00
 tag: [Android, DroidKaigi]
 categories:
@@ -19,7 +19,7 @@ categories:
 
 ## 1p
 
-검사 및 Android Lint Custome Rule에 따른 단일 책임 원칙의 실천
+Inspection 및 Android Lint Custome Rule에 따른 단일 책임 원칙의 실천
 
 ## 2p 서론
 
