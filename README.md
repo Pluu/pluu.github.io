@@ -21,7 +21,8 @@
 
 1. gem install bundler
 2. bundle install
-3. bundle exec jekyll serve --watch --skip-initial-build
+3. bundle update
+4. bundle exec jekyll serve --watch --skip-initial-build
 
 - - -
 
