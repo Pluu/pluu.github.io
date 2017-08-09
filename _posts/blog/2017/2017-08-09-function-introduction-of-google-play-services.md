@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[번역] Function Introduction of Google Play Services"
+title: "[번역] DroidKaigi 2017 ~ Function Introduction of Google Play Services"
 date: 2017-08-09 01:40:00 +09:00
 tag: [Android, DroidKaigi]
 categories:
@@ -9,7 +9,7 @@ categories:
 - DroidKaigi
 ---
 
-본 포스팅은 [Function Introduction of Google Play Services](https://speakerdeck.com/syarihu/droidkaigi-2017-function-introduction-of-google-play-services) 을 기본으로 번역하여 작성했습니다
+본 포스팅은 [DroidKaigi 2017 ~ Function Introduction of Google Play Services](https://speakerdeck.com/syarihu/droidkaigi-2017-function-introduction-of-google-play-services) 을 기본으로 번역하여 작성했습니다
 
 제 일본어 실력으로 인하여 오역이나 오타가 발생할 수 있습니다.
 
