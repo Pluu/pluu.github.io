@@ -41,7 +41,7 @@ categories:
 - 실제로 앱을 만들어 봤다
 - 정리
 
- ## 6p ~ 7p, Accessibility Service란
+## 6p ~ 7p, Accessibility Service란
 
  - 시각에 불편함이 있는 분들을 위한 보조 기능
  - Android 1.6부터 지원되고 있다
@@ -441,7 +441,7 @@ Multi Window 에서의 움직임
    - 일반적인 사람은 사용하지 않을 것 같은 정보뿐
    - 하지만, 개발자로서는 매력적인 정보가 가득하다
 
-## 43p ~ 44p,
+## 43p ~ 44p
 
 그러면 어떻게 할까
 
