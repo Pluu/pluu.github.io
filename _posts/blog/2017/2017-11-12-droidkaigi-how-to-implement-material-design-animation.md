@@ -673,7 +673,7 @@ Activity B -> A로 돌아오는 경우
 <item name="android:windowContentTransitions">true</item>
 ```
 
-- ImageVIew의 scaleType을 건들여봤나요?
+- ImageVIew의 scaleType을 건드려봤나요?
 - View의 Background에 제대로 색을 지정했나요?
 
 ## 92p ~ 96p, Transition이 제대로 동작하지 않을 때 체크 리스트 2
@@ -765,7 +765,7 @@ Android Icon Animator를 다뤄본다
 
 ### AnimatedVectorDrawable을 도입한다
 
-Module의 build.gradle에 활성화 한다
+Module의 build.gradle에 활성화한다
 
 ```
 android {
@@ -821,7 +821,7 @@ AppCompatActivity를 사용하는 Layout으로 ImageView에 app:srcCompat으로 
 
 Android 4.x와 Android 5.x와 Android 7.x에서 동작을 확인할 것
 
-startOffset을 넣으면 Android 4.x에서 Animation 안되므로, 대안으로 아무것도 하지않는 Animation을 중간에 넣어 속인다
+startOffset을 넣으면 Android 4.x에서 Animation 안되므로, 대안으로 아무것도 하지 않는 Animation을 중간에 넣어 속인다
 
 [참고 : Android Open Source Projct의 이슈](https://code.google.com/p/android/issues/detail?id=231154&q=svg&colspec=ID%20Type%20Status%20Owner%20Summary%20Stars)
 
@@ -930,7 +930,7 @@ public Animator createAnimator(ViewGroup sceneRoot, TransitionValues startValues
 
 - Android 5.0 = API Level 21
 - Android Dashboard에 따르면 66% 사용자가 Android 5.0 이상
-- 순조롭게 늘고있다
+- 순조롭게 늘고 있다
 
 > Data collected during a 7-day period ending on February 6, 2017. 
 
@@ -946,7 +946,7 @@ public Animator createAnimator(ViewGroup sceneRoot, TransitionValues startValues
 
 - 개요
    - minSdkVersion=21로 한다
-   - Androdi 5.0 미만은 설치할 수 없게한다
+   - Androdi 5.0 미만은 설치할 수 없게 한다
 - 장점
    - 구현하기 쉽다
 - 단점
@@ -960,7 +960,7 @@ public Animator createAnimator(ViewGroup sceneRoot, TransitionValues startValues
    - Android 버전에 따라 if 문 등응로 분기시킨다
    - Support Library 등으로 가능하면 그것을 사용한다
 - 장점
-   - 그다지 구현 비용이 높지않다
+   - 그다지 구현 비용이 높지 않다
 - 단점
    - 일부 사용자는 사용 느낌이 다르다
 
