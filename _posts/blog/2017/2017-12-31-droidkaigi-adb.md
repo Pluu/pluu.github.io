@@ -9,7 +9,7 @@ categories:
 - DroidKaigi
 ---
 
-본 포스팅은 [DroidKaigi 2017 ~ Command 없이 나는 Android 개발 불가능한 이야기](https://speakerdeck.com/operando/komantonasitehokuhaandroidkai-fa-tekinaihua-1) 을 기본으로 번역하여 작성했습니다
+본 포스팅은 [DroidKaigi 2017 ~ コマンドなしでぼくはAndroid開発できない話](https://speakerdeck.com/operando/komantonasitehokuhaandroidkai-fa-tekinaihua-1) 을 기본으로 번역하여 작성했습니다
 
 제 일본어 실력으로 인하여 오역이나 오타가 발생할 수 있습니다.
 

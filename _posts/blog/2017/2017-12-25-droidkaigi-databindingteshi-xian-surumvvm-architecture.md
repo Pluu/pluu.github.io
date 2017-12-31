@@ -9,7 +9,7 @@ categories:
 - DroidKaigi
 ---
 
-본 포스팅은 [DroidKaigi 2017 ~ DataBinding 로 구현하는 MVVM Architecture](https://speakerdeck.com/star_zero/databindingteshi-xian-surumvvm-architecture) 을 기본으로 번역하여 작성했습니다
+본 포스팅은 [DroidKaigi 2017 ~ DataBindingで実現するMVVM Architecture](https://speakerdeck.com/star_zero/databindingteshi-xian-surumvvm-architecture) 을 기본으로 번역하여 작성했습니다
 
 제 일본어 실력으로 인하여 오역이나 오타가 발생할 수 있습니다.
 
