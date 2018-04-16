@@ -2,7 +2,7 @@
 layout: post
 title: "ConstraintLayout 1.1.0 Changes 모음"
 date: 2018-04-16 23:40:00 +09:00
-tag: [Android, DroidKaigi]
+tag: [Android, ConstraintLayout]
 categories:
 - blog
 - Android
