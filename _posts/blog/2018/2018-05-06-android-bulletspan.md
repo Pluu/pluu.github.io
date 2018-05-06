@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[번역] DroidKaigi 2018 ~ DataBinding 코드 읽기"
+title: "BulletSpan … ?!"
 date: 2018-05-06 18:45:00 +09:00
 tag: [Android]
 categories:
