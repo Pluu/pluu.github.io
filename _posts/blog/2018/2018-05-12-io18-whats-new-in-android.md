@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[요약] What's new in Android (Google I/O '18)"
-date: 2018-05-12 01:00:00 +09:00
+date: 2018-05-12 02:00:00 +09:00
 tag: [Android]
 categories:
 - blog
