@@ -366,15 +366,6 @@ val b = ImageDecorder.decodeBitmap(src){ decorder, info, s ->
 
 ## Neural networks APIs
 
-[화면 캡쳐 : 9:43]
-
-Android Framework를 쉽게 mock 가능해집니다.
-
-- Final method
-
-- Static method (곧 가능)
-- System-created objects (Activity ...)
-
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io18/whats-new-in-android/22.png" }}" /> 
 
 기계 학습을 위해 설계된 C API이며 낮은 수준의 API이기도 합니다.
