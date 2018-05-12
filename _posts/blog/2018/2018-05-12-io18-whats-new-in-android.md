@@ -230,7 +230,7 @@ WiFi round trip time API 를 이용해서 실내에서 정확한 위치를 찾�
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io18/whats-new-in-android/11.png" }}" /> 
 
-Unified BiometricDialog (통합 지문 인증 대화상자) 를 제공합니다. FingerprintManager는 @deprecated 되었습니다. 지문보다 신체를 인증하는 방법이 더 많기 때문입니다. 모든 장치와 인증 수단에 대해 단일 UI를 제공합니다.
+Unified BiometricDialog (통합 생체 인증 대화상자) 를 제공합니다. FingerprintManager는 @deprecated 되었습니다. 지문보다 신체를 인증하는 방법이 더 많기 때문입니다. 모든 장치와 인증 수단에 대해 단일 UI를 제공합니다.
 
  `Build.SERIAL` 는 더 이상 동작하지 않습니다. API로서 존재하지만 가짜 데이터를 반환합니다.
 
