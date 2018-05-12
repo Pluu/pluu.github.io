@@ -151,30 +151,15 @@ val (_, r, g, b) = bitmap[16, 16]
 >
 > [Android Jetpack: sweetening Kotlin development with Android KTX](https://www.youtube.com/watch?v=st1XVfkDWqk)
 
-## Android Test
+## Mockable Framework ~ mockito
 
-- First class Kotlin 지원
-- boilerplate 코드를 줄이고 가독성을 높이기위한 API 제공합니다
+<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io18/whats-new-in-android/23.png" }}" /> 
 
-```java
-// Before
-assertEquals(view.getVisiblity(), view.VISIBLE);
-// "Failed Expected 0 but was 16"
-```
+Android Framework를 쉽게 mock 가능해집니다.
 
-위와 같은 코드는 매개변수의 순서가 알기 어려우며, 그로인한 오류 메시지도 그다지 도움되지 않습니다.
-
-아래와 같은 코드가 더욱 더 실제 속성에 대해서 작업된다고 보입니다. 오류 메시지도 더 잘 제공합니다
-
-```java
-// Now
-assertThat(view).isVisible();
-// "Failed, view was not visible"
-```
-
-> 더 자세한 내용은 아래의 세션에서 소개되고 있습니다
->
-> [Frictionless Android testing: write once, run everywhere](https://www.youtube.com/watch?v=wYMIadv9iF8)
+- Final method
+- Static method (곧 가능)
+- System-created objects (Activity ...)
 
 ## Background Text Measurement
 
