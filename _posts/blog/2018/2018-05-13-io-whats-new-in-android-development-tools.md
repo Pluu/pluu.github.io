@@ -249,7 +249,9 @@ androidx.test.espresso:espresso-core:3.1.0-alpha1
 
 Navigation Library 에서는 처음부터 Navigation Library용 앱을 설계해야합니다. 
 
-레이아웃에서 NavHostFragment 넣으면, 런타임에 Dispatching 을 수행합니다. 그런 다음 navigation resource file에 저장합니다.
+화면을 구성하는 레이아웃을 나열하고, 각 화면을 이동할 곳을 화살표로 연결하는 것으로, Navigator 상으로 이동되는 것이 결정됩니다. 
+
+그리고, 각 XML의 레이아웃에서 NavHostFragment 넣으면, 런타임에 Dispatching 을 수행합니다. 그런 다음 navigation resource file에 저장합니다. 
 
 ```xml
 <fragment
