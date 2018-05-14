@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[요약] Android Jetpack: what’s new in Android Support Library (Google I/O '18)"
-date: 2018-05-15 00:30:00 +09:00
+date: 2018-05-15 00:50:00 +09:00
 tag: [Android]
 categories:
 - blog
