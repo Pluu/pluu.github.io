@@ -356,10 +356,7 @@ BottomAppBar 는 작업을 위한 것이고, Bottom Navigation은 앱 내의 다
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io18/whats-new-in-android-support-library/74.png" }}" />
 
-AndroidX의 Support Library에 있는 기존 CardView의 Wrapper인 MaterialCardView입니다. 더 단순화하여 더 낮은 Elevation과 Shadow를 갖게하고, Theme와 Color도 가져옵니다.
-
-> 해당 부분은 해석이 자연스럽지 않아 원문을 포함했습니다.
-> We've simplified how this was built so that it has less elevation and shadow, and it also pulls from the theme and color.
+AndroidX의 Support Library에 있는 기존 CardView의 Wrapper인 MaterialCardView입니다. 더 단순화하여 더 낮은 Elevation과 Shadow를 가질 수 있으며, Theme와 Color도 가져올 수 있습니다.
 
 > 더 자세한 세션을 원하면 아래의 세션을 참고해주세요
 >
