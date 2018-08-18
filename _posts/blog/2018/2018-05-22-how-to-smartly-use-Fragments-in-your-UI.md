@@ -11,6 +11,10 @@ categories:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WVPH48lUzGY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
+<!--more-->
+
+- - - 
+
 ### Activity
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io18/how-to-smartly-use-Fragments-in-your-UI/01.png" }}" /> 
