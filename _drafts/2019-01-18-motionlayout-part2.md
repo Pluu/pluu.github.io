@@ -40,7 +40,7 @@ Collapsing 을 지원하는 View인 경우 높이가 변한다는 것을 추측�
 
 일반적으로 ConstraintLayout 작업시 대부분은 `Top-To-Bottom` 방식으로 위에서 아래로 Anchor를 처리하면서 레이아웃을 구성하는 방식을 사용합니다. 그러나,  `CollapsibleToolbar` 사용 시에는 동일하게 Start/End에 대한 처리를 해서 동작시켜보시면 실제로 원하던 동작을 하지 않습니다. MotionLayout의 `Show Path`를 활성시 움직이는 궤적도 원하던 형태가 아닐 것입니다.
 
-정확한 이유는 파악하지 못했지만, `CollapsibleToolbar` 를 사용하는 소스를 보면 모두 `Bottom-Top-Top` 형태로 레이아웃을 구성되어 있는 것을 볼 수 있습니다.  `Top-To-Bottom` 로 안되는 이유는 AppBarLayout이 줄어들 때 상단 부분이 사라지는 기능의 연장선이라고 추측하고 있습니다. (개인적인 생각입니다) 
+정확한 이유는 파악하지 못했지만, `CollapsibleToolbar` 를 사용하는 소스를 보면 모두 `Bottom-To-Top` 형태로 레이아웃을 구성되어 있는 것을 볼 수 있습니다.  `Top-To-Bottom` 로 안되는 이유는 AppBarLayout이 줄어들 때 상단 부분이 사라지는 기능의 연장선이라고 추측하고 있습니다. (개인적인 생각입니다) 
 
 | Bottom-To-Top                                                | Top-To-Bottom                                                |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
