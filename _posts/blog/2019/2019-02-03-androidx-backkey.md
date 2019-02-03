@@ -1,12 +1,18 @@
 ---
 layout: post
-title: "AndroidX에서 Back Key 제어"
+title: "[번역] AndroidX에서 Back Key 제어"
 date: 2019-02-03 20:50:00 +09:00
 tag: [Android, AndroidX]
 categories:
 - blog
 - Android
 ---
+
+본 포스팅은 [AndroidXでのバックキー制御](http://androhi.hatenablog.com/entry/2019/01/31/201235?fbclid=IwAR1PM8uktDYu-1830JwQIrOtkhacTU-tIlYRcEwLgGWefcV2xcNAflP0ukU) 을 번역한 글입니다.
+
+제 일본어 실력으로 인하여 오역이나 오타가 발생할 수 있습니다.
+
+<!--more-->
 
 ### AndroidX 이전
 
