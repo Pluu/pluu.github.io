@@ -86,7 +86,10 @@ DroidKaigi는 다양한 형태의 스폰서들과 함께한다. 총 39개의 스
 
 ### 주요 세션
 
-그리고, 전반적으로 `Multi-Module` 에 대한 발표가 다수 존재했다. 여기에 대해서 어떻게 생각하는지 물어봤다. 이유는 몇가지가 존재했다. 첫 번째로 빌드 시간 개선을 위해서 `Multi-Module` 을 적용했다고 한다. 두 번째로 앱은 덩치가 점점 커지지 절대로 줄어들지 않는다. 그럼으로 각 `Feature`의 크기와 지식에 대한 형태가 분리가 필요하다고 한다. 우리가 Class/Method를 분리하는 것처럼 더 큰 형태로 분리가 필요하다고 느끼는 것이다.
+그리고, 전반적으로 `Multi-Module` 에 대한 발표가 다수 존재했다. 여기에 대해서 어떻게 생각하는지 물어봤다. 이유는 몇가지가 존재했다. 
+
+- 첫 번째로 빌드 시간 개선을 위해서 `Multi-Module` 을 적용했다고 한다. 
+- 두 번째로 앱은 덩치가 점점 커지지 절대로 줄어들지 않는다. 그럼으로 각 `Feature`의 크기와 지식에 대한 형태가 분리가 필요하다고 한다. 우리가 Class/Method를 분리하는 것처럼 더 큰 형태로 분리가 필요하다고 느끼는 것이다.
 
 | <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2019/droidkaigi/06.jpg" }}" /> | <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2019/droidkaigi/07.jpg" }}" /> |
 | <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2019/droidkaigi/08.jpg" }}" /> | <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2019/droidkaigi/09.jpg" }}" /> |
@@ -148,7 +151,7 @@ Kotlin Puzzle 과 Android 개발에 관련된 투표도 진행되었다.
 
 - DroidKaigi 2019를 준비하는 기간동안 연락한 일본 개발자들과 만날 수 있는 시간이 되어서 즐거웠다
 - Googler가 한번에 같은 시간대에 발표하는 것때문에 듣지못하는 세션이 생기는 건 좀 아쉬웠다. 여러시간대로 나눠서 많은 사람들이 들을 수 있는 기회가 있었으면 좋았을 것 같다.
-- 행사장에서 [Chris Banes](https://twitter.com/chrisbanes) 을 봤다. 다른 행사 운영 담당자에게서는 DroidKaigi 2019 CFP에서 떨어졌다는 이야기를 들었다. [...]
+- 행사장에서 [Chris Banes](https://twitter.com/chrisbanes) 을 봤다. 행사 운영 담당자에게서는 DroidKaigi 2019 CFP에서 떨어졌다는 이야기를 들었다. [...]
 
 ## P.S
 
