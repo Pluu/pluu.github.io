@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "성장하기 위해 번역하는 나"
+title: "DroidKnights 2019 ~ MotionLayout 무릎까지 담궈보기"
 date: 2019-04-07 18:30:00 +09:00
 tag: [Android, MotionLayout]
 categories:
