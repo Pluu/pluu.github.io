@@ -14,7 +14,7 @@ categories:
 
 <!--more-->
 
-## AndroidX Activity
+## AndroidX ComponentActivity
 
 `Activity#1.0.0-alpha01` 부터 추가된 `ComponentActivity` 라는 새로운 클래스가 추가되었습니다. 아마도, 기존에 있던 `SupportActivity` 의 새로운 이름으로 변경한 형태로 보입니다. 이 클래스는 `FragmentActivity` 와 `AppComatActivity`의 상위 클래스이며, 개발자가 직접 사용할 수 없는 형태입니다.
 
