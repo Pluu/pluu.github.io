@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "AndroidX의 Activity#1.0.0-alpha06에서 OnBackPressedCallback 관련 업데이트와 내부 파악"
+title: "Activity#1.0.0-alpha06에서 OnBackPressedCallback 관련 업데이트 훑어보기"
 date: 2019-04-20 20:01:00 +09:00
 tag: [Android, AndroidX]
 categories:
@@ -329,7 +329,7 @@ public final class OnBackPressedDispatcher {
             mLifecycle.removeObserver(this);
             if (mCurrentCancellable != null) {
               	// Cancel 처리
-              // 최종적으로 OnBackPressedCancellable#cancel 이 호출
+                // 최종적으로 OnBackPressedCancellable#cancel 이 호출
                 mCurrentCancellable.cancel();
                 mCurrentCancellable = null;
             }
@@ -379,7 +379,7 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity
     }
     @Deprecated
     public void addOnBackPressedCallback(@NonNull OnBackPressedCallback onBackPressedCallback) {
-    		// OnBackPressedDispatcher에서 생성된 Cancellable을 추가
+    	// OnBackPressedDispatcher에서 생성된 Cancellable을 추가
         mOnBackPressedCallbackCancellables.put(onBackPressedCallback,
                 getOnBackPressedDispatcher()
                         .addCallback(this, onBackPressedCallback));
@@ -394,7 +394,7 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity
     }
     @Deprecated
     public void removeOnBackPressedCallback(@NonNull OnBackPressedCallback onBackPressedCallback) {
-    		// onBackPressedCallback을 Cache Map에서 가져와서 cancel 처리 수행
+    	// onBackPressedCallback을 Cache Map에서 가져와서 cancel 처리 수행
         Cancellable cancellable = mOnBackPressedCallbackCancellables.remove(onBackPressedCallback);
         if (cancellable != null) {
             cancellable.cancel();
