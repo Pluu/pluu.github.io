@@ -147,7 +147,7 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity
 }
 ```
 
-`Activity#1.0.0-alpha06` 이전까지는  `ComponentActivity` 의 내부 리스트를 이용하고, Add/Remove 이용해서 관리했습니다.
+`Activity#1.0.0-alpha06` 이전까지 OnBackPressedCallback은 `ComponentActivity` 내부의 Add/Remove를 이용해서 관리했습니다.
 
 - - -
 
