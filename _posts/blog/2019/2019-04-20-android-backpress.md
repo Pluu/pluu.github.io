@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "AndroidX Activity#1.0.0-alpha06 의 변경 점"
+title: "AndroidX Activity#1.0.0-alpha06 OnBackPressedCallback 변경 점"
 date: 2019-04-20 20:01:00 +09:00
 tag: [Android, AndroidX]
 categories:
@@ -10,19 +10,21 @@ categories:
 
 2019년 4월초 AndroidX의 많은 부분이 업데이트 되었습니다.
 
-그 중에서 `Activity#1.0.0-alpha06`의 변경 점에 대해서 알아보겠습니다.
+그 중에서 `Activity#1.0.0-alpha06`의 변경 중에서 `OnBackPressedCallback`의 변경에 대해서 알아보겠습니다.
 
 <!--more-->
 
 ## AndroidX ComponentActivity
 
-`Activity#1.0.0-alpha01` 부터 추가된 `ComponentActivity` 라는 새로운 클래스가 추가되었습니다. 아마도, 기존에 있던 `SupportActivity` 의 새로운 이름으로 변경한 형태로 보입니다. 이 클래스는 `FragmentActivity` 와 `AppComatActivity`의 상위 클래스이며, 개발자가 직접 사용할 수 없는 형태입니다.
+먼저 소개할 내용은 `ComponentActivity` 클래스입니다. `Activity#1.0.0-alpha01` 부터 추가되었으며 기존에 있던 `SupportActivity` 의 새로운 이름으로 변경한 형태로 보입니다. 이 클래스는 `FragmentActivity` 와 `AppComatActivity`의 상위 클래스이며, 개발자가 직접 사용할 수 없는 형태입니다.
 
 ```java
 @RestrictTo(LIBRARY_GROUP_PREFIX)
 public class ComponentActivity extends Activity
         implements KeyEventDispatcher.Component {
 ```
+
+Activity 및 Fragment의 Back Key 처리시 내부적으로 호출 및 작업되는 클래스가 바로 ComponentActivity라고 보시면 됩니다.
 
 ## Activity#1.0.0-alpha01
 
