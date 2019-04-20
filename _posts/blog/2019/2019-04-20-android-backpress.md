@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "AndroidX Activity#1.0.0-alpha06 OnBackPressedCallback 변경 점"
+title: "AndroidX의 Activity#1.0.0-alpha06에서 OnBackPressedCallback 관련 업데이트와 내부 파악"
 date: 2019-04-20 20:01:00 +09:00
 tag: [Android, AndroidX]
 categories:
