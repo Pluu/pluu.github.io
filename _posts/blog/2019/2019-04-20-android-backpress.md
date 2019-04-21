@@ -16,15 +16,22 @@ categories:
 
 ## AndroidX ComponentActivity
 
-먼저 소개할 내용은 `ComponentActivity` 클래스입니다. `Activity#1.0.0-alpha01` 부터 추가되었으며 기존에 있던 `SupportActivity` 의 새로운 이름으로 변경한 형태로 보입니다. 이 클래스는 `FragmentActivity` 와 `AppComatActivity`의 상위 클래스이며, 개발자가 직접 사용할 수 없는 형태입니다.
+먼저 소개할 내용은 `ComponentActivity` 클래스입니다. 
+
+ComponentActivity는 `Activity#1.0.0-alpha01` 부터 추가되었으며 기존에 있던 `SupportActivity` 의 새로운 이름으로 변경한 형태로 보입니다. 이 클래스는 `FragmentActivity` 와 `AppComatActivity`의 상위 클래스입니다.
+
+이번에 이야기하는 ComponentActivity는 `androidx.activity`에 있는 클래스이며, androidx.core.app에 동일한 이름의 ComponentActivity는 아닙니다. 
 
 ```java
-@RestrictTo(LIBRARY_GROUP_PREFIX)
-public class ComponentActivity extends Activity
-        implements KeyEventDispatcher.Component {
+public class ComponentActivity extends androidx.core.app.ComponentActivity 
+        implements LifecycleOwner, ViewModelStoreOwner,SavedStateRegistryOwner {
 ```
 
 Activity 및 Fragment의 Back Key 처리시 내부적으로 호출 및 작업되는 클래스가 바로 ComponentActivity라고 보시면 됩니다.
+
+<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2019/2019-04-20-backpress-01.png" }}" /> 
+
+- - -
 
 ## Activity#1.0.0-alpha01
 
@@ -93,12 +100,12 @@ Link : [ComponentActivity](<https://android.googlesource.com/platform/frameworks
 public class ComponentActivity extends androidx.core.app.ComponentActivity 
 		implements LifecycleOwner, ViewModelStoreOwner {
 		...
-		// OnBackPressedCallback Listener를 보관할 Cache
+    // OnBackPressedCallback Listener를 보관할 Cache
     final CopyOnWriteArrayList<LifecycleAwareOnBackPressedCallback> mOnBackPressedCallbacks = new CopyOnWriteArrayList<>();    
     ...    
     @Override
     public void onBackPressed() {
-    		// 등록한 순차적으로 OnBackPressedCallback#handleOnBackPressed() 를 실행
+        // 등록한 순차적으로 OnBackPressedCallback#handleOnBackPressed() 를 실행
         for (OnBackPressedCallback onBackPressedCallback : mOnBackPressedCallbacks) {
             if (onBackPressedCallback.handleOnBackPressed()) {
                 return;
@@ -139,7 +146,7 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity
             }
         }
         if (callbackToRemove != null) {
-        		// Lifecycle 구독 해지
+            // Lifecycle 구독 해지
             callbackToRemove.onRemoved();
             // Cache 목록에서 Callback 제거
             mOnBackPressedCallbacks.remove(callbackToRemove);
@@ -157,7 +164,7 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity
 
 [Activity#1.0.0-alpha06 Release Note](<https://developer.android.com/jetpack/androidx/releases/activity#1.0.0-alpha06>)
 
-`1.0.0-alpha01` 에 추가되었던 `ComponentActivity#addOnBackPressedCallback` 의 기능이 `deprecated` 가 되었습니다.
+`1.0.0-alpha01` 에 추가되었던 ComponentActivity#`addOnBackPressedCallback` 의 기능이 `deprecated` 가 되었습니다.
 
 그 대신 `OnBackPressedDispatcher` 를 이용하는 형태로 변경되었습니다.
 
@@ -219,7 +226,7 @@ class MainFragment : Fragment() {
 
 ### OnBackPressedDispatcher
 
-여기서 OnBackPressedDispatcher의 내부를 한 번 보겠습니다.
+위쪽에서 언급한 OnBackPressedDispatcher의 내부를 한 번 보겠습니다.
 
 ```java
 public final class OnBackPressedDispatcher {
@@ -264,8 +271,8 @@ public final class OnBackPressedDispatcher {
         }
     }
  
-  	// 단순 형태의 OnBackPressedCancellable
-		private class OnBackPressedCancellable implements Cancellable {
+    // 단순 형태의 OnBackPressedCancellable
+    private class OnBackPressedCancellable implements Cancellable {
         private final OnBackPressedCallback mOnBackPressedCallback;
         private boolean mCancelled;
 
@@ -344,17 +351,13 @@ public final class OnBackPressedDispatcher {
 }
 ```
 
-이전 버전과 다른 점은 아래와 같습니다.
+새롭게 추가된 `OnBackPressedDispatcher` 클래스는 기존 ComponentActivity에서 관리하던 OnBackPressedCallback 을 가져와서  관리하는 형태로 변경되습니다.
 
--  Callback 관리 이동
-   - ComponentActivity → OnBackPressedDispatcher
-- 기본 형태로 Callback 추가 시 Lifecycle을 미체크
-- Callback을 담는 형태가 변경
-   - CopyOnWriteArrayList → ArrayDeque
+그리고, 기본 형태인 OnBackPressedCancellable와 Lifecycle을 참조하는 LifecycleOnBackPressedCancellable 로 좀 더 명확히 분리되었습니다.
 
 ### ComponentActivity ~ 1.0.0-alpha06
 
-ComponentActivity의 내부를 먼저 살펴보겠습니다.
+다음으로 1.0.0-alpha06부터 변경된 ComponentActivity의 내부를 먼저 살펴보겠습니다.
 
 ```java
 public class ComponentActivity extends androidx.core.app.ComponentActivity 
@@ -404,17 +407,29 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity
 }
 ```
 
+### Activity 1.0.0-alpha01 vs 1.0.0-alpha06 차이점
+
 기존 버전과 호환을 위해 `addOnBackPressedCallback`/`removeOnBackPressedCallback` 는 그대로 유지하고 있습니다.
 
-변경된 차이점은 다음과 같습니다.
+가장 큰 차이점은 `OnBackPressedDispatcher`가 `OnBackPressedCallback`의 동작을 관리하는 변화입니다.
 
-- Callback을 담는 형태 `OnBackPressedDispatcher` 가 추가
-- Cancellable Callback을 담는 형태로 변경 : `mOnBackPressedCallbackCancellables`
-- Lifecycle과 단순한 형태의 `BackPressedCallback` 가 각자 가지는 동작을 분리
+추가적인 차이점은 아래와 같습니다.
+
+- 기본 형태로 OnBackPressedDispatcher에 OnBackPressedCallback 추가 시 Lifecycle을 미체크
+- OnBackPressedCallback을 보관하는 Wrapper Class 변경
+   - CopyOnWriteArrayList → ArrayDeque
+- Cancellable Callback을 보관하는 Wrapper Class 변경 : `mOnBackPressedCallbackCancellables`
+- Lifecycle과 기본 형태의 `OnBackPressedCallback` 가 각자 가지는 동작을 분리
+
+좀 더 자세한 차이점은 아래의 Review 링크를 참고해주세요/
+
+> Separate onBackPressed handling from ComponentActivity
+> - [ComponentActivity](https://android-review.googlesource.com/c/platform/frameworks/support/+/922523/5/activity/src/main/java/androidx/activity/ComponentActivity.java)
+> - [OnBackPressedDispatcher](https://android-review.googlesource.com/c/platform/frameworks/support/+/922523/5/activity/src/main/java/androidx/activity/OnBackPressedDispatcher.java)
 
 - - -
 
-### Summary
+## Summary
 
 이번 글을 통해서 Back Key 선택 시의 동작과 새로운 변경 점을 알아보았습니다.
 
