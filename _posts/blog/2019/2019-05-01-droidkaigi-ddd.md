@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[번역] DroidKaigi 2018 ~ Android 앱 개발에서의 도메인 주도 설계를 하는 이야기"
-date: 2019-04-28 23:45:00 +09:00
+date: 2019-05-01 21:00:00 +09:00
 tag: [Android, DroidKaigi]
 categories:
 - blog
