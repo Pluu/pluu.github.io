@@ -1663,7 +1663,7 @@ TimetableViewModel에서 Coroutines을 사용하여 백그라운드에서 Reposi
 
 ## 146p
 
-|               | 타이틀 | abstra | 발표자 | Session Format | Language | 카테고리 | 룸   | 일시 ・ 시간 |
+|               | 타이틀 | 요약 | 발표자 | Session Format | Language | 카테고리 | 룸   | 일시 ・ 시간 |
 | ------------- | ------ | ------ | ------ | -------------- | -------- | -------- | ---- | ------------ |
 | 응모 세션     | O      | O      | O      | O              | O        | O        | O    | O            |
 | 웰컴 토크     | O      | ""     | ?      | X              | ?        | X        | O    | O            |
