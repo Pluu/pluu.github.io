@@ -19,15 +19,15 @@ categories:
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io19/whats-new-in-android/002.png" }}" /> 
 
-API 29 Preview에 추가된 기능인 Bubbles는 모든 앱에서 구현이 가능하며, 떠다니는 채팅 버블을 이야기합니다. 앱을 연결하는 데 사용할 수 있습니다.
+API 29 Preview에 추가된 기능인 Bubbles는 모든 앱에서 구현이 가능하며, 떠다니는 채팅 버블을 이야기한다. 앱을 연결하는 데 사용할 수 있다.
 
 - 알림 게시
 - 아이콘 추가, Activity 연결 포함
 - Intent로 Bubbles 안의 창에 연결
 
-> Q 개발자 설정에서 이 기능을 사용할 수 있습니다.
+> Q 개발자 설정에서 이 기능을 사용할 수 있다.
 
-- SAW (System Alert Window)는 완전히 deprecated 될 것이며, 관련 패러다임을 사용하는 앱은 Bubbles API로 넘어가게 될 것입니다.
+- SAW (System Alert Window)는 완전히 deprecated 될 것이며, 관련 패러다임을 사용하는 앱은 Bubbles API로 넘어가게 될 것이다.
 
 > 자세한 것은 다음 세션에서 확인 : [What's New in the Android OS User Interface (Google I/O'19)](https://www.youtube.com/watch?v=nWbW58RMteI)
 
@@ -35,8 +35,8 @@ API 29 Preview에 추가된 기능인 Bubbles는 모든 앱에서 구현이 가�
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io19/whats-new-in-android/004.png" }}" /> 
 
-- 시간과 관련된 MODE AUTO_TIME가 deprecated 되었습니다.
-- Dark Theme를 끄고 켜는 방식을 취한다
+- 시간과 관련된 MODE AUTO_TIME가 deprecated 됨
+- Dark Theme를 끄고 켜는 방식을 취함
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io19/whats-new-in-android/005.png" }}" /> 
 
@@ -54,7 +54,7 @@ Dark Theme의 작동 방식입니다
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io19/whats-new-in-android/007.png" }}" /> 
 
-공유시에 특히 아링의 처리는 Q에서 조금 더 개발자가 신경 쓸 필요가 있습니다
+ShareSheet는 Q에서 조금 더 신경 쓸 필요가 있다
 
 - 앱에서 제공되는 맞춤형 공유
 - Content 미리 보기
@@ -73,7 +73,7 @@ Dark Theme의 작동 방식입니다
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io19/whats-new-in-android/011.png" }}" /> 
 
-Notification의 중요도에 따라 섹션을 구분합니다
+Notification의 중요도에 따라 섹션을 구분한다
 
 - priority : 사용자의 관심을 끌기 위해서 알림 영역 (상단)
 - gentle : 사용자의 관심도가 낮은 알림 영역 (하단)
