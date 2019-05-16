@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[번역] DroidKaigi 2019 ~ `LiveData와 Coroutines로 구현하는 DDD 전술적 설계`에 대해서 이야기 했습니다"
-date: 2019-05-12 17:00:00 +09:00
+date: 2019-05-16 23:00:00 +09:00
 tag: [Android, DroidKaigi]
 categories:
 - blog
