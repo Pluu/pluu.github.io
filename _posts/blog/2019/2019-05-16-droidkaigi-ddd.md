@@ -77,7 +77,7 @@ DroidKaigi에서 도메인 주도 설계를 다루는 것은 3번째입니다. �
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2019/0216-ddd/DroidKaigi2018_2.007.png" }}" /> 
 
-전술적 설계의 유비쿼터스 언어, Bounded Contet, Context Map은 이전전에 이야기 했습니다
+전략적 설계의 유비쿼터스 언어, Bounded Contet, Context Map은 이전전에 이야기 했습니다
 
 ## 8p
 
