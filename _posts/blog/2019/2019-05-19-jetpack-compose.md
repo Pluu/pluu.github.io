@@ -66,7 +66,7 @@ Sync 작업이 끝나면 아래와 같은 화면을 볼 수 있다
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2019/0519-jetpack-compose/003.png" }}" /> 
 
-> 최신 코드를 얻기 위해서는 `git fetch` 사용
+> `repo sync`를 통해 최신 소스와 동기화 작업이 이루어지며, 이것은 `git fetch`와 비슷하다.
 
 ## 빌드
 
@@ -122,6 +122,14 @@ Android Studio Version 3.4.1 Jetpack Compose Preview를 볼 수 있다
 ### ui-material-studies
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2019/0519-jetpack-compose/009.png" }}" /> 
+
+## 리뷰어
+
+리뷰해주시신 차영호님께 감사함을 전합니다.
+
+- `repo sync -c`실행 시 `--no-tags` 옵션을 추가하여 tag 정보는 받지않게하여 `git object` 전송량을 줄일 수 있다
+- `repo sync`의 `-j8` 옵션은 기본으로 활성화 상태다
+   - https://android.googlesource.com/platform/manifest/+/refs/heads/androidx-master-dev/default.xml?fbclid=IwAR3myJQbrsUCFRr6hzAJSUFvgjOh4stBcAOKhPX-KV_G535qznGPCuxQ3ls#8
 
 ## 참고
 
