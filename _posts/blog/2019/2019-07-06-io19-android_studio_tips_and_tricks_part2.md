@@ -11,7 +11,7 @@ categories:
 
 Android Studio/ Tips and Tricks 세션의 내용이 많아서 3개의 파트로 나누어서 공개합니다.
 
-본 글에서는 Navigation Editor를 소개합니다.
+본 글에서는 Navigation Editor, Resource Manager를 소개합니다.
 
 <!--more-->
 
@@ -21,8 +21,9 @@ Android Studio/ Tips and Tricks 세션의 내용이 많아서 3개의 파트로 
 
 Android Studio/ Tips and Tricks
 
-- [Part 1]({{ site.baseurl }}/blog/android/io19/2019/07/06/io19-android_studio_tips_and_tricks_part1/)
-- [Part 2]({{ site.baseurl }}/blog/android/io19/2019/07/06/io19-android_studio_tips_and_tricks_part2/)
+- [Part 1 ~ Profiler, 기본 IDE]({{ site.baseurl }}/blog/android/io19/2019/07/06/io19-android_studio_tips_and_tricks_part1/)
+- [Part 2 ~ Navigation Editor, Resource Manager]({{ site.baseurl }}/blog/android/io19/2019/07/06/io19-android_studio_tips_and_tricks_part2/)
+- [Part 3 ~ Build&Deploy]({{ site.baseurl }}/blog/android/io19/2019/07/08/io19-android_studio_tips_and_tricks_part3/)
 
 - - -
 
@@ -134,5 +135,6 @@ Preview의 우측하단에 있는 View를 Drag하는 것으로 다양한 디바�
 
 Android Studio/ Tips and Tricks
 
-- [Part 1]({{ site.baseurl }}/blog/android/io19/2019/07/06/io19-android_studio_tips_and_tricks_part1/)
-- [Part 2]({{ site.baseurl }}/blog/android/io19/2019/07/06/io19-android_studio_tips_and_tricks_part2/)
+- [Part 1 ~ Profiler, 기본 IDE]({{ site.baseurl }}/blog/android/io19/2019/07/06/io19-android_studio_tips_and_tricks_part1/)
+- [Part 2 ~ Navigation Editor, Resource Manager]({{ site.baseurl }}/blog/android/io19/2019/07/06/io19-android_studio_tips_and_tricks_part2/)
+- [Part 3 ~ Build&Deploy]({{ site.baseurl }}/blog/android/io19/2019/07/08/io19-android_studio_tips_and_tricks_part3/)
