@@ -9,8 +9,6 @@ categories:
 - io19
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ihF-PwDfRZ4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 Android Studio/ Tips and Tricks 세션의 내용이 많아서 3개의 파트로 나누어서 공개합니다.
 
 본 글에서는 Navigation Editor를 소개합니다.
@@ -19,7 +17,12 @@ Android Studio/ Tips and Tricks 세션의 내용이 많아서 3개의 파트로 
 
 - - - 
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ihF-PwDfRZ4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Android Studio/ Tips and Tricks
+
 - [Part 1]({{ site.baseurl }}/blog/android/io19/2019/07/06/io19-android_studio_tips_and_tricks_part1/)
+- [Part 2]({{ site.baseurl }}/blog/android/io19/2019/07/06/io19-android_studio_tips_and_tricks_part2/)
 
 - - -
 
@@ -29,7 +32,7 @@ Android Studio/ Tips and Tricks 세션의 내용이 많아서 3개의 파트로 
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io19/android_studio_tips_and_tricks/027.png" }}" /> 
 
-좌측 Navigation Graph가 정의된 패널에서 항목 선택시 자동으로 해당 화면으로 이동한다.
+좌측 Navigation Graph가 정의된 패널에서 항목 선택 시 자동으로 해당 화면으로 이동한다.
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io19/android_studio_tips_and_tricks/028.png" }}" /> 
 
@@ -63,7 +66,7 @@ Graph를 정의하는 곳이 RecyclerView를 사용한다면 `Sample Data ` 를 
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io19/android_studio_tips_and_tricks/034.png" }}" /> 
 
-Android Studio 3.5에서는 Design View에서 Constraint Layout를 다루기위해서 개선되었다. 먼저 기존에 적용되어 있는 제약조건을 쉽게 제거할 수 있다. 제약조건에서 `⌘`키를 누르면 제거할 수 있는 형태로 변경된다. 
+Android Studio 3.5에서는 Design View에서 Constraint Layout를 다루기 위해서 개선되었다. 먼저 기존에 적용된 제약조건을 쉽게 제거할 수 있다. 제약조건에서 `⌘`키를 누르면 제거할 수 있는 형태로 변경된다. 
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io19/android_studio_tips_and_tricks/035.png" }}" /> 
 
@@ -71,7 +74,7 @@ Android Studio 3.5에서는 Design View에서 Constraint Layout를 다루기위�
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io19/android_studio_tips_and_tricks/036.png" }}" /> 
 
-기본적을 Android에서 View가 렌더링시에 사용되는 순서는 XML에서 정의한 순서이다. 만약, 해당 View 하단에 다른 View 있다고 가정할 경우, 그 View를 변경하고 싶을 때 불편했다.
+기본적으로 Android에서 View가 렌더링 시에 사용되는 순서는 XML에서 정의한 순서이다. 만약, 해당 View 하단에 다른 View 있다고 가정할 경우, 그 View를 변경하고 싶을 때 불편했다.
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io19/android_studio_tips_and_tricks/037.png" }}" /> 
 
@@ -87,7 +90,7 @@ Resource에 정의된 내용을 사용하고 싶을 경우에 Attribute Pannel�
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io19/android_studio_tips_and_tricks/040.png" }}" /> 
 
-그리고, Text Color의 경우 추가적으로 변경하고 싶은 경우에는 Attribute Pannel에서 Color 가 노출되는 부분을 더블 클릭하면 Color Picker를 사용할 수 있다.
+그리고, Text Color의 경우 추가로 변경하고 싶은 경우에는 Attribute Pannel에서 Color 가 노출되는 부분을 더블 클릭하면 Color Picker를 사용할 수 있다.
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io19/android_studio_tips_and_tricks/041.png" }}" /> 
 
@@ -107,7 +110,7 @@ Resource Manager는 기본적으로 프로젝트에 있는 모든 리소스를 �
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io19/android_studio_tips_and_tricks/043.png" }}" /> 
 
-Resource Manager의 Drawable은 Layout에 Drag&Drop하는 것으로 ImageView 형태로 추가할 수 있다. 뿐만아니라 Layout도 가능하다. 이 경우는 `include` 형태로 추가된다.
+Resource Manager의 Drawable은 Layout에 Drag&Drop하는 것으로 ImageView 형태로 추가할 수 있다. 뿐만 아니라 Layout도 가능하다. 이 경우는 `include` 형태로 추가된다.
 
 해당 기능은 Design View 뿐만 아니라 Text View 에서도 가능하다.
 
@@ -117,7 +120,7 @@ Resource Manager의 Drawable은 Layout에 Drag&Drop하는 것으로 ImageView �
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io19/android_studio_tips_and_tricks/045.png" }}" /> 
 
-기본 Design View에서 `O` 버튼을 통해서 Preview의 landscape/landscape으로 변경할 수 있다.
+기본 Design View에서 `O` 버튼을 통해서 Preview의 landscape/landscape로 변경할 수 있다.
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io19/android_studio_tips_and_tricks/046.png" }}" /> 
 
@@ -126,3 +129,10 @@ Resource Manager의 Drawable은 Layout에 Drag&Drop하는 것으로 ImageView �
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io19/android_studio_tips_and_tricks/047.png" }}" /> 
 
 Preview의 우측하단에 있는 View를 Drag하는 것으로 다양한 디바이스&해상도에서 어떻게 노출되는지 확인할 수 있다.
+
+- - - 
+
+Android Studio/ Tips and Tricks
+
+- [Part 1]({{ site.baseurl }}/blog/android/io19/2019/07/06/io19-android_studio_tips_and_tricks_part1/)
+- [Part 2]({{ site.baseurl }}/blog/android/io19/2019/07/06/io19-android_studio_tips_and_tricks_part2/)
