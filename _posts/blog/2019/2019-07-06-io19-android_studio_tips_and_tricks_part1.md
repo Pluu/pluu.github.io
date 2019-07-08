@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[요약] Android Studio/ Tips and Tricks ~ Part1 (Google I/O '19)"
+title: "[요약] Android Studio/ Tips and Tricks Part1 ~ Profiler, 기본 IDE (Google I/O '19)"
 date: 2019-07-06 16:00:00 +09:00
 tag: [Android]
 categories:

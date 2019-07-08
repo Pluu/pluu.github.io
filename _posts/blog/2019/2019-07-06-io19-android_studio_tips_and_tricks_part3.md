@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[요약] Android Studio/ Tips and Tricks ~ Part3 (Google I/O '19)"
+title: "[요약] Android Studio/ Tips and Tricks Part 3 ~ Build&Deploy (Google I/O '19)"
 date: 2019-07-08 00:30:00 +09:00
 tag: [Android]
 categories:
