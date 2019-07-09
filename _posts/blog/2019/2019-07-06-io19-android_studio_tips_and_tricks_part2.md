@@ -23,7 +23,7 @@ Android Studio/ Tips and Tricks
 
 - [Part 1 ~ Profiler, 기본 IDE]({{ site.baseurl }}/blog/android/io19/2019/07/06/io19-android_studio_tips_and_tricks_part1/)
 - [Part 2 ~ Navigation Editor, Resource Manager]({{ site.baseurl }}/blog/android/io19/2019/07/06/io19-android_studio_tips_and_tricks_part2/)
-- [Part 3 ~ Build&Deploy]({{ site.baseurl }}/blog/android/io19/2019/07/08/io19-android_studio_tips_and_tricks_part3/)
+- [Part 3 ~ Build&Deploy]({{ site.baseurl }}/blog/android/io19/2019/07/07/io19-android_studio_tips_and_tricks_part3/)
 
 - - -
 
@@ -137,4 +137,4 @@ Android Studio/ Tips and Tricks
 
 - [Part 1 ~ Profiler, 기본 IDE]({{ site.baseurl }}/blog/android/io19/2019/07/06/io19-android_studio_tips_and_tricks_part1/)
 - [Part 2 ~ Navigation Editor, Resource Manager]({{ site.baseurl }}/blog/android/io19/2019/07/06/io19-android_studio_tips_and_tricks_part2/)
-- [Part 3 ~ Build&Deploy]({{ site.baseurl }}/blog/android/io19/2019/07/08/io19-android_studio_tips_and_tricks_part3/)
+- [Part 3 ~ Build&Deploy]({{ site.baseurl }}/blog/android/io19/2019/07/07/io19-android_studio_tips_and_tricks_part3/)
