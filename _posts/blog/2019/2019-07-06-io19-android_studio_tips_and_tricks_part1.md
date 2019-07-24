@@ -49,8 +49,9 @@ Android Studio/ Tips and Tricks
 
 - 단축키 : `⇧⌘↑` , `⇧⌘↓` : 특정 창의 크기 조절
 
-> Main menu | Window | Active Tool Window | Resize | Stretch to Top
-> Main menu | Window | Active Tool Window | Resize | Stretch to Bottom 
+> Main menu \| Window \| Active Tool Window \| Resize \| Stretch to Top
+>
+> Main menu \| Window \| Active Tool Window \| Resize \| Stretch to Bottom 
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io19/android_studio_tips_and_tricks/003.png" }}" /> 
 
@@ -114,21 +115,21 @@ Android Studio 내에서 일부 탭에 밑줄이 그어져 있는 번호를 통
 
 - 단축기 : `⌃⇥`
 
-> Other | Switcher 
+> Other \| Switcher 
 
 Gradle Window의 경우 단축키가 없음므로, Switcher 화면에서 Control 키를 누르채로  `G` 키 입력으로 Gradle 창을 열 수 있다.
 
 현재 활성화된 Window는 `⇧⎋` 를 사용해서 닫을 수 있다. 
 
-> Main menu | Window | Active Tool Window | Hide Active Tool Window
+> Main menu \| Window \| Active Tool Window \| Hide Active Tool Window
 
 `F12` 키를 이용해 마지막으로 활성화된 Tool Window로 쉽게 이동할 수 있다.
 
-> Main menu | Window | Active Tool Window | Jump to Last Tool Window
+> Main menu \| Window \| Active Tool Window \| Jump to Last Tool Window
 
 `⇧⌘F12` 를 이용해 Editor를 제외한 다른 Tool Window를 모두 숨길 수 있다.  다시 한번 커맨드 입력 시 이전 상태로 복원할 수 있다.
 
-> Main menu | Window | Active Tool Window | Hide All Tool Windows
+> Main menu \| Window \| Active Tool Window \| Hide All Tool Windows
 
 #### Moving around Editor Tabs
 
@@ -141,25 +142,27 @@ Gradle Window의 경우 단축키가 없음므로, Switcher 화면에서 Control
 
 Editor 화면에서 `⇧⌘[` 혹은 `⇧⌘]` 명령어를 통해서 Editor 간의 좌/우로 이동을 할 수 있다.
 
-> Main menu | Window | Editor Tabs | Select Previous Tab 
-> Main menu | Window | Editor Tabs | Select Next Tab 
+> Main menu \| Window \| Editor Tabs \| Select Previous Tab 
+>
+> Main menu \| Window \| Editor Tabs \| Select Next Tab 
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io19/android_studio_tips_and_tricks/014.png" }}" /> 
 
 Android Studio의 Layout 파일에서 Design/Text View의 전환이 필요할 때는 `⇧⌃→ ` 혹은 `⇧⌃←` 를 사용할 수 있다. 이 기능은 `Version Control` Window에서도 사용할 수 있다.
 
-> Other | Tabs | Select Previous Tab in multi-editor file
-> Other | Tabs | Select Next Tab in multi-editor file
+> Other \| Tabs \| Select Previous Tab in multi-editor file
+>
+> Other \| Tabs \| Select Next Tab in multi-editor file
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io19/android_studio_tips_and_tricks/015.png" }}" /> 
 
 넓은 화면에서 더 많은 코드를 보기 위해서 Move Right를 통해서 복수의 탭으로 코드를 분리할 수 있다. Drag&Drop으로 분리된 탭에 Editor를 분리할 수 있다.
 
-> Main menu | Window | Editor Tabs | Move Right
+> Main menu \| Window \| Editor Tabs \| Move Right
 
 분할된 화면을 되돌리기 위해서 `Unsplit` Action을 실행할 수 있다.
 
-> Main menu | Window | Editor Tabs | Unsplit
+> Main menu \| Window \| Editor Tabs \| Unsplit
 
 #### Find Anything
 
@@ -167,7 +170,7 @@ Double Shift 기능을 이용해서 클래스, Symbol, Action를 찾을 수 있�
 
 - 단축키 : `⇧⇧`
 
-> Other | Search Everywhere
+> Other \| Search Everywhere
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io19/android_studio_tips_and_tricks/016.png" }}" /> 
 
@@ -179,23 +182,27 @@ Double Shift 기능을 이용해서 클래스, Symbol, Action를 찾을 수 있�
 
 기본적으로 `⌥` 키를 사용하여 좌우로 단어를 건너뛸 수 있고, `⇧` 키를 사용하여 텍스트 선택을 한다
 
-> Editor Actions | Move Caret to Previous Word
-> Editor Actions | Move Caret to Next Word
-> Editor Actions | Left with Selection
-> Editor Actions | Right with Selection
+> Editor Actions \| Move Caret to Previous Word
+>
+> Editor Actions \| Move Caret to Next Word
+>
+> Editor Actions \| Left with Selection
+>
+> Editor Actions \| Right with Selection
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io19/android_studio_tips_and_tricks/017.png" }}" /> 
 
 대문자 단위(Camel Hump)로 텍스트를 이동/선택할 경우 사용하면 편하다
 
-> Preferences | Editor | General | Smart Keys … Use "CamelHumps" words
+> Preferences \| Editor \| General \| Smart Keys … Use "CamelHumps" words
 
 #### Go to Method Above/Below
 
 `⌃↑` 혹은 `⌃↓` 을 이용해 빠르게 위아래에 있는 메소드로 빠르게 이동할 수 있다
 
-> Main menu | Navigate | Previous Method
-> Main menu | Navigate | Next Method
+> Main menu \| Navigate \| Previous Method
+>
+> Main menu \| Navigate \| Next Method
 >
 > ※ MAC에서는 System 키와 중첩되어 동작하지 않습니다.
 
@@ -205,7 +212,7 @@ Double Shift 기능을 이용해서 클래스, Symbol, Action를 찾을 수 있�
 
 - 단축키 : `⇧⌘⌫`
 
-> Main menu | Navigate | Last Edit Location
+> Main menu \| Navigate \| Last Edit Location
 
 ### Coding  Intelligence
 
@@ -217,13 +224,13 @@ Quick Documentation 를 이용하면 JavaDoc을 빠르게 확인할 수 있다
 
 -  단축키 : `F1`
 
-> Main menu | View | Quick Documentation
+> Main menu \| View \| Quick Documentation
 
 메소드의 Parameter 정보를 확인하기 위해 `Parameter Info` 기능 사용할 수 있다. 그리고 `⇥`과 `⇧⇥` 으로 Parameter 를 이동할 수 있다.
 
 - 단축키 : `⌘P`
 
-> Main menu | View | Parameter Info
+> Main menu \| View \| Parameter Info
 
 #### Code Completion basics
 
@@ -233,7 +240,7 @@ Parameter의 정보와 내부에서 접근 가능한 변수명을 체크해서 �
 
 - 단축키 : `⌃Space`
 
-> Main menu | Code | Completion | Basic
+> Main menu \| Code \| Completion \| Basic
 
 #### Smart Code Completion
 
@@ -241,7 +248,7 @@ Parameter의 정보와 내부에서 접근 가능한 변수명을 체크해서 �
 
 - 단축키 : `⇧⌃Space`
 
-> Main menu | Code | Completion | SmartType
+> Main menu \| Code \| Completion \| SmartType
 
 ### Editing Tricks
 
@@ -257,43 +264,45 @@ Parameter의 정보와 내부에서 접근 가능한 변수명을 체크해서 �
 
 - 단축키 : `⇧⌃J`
 
-> Main menu | Edit | Join Lines
+> Main menu \| Edit \| Join Lines
 
 `⌥↑`키를 통해서 선택 영역을 확장 가능하며, `⌥↓` 키로 선택 영역을 축소할 수 있다. 
 
-> Main menu | Edit | Extend Selection
-> Main menu | Edit | Shrink Selection
+> Main menu \| Edit \| Extend Selection
+>
+> Main menu \| Edit \| Shrink Selection
 
 `⌘D` 키를 통해 선택 영역을 복제할 수 있다.
 
-> Main menu | Edit | Duplicate Line or Selection
+> Main menu \| Edit \| Duplicate Line or Selection
 
 그리고, `⌘/` 키로 현재 포커스가 있는 줄 혹은 선택한 영역을 주석으로 처리할 수 있다.
 
-> Main menu | Code | Comment with Line Comment
+> Main menu \| Code \| Comment with Line Comment
 
 `⇧⌘↑` 키와 `⇧⌘↓` 키를 통해서 필요한 줄을 이동할 수 있다. 자동으로 블럭의 들여쓰기 등도 반영된다. 이 기능은 해당 라인이 유효한 범위내에서 이동된다.
 
-> Main menu | Code | Move Statement Down
-> Main menu | Code | Move Statement Up
+> Main menu \| Code \| Move Statement Down
+> Main menu \| Code \| Move Statement Up
 
 위의 기능과 상관없이 라인 이동을 원할 경우 `⌥⇧↑`키와 `⌥⇧↓`키를 사용하면 된다.
 
-> Main menu | Code | Move Line Down
-> Main menu | Code | Move Line Up
+> Main menu \| Code \| Move Line Down
+> Main menu \| Code \| Move Line Up
 
 `⌘⌫` 키를 통해서 삭제를 할 수 있다.
 
-> Editor Actions | Delete Line
+> Editor Actions \| Delete Line
 
 특정 키워드를 가지는 단어를 멀티 선택 시에 `⌃G` 키로 선택할 수 있다. `⇧⌃G` 로 선택 해제할 수 있다.
 
-> Main menu | Edit | Find | Add Selection for Next Occurrence
-> Main menu | Edit | Find | Unselect Occurrence
+> Main menu \| Edit \| Find \| Add Selection for Next Occurrence
+>
+> Main menu \| Edit \| Find \| Unselect Occurrence
 
 이전에 여러 가지 복사를 했다면 `⇧⌘V` 키를 통해서 지금까지 복사한 것들을 선택할 수 있다.
 
-> Main menu | Edit | Paste from History...
+> Main menu \| Edit \| Paste from History...
 
 #### Refactoring tools
 
@@ -301,15 +310,17 @@ Parameter의 정보와 내부에서 접근 가능한 변수명을 체크해서 �
 
 `⌃T` 키를 통해서 코드 리팩토링 메뉴를 제공한다. Extract 기능을 통해서 Variable, Property, Parameter 등을 제공한다.
 
-> Main menu | Refactor | Refactor This...
-> Main menu | Refactor | Extract | Variable...
-> Main menu | Refactor | Extract | Method...
+> Main menu \| Refactor \| Refactor This...
+>
+> Main menu \| Refactor \| Extract \| Variable...
+>
+> Main menu \| Refactor \| Extract \| Method...
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io19/android_studio_tips_and_tricks/022.png" }}" /> 
 
 `⌥⌘T` 를 이용하면 많이 사용되는 Control 기능을 선택할 수 있다.
 
->  Main menu | Code | Surround With...
+>  Main menu \| Code \| Surround With...
 
 | ------------------------------------------------------------ |
 | <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io19/android_studio_tips_and_tricks/023.png" }}" />  |
@@ -317,13 +328,13 @@ Parameter의 정보와 내부에서 접근 가능한 변수명을 체크해서 �
 
 특정 영역의 내용을 메소드의 Parameter로 주입받고 싶을 경우에는 `⌥⌘P` 키를 사용해서 Parameter로 추출할 수 있다.
 
-> Main menu | Refactor | Extract | Parameter...
+> Main menu \| Refactor \| Extract \| Parameter...
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io19/android_studio_tips_and_tricks/025.png" }}" /> 
 
 `⌘B` 키를 이용해 현재 메소드가 사용되는 곳을 쉽게 찾을 수 있다. 
 
-> Main menu | Navigate | Declaration
+> Main menu \| Navigate \| Declaration
 
 #### Postfix Completion
 
@@ -333,13 +344,13 @@ buildPath 함수의 반환형이 Boolean 형일 경우 기존 `Surround With` �
 
 위 예제는 buildPath 함수를 사용한 곳 뒤에서  `.` 입력시 Trigger로 `if`에 해당하는 Postfix Completion를 보여주고 있다. List Type의 경우에는 `forEach` 가 자주 사용되므로 추천하고 싶다.
 
-> Preferences | Editor | General | Postfix Completion
+> Preferences \| Editor \| General \| Postfix Completion
 
 #### Coding with Intensions
 
 Androi Studio의 Intensions 기능은 코드를 분석하고 검색한 후 최적화하는 방법과 잠재 문제를 해결하는 방안을 제안한다. IDE가 더 나은 방법을 찾았다면, 코드의 줄 옆에 노란색 전구 아이콘을 표시한다. 이 아이콘을 클릭하면 관련된 Intension 작업할 수 있다.
 
-> Preferences | Editor | Intentions
+> Preferences \| Editor \| Intentions
 
 - - - 
 

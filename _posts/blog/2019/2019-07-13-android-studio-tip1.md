@@ -14,6 +14,12 @@ Android Studio 에 숨어있는 꿀팁 등 다양한 기능을 공유하는 포�
 
 - - -
 
+연재 글
+
+- [Android Studio Tips #2]({{ site.baseurl }}/blog/android studio/2019/07/25/android-studio-tip2/)
+
+- - -
+
 ### Quick List
 
 Android Studio 사용 시 `Surround With` / `Refactor This` 와 같은 기능은 코드 개선과 코드 블럭을 이용하여 추가 작업을 위해 많이 사용되는 도구 중 하나이다. 이 Menu는 Android Studio 내부에서 기본적으로 제공되는 기능이다.
@@ -219,3 +225,9 @@ Android Studio의 Preference가 있는 위치를 다양한 곳에 작성해야 �
 결과는 다음과 같다.
 
 Preferences \| Build, Execution, Deployment \| Debugger \| Data Views \| Kotlin
+
+- - -
+
+연재 글
+
+- [Android Studio Tips #2]({{ site.baseurl }}/blog/android studio/2019/07/25/android-studio-tip2/)
