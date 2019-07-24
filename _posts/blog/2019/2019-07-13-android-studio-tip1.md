@@ -16,7 +16,7 @@ Android Studio 에 숨어있는 꿀팁 등 다양한 기능을 공유하는 포�
 
 연재 글
 
-- [Android Studio Tips #2]({{ site.baseurl }}/blog/android studio/2019/07/25/android-studio-tip2/)
+- [Android Studio Tips #2]({{ site.baseurl }}/blog/android studio/2019/07/24/android-studio-tip2/)
 
 - - -
 
@@ -230,4 +230,4 @@ Preferences \| Build, Execution, Deployment \| Debugger \| Data Views \| Kotlin
 
 연재 글
 
-- [Android Studio Tips #2]({{ site.baseurl }}/blog/android studio/2019/07/25/android-studio-tip2/)
+- [Android Studio Tips #2]({{ site.baseurl }}/blog/android studio/2019/07/24/android-studio-tip2/)
