@@ -286,6 +286,10 @@ External Annotation을 지정하기 위해 Annotation이 정의되지 않은 곳
 
 이로써 Nullable / NonNull 이 정의되지 않은 외부 소스로부터 한걸음 안전하게 개발을 할 수 있다. 그리고, `External Annotation` 은 Project에 별도 파일로 존재하므로 프로젝트를 사용하는 사람들과 공유할 수 있다.
 
+## 참고
+
+- [kingori님의 ConstraintLayout LiveTemplate](https://gist.github.com/kingori/fa4a71bf4e844b02d772d8c6d667fd32)
+
 ```xml
 <!-- annotations.xml -->
 <root>
