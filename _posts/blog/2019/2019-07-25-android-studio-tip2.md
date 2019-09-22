@@ -295,3 +295,7 @@ External Annotation을 지정하기 위해 Annotation이 정의되지 않은 곳
     </item>
 </root>
 ```
+
+## 참고
+
+- [kingori님의 ConstraintLayout LiveTemplate](https://gist.github.com/kingori/fa4a71bf4e844b02d772d8c6d667fd32)
