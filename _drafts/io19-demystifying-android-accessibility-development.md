@@ -27,7 +27,7 @@ Android Accessibility 개발은 매우 복잡하다. Accessibility 조차 Androi
 
 ### 1. 정보를 공개
 
-![001](/Users/pluulove/StudioProjects/pluu.github.io/assets/img/blog/io/io19/demystifying-android-accessibility-development/001.png)
+![001](../assets/img/blog/io/io19/demystifying-android-accessibility-development/001.png)
 
 대부분이 시각 장애인을 위한 접근성에 대해서 먼저 시작한다.
 
@@ -44,7 +44,7 @@ Android Accessibility 개발은 매우 복잡하다. Accessibility 조차 Androi
 
 ### 2. 간단하고 큰 컨트롤 선호
 
-![002](/Users/pluulove/StudioProjects/pluu.github.io/assets/img/blog/io/io19/demystifying-android-accessibility-development/002.png)
+![002](../assets/img/blog/io/io19/demystifying-android-accessibility-development/002.png)
 
 UI를 보고 내용을 이해할 수 있을때 UI를 사용할 수 있을까? 
 
@@ -54,262 +54,157 @@ UI를 보고 내용을 이해할 수 있을때 UI를 사용할 수 있을까?
 
 → 중요한 정보는 크고 이해하기 쉽게 컨트롤할 수 있도록 해야한다.
 
-![003](/Users/pluulove/StudioProjects/pluu.github.io/assets/img/blog/io/io19/demystifying-android-accessibility-development/003.png)
+### 3. 이미지를 정확하고 간결하게 라벨링
+
+![003](../assets/img/blog/io/io19/demystifying-android-accessibility-development/003.png)
 
 화면을 볼 수 없는 사용자를 돕기 위해서는 많이 생각해야한다. 이미지 사용시, 전혀 볼 수 없는 사람에게도 효과가 있는지 체크해야한다.
 
+- 간단한 해결 : 이미지에 레이블 지정
+- 이유 : 텍스트로 정보가 전달되는지 확인이 필요하다. ScreenReader 사용자 경험에서는 Graphic이 얼마나 좋은지에 대해서는 관심 밖이다. 
+- 가능한 정확하게, 방법을 설명하려면 동사인 단어만 사용
 
 
-And the simplest way to do that is just to label the image.
-And we have a very simple API that Qasid will mention that can help you do that.
-When you go to label things, you want to label it precisely, because you're trying to convey information, make sure that information is conveyed in the text.
+![004](../assets/img/blog/io/io19/demystifying-android-accessibility-development/004.png)
+
+
+사용자가 앱과 상호 작용하는 방식에서 본질적으로 두가지가 있다
+
+- 사용자에게 정보 제공
+- UI에서 어떤 행동을 함
+
+![005](../assets/img/blog/io/io19/demystifying-android-accessibility-development/005.png)
+
+앱 개발 단계 (선결제를 위한 사람들을 타겟팅)
+
+- 일반적인 사람
+- 시각 장애 : 서로 다른 수준의 장애가 있으며, 특정 유형의 물건을 볼 수 없기도 하다
+- 운동 장애 : 다양한 종류가 존재
+- 청각 장애
+
+이런 장애가 조합적인 사람들도 있다.
+
+전세계에는 10억명의 장애를 가진 사람이 있지만, 10억개의 사례를 기준으로 하지 않아도 된다. 이런 생태계에서 `접근성 서비스` 를 통해 많은 사례에 맞게 확장할 수 있도록 지원한다. 접근성 서비스는 Android Platform에 대한 플러그인이며, 사용자 대신 UI에 대한 정보를 얻거나 액션을 취할 수 있다.
+
+![006](../assets/img/blog/io/io19/demystifying-android-accessibility-development/006.png)
+
+특정 사용자에 맞게 정보를 제공하는 방법을 제시한다.
+
+- 오디오
+- 점자
+- 스위치
+
+동작 방식은 Android Framework를 통해서 처리한다. 
+
+![007](../assets/img/blog/io/io19/demystifying-android-accessibility-development/007.png)
+
+API를 사용하여 정보를 제시하고 사용자가 Action을 하도록 하는 것이다. 그런 다음 테스트 도구를 사용하여 실제로 동작하는지 확인한다.
+
+## Accessibility API
+
+### 1. ContentDescription
+
+![008](../assets/img/blog/io/io19/demystifying-android-accessibility-development/008.png)
+
+접근성 서비스와 통신하는 방법은 `접근성 API`를 사용하는 것이다. 대부분은 뷰 계층을 통해서 유추 가능하다. 그러나, 위와 같은 옵션 버튼은 Android Framework는 화면의 위치 및 클릭가능한 정보 등을 `View.java` 를 통해 유추할 수 있다.
+
+![009](../assets/img/blog/io/io19/demystifying-android-accessibility-development/009.png)
+
+화면을 볼수 없는 `TalkBack` 사용자는 이 항목에 손가락을 대면 아무것도 얻지 못한다. TalkBack이 해당 상황에서 무엇을 말해야하는지 모르기 때문이다. 그것은 Description Text가 없기 때문이다.
+
+![010](../assets/img/blog/io/io19/demystifying-android-accessibility-development/010.png)
+
+Content Description API를 통해서 설명을 추가할 수 있다. Localized 된 문자열을 전달하면 된다. 누군가는 문자열을 들어야하므로 현지화와 간결한 설명이 필요하다.
+
+![011](../assets/img/blog/io/io19/demystifying-android-accessibility-development/011.png)
+
+추가 옵션 버튼이라는 것을 알게 되었으며, 원하던 상호작용을 이어나갈 수 있다.
+
+### 2. AccessibilityAction
+
+![012](../assets/img/blog/io/io19/demystifying-android-accessibility-development/012.png)
+
+다른 예로는, 이메일 UI에서 스와이프로 이메일을 삭제/읽음을 표시할 수 있다. 스와이프하면 해당 이메일은 삭제된다. 그러나 모든 사용자가 탭/스와이프를 할 수 있는 것은 아니다.
+
+- TalkBack 사용자는 다른 제스처를 통해 UI 동작
+- 스위치 사용자는 단일 스위치를 통해 UI 동작
+
+`접근성 서비스`를 통해서 각 케이스에서 할 수 있는 작업을 알 수 있다.
+
+![013](../assets/img/blog/io/io19/demystifying-android-accessibility-development/013.png)
+
+ContentDescription과 유사하게 `접근성 API`를 사용하면 된다.
+
+> [ViewCompat#addAccessibilityAction](https://developer.android.com/reference/androidx/core/view/ViewCompat#addAccessibilityAction(android.view.View,%20java.lang.CharSequence,%20androidx.core.view.accessibility.AccessibilityViewCommand))
+
+![014](../assets/img/blog/io/io19/demystifying-android-accessibility-development/014.png)
+
+View, 지역화된 문자열, 사용자 요청시 수행할 Lambda 를 전달하여 정의한다.
+
+![015](../assets/img/blog/io/io19/demystifying-android-accessibility-development/015.png)
+
+`ViewCompat#addAccessibilityAction` API를 사용함으로 스위치 사용자가 Select/Remove 작업을 모두 수행할 수 있다.
+
+> AndroidX API이므로 `API 21 이상`에서 동작한다.
+
+### 3. EnableAccessibleClickableSpanSupport
+
+Android O 이전에는 Accessibility Frameworks가 텍스트 링크 혹은 ClickableSpans 사용시 URL이 아닌 범위에 대한 처리를 할 수 없었다. TalkBack 사용자는 화면에 링크가 있다는 메시지가 표시되지 않는 문제가 발생했다. 
+
+![016](../assets/img/blog/io/io19/demystifying-android-accessibility-development/016.png)
+
+해당 문제를 해결하기 위해 AndroidX에 API가 추가되었다.
+
+> [ViewCompat#enableAccessibleClickableSpanSupport](https://developer.android.com/reference/androidx/core/view/ViewCompat#enableAccessibleClickableSpanSupport(android.view.View))
+>
+> `API 19 이상`에서 동작한다.
+
+![017](../assets/img/blog/io/io19/demystifying-android-accessibility-development/017.png)
+
+> 정상적으로 적용된 경우의 화면
+
+### 4. AccessibilityPaneTitle
+
+![018](../assets/img/blog/io/io19/demystifying-android-accessibility-development/018.png)
+
+Dialog가 아니라 ViewGroup 과 텍스트와 버튼의 조합으로 구현하는 경우, 상황에 따라 시각적으로 표현하는 정보가 결정되므로 TalkBack과 같은 접근성 서비스에 문제가 발생한다.
+
+![019](../assets/img/blog/io/io19/demystifying-android-accessibility-development/019.png)
+
+이 경우, 해결방법은 ViewGroup에 접근성을 제공하는 것이다.
+
+![020](../assets/img/blog/io/io19/demystifying-android-accessibility-development/020.png)
+
+> [ViewCompat#setAccessibilityPaneTitle]([https://developer.android.com/reference/androidx/core/view/ViewCompat#setAccessibilityPaneTitle(android.view.View,%20java.lang.CharSequence)](https://developer.android.com/reference/androidx/core/view/ViewCompat#setAccessibilityPaneTitle(android.view.View, java.lang.CharSequence))
+>
+> `API 19 이상`에서 동작한다.
+
+
+![021](../assets/img/blog/io/io19/demystifying-android-accessibility-development/021.png)
+
+이제 TalkBack을 통해서 올바르게 음성으로 알려준다.
+
+### 5. Timeout
+
+![022](../assets/img/blog/io/io19/demystifying-android-accessibility-development/022.png)
+
+비디오 플레이어에서 재생 버튼 등이 일정 시간이 지나면 사라지는 컨트롤이 있는 것은 일반적이다. 대부분 콘텐츠를 원하기때문에 유용한 기능이다.
+
+그러나, 컨트롤과 상호작용하는데 시간이 걸리는 접근성 사용자를 위해서 재생 버튼을 화면에 다시 표시하는 방법을 찾아야한다. Timeout으로 사라지기 전에 상호 작용하는 방법을 찾아야한다. 
+
+필요한 것은 상황에 따라 이상적으로 필요한 Timeout 시간을 조정하는 방법이다. 
+
+![023](../assets/img/blog/io/io19/demystifying-android-accessibility-development/023.png)
+
+사용자가 반응 할 시간을 줄 수 있도록 최소한이 시간 동안 컨트롤을 화면에 유지해야합니다. 
+
+1. AccessibilityManager에 대한 참조를 취득한다
+2. getRecommendedTimeoutMillis API를 호출한다. 사용자에게 필요한 UI 변경에 대한 Timeout 시간이 반환된다. 
+
+> 적용된 사례 : [SnackBar#Duration](https://github.com/material-components/material-components-android/blob/master/lib/java/com/google/android/material/snackbar/Snackbar.java#L307)
 
 
 
-
-가장 간단한 방법은 이미지에 레이블을 지정하는 것입니다.
-그리고 우리는 Qasid가 당신을 도울 수있는 매우 간단한 API를 가지고 있습니다.
-레이블을 지정할 때 정보를 전달하려고하기 때문에 정확하게 레이블을 지정하려고합니다. 정보가 텍스트로 전달되는지 확인하십시오.
-
-
-
-But on the other hand, if you think about the experience of a screen reader user, there is-- particularly if it's like a control or something they're going to go to all the time, they don't want to hear a long treatise about how exciting this particular graphic is.
-They really want to just get on with their day and get on with whatever action that thing can do.
-So you want to label things concisely.
-These two things are a little bit in tension with one another.
-So part of this is are you trying to really just convey information, and that's what's in there, make sure that's conveyed as precisely as possible.
-If you're trying to just explain to somebody how to use something, just one word, which is a verb, is usually enough.
-So that's three things.
-
-
-그러나 다른 한편으로, 스크린 리더 사용자의 경험에 대해 생각하면, 특히 컨트롤이나 그들이 항상 갈 것 같은 것이 있다면, 그들은 오랫동안 듣고 싶지 않습니다. 이 특정 그래픽이 얼마나 흥미로운 지에 대한 논문.
-그들은 정말로 하루를 즐기고 그 일을 할 수있는 모든 행동을 계속하고 싶어합니다.
-따라서 간결하게 레이블을 지정하려고합니다.
-이 두 가지는 서로 약간 긴장되어 있습니다.
-이 중 일부는 실제로 정보를 전달하려고하는 것입니다. 그것이 그 안에있는 것이므로 가능한 한 정확하게 전달되도록하십시오.
-누군가에게 무언가를 사용하는 방법을 설명하려고한다면, 동사 인 한 단어만으로도 충분합니다.
-이것이 세 가지입니다.
-
-But you may have come here to learn more than three things.
-So we want to dig a little bit deeper and just think about how users interact with your app.
-Much like the three things, there's essentially two things that you're doing.
-You're presenting information to users, and you're allowing them to take actions on your UI.
-Often the first design ends up being for people who may not necessarily have an accessibility need, but ideally, you're thinking about this upfront.
-Then it quickly becomes kind of overwhelming.
-You start thinking about, OK, how's somebody who can't see going to use my app? 
-How is somebody who's motor impaired going to use my app? 
-How is somebody who's deaf or hard of hearing going to use my app? So now suddenly you've got four types of users, which is your original mainstream user and then these three categories.
-But within these three categories, the more you stare at them, the more complexity you see.
-It's like a fractal.
-People who are visually impaired, there's all sorts of different visual impairments.
-People can see different levels of detail, different types of things.
-Motor impairments come in a radical sort of variety of people out there.
-And then also, there are people that have combinations of these disabilities.
-And so what are you supposed to do as an app developer? There's like a billion people in the world with a disability.
-Are you supposed to think through a billion use cases? The answer is no, fortunately.
-And nobody is ever going to think through all billion use cases.
-But with an ecosystem like this, we do have the ability to scale to that many use cases.
-And the tool we use to do that are Accessibility Services.
-These are plug-ins to the Android platform that get information about the UI, can take actions on the UI on behalf of the user.
-And those developers can think about, how do I serve this particular set of users that I'm targeting? And so they're the ones that are presenting the information.
-If somebody can't see the screen, they're presenting it audio or Braille.
-If somebody can't take actions on the screen directly, they may be using a switch to do it.
-And then these services can intermediate that.
-The way that they work is they get their information from the Android framework, and they use the Android framework to take actions on the UI.
-
-그러나 세 가지 이상을 배우기 위해 여기에 왔을 것입니다.
-우리는 조금 더 깊이 파고 들고 사용자가 앱과 상호 작용하는 방식에 대해 생각하고 싶습니다.
-세 가지와 마찬가지로 본질적으로 두 가지 일이 있습니다.
-사용자에게 정보를 제공하고 있으며 UI에서 조치를 취할 수 있습니다.
-종종 첫 번째 디자인은 접근성 요구가 반드시 필요한 것은 아니지만 이상적으로는 이러한 선결제에 대해 생각하는 사람들을위한 것입니다.
-그러면 빨리 압도적입니다.
-당신은 내 앱을 사용하지 못하는 사람은 어떻습니까? 
-운동 장애가있는 사람이 내 앱을 어떻게 사용하게 되나요? 
-청각 장애가있는 사람이 내 앱을 어떻게 사용합니까? 
-이제 갑자기 네 가지 유형의 사용자가 있는데, 이는 원래 주류 사용자이고이 세 가지 범주입니다.
-그러나이 세 가지 범주 내에서 더 많이 응시할수록 더 복잡해집니다.
-프랙탈과 같습니다.
-시각 장애인은 모든 종류의 시각 장애가 있습니다.
-사람들은 다른 수준의 세부 사항, 다른 유형의 사물을 볼 수 있습니다.
-운동 장애는 다양한 종류의 사람들로 나옵니다.
-그리고이 장애들을 조합 한 사람들도 있습니다.
-그리고 앱 개발자로서 무엇을해야합니까? 세계에는 10 억 명의 장애인이 있습니다.
-10 억 개의 사용 사례를 통해 생각해야합니까? 대답은 다행입니다.
-그리고 아무도 10 억 건의 사용 사례를 모두 생각하지 않을 것입니다.
-그러나 이와 같은 생태계를 통해 우리는 많은 사용 사례에 맞게 확장 할 수 있습니다.
-우리가 사용하는 도구는 접근성 서비스입니다.
-이들은 UI에 대한 정보를 얻는 Android 플랫폼에 대한 플러그인이며, 사용자 대신 UI에 대한 조치를 취할 수 있습니다.
-그리고 이러한 개발자는 내가 타겟팅하고있는 특정 사용자 집합에 어떻게 서비스를 제공 할 수 있습니까? 그리고 그들은 정보를 제시하는 것들입니다.
-누군가 화면을 볼 수 없으면 오디오 나 점자를 제시하는 것입니다.
-누군가가 화면에서 직접 조치를 취할 수없는 경우 스위치를 사용하여 조치를 취할 수 있습니다.
-그리고 이러한 서비스는이를 중개 할 수 있습니다.
-그들이 작동하는 방식은 Android 프레임 워크에서 정보를 얻고 Android 프레임 워크를 사용하여 UI에 대한 조치를 취하는 것입니다.
-
-And so down here at the bottom is your app.
-In your app, what it needs to do is present the information to the Android framework so that the framework can then share it with all these different services to support these different users.
-And then it needs to allow the framework to take actions on it so that all these different services, all these different users can actually get control of your app.
-So the way that you can do this is really to use the APIs that Qasid is going to talk about in a moment to make sure you're presenting the information and allowing users take actions on it.
-And once you've done that, you can use these testing tools to verify that your app is actually working for a wide range of different users.
-So now let me hand it over to Qasid to talk about these APIs.
-QASID SADIQ: Hey, everyone.
-I'm Qasid.
-I'm on the Android Accessibility team.
-Let's talk about APIs.
-So as Phil mentioned, the way your application communicates what's visible on screen to the accessibility service is the accessibility APIs.
-But thankfully for you guys, most of the information that an accessibility service needs can already be inferred through the view hierarchy.
-But there are some situations where you guys actually do have to use our APIs.
-Thankfully those are minimal.
-But let me show you what I mean.
-So let's you say you've made this application.
-And let's just say you've got this More Options button.
-Now, our frameworks can infer important information, like its position on screen and that it's clickable.
-The information in view.
-java.
-
-여기 아래쪽에 앱이 있습니다.
-앱에서해야 할 일은 정보를 Android 프레임 워크에 표시하여 프레임 워크가 다른 모든 서비스와 정보를 공유하여 서로 다른 사용자를 지원할 수 있도록하는 것입니다.
-그런 다음 프레임 워크가 다른 모든 서비스, 다른 모든 사용자가 실제로 앱을 제어 할 수 있도록 조치를 취할 수 있어야합니다.
-따라서이를 수행 할 수있는 방법은 실제로 Qasid가 논의 할 API를 사용하여 정보를 제시하고 사용자가 조치를 취할 수 있도록하는 것입니다.
-그런 다음이 테스트 도구를 사용하여 앱이 실제로 다양한 사용자를 위해 작동하는지 확인할 수 있습니다.
-이제 Qasid에게이 API에 대해 이야기하도록하겠습니다.
-QASID SADIQ : 안녕하세요.
-나는 Qasid입니다.
-저는 Android 접근성 팀에 있습니다.
-API에 대해 이야기합시다.
-Phil이 언급했듯이 응용 프로그램이 화면에 표시되는 내용을 접근성 서비스와 통신하는 방식은 접근성 API입니다.
-그러나 고맙게도, 접근성 서비스에 필요한 대부분의 정보는 뷰 계층을 통해 이미 유추 될 수 있습니다.
-그러나 실제로 API를 사용해야하는 상황이 있습니다.
-고맙게도 그것들은 최소한입니다.
-그러나 내가 의미하는 바를 보여 드리겠습니다.
-이 응용 프로그램을 만들었다 고 가정 해 봅시다.
-이 추가 옵션 버튼이 있다고 가정 해 봅시다.
-이제 Google의 프레임 워크는 화면에서의 위치 및 클릭 가능한 정보와 같은 중요한 정보를 유추 할 수 있습니다.
-정보가 표시됩니다.
-자바.
-
-But when a TalkBack user, a user who may not be able to see the screen places their finger on this item to hear a description of this item, they're not going to get anything.
-And the reason is TalkBack really doesn't know what to say in this situation.
-There is no descriptive text associated with it.
-So you as an app developer have to step in and fill in the blanks for us.
-And you can do that through the content description API.
-All you do is pass in a localized string into site content description.
-Remember, keep the string localized, concise, and descriptive, because someone has to hear it.
-A user has to hear it.
-When Phil says label your items, he means this, and for good reason, because this is mostly the accessibility issues your application is going to have.
-And thankfully, it's trivially simple to fix.
-Now our user knows that this is the More Options button, and we have a successful interaction.
-So let's talk about something different.
-Let's say you've got this email UI.
-And like most inbox UIs with a list of emails, you can tap and email to select it.
-And you can swipe to reveal that an email was deletable.
-And if you continue swiping, you'll delete that email.
-This is great and all, but not all users can tap and swipe on screen.
-TalkBack users, for example, drive the UI through a completely different gesture set.
-Switch Access users, on the other hand, they drive the UI through a series of single switches.
-So for these particular situations, the accessibility service, which Access or TalkBack, need to know what actions you can perform on each item or each view in your hierarchy.
-Now, when a Switch Access user highlights a certain item as it currently stands, the user only knows that you can tap an item.
-And this may be because of the way we implemented that remove action or that delete action.
-So again, like content description, we have to fill in the blanks.
-And you can do that through our new accessibility actions API.
-All you do is call ViewCompat.
-addAc cessibilityAction.
-You pass in the view of the action, a localized string describing the action concisely to the user, and a Lambda to be performed at the user's request.
-
-그러나 화면을 볼 수없는 음성 안내 지원 사용자가이 항목에 대한 설명을 듣기 위해이 항목에 손가락을 대면 아무 것도 얻지 못합니다.
-그 이유는 TalkBack이이 상황에서 무엇을 말해야하는지 모르기 때문입니다.
-관련된 설명 텍스트가 없습니다.
-따라서 앱 개발자는 우리를 위해 공백을 채우고 채워야합니다.
-컨텐츠 설명 API를 통해이를 수행 할 수 있습니다.
-현지화 된 문자열을 사이트 콘텐츠 설명에 전달하기 만하면됩니다.
-누군가가 문자열을 들어야하므로 문자열을 현지화되고 간결하며 설명이 필요합니다.
-사용자는 그것을 들어야합니다.
-Phil이 항목에 레이블을 지정하면 이는 의미가 있으며, 그 이유는 대부분 응용 프로그램에서 발생하는 접근성 문제이기 때문입니다.
-고맙게도 고치는 것은 간단합니다.
-이제 사용자는 이것이 추가 옵션 버튼이라는 것을 알고 있으며 성공적인 상호 작용을합니다.
-그래서 다른 것에 대해 이야기합시다.
-이 이메일 UI가 있다고 가정 해 봅시다.
-이메일 목록이있는 대부분의받은 편지함 UI와 마찬가지로 이메일을 눌러 선택할 수 있습니다.
-스 와이프하여 이메일을 삭제할 수 있음을 표시 할 수 있습니다.
-그리고 계속 스 와이프하면 해당 이메일이 삭제됩니다.
-이는 훌륭하지만 모든 사용자가 화면을 탭하고 스 와이프 할 수있는 것은 아닙니다.
-예를 들어 TalkBack 사용자는 완전히 다른 제스처 세트를 통해 UI를 구동합니다.
-반면 스위치 액세스 사용자는 일련의 단일 스위치를 통해 UI를 구동합니다.
-따라서 이러한 특정 상황의 경우 Access 또는 TalkBack 인 내게 필요한 옵션 서비스는 계층의 각 항목 또는 각보기에서 수행 할 수있는 작업을 알아야합니다.
-이제 스위치 액세스 사용자가 현재있는 특정 항목을 강조 표시하면 사용자는 항목을 누를 수 있다는 것만 알 수 있습니다.
-그리고 이것은 제거 조치 또는 삭제 조치를 구현 한 방식 때문일 수 있습니다.
-콘텐츠 설명과 마찬가지로 다시 빈칸을 채워야합니다.
-새로운 접근성 작업 API를 통해이를 수행 할 수 있습니다.
-ViewCompat에 전화하면됩니다.
-addAc cessibilityAction.
-액션 뷰, 액션을 사용자에게 간결하게 설명하는 지역화 된 문자열 및 사용자 요청시 수행 할 Lambda를 전달합니다.
-
-Now our hypothetical Switch user will be able to perform both the select and the delete action.
-And also, because this is an AndroidX, the library we use to back part a lot of our API, this is going to work back to API 21.
-OK, but let's get into something a little more complicated.
-Let's talk about text and links, or clickable spans.
-Now, before AndroidO, our accessibility frameworks really couldn't handle non-URL spans well.
-And this is a problem, as you can imagine users like TalkBack users, they wouldn't be informed that there are links on screen.
-Actually, they wouldn't be even able to activate them.
-They would essentially see nothing.
-So to solve this problem, we added some API into AndroidX.
-All you do for a text view, which contains these non-URL clickable spans is called ViewCompat.
-enabl eAccessibleClick ableSpanSupport.
-Pass in the text view or the view that contains these spans.
-Now our users all the way back to API 19 will know that these links exist and will be able to successfully activate them.
-So as app developers, a lot of you like to roll some interesting custom UI.
-So this may look like an alert dialog, but for whatever reason we decided to implement this using a view group, a couple of text views and a button.
-Now, this poses a problem for accessibility services like TalkBack, because there's some information that's visually expressed about a context change happening on screen.
-But that actually hasn't happened.
-This behaves a bit like a window.
-So our accessibility user isn't informed about this.
-So the way you solve this is by treating this view group as an accessibility pane.
-And you can do that by calling ViewCompat.
-setAc cessibilityPaneTitle on the view that you consider a pane, and you pass in a localized concise string describing this pane to the user.
-
-이제 가상 스위치 사용자가 선택 및 삭제 작업을 모두 수행 할 수 있습니다.
-또한 이것은 API의 많은 부분을 뒷받침하기 위해 사용하는 라이브러리 인 AndroidX이므로 API 21로 다시 작동합니다.
-좋아,하지만 좀 더 복잡한 것에 들어가 보자.
-텍스트와 링크 또는 클릭 가능한 범위에 대해 이야기합시다.
-이제 AndroidO 이전에는 접근성 프레임 워크가 URL이 아닌 범위를 제대로 처리 할 수 ​​없었습니다.
-TalkBack 사용자와 같은 사용자를 상상할 수 있듯이 화면에 링크가 있다는 메시지가 표시되지 않습니다.
-실제로, 그들은 심지어 그것들을 활성화시킬 수 없습니다.
-그들은 본질적으로 아무것도 볼 수 없었습니다.
-따라서이 문제를 해결하기 위해 일부 API를 AndroidX에 추가했습니다.
-URL을 클릭 할 수없는 범위가 포함 된 텍스트보기에 대해서는 ViewCompat이라고합니다.
-eAccessibleClickableSpanSupport를 클릭하십시오.
-텍스트 범위 또는 이러한 범위를 포함하는보기를 전달하십시오.
-이제 API 19로 돌아가는 사용자는 이러한 링크가 존재하고 성공적으로 활성화 할 수 있음을 알게됩니다.
-따라서 앱 개발자로서 많은 사용자가 흥미로운 사용자 정의 UI를 구현하는 것을 좋아합니다.
-따라서 이것은 경고 대화 상자처럼 보일 수 있지만, 어떤 이유로 든보기 그룹, 몇 개의 텍스트보기 및 단추를 사용하여이를 구현하기로 결정했습니다.
-화면에 상황 변화에 대해 시각적으로 표현 된 정보가 있기 때문에 이것은 음성 안내 지원과 같은 접근성 서비스에 문제가됩니다.
-그러나 실제로는 일어나지 않았습니다.
-이것은 창처럼 작동합니다.
-따라서 접근성 사용자에게는 이에 대한 정보가 없습니다.
-따라서이를 해결하는 방법은이 뷰 그룹을 접근성 창으로 취급하는 것입니다.
-ViewCompat를 호출하여이를 수행 할 수 있습니다.
-분할 창을 고려한보기에서 setAc cessibilityPaneTitle을 설정하고이 분할 창을 설명하는 현지화 된 간결한 문자열을 사용자에게 전달합니다.
-
-Now, when our custom alert appears, TalkBack is going to speak, alert.
-This also works all the way back to API 19.
-And finally, let's say you have a video player in your application.
-And it's pretty typical in that has a play button or some controls that time out and disappear after a certain period of time.
-That's useful because most users just want to get to your content.
-They don't want to fiddle with your controls.
-But you can imagine an accessibility user who needs to take time interacting with your controls.
-By the time they're able to precisely interact with this play button, disappears.
-Now they've got to figure out a way to get that play button back up on screen.
-They've got to figure out a way to interact with it before the timeout disappears again.
-And this is a pretty frustrating cycle.
-So what we ideally need in this situation is a way to adjust our timeout based on our current user's needs.
-And you can do that through our new timeouts API.
-First you get a reference to the accessibility manager.
-Then you call getRecommendedTi meoutMilliseconds.
-This returns the suggested timeout for your view.
-It's customized for your view and for your user.
-It does this by taking the default timeout that you had planned and adjusting it based on the type of content this view is.
-You specify this in the second parameter.
-In this situation, this is a play button, and it's a control.
-So we pass in FLAG_CONTENT_CONTROLS.
 You can imagine someone with a motor disability, for example, may need this adjusted if it's a control.
 It also presents visual information, so we pass in FLAG_CONTENT_ICONS for people who may have trouble parsing visual information.
 If it was text, we pass in FLAG_CONTENT_TEXT for people who have trouble parsing text.
@@ -319,19 +214,6 @@ So those are the fundamentals.
 And let's just say you've used those fundamentals to make your application accessible.
 You become a bit of an expert.
 
-이제 맞춤 알림이 표시되면 음성 안내 지원에서 음성으로 알려줍니다.
-또한 API 19까지 계속 작동합니다.
-마지막으로 응용 프로그램에 비디오 플레이어가 있다고 가정 해 봅시다.
-재생 버튼이나 일정 시간이 지나면 사라지는 컨트롤이있는 것이 일반적입니다.
-대부분의 사용자가 귀하의 콘텐츠를 원하기 때문에 유용합니다.
-그들은 당신의 컨트롤을 피하고 싶지 않습니다.
-그러나 컨트롤과 상호 작용하는 데 시간이 걸리는 접근성 사용자를 상상할 수 있습니다.
-이 재생 버튼과 정확하게 상호 작용할 수있게되면 사라집니다.
-이제 재생 버튼을 화면에 다시 표시하는 방법을 찾아야합니다.
-타임 아웃이 다시 사라지기 전에 상호 작용하는 방법을 찾아야합니다.
-그리고 이것은 꽤 실망스러운주기입니다.
-따라서이 상황에서 이상적으로 필요한 것은 현재 사용자의 요구에 따라 시간 초과를 조정하는 방법입니다.
-새로운 타임 아웃 API를 통해이를 수행 할 수 있습니다.
 먼저 접근성 관리자에 대한 참조를 얻습니다.
 그런 다음 getRecommendedTi meoutMilliseconds를 호출하십시오.
 뷰에 대한 제안 된 시간 초과가 반환됩니다.
