@@ -100,6 +100,8 @@ UI를 보고 내용을 이해할 수 있을때 UI를 사용할 수 있을까?
 
 API를 사용하여 정보를 제시하고 사용자가 Action을 하도록 하는 것이다. 그런 다음 테스트 도구를 사용하여 실제로 동작하는지 확인한다.
 
+------
+
 ## Accessibility API
 
 ### 1. ContentDescription
@@ -203,36 +205,18 @@ Dialog가 아니라 ViewGroup 과 텍스트와 버튼의 조합으로 구현하�
 
 > 적용된 사례 : [SnackBar#Duration](https://github.com/material-components/material-components-android/blob/master/lib/java/com/google/android/material/snackbar/Snackbar.java#L307)
 
+- FLAG_CONTENT_CONTROLS
+- FLAG_CONTENT_ICONS
+- FLAG_CONTENT_TEXT
 
+------
 
-You can imagine someone with a motor disability, for example, may need this adjusted if it's a control.
-It also presents visual information, so we pass in FLAG_CONTENT_ICONS for people who may have trouble parsing visual information.
-If it was text, we pass in FLAG_CONTENT_TEXT for people who have trouble parsing text.
-Now we've got a timeout that's customized for our view and for the current user and a play button that works for everybody.
-OK.
-So those are the fundamentals.
-And let's just say you've used those fundamentals to make your application accessible.
-You become a bit of an expert.
+## Anti-patterns
 
-먼저 접근성 관리자에 대한 참조를 얻습니다.
-그런 다음 getRecommendedTi meoutMilliseconds를 호출하십시오.
-뷰에 대한 제안 된 시간 초과가 반환됩니다.
-보기 및 사용자에 맞게 사용자 정의되었습니다.
-이 작업은 계획 한 기본 시간 초과를 가져 와서이보기의 내용 유형에 따라 조정하여 수행합니다.
-두 번째 매개 변수에서이를 지정하십시오.
-이 상황에서이 버튼은 재생 버튼이며 컨트롤입니다.
-FLAG_CONTENT_CONTROLS에 전달합니다.
-예를 들어, 운동 장애가있는 사람이 컨트롤 인 경우이를 조정해야 할 수도 있습니다.
-시각적 정보도 제공하므로 시각적 정보를 구문 분석하는 데 문제가있는 사용자를 위해 FLAG_CONTENT_ICONS를 전달합니다.
-텍스트 인 경우 텍스트 구문 분석에 문제가있는 사용자를 위해 FLAG_CONTENT_TEXT를 전달합니다.
-이제 우리의 시각과 현재 사용자 및 모든 사람에게 적합한 재생 버튼에 맞게 사용자 정의 된 시간 초과가 있습니다.
-승인.
-이것이 기본입니다.
-이러한 기본 사항을 사용하여 애플리케이션에 액세스 할 수 있다고 가정 해 봅시다.
-당신은 약간의 전문가가됩니다.
+![024](../assets/img/blog/io/io19/demystifying-android-accessibility-development/024.png)
 
-But you are going to really quickly discover there are some murky areas, places where it's not clear what the right thing to do is.
-Let's get back to this email UI.
+화면에서 볼 수 없는 음성 안내 지원 사용자를 위해 특별히 제작한다는 가정을 해보자.
+
 Now, let's just say you're trying to build very specifically for the TalkBack user, the user that can't see on screen.
 You try to determine what the experience is going to be when a new email appears.
 And you're trying to figure out how to express this change, and you figure the best thing you can do is by making an announcement.
@@ -244,6 +228,19 @@ Services don't need fine tuning of accessibility UI from the application.
 They need a generic representation of the UI that they themselves can manipulate for the users that they understand so well.
 So what do you do in this situation? This is what you do.
 That's right.
+
+화면에서 볼 수없는 음성 안내 지원 사용자를 위해 특별히 제작하려고한다고 가정 해 보겠습니다.
+새 이메일이 나타날 때 어떤 경험이 될지 결정하려고합니다.
+그리고 당신은이 변화를 표현하는 방법을 찾으려고 노력하고 있으며, 당신이 할 수있는 가장 좋은 일은 발표를하는 것입니다.
+새 이메일이 나타날 때마다 이메일을 알리십시오.
+글쎄, 이것은 나쁜 생각입니다.
+접근성 이벤트 TYPE_ANNOUNCEMENT를 사용하여 자신을 발견하면 아마도이 안티 패턴을 따르는 것입니다.
+UI의 변경 사항은 내게 필요한 옵션 서비스 및 사용자 기본 설정에 따라 매우 다르게 표현됩니다.
+서비스는 응용 프로그램에서 접근성 UI를 미세 조정할 필요가 없습니다.
+이해하기 쉬운 사용자를 위해 스스로 조작 할 수있는 일반적인 UI 표현이 필요합니다.
+이 상황에서 무엇을하십니까? 이것이 당신이하는 일입니다.
+맞습니다.
+
 You don't do anything.
 And you can do this by using the widgets we provide to you in our frameworks, such as AndroidX and Material.
 These widgets come with accessibility built in out of the box, which significantly reduce the amount of work you as an app developer have to do.
@@ -256,27 +253,7 @@ And again, this is a bad idea.
 Accessibility focus has to be determined by the accessibility service.
 And just like announcements, this creates an inconsistency in experience.
 And actually, that's one of the biggest issues that accessibility users face, inconsistency across applications and over time.
-You see, there are a lot of applications.
-And if you as an app developer decide to break with the paradigms of accessibility interaction from the rest of the system, you're making your users' lives frustrating, because now that accessibility user, every time they open your application, they've got to throw out all of their expectations in terms of how their interaction works.
-And they've got to relearn this whole new UI at a very fundamental level.
-The best thing that you can do for your accessibility user is to maintain consistency over time and with a system.
-OK, now that you know how to fix your issues, Isha's going to talk about how to find them and how to make sure you fix them.
-ISHA BOBRA: Thanks, Qasid.
-Hello, everyone.
 
-그러나 당신은 어떤 어두운 영역, 올바른 일이 무엇인지 명확하지 않은 곳이 있다는 것을 정말로 빨리 알게 될 것입니다.
-이 이메일 UI로 돌아 갑시다.
-화면에서 볼 수없는 음성 안내 지원 사용자를 위해 특별히 제작하려고한다고 가정 해 보겠습니다.
-새 이메일이 나타날 때 어떤 경험이 될지 결정하려고합니다.
-그리고 당신은이 변화를 표현하는 방법을 찾으려고 노력하고 있으며, 당신이 할 수있는 가장 좋은 일은 발표를하는 것입니다.
-새 이메일이 나타날 때마다 이메일을 알리십시오.
-글쎄, 이것은 나쁜 생각입니다.
-접근성 이벤트 TYPE_ANNOUNCEMENT를 사용하여 자신을 발견하면 아마도이 안티 패턴을 따르는 것입니다.
-UI의 변경 사항은 내게 필요한 옵션 서비스 및 사용자 기본 설정에 따라 매우 다르게 표현됩니다.
-서비스는 응용 프로그램에서 접근성 UI를 미세 조정할 필요가 없습니다.
-이해하기 쉬운 사용자를 위해 스스로 조작 할 수있는 일반적인 UI 표현이 필요합니다.
-이 상황에서 무엇을하십니까? 이것이 당신이하는 일입니다.
-맞습니다.
 당신은 아무것도하지 않습니다.
 AndroidX 및 Material과 같은 프레임 워크에서 제공하는 위젯을 사용하여이를 수행 할 수 있습니다.
 이 위젯에는 기본 제공되는 접근성이 내장되어있어 앱 개발자가해야 할 작업량을 크게 줄일 수 있습니다.
@@ -289,6 +266,15 @@ AndroidX 및 Material과 같은 프레임 워크에서 제공하는 위젯을 �
 내게 필요한 옵션은 내게 필요한 옵션 서비스에 의해 결정되어야합니다.
 발표와 마찬가지로 경험에 일관성이 없습니다.
 실제로, 이는 접근성 사용자가 직면 한 가장 큰 문제 중 하나이며, 응용 프로그램간에 시간이 지남에 따라 일관성이 없습니다.
+
+You see, there are a lot of applications.
+And if you as an app developer decide to break with the paradigms of accessibility interaction from the rest of the system, you're making your users' lives frustrating, because now that accessibility user, every time they open your application, they've got to throw out all of their expectations in terms of how their interaction works.
+And they've got to relearn this whole new UI at a very fundamental level.
+The best thing that you can do for your accessibility user is to maintain consistency over time and with a system.
+OK, now that you know how to fix your issues, Isha's going to talk about how to find them and how to make sure you fix them.
+ISHA BOBRA: Thanks, Qasid.
+Hello, everyone.
+
 알다시피, 많은 응용 프로그램이 있습니다.
 그리고 앱 개발자가 나머지 시스템과의 접근성 상호 작용 패러다임을 극복하기로 결정하면 사용자의 삶이 좌절됩니다. 이제 내게 필요한 접근성 사용자는 응용 프로그램을 열 때마다 그들의 상호 작용이 어떻게 작동하는지에 대한 모든 기대를 버립니다.
 그리고이 완전히 새로운 UI를 매우 근본적인 수준으로 다시 배워야합니다.
@@ -304,6 +290,15 @@ On a high level, there are three approaches that you can leverage as a developer
 The first is automated tests.
 This technique requires some coding changes and is very good to detect accessibility issues at the very early developmental phases.
 You can run these tests alongside your existing UI unit or integration test as part of resubmit or continuous integration solution.
+
+이제 우리가 무엇을 만들고 있는지 그리고 그것을 어떻게 구축하는지 알았으므로, 다음으로 분명한 질문은, 내가 만든 것이 올바른지 어떻게 알 수 있습니까?
+내 텍스트가 대부분의 사용자에게 표시됩니까? 또는 내 버튼이 충분히 크거나 내 버튼에 라벨이 붙어 있더라도 말입니까? 누군가 우리를 위해 그것을 확인할 수 있다면 좋지 않을까요?
+이 질문에 대답하고 테스트 작업을 쉽게 수행 할 수있는 몇 가지 방법이 있습니다.
+높은 수준에서 개발자로서 활용하여 대부분의 사용자가 액세스 할 수있는 환경을 만들 수있는 세 가지 방법이 있습니다.
+첫 번째는 자동화 된 테스트입니다.
+이 기술은 약간의 코딩 변경이 필요하며 초기 개발 단계에서 접근성 문제를 감지하는 데 매우 좋습니다.
+다시 제출 또는 지속적인 통합 솔루션의 일부로 기존 UI 단위 또는 통합 테스트와 함께 이러한 테스트를 실행할 수 있습니다.
+
 The next tool we're going to look at is the accessibility testing tools.
 These tools do not require any technical knowledge and can be run by QA teams and release managers to perform a sanity check before your app is released out in public.
 And the third is a manual testing, which, by experience, we have realized is one of the most effective ways to ensure you're creating an end to end experience for users with disabilities in real world scenarios.
@@ -313,22 +308,7 @@ Most of the Android Accessibility testing tools are backed by the Android Access
 It is a Java library that is written on a rule-based system to evaluate Android UI constructs for accessibility issues at runtime.
 Remember, it's open source.
 So if you wish to make contributions and add checks for accessibility, please reach out to us on GitHub.
-So what does this framework test for? It tests for missing labels, which actually prevents users of screen readers from understanding the content within your app.
-It looks for small touch targets, which can prevent users with dexterity issues to interact with your app.
-It also looks for low contrast text and images, which impacts the legibility of your app, and it looks for other implementation-specific issues, which can actually prevent your app from sending the proper semantics to the Android Accessibility Framework.
-So that was about the framework, and we understood what the framework tests for.
-The question is, how do I use this framework? So we've made it really easy to integrate this Accessibility Testing Framework into the existing testing frameworks like Espresso and Robolectric.
-These are provided as an optional competent, and you can use our existing test code to run these checks.
-As you interact with the view in your tests, these accessibility checks run automatically before proceeding.
-So if you're interacting with a button in your test, we look for the button and potentially the UI around the button to look for accessibility issues.
 
-이제 우리가 무엇을 만들고 있는지 그리고 그것을 어떻게 구축하는지 알았으므로, 다음으로 분명한 질문은, 내가 만든 것이 올바른지 어떻게 알 수 있습니까?
-내 텍스트가 대부분의 사용자에게 표시됩니까? 또는 내 버튼이 충분히 크거나 내 버튼에 라벨이 붙어 있더라도 말입니까? 누군가 우리를 위해 그것을 확인할 수 있다면 좋지 않을까요?
-이 질문에 대답하고 테스트 작업을 쉽게 수행 할 수있는 몇 가지 방법이 있습니다.
-높은 수준에서 개발자로서 활용하여 대부분의 사용자가 액세스 할 수있는 환경을 만들 수있는 세 가지 방법이 있습니다.
-첫 번째는 자동화 된 테스트입니다.
-이 기술은 약간의 코딩 변경이 필요하며 초기 개발 단계에서 접근성 문제를 감지하는 데 매우 좋습니다.
-다시 제출 또는 지속적인 통합 솔루션의 일부로 기존 UI 단위 또는 통합 테스트와 함께 이러한 테스트를 실행할 수 있습니다.
 다음으로 살펴볼 도구는 내게 필요한 옵션 테스트 도구입니다.
 이 도구는 기술 지식이 필요하지 않으며 QA 팀과 릴리스 관리자가 앱을 공개적으로 공개하기 전에 상태 확인을 수행하기 위해 실행할 수 있습니다.
 세 번째는 경험에 따라 실제 시나리오에서 장애가있는 사용자에게 엔드 투 엔드 경험을 제공 할 수있는 가장 효과적인 방법 중 하나 인 수동 테스트입니다.
@@ -338,6 +318,16 @@ So if you're interacting with a button in your test, we look for the button and 
 런타임에 접근성 문제에 대한 Android UI 구성을 평가하기 위해 규칙 기반 시스템에서 작성된 Java 라이브러리입니다.
 오픈 소스라는 것을 기억하십시오.
 당신이 기여를하고 접근성에 대한 점검을 추가하고 싶다면 GitHub에서 우리에게 연락하십시오.
+
+So what does this framework test for? It tests for missing labels, which actually prevents users of screen readers from understanding the content within your app.
+It looks for small touch targets, which can prevent users with dexterity issues to interact with your app.
+It also looks for low contrast text and images, which impacts the legibility of your app, and it looks for other implementation-specific issues, which can actually prevent your app from sending the proper semantics to the Android Accessibility Framework.
+So that was about the framework, and we understood what the framework tests for.
+The question is, how do I use this framework? So we've made it really easy to integrate this Accessibility Testing Framework into the existing testing frameworks like Espresso and Robolectric.
+These are provided as an optional competent, and you can use our existing test code to run these checks.
+As you interact with the view in your tests, these accessibility checks run automatically before proceeding.
+So if you're interacting with a button in your test, we look for the button and potentially the UI around the button to look for accessibility issues.
+
 이 프레임 워크는 무엇을 테스트합니까? 레이블이 없는지 테스트하여 실제로 화면 판독기 사용자가 앱 내의 콘텐츠를 이해하지 못하게합니다.
 작은 터치 대상을 찾아 손재주 문제가있는 사용자가 앱과 상호 작용하지 못하게 할 수 있습니다.
 또한 명암비가 낮은 텍스트와 이미지를 찾아 앱의 가독성에 영향을 미치고 다른 구현 관련 문제를 찾아 앱이 실제로 의미를 Android 접근성 프레임 워크로 전송하지 못하게 할 수 있습니다.
@@ -363,20 +353,6 @@ Tests will be called in the view when you call ShadowView.
 clickOn the view you want to test.
 And much like Espresso, you can customize your tests using Robolectric's accessibility tools.
 So that was all about automated tests, making changes in your code, and figuring out accessibility issues at the very, very early development phases.
-Next, we're going to look at is using the accessibility testing tools.
-These are automated tools and do not require any technical knowledge.
-The first we're going to talk about is the Google Play Pre-Launch Report.
-It is an automated tool that controls your app on multiple physical devices and looks for accessibility issues so that you can fix them before launching your app.
-It looks for issues like crashes, performance, and now even accessibility.
-We've made it really easy to get accessibility test results by integrating those directly into its developer console.
-These checks run on all APKs released on any Play Store track.
-Pre-Launch Report is located within the Google Play Console beneath Release Management.
-You can see here's a list of issues that are highlighted by the Pre-Launch Report.
-These issues are clustered, characterized, and ranked by severity.
-Here's a detailed view of how a report looks like generated by the Pre-Launch Report.
-You can see the text with the incorrect contrast ratios highlighted and a suggestion is provided to improve it.
-On the left-hand side panel, you can see the occurrences of the similar underlining issues being highlighted.
-For each of the accessibility findings identified by the report, there is a Learn More link, which gives you a detailed understanding of the concept and provides suggestions to improve it.
 
 Espresso의 경우 접근성 검사를 사용할 수 있습니다.
 테스트를 활성화합니다.
@@ -394,6 +370,22 @@ ShadowView를 호출하면보기에서 테스트가 호출됩니다.
 테스트하려는보기를 클릭하십시오.
 Espresso와 마찬가지로 Robolectric의 접근성 도구를 사용하여 테스트를 사용자 정의 할 수 있습니다.
 초기 단계에서 자동화 된 테스트, 코드 변경, 접근성 문제 파악 등이 전부였습니다.
+
+Next, we're going to look at is using the accessibility testing tools.
+These are automated tools and do not require any technical knowledge.
+The first we're going to talk about is the Google Play Pre-Launch Report.
+It is an automated tool that controls your app on multiple physical devices and looks for accessibility issues so that you can fix them before launching your app.
+It looks for issues like crashes, performance, and now even accessibility.
+We've made it really easy to get accessibility test results by integrating those directly into its developer console.
+These checks run on all APKs released on any Play Store track.
+Pre-Launch Report is located within the Google Play Console beneath Release Management.
+You can see here's a list of issues that are highlighted by the Pre-Launch Report.
+These issues are clustered, characterized, and ranked by severity.
+Here's a detailed view of how a report looks like generated by the Pre-Launch Report.
+You can see the text with the incorrect contrast ratios highlighted and a suggestion is provided to improve it.
+On the left-hand side panel, you can see the occurrences of the similar underlining issues being highlighted.
+For each of the accessibility findings identified by the report, there is a Learn More link, which gives you a detailed understanding of the concept and provides suggestions to improve it.
+
 다음으로 접근성 테스트 도구를 사용하겠습니다.
 이들은 자동화 된 도구이며 기술 지식이 필요하지 않습니다.
 가장 먼저 이야기 할 것은 Google Play 사전 출시 보고서입니다.
