@@ -361,3 +361,8 @@ Accessibility Scanner에서 작성된 보고서의 모습이다. 예로는 잘�
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io19/demystifying-android-accessibility-development/046.png" }}" /> 
 
+## Reference
+
+Accessibility 테스트에 도움이 되는 자료
+- [I/O 19 ~ Basic Android Accessibility Codelab](https://codelabs.developers.google.com/codelabs/basic-android-accessibility/index.html)
+- [Android Accessibility Suite](https://play.google.com/store/apps/details?id=com.google.android.marvin.talkback)
