@@ -19,6 +19,10 @@ categories:
 
 - - -
 
+번역에서 사용한 이미지는 원본은 [https://speakerdeck.com/mhidaka/understanding-kotlin-coroutines-korutindejin-hua-suruapurikesiyonkai-fa](https://speakerdeck.com/mhidaka/understanding-kotlin-coroutines-korutindejin-hua-suruapurikesiyonkai-fa) 에 있습니다.
+
+- - -
+
 ## 1p, Understanding Kotlin Coroutines
 
 Coroutine으로 진화하는 앱 개발
