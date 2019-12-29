@@ -19,7 +19,7 @@
 
 실행 순서 (1)
 
-1. gem install bundler
+1. sudo gem install bundler
 2. bundle install
 3. bundle update
 4. bundle exec jekyll serve --watch --skip-initial-build
