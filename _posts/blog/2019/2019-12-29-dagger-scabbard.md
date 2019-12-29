@@ -161,6 +161,10 @@ Scabbard를 통해서 생성된 이미지는 build-tmp-kapt3-classes-debug-패�
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2019/1229-scabbard/ads2019_build.png" }}" />
 
+## 테스트 영상
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/s2FYzhBzeAk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## 감상
 
 - 아직 문서가 정리되지 않은 형태로 해당 기능을 어느 파일과 어떻게 적용해야 하는지 쉽게 정리되어 있지 않다.
