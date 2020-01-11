@@ -1,14 +1,16 @@
 ---
 layout: post
 title: "[번역] Unicode 이모티콘에 얽힌 이것저것 (이모티콘 표준과 프로그래밍 핸들링)"
-date: 2020-01-101 13:00:00 +09:00
+date: 2020-01-11 13:00:00 +09:00
 tag: [Android]
 categories:
 - blog
 - Android
 ---
 
-본 포스팅은 [Unicode 絵文字にまつわるあれこれ (絵文字の標準とプログラム上でのハンドリング)](https://qiita.com/_sobataro/items/47989ee4b573e0c2adfc#part-i-unicode-絵文字の標準-暇人向け)을 기본으로 번역하여 작성했습니다
+본 포스팅은 [Unicode 絵文字にまつわるあれこれ (絵文字の標準とプログラム上でのハンドリング)](https://qiita.com/_sobataro/items/47989ee4b573e0c2adfc#part-i-unicode-絵文字の標準-暇人向け) 을 번역한 글입니다.
+
+제 일본어 실력으로 인하여 오역이나 오타가 발생할 수 있습니다.
 
 <!--more-->
 
