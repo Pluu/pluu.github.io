@@ -81,7 +81,7 @@ ViewBinding은 DataBinding과 동일하게 Activity와 Fragment 및 View에서 �
 >
 > 그리고, ViewBinding은 XML 파일에  `tools:viewBindingIgnore="true"` 을 사용하면 해당 XML의 바인딩 클래스가 생성되지 않습니다. 
 
-최근 Fragment에서 ViewBinding 사용 방법이 변경되었습니다. build.gradle과 XML은 바뀌지 않았지만, code 부분이 바뀌었다.
+최근 Fragment에서 ViewBinding 사용 방법이 변경되었습니다. build.gradle과 XML은 바뀌지 않았지만, code 부분이 바뀌었습니다.
 
 ### Code
 
@@ -116,7 +116,7 @@ override fun onDestroyView() {
 
 > Fragments outlive their views. Make sure you clean up any references to the binding class instance in the fragment's [`onDestroyView()`](https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment#ondestroyview) method.
 
-이 부분은 조금만 생각하면 이해되는 부분이다. Activity와 다르게 Fragment에는 2개의 Lifecycle이 존재한다. 바로 Fragment Lifecycle과 Fragment View Lifecycle이 달라져서 생기는 문제입니다. 기본적으로 Fragment는 Fragment가 가지는 View보다 오래 유지됩니다.
+이 부분은 조금만 생각하면 이해되는 부분입니다. Activity와 다르게 Fragment에는 2개의 Lifecycle이 존재합니다. 바로 Fragment Lifecycle과 Fragment View Lifecycle이 달라져서 생기는 문제입니다. 기본적으로 Fragment는 Fragment가 가지는 View보다 오래 유지됩니다.
 
 게다가 ViewBinding은 DataBinding과 다르게 Lifecycle을 모릅니다. 그로 인해 각 Binding의 객체를 적절히 메모리에서 초기화 작업을 해야 합니다. 그러나, 명시적으로 초기화 작업을 하지 않음으로서 `Memory Leak`이 발생합니다. 
 
