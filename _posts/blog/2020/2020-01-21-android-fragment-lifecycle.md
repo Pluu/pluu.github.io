@@ -34,8 +34,6 @@ Activity, Fragment의 생명주기는 큰 흐름은 위와 같은 형태로 동�
 
 <img src="https://miro.medium.com/max/694/1*ALMDBkuAAZ28BJ2abmvniA.png" />
 
-<img src="https://miro.medium.com/max/694/1*ALMDBkuAAZ28BJ2abmvniA.png" />
-
 > 출처 : [The Android Lifecycle cheat sheet — part III : Fragments](https://medium.com/androiddevelopers/the-android-lifecycle-cheat-sheet-part-iii-fragments-afc87d4f37fd)
 
 > 좀 더 복잡한 전체 그림을 원하시는 경우에는 다음 링크를 보세요.
@@ -221,7 +219,6 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 아래 영상은 I/O '19 what's new in Architecture Components 세션이며 Fragment와 LiveData 사용에 필요한 Lifecycle에 대해서 언급하고 있습니다.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/pErTyQpA390?start=214" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 ------
 
 ## Updated, Fragment 1.2.0
