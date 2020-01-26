@@ -8,8 +8,7 @@ baseurl: "" #important: start with /
 url: "http://pluu.github.io"
 
 # Build settings
-kramdown:
-  input: GFM
+markdown: kramdown
 permalink: /:categories/:year/:month/:day/:title/
 excerpt_separator: <!--more--> #use this in posts to define how long the excerpt of the post (that is shown on the Blog page) is
 paginate: 10
@@ -23,6 +22,15 @@ colors:  #in hex code if not noted else
   link_hover: "#01b2fe"
   footer_heading: "#ffffff"
   footer_content: "#bfc9d3"
+
+# Making projects separate from posts
+collections:
+  projects:
+    output: true
+    permalink: /projects/:title/
+  questions:
+    output: true
+    permalink: /questions/:title/
 
 ### CONTACT SETTINGS ###
 

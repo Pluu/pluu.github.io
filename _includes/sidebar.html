@@ -1,11 +1,4 @@
 <div class="col-lg-4">
-   <!--  <h4>Search</h4>
-    <div class="hline"></div>
-        <p>
-            <br/>
-            <input type="text" class="form-control" placeholder="Search something">
-        </p>
-    <div class="spacing"></div> -->
     <h4>Subscribe</h4>
     <div class="hline"></div>
         <p>
@@ -16,39 +9,23 @@
     <div class="hline"></div>
     <div class="spacing"></div>
     <div class="list-group">
-    {% for category in site.categories %}{% unless category.first == "blog" or category.first == "project" or category.first == "question" %}
-        <a class="list-group-item" href="{{ '/category/#'  | prepend: site.baseurl  }}{{ category | first }}">
-            {{ category | first | capitalize }}
+    {% for category in site.categories %}
+        <a class="list-group-item" href="{{ '/category/#'  | prepend: site.baseurl  }}{{ category | first }}">{{ category | first | capitalize }}
             <span class="badge badge-theme pull-right">{{ category | last | size }}</span>
         </a>
-    {% endunless %}{% endfor %}
+    {% endfor %}
     </div>
 
     <div class="spacing"></div>
-
+        
     <h4>Recent Posts</h4>
     <div class="hline"></div>
         <ul class="popular-posts">
-            {% for post in site.categories['blog'] limit:4 %}
+           {% for post in site.categories['blog'] limit:4 %}
                 <li>
                     <p><a href="{{ post.url }}">{{ post.title }}</a></p>
                 <em>Posted on {{ post.date | date_to_string }}</em>
             </li>
             {% endfor %}
         </ul>
-
-    <!-- <div class="spacing"></div>
-
-    <h4>Popular Tags</h4>
-    <div class="hline"></div>
-    <p>
-    {% for tag in site.tags %}
-            <a class="btn btn-theme" href="{{ '/tags.html#'  | prepend: site.baseurl  }}{{ tag | first }}-ref" role="button">{{ tag | first }} ({{ tag | last | size }})</a>
-        {% endfor %}
-    </p> -->
-    <!-- <p>
-    {% for category in site.categories %}{% unless category.first == "blog" or category.first == "project" or category.first == "question" %}
-            <a class="btn btn-theme" href="{{ '/category/#'  | prepend: site.baseurl  }}{{ category | first }}" role="button">{{ category | first | capitalize }} ({{ category | last | size }})</a>
-        {% endunless %}{% endfor %}
-     </p>-->
 </div>
