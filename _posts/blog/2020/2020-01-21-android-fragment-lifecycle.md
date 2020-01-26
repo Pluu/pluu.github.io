@@ -52,7 +52,7 @@ Fragment의 생명주기는 Attach 되는 Activity의 생명주기에 영향을 
 
 ### Fragment & LiveData 사용 예시
 
-아래 코드는 간단한 샘플로서 ViewModel에서 정의한 `isUpdate`  로 정의한 LiveData를 Observe하는 코드입니다. 아래 코드르 본 후 문제가 될 수 있는 상황을 생각해보세요.
+아래 코드는 간단한 샘플로서 ViewModel에서 정의한 `isUpdate` 로 정의한 LiveData를 Observe하는 코드입니다. 아래 코드를 본 후 문제가 될 수 있는 상황을 생각해보세요.
 
 ```kotlin
 // SampleViewModel.kt
