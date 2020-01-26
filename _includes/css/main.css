@@ -115,6 +115,7 @@ a {
 	-o-transition: background-color .4s linear, color .4s linear;
 	-ms-transition: background-color .4s linear, color .4s linear;
 	transition: background-color .4s linear, color .4s linear;
+	overflow-wrap: break-word;
 }
 a:hover,
 a:focus {
