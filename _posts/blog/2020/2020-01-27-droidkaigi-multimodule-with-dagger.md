@@ -2,7 +2,7 @@
 layout: post
 title: "[번역] DroidKaigi 2019 ~ 
 멀티 모듈 프로젝트에서의 Dagger를 사용해 Dependency Injection"
-date: 2019-11-27 23:00:00 +09:00
+date: 2020-01-27 21:00:00 +09:00
 tag: [Android, DroidKaigi]
 categories:
 - blog
