@@ -520,6 +520,8 @@ Android에서 상태를 저장하기위해서 ViewModel, onSaveInstanceState(), 
 
 최종적으로는 현재 앱에 적용된 아키텍처와 앞으로의 방향에 따라서 선택할 필요가 있습니다.
 
+> 이번 글에서 사용된 샘플 코드는 다음 [링크](https://github.com/Pluu/Android-UI-SavedState-Sample)에서 확인할 수 있습니다.
+
 ## 참고 자료
 
 - [Android Developers ~ Activity](https://developer.android.com/reference/android/app/Activity)
