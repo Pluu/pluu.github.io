@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Android에서 상태 저장"
+title: "Android 상태 저장의 기본에서 Savedstate까지"
 date: 2020-02-10 23:40:00 +09:00
 tag: [Android, SavedState]
 categories:
