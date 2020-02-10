@@ -331,11 +331,11 @@ class CounterViewModel : ViewModel() {
 }
 ```
 
-### 시스템에 의해 종료시 대응
+### 시스템에 의한 종료
 
 다만, 시스템에 의해서 종료된 경우는 ViewModel이 새롭게 생성됩니다. 그 이유는 ViewModel은 `메모리 내에 위치`하므로 해당 프로세스가 종료되면 인스턴스는 없어집니다. 
 
-이제 시스템에 의한 종료에도 대응을 해보겠습니다. 먼저 Activity를 열고, 예제와 같이 3번의 클릭 후 홈 키를 누른 후 아래의 명령어를 입력합니다. 이번 테스트에서 샘플 앱의 패키지명은 "com.pluu.savedstate" 입니다. 
+이제 시스템에 의한 종료를 확인해 보겠습니다. 먼저 Activity를 열고, 예제와 같이 3번의 클릭 후 홈 키를 누른 후 아래의 명령어를 입력합니다. 이번 테스트에서 샘플 앱의 패키지명은 "com.pluu.savedstate" 입니다. 
 
 ```shell
 adb shell am kill com.pluu.savedstate
