@@ -379,7 +379,7 @@ I/App$onCreate: Resumed : ViewModelCounterActivity
 
 ## SavedState + ViewModel 이용
 
-이전 섹션에서 언급한 것처럼 [`ViewModel`](https://developer.android.com/reference/androidx/lifecycle/ViewModel.html?hl=ko) 을 사용하더라도 시스템에 의해 프로세스 중단을 처리해야 할 때에는 [`onSaveInstanceState()`](https://developer.android.com/reference/android/app/Activity?hl=ko#onSaveInstanceState(android.os.Bundle))를 사용해야 할 수 있습니다. 
+이전 섹션에서 언급한 것처럼 [`ViewModel`](https://developer.android.com/reference/androidx/lifecycle/ViewModel.html?hl=en) 을 사용하더라도 시스템에 의해 프로세스 중단을 처리해야 할 때에는 [`onSaveInstanceState()`](https://developer.android.com/reference/android/app/Activity?hl=en#onSaveInstanceState(android.os.Bundle))를 사용해야 할 수 있습니다. 
 
 이때 사용할 수 있는 방법으로 SavedState ViewModel이 있습니다. SavedState ViewModel은 Google I/O '19에서 처음 소개되었습니다. 
 
@@ -424,7 +424,7 @@ class SavedStateCounterViewModel(
 
 ### SavedStateHandle
 
- [`ViewModel`](https://developer.android.com/reference/androidx/lifecycle/ViewModel.html?hl=ko) 의 생성자로 넘어오는  [`SavedStateHandle`](https://developer.android.com/reference/androidx/lifecycle/SavedStateHandle.html)  객체는 Key-Value 형태인 Map 구조입니다. SavedStateHandle은 프로세스가 시스템에 의해 종료되더라도 유지됩니다.
+ [`ViewModel`](https://developer.android.com/reference/androidx/lifecycle/ViewModel.html?hl=en) 의 생성자로 넘어오는  [`SavedStateHandle`](https://developer.android.com/reference/androidx/lifecycle/SavedStateHandle.html)  객체는 Key-Value 형태인 Map 구조입니다. SavedStateHandle은 프로세스가 시스템에 의해 종료되더라도 유지됩니다.
 
 [get(String)](https://developer.android.com/reference/androidx/lifecycle/SavedStateHandle.html#get(java.lang.String)) 을 통해서 값을 가져올 수 있으며 [getLiveData(String)](https://developer.android.com/reference/androidx/lifecycle/SavedStateHandle.html#getLiveData(java.lang.String))를 이용해 [LiveData](https://developer.android.com/reference/androidx/lifecycle/LiveData.html)를 리턴할 수도 있습니다. [set(String, Object)](https://developer.android.com/reference/androidx/lifecycle/SavedStateHandle.html#set(java.lang.String,%20T))를 통해서 값을 저장하거나 [getLiveData(String)](https://developer.android.com/reference/androidx/lifecycle/SavedStateHandle.html#getLiveData(java.lang.String)) 를 통해서 반환된 LiveData에 새로운 값을 전달합니다.
 
