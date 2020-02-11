@@ -58,7 +58,7 @@ class CounterActivity : AppCompatActivity() {
 | ------------------------------------------------------------ |
 | <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2020/0208-savedsate/03.png" }}" /> |
 
-이 현상은 Android 개발시 다양한 자료를 통해서 많이 본 내용입니다. 왜 이 현상이 일어나는지 로그를 보면 이야기를 다루겠습니다.
+이 현상은 Android 개발 시 다양한 자료를 통해서 많이 본 내용입니다. 왜 이 현상이 일어나는지 로그를 보면 이야기를 다루겠습니다.
 
 먼저 Activity의 활동을 추적하는 방법 중에서 Application에서 `registerActivityLifecycleCallbacks` 콜백을 등록해서 로그를 출력할 수 있습니다.
 
@@ -120,7 +120,7 @@ Resumed : CounterActivity
 
 회전할 때마다 기존 CounterActivity는 종료되고, 새롭게 Activity가 만들어집니다. 이로 인해 실제 Counter의 값과 TextView에 노출되고 있던 상태를 잃습니다. 이제 원인을 알게 되었으니 우리가 해결해야 할 것은 다음 2가지입니다.
 
-1. Counter 저장/복워
+1. Counter 저장/복원
 2. TextView 값 노출
 
 >  Medium의 [The Android Lifecycle cheat sheet — part I: Single Activities](https://medium.com/androiddevelopers/the-android-lifecycle-cheat-sheet-part-i-single-activities-e49fd3d202ab)의 **Scenario 3: Configuration changes** 시나리오의 결과를 통해서 동일한 것을 알 수 있습니다.
