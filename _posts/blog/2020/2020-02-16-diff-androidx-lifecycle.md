@@ -15,6 +15,18 @@ categories:
 
 <!--more-->
 
+- - -
+
+ViewModel에 대해서 총 5개의 글을 소개할 예정입니다.
+
+- 1부 : [Android 상태 저장의 기본에서 Savedstate까지]({{ site.url }}/blog/android/2020/02/10/saved-state/)
+- 2부 : [SavedState is Default]({{ page.url }})
+- 3부 : [SavedStateHandle을 다뤄봅니다]({{ site.url }}/blog/android/2020/02/20/savedstatehandle/)
+- 4부 : SavedStateHandle이 어떻게 저장되고 복원될까?
+- 5부 : TBD
+
+- - -
+
 AndroidX는 Stable/RC/Beta/Alpha의 단계를 가지면서 업데이트되고 있습니다. 그리고, 안드로이드 개발자라면 이 내용을 알고 계실 겁니다. AndroidX 사용으로 편해진 부분도 있으며, 조용하게 여러 부분이 변경되고 있습니다.
 
 SavedState 기능도 별도 라이브러리로 존재하지만, AndroidX Activity / Fragment / Lifecycle 최신 버전을 쓰고 계신 분이라면 이미 여러분은 침투(?)당했습니다.
@@ -139,3 +151,13 @@ OnRequeryFactory
 ### lifecycle-viewmodel-savedstate 1.0.0 ➡ lifecycle-viewmodel 2.2.0
 
 lifecycle-viewmodel-savedstate는 다른 Lifecycle artifact와 동일한 버전을 사용하도록 변경되었습니다. 기존 1.0.0의 동작과 동일합니다.
+
+- - -
+
+ViewModel에 대해서 총 5개의 글을 소개할 예정입니다.
+
+- 1부 : [Android 상태 저장의 기본에서 Savedstate까지]({{ site.url }}/blog/android/2020/02/10/saved-state/)
+- 2부 : [SavedState is Default]({{ page.url }})
+- 3부 : [SavedStateHandle을 다뤄봅니다]({{ site.url }}/blog/android/2020/02/20/savedstatehandle/)
+- 4부 : SavedStateHandle이 어떻게 저장되고 복원될까?
+- 5부 : TBD
