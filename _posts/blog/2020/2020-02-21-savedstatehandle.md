@@ -835,6 +835,10 @@ public final class SavedStateHandle {
 
 다음 글은 SavedStateHandle이 만들어지는 과정에 대해서 다룰 예정입니다.
 
+> 본 글에서 다룬 샘플은 다음 링크에 있습니다.
+> 
+> https://github.com/Pluu/Android-UI-SavedState-Sample
+
 - - -
 
 ViewModel에 대해서 총 5개의 글을 소개할 예정입니다.
