@@ -30,8 +30,8 @@ ViewModel 에 대해서 총 5개의 글을 소개할 예정입니다.
 
 본 글에서 다루는 FlowChart를 빠르게 확인하기 위해서는 아래 링크를 참고해주세요
 
-- ComponentActivity : [download (1.26 MB - 8,486px X 7,084px)](https://github.com/Pluu/pluu.github.io/blob/master/assets/img/blog/2020/0314-savedstate-flow/SavedState%20Flow-Activity.png)
-- Fragment : [download (1.67MB - 8,486px X 10,932px)](https://github.com/Pluu/pluu.github.io/blob/master/assets/img/blog/2020/0314-savedstate-flow/SavedState%20Flow-Fragment.png)
+- ComponentActivity : [download (1.26 MB - 8,486px X 7,084px)](http://bit.ly/33lBmQK)
+- Fragment : [download (1.67MB - 8,486px X 10,932px)](http://bit.ly/2TTgsoM)
 
 일부 Flowchart는 화면에 다 담기에 큰 이미지로 인해 위 이미지를 참고하시면 됩니다.
 
@@ -423,8 +423,8 @@ public final class SavedStateHandle {
 
 본 글에서 다루는 FlowChart를 빠르게 확인하기 위해서는 아래 링크를 참고해주세요
 
-- ComponentActivity : [download (1.26 MB - 8,486px X 7,084px)](https://github.com/Pluu/pluu.github.io/blob/master/assets/img/blog/2020/0314-savedstate-flow/SavedState%20Flow-Activity.png)
-- Fragment : [download (1.67MB - 8,486px X 10,932px)](https://github.com/Pluu/pluu.github.io/blob/master/assets/img/blog/2020/0314-savedstate-flow/SavedState%20Flow-Fragment.png)
+- ComponentActivity : [download (1.26 MB - 8,486px X 7,084px)](http://bit.ly/33lBmQK)
+- Fragment : [download (1.67MB - 8,486px X 10,932px)](http://bit.ly/2TTgsoM)
 
 일부 Flowchart는 화면에 다 담기에 큰 이미지로 인해 위 이미지를 참고하시면 됩니다.
 
