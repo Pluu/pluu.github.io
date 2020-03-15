@@ -23,7 +23,7 @@ ViewModel에 대해서 총 5개의 글을 소개할 예정입니다.
 - 1부 : [Android 상태 저장의 기본에서 Savedstate까지]({{ page.url }})
 - 2부 : [SavedState is Default]({{ site.url }}/blog/android/2020/02/15/diff-androidx-lifecycle/)
 - 3부 : [SavedStateHandle을 다뤄봅니다]({{ site.url }}/blog/android/2020/02/20/savedstatehandle/)
-- 4부 : SavedStateHandle이 어떻게 저장되고 복원될까?
+- 4부 : [SavedState 어떻게 저장되고 복원될까?]({{ site.url }}/blog/android/2020/03/15/savedstate-flow/)
 - 5부 : TBD
 
 - - -
@@ -551,5 +551,5 @@ ViewModel에 대해서 총 5개의 글을 소개할 예정입니다.
 - 1부 : [Android 상태 저장의 기본에서 Savedstate까지]({{ page.url }})
 - 2부 : [SavedState is Default]({{ site.url }}/blog/android/2020/02/15/diff-androidx-lifecycle/)
 - 3부 : [SavedStateHandle을 다뤄봅니다]({{ site.url }}/blog/android/2020/02/20/savedstatehandle/)
-- 4부 : SavedStateHandle이 어떻게 저장되고 복원될까?
+- 4부 : [SavedState 어떻게 저장되고 복원될까?]({{ site.url }}/blog/android/2020/03/15/savedstate-flow/)
 - 5부 : TBD
