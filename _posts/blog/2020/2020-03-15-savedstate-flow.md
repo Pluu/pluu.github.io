@@ -248,7 +248,7 @@ public ViewModelProvider.Factory getDefaultViewModelProviderFactory() {
 
 [ComponentActivity](https://developer.android.com/reference/androidx/activity/ComponentActivity) 와 [Fragment](https://developer.android.com/reference/androidx/fragment/app/Fragment) 에서 [SavedStateViewModelFactory](https://developer.android.com/reference/androidx/lifecycle/SavedStateViewModelFactory) 인스턴스 생성시 3번째 파라미터 넘겨지는 [Bundle](https://developer.android.com/reference/android/os/Bundle.html) 객체를 유심히 살펴볼 필요가 있습니다. 바로 이 [Bundle](https://developer.android.com/reference/android/os/Bundle.html) 값이 [SavedStateHandle](https://developer.android.com/reference/androidx/lifecycle/SavedStateHandle) 의 기본값으로 사용 (🎉🎉🎉) 됩니다. 이 내용은 이후의 파트에서 더 살펴보겠습니다.
 
-### 사용사례 : activity-kyx
+### 사용사례 : activity-ktx
 
 ```kotlin
 @MainThread
