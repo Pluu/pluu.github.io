@@ -10,7 +10,7 @@ categories:
 
 본 글에서는 상태 저장을 위해서 사용되는 [SavedStateHandle](https://developer.android.com/reference/androidx/lifecycle/SavedStateHandle) 객체가 AndroidX에서 어떻게 저장과 복원이 이루어지는지 그림과 함께 살펴볼 것입니다.
 
-[ComponentActivity](https://developer.android.com/reference/androidx/activity/ComponentActivity)와 [Fragment](https://developer.android.com/reference/androidx/fragment/app/Fragment)의 흐름을 확인하기 위해서 AndroidX [Activity:1.1.0](https://developer.android.com/jetpack/androidx/releases/activity#version_110_3) / [Fragment:1.2.0](https://developer.android.com/jetpack/androidx/releases/fragment#version_120_3) / [android/platform/frameworks/supports](android/platform/frameworks/supports) androidx-master-dev 소스를 통해서 파악한 정보입니다.
+[ComponentActivity](https://developer.android.com/reference/androidx/activity/ComponentActivity)와 [Fragment](https://developer.android.com/reference/androidx/fragment/app/Fragment)의 흐름을 확인하기 위해서 AndroidX [Activity:1.1.0](https://developer.android.com/jetpack/androidx/releases/activity#version_110_3) / [Fragment:1.2.0](https://developer.android.com/jetpack/androidx/releases/fragment#version_120_3) / [android/platform/frameworks/supports](https://android.googlesource.com/platform/frameworks/support/) androidx-master-dev 소스를 통해서 파악한 정보입니다.
 
 <!--more-->
 
