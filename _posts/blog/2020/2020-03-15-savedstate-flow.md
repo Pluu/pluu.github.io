@@ -273,7 +273,7 @@ activity-ktx 를 이용해서 ViewModel을 가져오는 경우에도 앞서 언�
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2020/0314-savedstate-flow/SavedStateViewModelFactory.png" }}" />
 
-[SavedStateViewModelFactory](https://developer.android.com/reference/androidx/lifecycle/SavedStateViewModelFactory) 는 [ViewModelProvider.KeyedFactory](https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-master-dev/lifecycle/lifecycle-viewmodel/src/main/java/androidx/lifecycle/ViewModelProvider.java#65) 라는 추상 클래스를 상속해서 구현하고 있습니다. 아쉽게도 해당 클래스는 외부로 공개된 클래스가 아니라서 개발자가 직접 상속받아서 구현할 수는 없습니다. 이 클래스는 [ViewModelProvider.Factory](https://developer.android.com/reference/androidx/lifecycle/ViewModelProvider.Factory) 인터페이스를 구현하여 ViewModel을 인스턴스화하는 역할을 가지고 있습니다. 또한 해당 ViewModel에 지정된 키를 수신하는 확장 Factory입니다.
+[SavedStateViewModelFactory](https://developer.android.com/reference/androidx/lifecycle/SavedStateViewModelFactory) 는 [ViewModelProvider.KeyedFactory](https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-master-dev/lifecycle/lifecycle-viewmodel/src/main/java/androidx/lifecycle/ViewModelProvider.java#65) 라는 추상 클래스를 상속해서 구현하고 있습니다. 아쉽게도 이 추상 클래스는 외부로 공개된 클래스가 아니라서 개발자가 직접 상속받아서 구현할 수는 없습니다. 그리고 [ViewModelProvider.Factory](https://developer.android.com/reference/androidx/lifecycle/ViewModelProvider.Factory) 인터페이스를 구현하여 ViewModel을 인스턴스화하는 역할을 가지고 있습니다. 또한 해당 ViewModel에 지정된 키를 수신하는 확장 Factory입니다.
 
 > key 구성 : ViewModelProvider.DEFAULT_KEY + ":" + modelClass.getCanonicalName()
 >
@@ -416,6 +416,8 @@ public final class SavedStateHandle {
 ## 정리
 
 지금까지 [ComponentActivity](https://developer.android.com/reference/androidx/activity/ComponentActivity) 와 [Fragment](https://developer.android.com/reference/androidx/fragment/app/Fragment) 를 통해서 `SavedState`, 즉 저장된 상태가 어떻게  저장/복원되는지를 살펴봤습니다. 전체적인 흐름을 보았을 때 AndroidX 내부의 코드는 복원보다 저장의 흐름이 상당히 짧은 것을 볼 수 있습니다. 또한 빠른 저장을 위해서 [SavedStateRegistry#registerSavedStateProvider(String, SavedStateProvider)](https://developer.android.com/reference/androidx/savedstate/SavedStateRegistry#registerSavedStateProvider(java.lang.String,%20androidx.savedstate.SavedStateRegistry.SavedStateProvider)) 에 저장된 상태를 트리거 형태로 저장한 후 사용하는 모습도 보았습니다.
+
+이번 글은 내부 코드를 자세히 살펴보기보다는 전체 흐름을 통해서 각 클래스가 담당하는 역할을 확인하고 클래스 간의 연결성을 알아보았습니다.
 
 여기까지 긴 글을 읽어주셔서 감사합니다.
 
