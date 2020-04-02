@@ -219,3 +219,11 @@ new Intent(Intent.ACTION_CREATE_DOCUMENT)
   .setType("*/*")
   .putExtra(Intent.EXTRA_TITLE, input);
 ```
+
+------
+
+## Summary
+
+느리지만 Activity/Fragment에 조금씩 변화가 발생하고 있습니다. 저로서는 흥미로운 일입니다.
+
+그리고, 이번 업데이트에는 본 글에서 다루지 않은 다른 변화들도 존재합니다. 한 번쯤 릴리즈 노트를 챙겨보면서 변화의 흐름을 보는 재미를 느꼈으면 합니다.
