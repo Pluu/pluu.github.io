@@ -60,7 +60,7 @@ Glide.with(context)
   .into(/** ImageView */)
 ```
 
-기본적인 API를 사용했으며 CenterCrop과 이미지의 양 끝을 10dp만큼 둥글게 표현하는 코드입니다. 100dp x 100dp 의 이미지 뷰에 샘플 코드를 적용하면 아래와 같은 결과를 얻을 수 있습니다.
+기본적인 API를 사용했으며 CenterCrop과 이미지의 모서리를 10dp만큼 둥글게 표현하는 코드입니다. 100dp x 100dp 의 이미지 뷰에 샘플 코드를 적용하면 아래와 같은 결과를 얻을 수 있습니다.
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2020/0429-glidetarget/good_sample.png" }}" />
 
@@ -186,6 +186,16 @@ public abstract class CustomTarget<T> implements Target<T> {
 > 소스 출처 : https://github.com/bumptech/glide/blob/1caeff4bf1/library/src/main/java/com/bumptech/glide/request/target/CustomTarget.java#L53
 
 [CustomTarget](https://bumptech.github.io/glide/javadocs/490/com/bumptech/glide/request/target/CustomTarget.html) 생성자로 크기를 전달하지 않는 경우 [Target.SIZE_ORIGINAL](https://github.com/bumptech/glide/blob/1caeff4bf1/library/src/main/java/com/bumptech/glide/request/target/Target.java#L32) 를 width/height에 대입하고 있습니다. 이미지 요청 시 원본 이미지 크기로 읽겠다는 정의하고 있습니다.
+
+<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2020/0429-glidetarget/bad_sample.png" }}" />
+
+지금까지 내용을 토대로 위 현상을 해석을 하면 다음과 같습니다.
+
+- 좌측 : 1,212 x 2,475 이미지를 CenterCrop + 10dp로 모서리를 Round 처리한 이미지를 ImageView에 적용
+- 우측 : 80 x 80 이미지를 CenterCrop + 10dp로 모서리를 Round 처리한 이미지를 ImageView에 적용
+   - Pixel 3a에서 10dp는 27px로 Round 처리
+   - Round 되지 않는 부분은 4면의 26px만 해당됩니다.
+   - Round할 수치를 늘린다면 원형으로 표시됩니다.
 
 또한 [CustomTarget](https://bumptech.github.io/glide/javadocs/490/com/bumptech/glide/request/target/CustomTarget.html) 을 상속하는 클래스는 아래와 같습니다. 
 
