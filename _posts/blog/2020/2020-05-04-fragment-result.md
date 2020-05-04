@@ -111,7 +111,7 @@ Fragment간의 데이터 전달은 앞서 소개한 Listener를 사용하는 방
 - AndroidX : fragment-ktx:1.3.0-alpha04
 - View Binding
 
-### FragmentResut API
+### FragmentResult API
 
 Fragment에서 Result를 설정하는 API와 Result를 수신하는 API는 다음과 같습니다. `fragment-ktx` 소스이지만 확인하는 것은 어렵지 않을겁니다.
 
