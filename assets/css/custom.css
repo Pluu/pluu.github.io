@@ -1,0 +1,8 @@
+@media (max-width: 768px) {
+  table {
+    overflow: auto;
+  }
+  a {
+    word-break: break-all;
+  }
+}
