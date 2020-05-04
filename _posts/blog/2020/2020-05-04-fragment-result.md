@@ -18,13 +18,15 @@ Fragment간 데이터 전달시 Listener를 사용하는 것은 쉬운 방법 �
 
 ```kotlin
 class FragmentB : Fragment() {
-  interface OnResultListener { // Fragment 간의 통신용 Listener 정의 
+  // Fragment 간의 통신용 Listener 정의 
+  interface OnResultListener {
     fun onResult(value: String)
   }
   
   private var listener: OnResultListener? = null
   ...
-  fun setListener(listener: OnResultListener) { // 외부에서 전달할 Setter Listener
+  // 외부에서 전달할 Setter Listener
+  fun setListener(listener: OnResultListener) {
     this.listener = listener
   }
 
@@ -42,7 +44,8 @@ class FragmentA : Fragment(), FragmentB.OnResultListener {
   ...
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     ...
-    val restoreValue = arguments?.getString(keyRestore) // View가 Recreate시 처리
+    // View가 Recreate시 처리
+    val restoreValue = arguments?.getString(keyRestore)
     if (restoreValue != null) {
       /** action to do something */
     }
@@ -51,14 +54,17 @@ class FragmentA : Fragment(), FragmentB.OnResultListener {
   private fun showFragmentB() {
     parentFragmentManager.commit {
         replace(R.id.container, OldBasicChild2Fragment().apply {
-          setListener(this@OldBasicChild1Fragment) // FragmentB 표시할때 Listener를 전달
+          // FragmentB 표시할때 Listener를 전달
+          setListener(this@OldBasicChild1Fragment)
         })
         addToBackStack(null)
       }
   }
 
-  override fun onResult(value: String) { // Implement FragmentB.OnResultListener
-    if (isVisible) { // Fragment가 Visible 중일때만 처리
+  // Implement FragmentB.OnResultListener
+  override fun onResult(value: String) {
+    // Fragment가 Visible 중일때만 처리
+    if (isVisible) {
       /** action to do something */
     } else {
       // Visible이 아닐 경우 Fragment#Arguemtn에 데이터 저장
@@ -214,12 +220,15 @@ class FlexibleMasterFragment : ListFragment() {
 
   override fun onListItemClick(l: ListView, v: View, position: Int, id: Long) {
     super.onListItemClick(l, v, position, id)
-    setFragmentResult(requestKey, bundleOf(resultKey to list[position])) // Item Click시 setFragmentResult로 결과 전달
+    // Item Click시 setFragmentResult로 결과 전달
+    setFragmentResult(requestKey, bundleOf(resultKey to list[position]))
   }
 
   companion object {
-    const val requestKey = "flexible" // FragmentResult에 데이터 전달을 위한 RequestKey
-    const val resultKey = "item" // Bundle에 저장할 데이터 Key
+    // FragmentResult에 데이터 전달을 위한 RequestKey
+    const val requestKey = "flexible"
+    // Bundle에 저장할 데이터 Key
+    const val resultKey = "item"
   }
 }
 ```
