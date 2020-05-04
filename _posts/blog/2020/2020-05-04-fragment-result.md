@@ -53,9 +53,9 @@ class FragmentA : Fragment(), FragmentB.OnResultListener {
   
   private fun showFragmentB() {
     parentFragmentManager.commit {
-        replace(R.id.container, OldBasicChild2Fragment().apply {
+        replace(R.id.container, FragmentB().apply {
           // FragmentB 표시할때 Listener를 전달
-          setListener(this@OldBasicChild1Fragment)
+          setListener(this@FragmentA)
         })
         addToBackStack(null)
       }
