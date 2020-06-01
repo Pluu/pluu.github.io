@@ -285,7 +285,9 @@ final class FragmentManagerViewModel extends ViewModel {
 
 ## 정리
 
-지금까지 ViewModel의 탄생에서부터 죽음까지를 살펴봤습니다. 단편적으로 여러분들이 알고 있던 함수가 주요 키포인트였고, 그 주변 로직들과 연관지어 ViewModel의 B에서 D까지는 가는 것을 살펴봤습니다.
+지금까지 AndroidX 내부 코드를 토대로 ViewModel의 탄생에서부터 죽음까지를 살펴봤습니다. 여러분들이 알고 있던 함수가 주요 키포인트였으며 단편적이지만 그 주변 로직들과 연관 지어 설명을 했습니다.
+
+ViewModel 생성의 경우 지금까지의 글에서도 언급되었기에 쉽게 떠올리셨을 거라고 생각합니다.
 
 ------
 
