@@ -24,7 +24,7 @@ ViewModel 에 대해서 총 5개의 글을 소개합니다.
 - 2부 : [SavedState is Default]({{ site.url }}/blog/android/2020/02/15/diff-androidx-lifecycle/)
 - 3부 : [SavedStateHandle을 다뤄봅니다]({{ site.url }}/blog/android/2020/02/20/savedstatehandle/)
 - 4부 : [SavedState 어떻게 저장되고 복원될까?]({{ site.url }}/blog/android/2020/03/15/savedstate-flow/)
-- 5부 : [ViewModel의 탄생에서 죽음까지]({{ page.url }})/blog/android/2020/05/04/viewmodel-b-to-d/)
+- 5부 : [ViewModel의 탄생에서 죽음까지]({{ page.url }}/blog/android/2020/05/04/viewmodel-b-to-d/)
 
 - - -
 
@@ -552,4 +552,4 @@ ViewModel 에 대해서 총 5개의 글을 소개합니다.
 - 2부 : [SavedState is Default]({{ site.url }}/blog/android/2020/02/15/diff-androidx-lifecycle/)
 - 3부 : [SavedStateHandle을 다뤄봅니다]({{ site.url }}/blog/android/2020/02/20/savedstatehandle/)
 - 4부 : [SavedState 어떻게 저장되고 복원될까?]({{ site.url }}/blog/android/2020/03/15/savedstate-flow/)
-- 5부 : [ViewModel의 탄생에서 죽음까지]({{ page.url }})/blog/android/2020/05/04/viewmodel-b-to-d/)
+- 5부 : [ViewModel의 탄생에서 죽음까지]({{ page.url }}/blog/android/2020/05/04/viewmodel-b-to-d/)

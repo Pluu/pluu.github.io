@@ -237,12 +237,12 @@ ViewModel의 소유자(=[ViewModelStoreOwner](https://developer.android.com/refe
 
 ```java
 public class ComponentActivity ... {
-	public ComponentActivity() {
+  public ComponentActivity() {
     ...
     getLifecycle().addObserver(new LifecycleEventObserver() {
       @Override
-      public void onStateChanged(@NonNull LifecycleOwner source,
-						@NonNull Lifecycle.Event event) {
+      public void onStateChanged(@NonNull LifecycleOwner source, 
+        @NonNull Lifecycle.Event event) {
         if (event == Lifecycle.Event.ON_DESTROY) {
           if (!isChangingConfigurations()) {
             getViewModelStore().clear(); // ◀◀◀ ViewModelStore#clear() 호출
