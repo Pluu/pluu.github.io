@@ -17,13 +17,13 @@ categories:
 
 - - -
 
-ViewModel에 대해서 총 5개의 글을 소개할 예정입니다.
+ViewModel 에 대해서 총 5개의 글을 소개합니다.
 
 - 1부 : [Android 상태 저장의 기본에서 Savedstate까지]({{ site.url }}/blog/android/2020/02/10/saved-state/)
-- 2부 : [SavedState is Default]({{ page.url }})
+- 2부 : [SavedState is Default]({{ page.url }}) <-- 현재 글
 - 3부 : [SavedStateHandle을 다뤄봅니다]({{ site.url }}/blog/android/2020/02/20/savedstatehandle/)
 - 4부 : [SavedState 어떻게 저장되고 복원될까?]({{ site.url }}/blog/android/2020/03/15/savedstate-flow/)
-- 5부 : TBD
+- 5부 : [ViewModel의 탄생에서 죽음까지]({{ page.url }})/blog/android/2020/05/04/viewmodel-b-to-d/)
 
 - - -
 
@@ -154,10 +154,10 @@ lifecycle-viewmodel-savedstate는 다른 Lifecycle artifact와 동일한 버전�
 
 - - -
 
-ViewModel에 대해서 총 5개의 글을 소개할 예정입니다.
+ViewModel 에 대해서 총 5개의 글을 소개합니다.
 
 - 1부 : [Android 상태 저장의 기본에서 Savedstate까지]({{ site.url }}/blog/android/2020/02/10/saved-state/)
-- 2부 : [SavedState is Default]({{ page.url }})
+- 2부 : [SavedState is Default]({{ page.url }}) <-- 현재 글
 - 3부 : [SavedStateHandle을 다뤄봅니다]({{ site.url }}/blog/android/2020/02/20/savedstatehandle/)
 - 4부 : [SavedState 어떻게 저장되고 복원될까?]({{ site.url }}/blog/android/2020/03/15/savedstate-flow/)
-- 5부 : TBD
+- 5부 : [ViewModel의 탄생에서 죽음까지]({{ page.url }})/blog/android/2020/05/04/viewmodel-b-to-d/)
