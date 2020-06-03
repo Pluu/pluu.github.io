@@ -64,7 +64,7 @@ val counterViewModel: CounterViewModel by viewModels()
 
 ### ViewModelProvider
 
-ViewModel 사용 시 요청하는 곳이 [ViewModelProvider](https://developer.android.com/reference/androidx/lifecycle/ViewModelProvider) 이라른 것을 이미 우리는 알고 있습니다. 이전 글에서도 다루었지만, 다시한번 [ViewModelProvider](https://developer.android.com/reference/androidx/lifecycle/ViewModelProvider) 의 생성자를 확인해보겠습니다.
+ViewModel 사용 시 요청하는 곳이 [ViewModelProvider](https://developer.android.com/reference/androidx/lifecycle/ViewModelProvider) 이라는 것을 이미 우리는 알고 있습니다. 이전 글에서도 다루었지만, 다시한번 [ViewModelProvider](https://developer.android.com/reference/androidx/lifecycle/ViewModelProvider) 의 생성자를 확인해보겠습니다.
 
 #### ViewModelProvider 생성자
 
@@ -225,7 +225,7 @@ public class ViewModelStore {
 
 > 소스 출처 : https://cs.android.com/androidx/platform/frameworks/support/+/androidx-master-dev:lifecycle/lifecycle-viewmodel/src/main/java/androidx/lifecycle/ViewModelStore.java
 
-ViewModelStore는 ViewModel의 소유자(Owner)가 인턴스형태로 가지고 있으며, 생명주기가 종료시에 [ViewModelStore#clear()](https://developer.android.com/reference/androidx/lifecycle/ViewModelStore#clear())를 호출하여 ViewModel이 종료되도록 동작합니다. 또한, `ViewModelStore#put(String, ViewModel)` 할 경우에도 이미 Store 내부에 오래된 ViewModel 존재하는 경우 [ViewModel#onCleared()](https://developer.android.com/reference/androidx/lifecycle/ViewModel#onCleared()) 을 명시적으로 호출합니다.
+ViewModelStore는 ViewModel의 소유자(Owner)가 인스턴스 형태로 가지고 있으며, 생명주기가 종료시에 [ViewModelStore#clear()](https://developer.android.com/reference/androidx/lifecycle/ViewModelStore#clear())를 호출하여 ViewModel이 종료되도록 동작합니다. 또한, `ViewModelStore#put(String, ViewModel)` 할 경우에도 이미 Store 내부에 오래된 ViewModel 존재하는 경우 [ViewModel#onCleared()](https://developer.android.com/reference/androidx/lifecycle/ViewModel#onCleared()) 을 명시적으로 호출합니다.
 
 ### ViewModelStore#clear() 호출
 
