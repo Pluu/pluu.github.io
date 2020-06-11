@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Dagger Hilt / AndroidX Hilt 자료 정리"
+title: "Dagger Hilt / AndroidX Hilt 자료 링크 정리"
 date: 2020-06-11 21:40:00 +09:00
 tag: [Android, AndroidX, Hilt]
 categories:
@@ -8,7 +8,7 @@ categories:
 - Android
 ---
 
-Hilt 자료 정리
+Hilt 자료 링크 정리
 
 <!--more-->
 
