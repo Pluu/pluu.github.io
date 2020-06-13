@@ -14,6 +14,10 @@ Hilt 자료 링크 정리
 
 <img src="https://developer.android.com/images/training/dependency-injection/hilt-hierarchy.svg" />
 
+### Youtube 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/R3caBPj-6Sg?start=65" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ### Dagger ~ Hilt
 
 - Hilt Guide : https://dagger.dev/hilt/
