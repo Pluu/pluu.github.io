@@ -33,6 +33,10 @@ AVD Manager에서 `13.5 Freeform`을 확인할 수 있습니다.
   <iframe width="560" height="315" src="https://www.youtube.com/embed/ZpbpQYy7JCA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
+앱 실행 중에 앱의 창 크기를 자유롭게 변경이 가능하며, 변경된 크기에 따른 앱의 화면 전환도 확인할 수 있습니다.
+
+시계 앱의 타이머는 Window의 크기에 따라서 `시간 표시`와 `입력 패널`을 변경하는 것을 확인할 수 있습니다. 
+
 ### 참고 자료
 
 - Screens - large, small and foldable(Youtube) : https://youtu.be/llHMxCz2Jig?t=669
