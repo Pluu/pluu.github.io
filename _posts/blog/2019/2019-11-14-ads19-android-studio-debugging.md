@@ -9,7 +9,9 @@ categories:
 - AndroidDevSummit
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rjlhSDhFwzM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="youtube">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/rjlhSDhFwzM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 <!--more-->
 
@@ -156,7 +158,9 @@ Evaluate는 더 다양한 내용으로 값을 체크할 수 있다. 변수 생�
 
 디버깅 중 누락된 작업을 추가하고 싶을 때 기존이라면 디버그 모드를 종료한 후 코드를 작성하고서 다시 디버깅 모드로 진입하여 추가한 코드를 확인한다. 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/YIYaC9eHUJs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="youtube">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/YIYaC9eHUJs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Break Point를 설정한 곳에서 멈춘 곳 이후의 부분에 코드를 추가로 작성하고서 `Apply Code Changes`를 실행한다. 그 뒤 Frame Drop을 통해 다시 Break Point가 멈춘 후 이어서 실행을 시켜보면 예제와 같이 새롭게 추가한 로그가 출력되는 것을 볼 수 있다.
 

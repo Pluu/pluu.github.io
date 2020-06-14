@@ -353,7 +353,9 @@ adb shell am kill com.pluu.savedstate
 
 시스템에 의해서 종료된 ViewModel의 정보는 복원되지 않는 것을 볼 수 있습니다.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/NdQwHwV0Vuo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="youtube">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/NdQwHwV0Vuo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 그리고 출력되는 로그도 체크해봅니다.
 
@@ -393,7 +395,9 @@ I/App$onCreate: Resumed : ViewModelCounterActivity
 
 이때 사용할 수 있는 방법으로 SavedState ViewModel이 있습니다. SavedState ViewModel은 Google I/O '19에서 처음 소개되었습니다. 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Qxj2eBmXLHg?start=686" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="youtube">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/Qxj2eBmXLHg?start=686" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 ### 설정
 
@@ -509,7 +513,9 @@ class SavedStateCounterViewModel(
 
 시스템에 의한 앱 종료가 되어도 기존 데이터가 정상적으로 보관되는 것을 확인할 수 있습니다. 이것으로 ViewModel을 사용하면서 데이터를 보다 안정적으로 보관할 수 있습니다.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/MXfWkQ_wnYk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="youtube">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/MXfWkQ_wnYk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 ## 정리
 

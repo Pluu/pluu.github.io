@@ -8,7 +8,9 @@ categories:
 - Android
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VsStyq4Lzxo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="youtube">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/VsStyq4Lzxo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 먼저, Android Studio 자체를 빌드해본 것은 처음이라서, 일부 올바르지 않은 내용이 있을 수 있습니다.
 

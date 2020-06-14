@@ -9,7 +9,9 @@ categories:
 - AndroidDevSummit
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/XPMrnR1_Biw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="youtube">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/XPMrnR1_Biw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 <!--more-->
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "ads19/whats-new-in-android-studio/001.png" }}" /> 

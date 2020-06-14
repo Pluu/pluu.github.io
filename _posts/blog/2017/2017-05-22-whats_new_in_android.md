@@ -14,7 +14,9 @@ categories:
 
 <!--more-->
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/1N9KveJ-FU8" frameborder="0" allowfullscreen></iframe>
+<div class="youtube">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/1N9KveJ-FU8" frameborder="0" allowfullscreen></iframe>
+</div>
 
 ## Picture in Picture
 

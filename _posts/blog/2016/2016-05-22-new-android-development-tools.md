@@ -175,7 +175,9 @@ Test Target으로 `Cloud Testing`도 보이네요.
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2016/2016-05-22-new-android-development-tools-22.png" }}" />
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/csaXml4xtN8" frameborder="0" allowfullscreen></iframe>
+<div class="youtube">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/csaXml4xtN8" frameborder="0" allowfullscreen></iframe>
+</div>
 
 ## 읽어볼 만한 페이지
 

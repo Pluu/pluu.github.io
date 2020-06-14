@@ -9,7 +9,9 @@ categories:
 - io19
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bTodlNvQGfY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="youtube">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/bTodlNvQGfY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 <!--more-->
 
 Android Accessibility 개발은 매우 복잡하다. Accessibility조차 Android의 일부이다.

@@ -50,7 +50,9 @@ Developer Programs Engineer @Google
 
 "디지털 경험을 만들기 위한 이론과 리소스와 도구를 맞춘 통합 시스템"
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Q8TXgCzxEnw" frameborder="0" allowfullscreen></iframe>
+<div class="youtube">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/Q8TXgCzxEnw" frameborder="0" allowfullscreen></iframe>
+</div>
 
 ## 5p 머티리얼 디자인 가이드라인
 

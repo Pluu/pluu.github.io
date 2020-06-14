@@ -17,7 +17,9 @@ Android Studio/ Tips and Tricks 세션의 내용이 많아서 3개의 파트로 
 
 - - - 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ihF-PwDfRZ4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="youtube">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/ihF-PwDfRZ4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Android Studio/ Tips and Tricks
 

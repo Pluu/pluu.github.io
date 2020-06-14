@@ -14,7 +14,9 @@ categories:
 
 <!--more-->
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Hx_rwS1NTiI" frameborder="0" allowfullscreen></iframe>
+<div class="youtube">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/Hx_rwS1NTiI" frameborder="0" allowfullscreen></iframe>
+</div>
 
 ## Android Studio
 

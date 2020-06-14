@@ -9,7 +9,9 @@ categories:
 - IO18
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/WVPH48lUzGY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div class="youtube">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/WVPH48lUzGY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
 
 <!--more-->
 

@@ -218,7 +218,9 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
 아래 영상은 I/O '19 what's new in Architecture Components 세션이며 Fragment와 LiveData 사용에 필요한 Lifecycle에 대해서 언급하고 있습니다.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/pErTyQpA390?start=214" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="youtube">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/pErTyQpA390?start=214" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 ------
 
 ## Updated, Fragment 1.2.0

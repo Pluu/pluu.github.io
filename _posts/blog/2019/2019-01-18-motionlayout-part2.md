@@ -153,7 +153,9 @@ public class MotionController {
 
 ## 결과 화면 (Ver. Slow)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/pGofoAJf4Is" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="youtube">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/pGofoAJf4Is" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 > 실제로 위의 영상은 추가적인 MotionLayout 처리와 + Custom Behavior 를 이용한 화면입니다.
 

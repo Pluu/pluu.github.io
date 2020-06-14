@@ -33,7 +33,9 @@ MotionLayout에 대한 자세한 설명은 아래의 자료를 추천합니다.
 
 #### Youtube
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ytZteMo4ETk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="youtube">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/ytZteMo4ETk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 >  What's new with ConstraintLayout and Android Studio design tools (Google I/O '18)
 
@@ -47,7 +49,9 @@ MotionLayout에 대한 자세한 설명은 아래의 자료를 추천합니다.
 
 먼저 이번 야놀자 7.0.0 프로젝트에 도입된 MotionLayout이 도입된 화면을 먼저 감상하겠습니다.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/AxUVJ1XZQos" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="youtube">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/AxUVJ1XZQos" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 프로젝트 작업 중 자연스러운 애니메이션을 적용해야 하는 미션이 생겼습니다.  `CollapsingToolbarLayout` 느낌을 주면서 `Expand/Collapsing`시에 각 뷰의 위치/노출 처리가 필요한 스펙이었습니다. 복수 뷰를 제어하는 처리라면 CollapsingToolbarLayout로는 해결할 수 없습니다.
 
@@ -136,7 +140,9 @@ Google MotionLayout의 샘플 코드에 있는 기능을 그대로 사용했습�
 
 위 작업 후 실행하는 것으로 MotionLayout을 적용하여 Animation을 얻을 수 있습니다.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/L7HKXlxZ2x8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="youtube">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/L7HKXlxZ2x8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 > [야놀자 앱 > 홈 > 내 주변 쿠폰] 화면 샘플 화면
 

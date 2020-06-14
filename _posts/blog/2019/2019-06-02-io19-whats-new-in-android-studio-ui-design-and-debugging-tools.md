@@ -9,7 +9,9 @@ categories:
 - io19
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/oWTG5g5rT4s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="youtube">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/oWTG5g5rT4s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 <!--more-->
 

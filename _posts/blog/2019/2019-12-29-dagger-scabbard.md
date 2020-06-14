@@ -163,7 +163,9 @@ Scabbard를 통해서 생성된 이미지는 build-tmp-kapt3-classes-debug-패�
 
 ## 테스트 영상
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/s2FYzhBzeAk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="youtube">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/s2FYzhBzeAk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 ## 감상
 

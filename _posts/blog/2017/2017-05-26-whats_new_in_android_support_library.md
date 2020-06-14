@@ -14,7 +14,9 @@ categories:
 
 <!--more-->
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/V6-roIeNUY0" frameborder="0" allowfullscreen></iframe>
+<div class="youtube">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/V6-roIeNUY0" frameborder="0" allowfullscreen></iframe>
+</div>
 
 Support Library 26.0 Beta 1에 대한 이야기이다.
 

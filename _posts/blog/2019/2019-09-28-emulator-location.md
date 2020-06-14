@@ -78,11 +78,15 @@ Emulator 화면에서 `More` 기능을 선택하면 가장 위에 본 글에서 
 
 ### Single points
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xPBqD6BzpoQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="youtube">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/xPBqD6BzpoQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 ### Routes
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2Cna4YMuFQ4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="youtube">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/2Cna4YMuFQ4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 ## 발견된 버그
 

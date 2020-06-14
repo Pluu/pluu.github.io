@@ -78,7 +78,9 @@ DroidKaigi는 다양한 형태의 스폰서들과 함께한다. 총 39개의 스
 
 먼저 올해 오프닝 영상을 구경하자.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4suIJHROcK0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="youtube">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/4suIJHROcK0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 올해는 일본어 58개 / 영어 16개 / 일본어+영어 14개의 세션이 준비되었다. 그 중 몇개의 세션은 취소도 되었다. 세션 사진은 많이 찍지 않았다. 사실 찍어야한다는 생각도 나중에 했다. 그 중 몇개의 세션 사진을 올려본다.
 
