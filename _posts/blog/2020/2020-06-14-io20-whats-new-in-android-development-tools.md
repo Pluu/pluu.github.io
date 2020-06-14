@@ -356,8 +356,9 @@ Android studio 4.1의 빌드 관련 설정 개선으로 빌드 속도를 개선�
 
 Goolge Santa Tracker에서는 빌드 시간이 60% 감소했습니다.
 
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io20/whats_new_in_android_development_tools/build_tools_01.png" }}" />  | <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io20/whats_new_in_android_development_tools/build_tools_02.png" }}" />  |
+| ------------------------------------------------------------ | 
+| <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io20/whats_new_in_android_development_tools/build_tools_01.png" }}" />  |
+| <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io20/whats_new_in_android_development_tools/build_tools_02.png" }}" />  |
 
 ## Summary
 
