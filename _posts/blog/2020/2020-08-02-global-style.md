@@ -105,7 +105,7 @@ Theme를 사용하는 방법은 `res/themes.xml`에 자신이 원하는 Theme �
 
 #### Theme.AppCompat 은 어디에서 왔을까?
 
-현재 Android 개발에서 Material Design 테마를 사용하지 않는 경우에는 대부분 `Theme.AppCompat` 을  기본 테마로 지정하고 사용하고 있습니다. `Theme.AppCompat`는 AndroidX의 `AppCompat`에 포함되어 있습니다.
+현재 Android 개발에서 Material Design 테마를 사용하지 않는 경우에는 대부분 `Theme.AppCompat` 을 기본 테마로 지정하고 사용하고 있습니다. `Theme.AppCompat`는 AndroidX의 `AppCompat`에 포함되어 있습니다.
 
 ```xml
 <resources>
@@ -120,7 +120,7 @@ Theme를 사용하는 방법은 `res/themes.xml`에 자신이 원하는 Theme �
 
 그리고, `Theme.AppCompat` 또한 `Base.Theme.AppCompat` 을 부모 테마로 사용하는 것을 알 수 있습니다. Android에서 `Comapt`으로 끝나는 이름을 가지는 Theme, Class, File 등은 Android의 발전으로 통해서 생겨난 정보를 호환하는 역할을 담당합니다.
 
-실제로  `Base.Theme.AppCompat` 은 하나의 Theme로 정의되어 있지만, 호환성을 확보하기 위해서 버전마다 다양한 형태로 정의되어 있습니다.
+실제로 `Base.Theme.AppCompat` 은 하나의 Theme로 정의되어 있지만, 호환성을 확보하기 위해서 버전마다 다양한 형태로 정의되어 있습니다.
 
 ```xml
 <!-- Default -->
@@ -281,12 +281,12 @@ TextView의 Global Style을 적용한 모습입니다.
 | :----------------------------------------------------------: | :----------------------------------------------------------: |
 | <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2020/0802-global-theme-style/default_preview.png" }}" /> | <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2020/0802-global-theme-style/apply_text_style.png" }}" /> |
 
- `textColor` 와 `textViewStyle`  두 가지의 속성이 각각 다양한 곳에 적용되었습니다.
+ `textColor` 와 `textViewStyle` 두 가지의 속성이 각각 다양한 곳에 적용되었습니다.
 
 - textColor : TextView, Button
 - textViewStyle : TextView
 
-`textColor`  속성이 Button에도 적용이 가능하다는 것을 확인했습니다. 해당 내용의 적용에 대해서는 이후에 별도 항목에서 살펴보겠습니다. 지금은  TextView와 Button에 적용까지 살펴봤습니다.
+`textColor` 속성이 Button에도 적용이 가능하다는 것을 확인했습니다. 해당 내용의 적용에 대해서는 이후에 별도 항목에서 살펴보겠습니다. 지금은 TextView와 Button에 적용된다는 현상만 알고 넘어가겠습니다.
 
 만약, TextView에만 Style을 적용하고 싶은 경우에는 `textViewStyle` 내부에 textColor를 별도로 지정하는 방법으로 위 케이스는 해결이 가능합니다.
 
@@ -375,11 +375,11 @@ EditText의 Global Style을 적용한 모습입니다.
 
 ### Button Global Style
 
-Button의 Global View Style 적용은 Theme의  `textColor` 속성을 이용해서 적용도 가능합니다. 그러나, background color를 더 자유롭게 하고 싶은 경우가 많기 때문에, Button에서는 공통 `textColor` 대신 buttonStyle의 textColor를 이용해서 Button의 textColor를 적용합니다.
+Button의 Global View Style 적용은 Theme의 `textColor` 속성을 이용해서 적용도 가능합니다. 그러나, background color를 더 자유롭게 하고 싶은 경우가 많기 때문에, Button에서는 공통 `textColor` 대신 buttonStyle의 textColor를 이용해서 Button의 textColor를 적용합니다.
 
 ```xml
 <!-- res/themes.xml -->
-<style name="BaseTheme.Styled">  
+<style name="BaseTheme.Styled">
     <!-- Button Style -->
     <item name="android:buttonStyle">@style/MyButtonStyle</item>
 </style>
@@ -469,7 +469,7 @@ TextView의 Global Style을 적용 시 `textColor` 속성이 TextView와 Button 
 
 ### EditText의 textColor
 
-EditText의 TextColor는 TextView의 `textColor` 대신 `editTextColor`를 사용했습니다. 아래의 플랫폼, AndroidX 소스를 확인해보면 AppCompat과 Material Design의 EditText 스타일에서  `textAppearance` 스타일 대신 `textColor`를 재정의하고 있습니다. 그리고 재정의한 textColor 속성에서 `editTextColor`값을 찾는 것을 알 수 있습니다.
+EditText의 TextColor는 TextView의 `textColor` 대신 `editTextColor`를 사용했습니다. 아래의 플랫폼, AndroidX 소스를 확인해보면 AppCompat과 Material Design의 EditText 스타일에서 `textAppearance` 스타일 대신 `textColor`를 재정의하고 있습니다. 그리고 재정의한 textColor 속성에서 `editTextColor`값을 찾는 것을 알 수 있습니다.
 
 ```xml
 <!-- EditText - AppCompat -->
@@ -494,7 +494,7 @@ EditText의 TextColor는 TextView의 `textColor` 대신 `editTextColor`를 사�
 
 ### Button의 textColor
 
-Button 또한 TextView와 동일하게 `textAppearance`를 통해서 텍스트 컬러를 정의하고 있습니다.
+Button 또한 TextView와 동일하게 `textAppearance`를 통해서 텍스트 컬러를 정의하고 있습니다. textAppearance의 스타일에서 textColor를 정의한 값을 사용하고 있으므로 Theme에 정의한 `textColor`가 Button에도 적용됩니다.
 
 ```xml
 <!-- Button - AppCompat -->
@@ -517,7 +517,7 @@ Button 또한 TextView와 동일하게 `textAppearance`를 통해서 텍스트 �
 <!-- Button - Material Design -->
 <style name="Widget.AppCompat.Button" parent="Base.Widget.AppCompat.Button"/>
 <style name="Base.Widget.AppCompat.Button" parent="android:Widget.Material.Button"/>
-<style name="Widget.Material.Button">    
+<style name="Widget.Material.Button">
     <item name="textAppearance">?attr/textAppearanceButton</item>
     ...
 </style>
@@ -686,7 +686,7 @@ Theme 관련 Style/Attirbute 중에는 4.x 버전에만 적용, 5.0 이상 적�
 
 > 출처 : Android themes & styles demystified - Google I/O 2016 (https://www.youtube.com/watch?v=TIHXGwRTMWI)
 
-실제로  `Parent가 누락된 Style`은 속성을 스타일화시킨 정보의 집합에 불과합니다. 그래서, EditText에 hint, textSize에 적용되었습니다.  실제로 MyEditTextStyle는 editTextColor와 editTextBackground를 참조하고 있지 않기때문에 EditText에 적용되지않습니다.
+실제로 `Parent가 누락된 Style`은 속성을 스타일화시킨 정보의 집합에 불과합니다. 그래서, EditText에 hint, textSize에 적용되었습니다. 실제로 MyEditTextStyle는 editTextColor와 editTextBackground를 참조하고 있지 않기때문에 EditText에 적용되지않습니다.
 
 ```xml
 <!-- 올바른 수정 -->
@@ -700,7 +700,7 @@ Theme 관련 Style/Attirbute 중에는 4.x 버전에만 적용, 5.0 이상 적�
 
 Theme에서 `android:editTextStyle` 속성을 재정의할 수 있습니다. 그러나, 이 속성을 사용하셔도 EidtText의 Style은 변경되지 않습니다. Google 검색을 통해서는 AppCompat 버전에 따라서 일부 버전에서 동작한 것으로 보이지만, 현재 최신 버전에서는 Style이 적용되지 않습니다. 
 
-그러므로, android namespace가 제거된  `editTextStyle`을 사용해야 합니다.
+그러므로, android namespace가 제거된 `editTextStyle`을 사용해야 합니다.
 
 ```xml
 <style name="BaseTheme.Styled">
