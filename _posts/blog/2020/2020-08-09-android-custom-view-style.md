@@ -531,7 +531,7 @@ Debug로 직접 TypedArray의 내용을 호출할 경우에 `java.lang.ArrayInde
 - customTextColor : 재정의한 컬러 혹은 청록색의 기본 컬러 <font color="#1DE9B6"><b>(#1DE9B6)</b> </font> 
 - customTextColorHint : 재정의한 컬러 혹은 붉은색의 기본 컬러 <font color="#FF0000"><b>(#FF0000)</b> </font> 
 
-![debugging_android_namespace 2](/Users/pluulove/StudioProjects/pluu.github.io/assets/img/blog/2020/0809-custom-declare-styleable/debugging_android_namespace 2.png)
+<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2020/0809-custom-declare-styleable/debugging_android_namespace_2.png" }}" />
 
 ## 참고 자료
 
