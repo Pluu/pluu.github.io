@@ -118,7 +118,7 @@ Theme를 사용하는 방법은 `res/themes.xml`에 자신이 원하는 Theme �
 
 > 출처 : https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-master-dev/appcompat/appcompat/src/main/res/values/themes.xml#32
 
-그리고, `Theme.AppCompat` 또한 `Base.Theme.AppCompat` 을 부모 테마로 사용하는 것을 알 수 있습니다. Android에서 `Comapt`으로 끝나는 이름을 가지는 Theme, Class, File 등은 Android의 발전으로 통해서 생겨난 정보를 호환하는 역할을 담당합니다.
+그리고, `Theme.AppCompat` 또한 `Base.Theme.AppCompat` 을 부모 테마로 사용하는 것을 알 수 있습니다. Android에서 `Compat`으로 끝나는 이름을 가지는 Theme, Class, File 등은 Android의 발전으로 통해서 생겨난 정보를 호환하는 역할을 담당합니다.
 
 실제로 `Base.Theme.AppCompat` 은 하나의 Theme로 정의되어 있지만, 호환성을 확보하기 위해서 버전마다 다양한 형태로 정의되어 있습니다.
 
