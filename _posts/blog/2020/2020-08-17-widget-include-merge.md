@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "CustomView의 레이아웃 깊이의 1-Depth 줄이기"
+title: "CustomView의 레이아웃 1-Depth 줄이기"
 date: 2020-08-16 23:00:00 +09:00
 tag: [Android, Performance]
 categories:
@@ -194,13 +194,13 @@ inflate 내부에서 merge tag를 사용하지 않는 경우 아래와 같은 �
 2. 자식 뷰들을 생성 : rInflateChildren(parser, temp, attrs, true);
 3. root view에 임시 View를 추가 : root.addView(temp, params);
 
-일반적인 방법을 사용한 경우에는 LayoutInflater#inflate 내부의 과정에서 include와 유사한 형태로 적용됩니다. 그렇기에 레이아웃 깊이가 `1-depth` 많습니다.
+이 경우에는 LayoutInflater#inflate 내부의 과정에서 include와 유사한 형태로 적용됩니다. 그렇기에 레이아웃 깊이가 `1-depth` 많습니다.
 
 이 `1-depth`는 `merge tag`를 사용해서 줄일 수 있습니다. 이어서 확인해보겠습니다.
 
 ## Merge 방식
 
-기존 CustomView에서 inflate할 XML의 Root는 ConstraintLayout였습니다. merge 방식에서는 merge 태그로 root를 선언합니다. 해당 화면이 호출하는 곳이 ConstraintLayout이라는 것을 Preview에 알리기 위해서 `parentTag`를 사용합니다.
+기존 CustomView에서 inflate할 XML의 Root는 ConstraintLayout였습니다. merge 방식에서는 merge tag로 root를 선언합니다. 해당 화면이 호출하는 곳이 ConstraintLayout이라는 것을 Preview에 알리기 위해서 `parentTag`를 사용합니다.
 
 ```xml
 <merge ...
@@ -290,7 +290,7 @@ public abstract class LayoutInflater {
 
 merge가 아닌 형태와 다른 부분은 임시 root를 만들지 않고, root에 직접 child view를 추가한다는 점입니다.
 
-또한, `merge` 태그를 사용한 경우 root가 null이거나 root에 attach 되지 않은 경우라면 `InflateException` 에러를 발생합니다.
+또한, `merge` tag를 사용한 경우 root가 null이거나 root에 attach 되지 않은 경우라면 `InflateException` 에러를 발생합니다.
 
 ## Summary
 
