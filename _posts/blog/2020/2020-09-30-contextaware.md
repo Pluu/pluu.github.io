@@ -203,7 +203,7 @@ public class AppCompatActivity extends FragmentActivity ... {
    protected void onCreate(@Nullable Bundle savedInstanceState) {
       final AppCompatDelegate delegate = getDelegate();
       delegate.installViewFactory();
-      legate.onCreate(savedInstanceState);
+      delegate.onCreate(savedInstanceState);
       super.onCreate(savedInstanceState);
    }
 }
