@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Deprecate Kotlin Android Extensions"
+title: "Deprecate Kotlin Android Extensions의 준비"
 date: 2020-11-08 20:40:00 +09:00
 tag: [Android, AndroidX]
 categories:
