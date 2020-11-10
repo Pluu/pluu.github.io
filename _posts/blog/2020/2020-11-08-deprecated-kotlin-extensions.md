@@ -44,7 +44,7 @@ categories:
 
 ### Check Configuation
 
-그러므로, 현재 프로젝트에서 `Kotlin Adnroid Extensions`을 사용하는지 체크해볼 필요가 있습니다. 그 이유는 Android Studio 4.0까지 새로운 프로젝트를 생성할 때 Kotlin Adnroid Extensions가 항상 포함되어 있기 때문이죠.
+그러므로, 현재 프로젝트에서 `Kotlin Android Extensions`을 사용하는지 체크해볼 필요가 있습니다. 그 이유는 Android Studio 4.0까지 새로운 프로젝트를 생성할 때 Kotlin Android Extensions가 항상 포함되어 있기 때문이죠.
 
 build.gradle (~ Android Studio 4.0)
 
