@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Jetpack Compose 공부 ~ 3주차"
-date: 2020-11-1 22:30:00 +09:00
+date: 2020-11-11 22:30:00 +09:00
 tag: [Android, AndroidX, Compose]
 categories:
 - blog
