@@ -782,7 +782,7 @@ public final class SavedStateHandle {
 }
 ```
 
-다음은 [SavedStateHandle](https://developer.android.com/reference/androidx/lifecycle/SavedStateHandle) 을 통해서 [LiveData](https://developer.android.com/reference/androidx/lifecycle/LiveData.html)를 가져온 경우에 모든 반환은 [MediatorLiveData](https://developer.android.com/reference/androidx/lifecycle/MediatorLiveData.html) 입니다. 기본적으로 [getLiveData(String)](https://developer.android.com/reference/androidx/lifecycle/SavedStateHandle#getLiveData(java.lang.String)), [getLiveData(String, T)](https://developer.android.com/reference/androidx/lifecycle/SavedStateHandle#getLiveData(java.lang.String,%20T)) 2가지의 함수를 제공하고 있습니다. 이 두 함수는 `getLiveDataInternal(String, boolean, T)` 형태인 함수를 재 호출하는 구조입니다.
+다음은 [SavedStateHandle](https://developer.android.com/reference/androidx/lifecycle/SavedStateHandle) 을 통해서 [LiveData](https://developer.android.com/reference/androidx/lifecycle/LiveData.html)를 가져온 경우에 모든 반환은 [MutableLiveData](https://developer.android.com/reference/androidx/lifecycle/MutableLiveData.html) 입니다. 기본적으로 [getLiveData(String)](https://developer.android.com/reference/androidx/lifecycle/SavedStateHandle#getLiveData(java.lang.String)), [getLiveData(String, T)](https://developer.android.com/reference/androidx/lifecycle/SavedStateHandle#getLiveData(java.lang.String,%20T)) 2가지의 함수를 제공하고 있습니다. 이 두 함수는 `getLiveDataInternal(String, boolean, T)` 형태인 함수를 재 호출하는 구조입니다.
 
  `getLiveDataInternal(String, boolean, T)` 함수에서 LiveData가 캐싱된 객체(mLiveDatas)를 이용해 사용하거나 캐싱된 LiveData가 없는 경우 새로운 LiveData를 위한 커스텀 객체를 생성합니다. 그 후 캐싱 객체에 주입하는 방식입니다.
 
