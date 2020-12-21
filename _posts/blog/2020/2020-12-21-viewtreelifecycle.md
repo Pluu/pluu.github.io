@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "AndroidX Lifecycle ~ ViewTreeLifecycleOwner"
-date: 2020-12-22 23:30:00 +09:00
+date: 2020-12-21 23:30:00 +09:00
 tag: [Android, AndroidX]
 categories:
 - blog
@@ -20,9 +20,9 @@ AndroidX Lifecycle은 Activity/Fragment의 컴포넌트 생명 주기와 상태 
 
 ## ViewTreeLifecycleOwner
 
-새롭게 추가된 `ViewTreeLifecycleOwner.get(View)` API를 사용해 `LifecycleOwner`를 얻을 수 있습니다. `lifecycle-runtime-ktx`에 추가된 `View.findViewTreeLifecycleOwner` KTX를 사용하면 쉽게 사용할 수 있습니다.
+새롭게 추가된 `ViewTreeLifecycleOwner.get(View)` API를 사용해 `LifecycleOwner`를 얻을 수 있습니다. **lifecycle-runtime-ktx**에 추가된 `View.findViewTreeLifecycleOwner` KTX를 사용하면 쉽게 사용할 수 있습니다.
 
-또한, `ViewTreeViewModelStoreOwner.get(View)` API를 사용해 `ViewModelStoreOwner`를 얻을 수 있습니다. `lifecycle-viewmodel-ktx`에 추가된 `View.findViewTreeViewModelStoreOwner` KTX를 사용하면 쉽게 사용할 수 있습니다.
+또한, `ViewTreeViewModelStoreOwner.get(View)` API를 사용해 `ViewModelStoreOwner`를 얻을 수 있습니다. **lifecycle-viewmodel-ktx**에 추가된 `View.findViewTreeViewModelStoreOwner` KTX를 사용하면 쉽게 사용할 수 있습니다.
 
 자세한 내용은 아래에서 더 살펴보겠습니다.
 
@@ -113,7 +113,7 @@ ViewTreeLifecycleOwner#set, ViewTreeViewModelStoreOwner#set 메소드가 적용�
 
 ```java
 public class ComponentActivity ... {
-		private void initViewTreeOwners() {
+    private void initViewTreeOwners() {
         // Set the view tree owners before setting the content view so that the inflation process
         // and attach listeners will see them already present
         ViewTreeLifecycleOwner.set(getWindow().getDecorView(), this);
@@ -192,7 +192,7 @@ Activity, Fragment, Custom View의 조합으로 각 View에서 참조하는 Life
 
 |                Case 1. Activity + Custom View                |          Case 2. Activity + Fragment + Custom View           |
 | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2020/1222-viewtreelifecycle/activity_customview.png" }}" /> | <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2020/1222-viewtreelifecycle/activity_fragment_customview.png" }}" /> |
+| <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2020/1221-viewtreelifecycle/activity_customview.png" }}" /> | <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2020/1221-viewtreelifecycle/activity_fragment_customview.png" }}" /> |
 
 ### 결과 확인
 
@@ -204,8 +204,6 @@ Activity, Fragment, Custom View의 조합으로 각 View에서 참조하는 Life
 - Case 2. Activity + Fragment + Custom View
   - Fragment와 동일한 로그
   - 즉, Fragment와 동일한 LifecycleOwner, ViewModelStoreOwner
-
-
 
 ## 🚧🚧🚧🚧🚧 Another 🚧🚧🚧🚧🚧
 
@@ -230,5 +228,7 @@ Activity, Fragment, Custom View의 조합으로 각 View에서 참조하는 Life
   - https://developer.android.com/reference/androidx/lifecycle/LiveData?hl=en#observe(androidx.lifecycle.LifecycleOwner,%20androidx.lifecycle.Observer%3C?%20super%20T%3E)
 
 ### 샘플 소스
+
+이번에 검증한 코드는 아래를 참고해주세요.
 
 > https://github.com/Pluu/ViewTreeOwnerSample
