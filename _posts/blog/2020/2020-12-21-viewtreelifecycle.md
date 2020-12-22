@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "AndroidX Lifecycle ~ ViewTreeLifecycleOwner"
+title: "AndroidX Lifecycle ~ ViewTreeLifecycleOwner/ViewTreeViewModelStoreOwner"
 date: 2020-12-21 23:30:00 +09:00
 tag: [Android, AndroidX]
 categories:
@@ -18,7 +18,7 @@ AndroidX Lifecycle은 Activity/Fragment의 컴포넌트 생명 주기와 상태 
 
 어느덧 AndroidX Lifecycle도 2.3.0-rc01 버전이 출시되었고, 곧 새로운 기능들이 정식 버전으로 만나볼 수 있습니다.
 
-## ViewTreeLifecycleOwner
+## ViewTreeLifecycleOwner/ViewTreeViewModelStoreOwner
 
 새롭게 추가된 `ViewTreeLifecycleOwner.get(View)` API를 사용해 `LifecycleOwner`를 얻을 수 있습니다. **lifecycle-runtime-ktx**에 추가된 `View.findViewTreeLifecycleOwner` KTX를 사용하면 쉽게 사용할 수 있습니다.
 
@@ -40,7 +40,7 @@ Lifecycle Version 2.3.0-alpha03
 
 #### 사전 조건
 
-사용 시 주의 사항으로 `ViewTreeLifecycleOwner` , 을 올바르게 사용하려면 아래와 같이 Activity, Fragment의 버전을 업그레이드해야 합니다.
+사용 시 주의 사항으로 `ViewTreeLifecycleOwner`, `ViewTreeViewModelStoreOwner` 을 올바르게 사용하려면 아래와 같이 Activity, Fragment의 버전을 업그레이드해야 합니다.
 
 - Activity 1.2.0-alpha05
 - Fragment 1.3.0-alpha05
