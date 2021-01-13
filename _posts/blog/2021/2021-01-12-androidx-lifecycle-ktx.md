@@ -21,7 +21,7 @@ categories:
 
 ## whenStateAtLeast
 
-안드로이드 주요 컴포넌트 중에서 Activity/Fragment는 사용자와 밀접하게 상호 작용을 하며 `메인 스레드`에서만 UI를 변경할 수 있다는 특성도 가지고 있습니다. 그리고 Activity/Fragment의 UI 변경 요청을 `CREATE ~ RESUME` 생명주기에서 합니다. UI가 화면에서 사라졌거나 종료된 이후에 UI 변경을 하지는 것은 불필요한 처리일 수 있으며, 앱이 종료 (생명 주기가 Destroy인 상태에서 변경한 경우) 될 수 도 있습니다. 
+안드로이드 주요 컴포넌트 중에서 Activity/Fragment는 사용자와 밀접하게 상호 작용을 하며 `메인 스레드`에서만 UI를 변경할 수 있다는 특성도 가지고 있습니다. 그리고 Activity/Fragment의 UI 변경 요청을 `CREATE ~ RESUME` 생명주기에서 합니다. UI가 화면에서 사라졌거나 종료된 이후에 UI 변경하는 것은 불필요한 처리일 수 있으며, 앱이 종료 (생명 주기가 Destroy인 상태에서 변경한 경우) 될 수 도 있습니다. 
 
 이때 도움이 되는 Lifecycle-ktx가 `whenStateAtLeast`입니다. 이어서 살펴보도록 하겠습니다.
 
