@@ -8,11 +8,11 @@ categories:
 - Android
 ---
 
-안드로이드 개발 시에 여러 곳에서 Kotlin `Coroutine` 도입을 긍정적으로 평가하는 곳이 늘어가고 있습니다. 그에 행보에 맞춰서 안드로이드에서도 Coroutine 사용을 돕고자 여러 가지 기능이 추가된 것을 아실 겁니다. 그중에서도 Activity, Fragment에서 사용되는 `lifecycleScope` 과 ViewModel을 위한 `viewModelScope` 가 가장 흔하게 사용되는 기능일 것입니다.
+최근 안드로이드 개발 시에 Kotlin `Coroutine` 도입을 긍정적으로 생각하는 곳이 늘어가고 있습니다. 그리고 AndroidX에도 Coroutine 사용을 돕고자 여러 가지 기능이 추가된 것을 아실 겁니다. 그중에서도 Activity/Fragment에서 사용되는 `lifecycleScope`와 ViewModel을 위한 `viewModelScope`가 흔하게 사용되는 기능일 것입니다.
 
 <!--more-->
 
-본 글의 주제와 관련된 Lifecycle-ktx는 현재 2.3.0-rc01이 최신 버전입니다. 그중에서 생명주기에 맞춰서 동작하는 ktx도 존재하는데 바로 아래 2가지 종류입니다.
+주제와 관련된 Lifecycle-ktx는 현재 2.3.0-rc01이 최신 버전입니다. 그중에서 생명주기에 따른 Coroutine을 처리하는 ktx도 존재하는데 바로 아래 2가지입니다.
 
 - whenStateAtLeast 
 - withStateAtLeast
@@ -21,11 +21,11 @@ categories:
 
 ## whenStateAtLeast
 
-안드로이드 주요 컴포넌트 중에서 Activity/Fragment는 사용자와 밀접하게 상호 작용을 하며 `메인 스레드`에서만 UI를 변경할 수 있다는 특성도 가지고 있습니다. 또한 Activity/Fragment는 사용자와 상호 작용 가능한 생명주기에서 UI 요청을 합니다. UI가 화면에서 사라졌거나 종료된 이후에 UI 변경을 하지는 것은 불필요한 처리일 수 있으며, 앱이 종료 (생명 주기가 Destroy인 상태에서 변경한 경우) 될 수 도 있습니다. 
+안드로이드 주요 컴포넌트 중에서 Activity/Fragment는 사용자와 밀접하게 상호 작용을 하며 `메인 스레드`에서만 UI를 변경할 수 있다는 특성도 가지고 있습니다. 그리고 Activity/Fragment의 UI 변경 요청을 `CREATE ~ RESUME` 생명주기에서 합니다. UI가 화면에서 사라졌거나 종료된 이후에 UI 변경을 하지는 것은 불필요한 처리일 수 있으며, 앱이 종료 (생명 주기가 Destroy인 상태에서 변경한 경우) 될 수 도 있습니다. 
 
 이때 도움이 되는 Lifecycle-ktx가 `whenStateAtLeast`입니다. 이어서 살펴보도록 하겠습니다.
 
-먼저 Android Developers 사이트에 기재되어 있는 KTX의 설명을 정리를 하면 아래와 같습니다.
+먼저 Android Developers 사이트에 기재되어 있는 whenStateAtLeast KTX의 설명을 정리를 하면 아래와 같습니다.
 
 - Main 스레드에서 블록을 실행하고 Lifecycle의 상태가 최소 상태(minState)가 아닐 경우 일시 중단
 - 블록이 실행 중 생명주기가 더 낮은 상태로 이동하면 생명주기가 최소 상태보다 크거나 같은 상태에 도달할 때까지 블록을 일시 중단
@@ -50,7 +50,7 @@ suspend fun <T> Lifecycle.whenStateAtLeast(
 
 **생명주기를 기본 정의한 ktx**
 
-개발자는 whenStateAtLeast 함수를 원하는 형태로 사용할 수 있으며, 추가로 Lifecycle-ktx에서는 아래와 같이 3가지 ktx를 기본 제공합니다.
+개발자는 whenStateAtLeast 함수를 원하는 형태로 사용할 수 있으며, 아래의 3가지 ktx를 제공합니다.
 
 - whenCreated
 - whenStarted
@@ -149,7 +149,7 @@ Coroutine 함수를 일정한 생명주기에서만 활성화 상태로 하고 �
 
 ## withStateAtLeast
 
-다음으로 Androidx Lifecycle-ktx 2.3.0-alpha06에 추가된 `withStateAtLeast`입니다. 먼저 withStateAtLeast 설명을 정리를 하면 아래와 같습니다.
+다음으로 Androidx Lifecycle-ktx 2.3.0-alpha06에 추가된 `withStateAtLeast`입니다. withStateAtLeast의 특징은 아래와 같습니다.
 
 - 지정한 생명주기 상태까지 대기하고, 지정한 생명주기 상태보다 크거나 같으면 일시 중단되지 않는 코드 블록을 실행
 - 현재 생명주기가 **Lifecycle.State.DESTROYED**인 경우에 withStateAtLeast 호출 시 LifecycleDestroyedException 발생
@@ -180,7 +180,7 @@ public suspend inline fun <R> Lifecycle.withStateAtLeast(
 
 **생명주기를 기본 정의한 ktx**
 
-개발자는 withStateAtLeast 함수를 원하는 형태로 사용할 수 있으며, 추가로 Lifecycle-ktx에서는 아래와 같이 3가지 ktx를 기본 제공합니다.
+개발자는 withStateAtLeast 함수를 원하는 형태로 사용할 수 있으며, 아래의 3가지 ktx를 제공합니다.
 
 - withCreated
 - withStarted
