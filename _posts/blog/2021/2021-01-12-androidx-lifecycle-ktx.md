@@ -41,8 +41,8 @@ categories:
 
 ```kotlin
 suspend fun <T> Lifecycle.whenStateAtLeast(
-    minState: Lifecycle.State, 
-    block: suspend CoroutineScope.() -> T
+   minState: Lifecycle.State, 
+   block: suspend CoroutineScope.() -> T
 ): T
 ```
 
@@ -60,13 +60,13 @@ suspend fun <T> Lifecycle.whenStateAtLeast(
 
 ```kotlin
 public suspend fun <T> Lifecycle.whenCreated(block: suspend CoroutineScope.() -> T): T {
-    return whenStateAtLeast(Lifecycle.State.CREATED, block)
+   return whenStateAtLeast(Lifecycle.State.CREATED, block)
 }
 public suspend fun <T> Lifecycle.whenStarted(block: suspend CoroutineScope.() -> T): T {
-    return whenStateAtLeast(Lifecycle.State.STARTED, block)
+   return whenStateAtLeast(Lifecycle.State.STARTED, block)
 }
 public suspend fun <T> Lifecycle.whenResumed(block: suspend CoroutineScope.() -> T): T {
-    return whenStateAtLeast(Lifecycle.State.RESUMED, block)
+   return whenStateAtLeast(Lifecycle.State.RESUMED, block)
 }
 ```
 
@@ -78,34 +78,34 @@ whenStateAtLeast의 여러 동작 중 `whenStarted`을 사용 시 어떤 결과�
 
 ```kotlin
 class PausingDispatcherActivity : AppCompatActivity() {
-    private val viewModel: SampleViewModel by viewModels()
+   private val viewModel: SampleViewModel by viewModels()
   
-    override fun onCreate(savedInstanceState: Bundle?) {
-        ...
-        // lifecycleScope는 LifecycleCoroutineScope의 구현체
-        // 호출 순서
-        // 1. LifecycleCoroutineScope#launchWhenStarted
-        // 2. Lifecycle.whenStarted
-        lifecycleScope.launchWhenStarted {
-            viewModel.flowCounter
-                .collect {
-                    binding.tvFlow.text = it.toString()
-                    Timber.tag("Activity").d("Flow $it")
-                }
-        }
-    }
+   override fun onCreate(savedInstanceState: Bundle?) {
+      ...
+      // lifecycleScope는 LifecycleCoroutineScope의 구현체
+      // 호출 순서
+      // 1. LifecycleCoroutineScope#launchWhenStarted
+      // 2. Lifecycle.whenStarted
+      lifecycleScope.launchWhenStarted {
+         viewModel.flowCounter
+            .collect {
+               binding.tvFlow.text = it.toString()
+               Timber.tag("Activity").d("Flow $it")
+            }
+      }
+   }
 }
 
 class SampleViewModel : ViewModel() {
-    val flowCounter: Flow<Int> = flow {
-        var value = 0
-        while (true) {
-            value++
-            Timber.tag("ViewModel").d("Flow : $value")
-            emit(value)
-            delay(1000L)
-        }
-    }
+   val flowCounter: Flow<Int> = flow {
+      var value = 0
+      while (true) {
+         value++
+         Timber.tag("ViewModel").d("Flow : $value")
+         emit(value)
+         delay(1000L)
+      }
+   }
 }
 ```
 
@@ -166,13 +166,13 @@ Coroutine 함수를 일정한 생명주기에서만 활성화 상태로 하고 �
 
 ```kotlin
 public suspend inline fun <R> Lifecycle.withStateAtLeast(
-    state: Lifecycle.State,
-    crossinline block: () -> R
+   state: Lifecycle.State,
+   crossinline block: () -> R
 ): R {
-    require(state >= Lifecycle.State.CREATED) {
-        "target state must be CREATED or greater, found $state"
-    }
-    return withStateAtLeastUnchecked(state, block)
+   require(state >= Lifecycle.State.CREATED) {
+      "target state must be CREATED or greater, found $state"
+   }
+   return withStateAtLeastUnchecked(state, block)
 }
 ```
 
@@ -190,24 +190,24 @@ public suspend inline fun <R> Lifecycle.withStateAtLeast(
 
 ```kotlin
 public suspend inline fun <R> Lifecycle.withCreated(
-    crossinline block: () -> R
+   crossinline block: () -> R
 ): R = withStateAtLeastUnchecked(
-    state = Lifecycle.State.CREATED,
-    block = block
+   state = Lifecycle.State.CREATED,
+   block = block
 )
 
 public suspend inline fun <R> Lifecycle.withStarted(
-    crossinline block: () -> R
+   crossinline block: () -> R
 ): R = withStateAtLeastUnchecked(
-    state = Lifecycle.State.STARTED,
-    block = block
+   state = Lifecycle.State.STARTED,
+   block = block
 )
 
 public suspend inline fun <R> Lifecycle.withResumed(
-    crossinline block: () -> R
+   crossinline block: () -> R
 ): R = withStateAtLeastUnchecked(
-    state = Lifecycle.State.RESUMED,
-    block = block
+   state = Lifecycle.State.RESUMED,
+   block = block
 )
 ```
 
@@ -219,35 +219,35 @@ withStateAtLeast의 여러 동작 중 `withStarted`을 사용 시 어떤 결과�
 
 ```kotlin
 class WithLifecycleStateActivity : AppCompatActivity() {
-    private val viewModel: SampleViewModel by viewModels()
+   private val viewModel: SampleViewModel by viewModels()
   
-    override fun onCreate(savedInstanceState: Bundle?) {
-        ...
-        // 1. LifecycleOwner.withStarted
-        lifecycleScope.launch {
-            withStarted {
-                lifecycleScope.launch {
-                    viewModel.flowCounter
-                        .collect {
-                            binding.tvFlow.text = it.toString()
-                            Timber.tag("Activity").d("Flow $it")
-                        }
-                }
+   override fun onCreate(savedInstanceState: Bundle?) {
+      ...
+      // 1. LifecycleOwner.withStarted
+      lifecycleScope.launch {
+         withStarted {
+            lifecycleScope.launch {
+               viewModel.flowCounter
+                  .collect {
+                     binding.tvFlow.text = it.toString()
+                     Timber.tag("Activity").d("Flow $it")
+                  }
             }
-        }
-    }
+         }
+      }
+   }
 }
 
 class SampleViewModel : ViewModel() {
-    val flowCounter: Flow<Int> = flow {
-        var value = 0
-        while (true) {
-            value++
-            Timber.tag("ViewModel").d("Flow : $value")
-            emit(value)
-            delay(1000L)
-        }
-    }
+   val flowCounter: Flow<Int> = flow {
+      var value = 0
+      while (true) {
+         value++
+         Timber.tag("ViewModel").d("Flow : $value")
+         emit(value)
+         delay(1000L)
+      }
+   }
 }
 ```
 
@@ -294,6 +294,13 @@ I/[Lifecycle] WithLifecycleStateActivity: Destroyed <---- Flow 종료
 ```
 
 결과를 통해서 알 수 있듯이 앱이 Background로 넘어가더라도 `withStarted` 내부에서 실행한 Flow는 멈추지 않습니다. 해당 컴포넌트의 LifecycleScope이 Destroy 상태가 되어야지 종료됩니다.
+
+### withStateAtLeast의 적절한 사용은?
+
+샘플 결과를 토대로 알 수 있는 사실은 `withStateAtLeast`은 일시 정지가 필요한 스트림에 맞지 않다는 것입니다. 개인적으로는 아래의 사용 사례가 적절해 보입니다.
+
+- suspend, coroutine이 아닌 일반 함수 블록 실행
+- 단일 액션만 하는 처리 (특정 생명 주기에서 실행되길 기대하는 로직)
 
 ------
 
