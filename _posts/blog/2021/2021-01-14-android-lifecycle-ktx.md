@@ -13,6 +13,7 @@ categories:
 <!--more-->
 
 - 1부 : http://pluu.github.io/blog/android/2021/01/12/androidx-lifecycle-ktx/
+- 2부 : http://pluu.github.io/blog/android/2021/01/14/android-lifecycle-ktx/
 
 ## whenStateAtLeast 살펴보기
 
@@ -312,3 +313,4 @@ internal suspend fun <R> Lifecycle.suspendWithStateAtLeastUnchecked(
 지금까지 whenStateAtLeast와 withStateAtLeast 기능이 어떻게 구현했는지를 살펴봤습니다. 내부 구현을 좀 더 확인해보고자 작성한 2부 글이지만, 많은 개발자는 1부에서 언급한 사용 방법과 동작에 대한 내용이 보다 더 유용할 것 같습니다.
 
 - 1부 : http://pluu.github.io/blog/android/2021/01/12/androidx-lifecycle-ktx/
+- 2부 : http://pluu.github.io/blog/android/2021/01/14/android-lifecycle-ktx/

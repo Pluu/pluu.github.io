@@ -12,7 +12,7 @@ categories:
 
 <!--more-->
 
-주제와 관련된 Lifecycle-ktx는 현재 2.3.0-rc01이 최신 버전입니다. 그중에서 생명주기에 따른 Coroutine을 처리하는 ktx도 존재하는데 바로 아래 2가지입니다.
+주제와 관련된 Lifecycle-ktx는 현재 2.3.0-rc01이 최신 버전입니다. 그중에서 생명 주기에 따른 Coroutine을 처리하는 ktx도 존재하는데 바로 아래 2가지입니다.
 
 - whenStateAtLeast 
 - withStateAtLeast
@@ -21,21 +21,21 @@ categories:
 
 ## whenStateAtLeast
 
-안드로이드 주요 컴포넌트 중에서 Activity/Fragment는 사용자와 밀접하게 상호 작용을 하며 `메인 스레드`에서만 UI를 변경할 수 있다는 특성도 가지고 있습니다. 그리고 Activity/Fragment의 UI 변경 요청을 `CREATE ~ RESUME` 생명주기에서 합니다. UI가 화면에서 사라졌거나 종료된 이후에 UI 변경하는 것은 불필요한 처리일 수 있으며, 앱이 종료 (생명 주기가 Destroy인 상태에서 변경한 경우) 될 수 도 있습니다. 
+안드로이드 주요 컴포넌트 중에서 Activity/Fragment는 사용자와 밀접하게 상호 작용을 하며 `메인 스레드`에서만 UI를 변경할 수 있다는 특성도 가지고 있습니다. 그리고 Activity/Fragment의 UI 변경 요청을 `CREATE ~ RESUME` 생명 주기에서 합니다. UI가 화면에서 사라졌거나 종료된 이후에 UI 변경하는 것은 불필요한 처리일 수 있으며, 앱이 종료 (생명 주기가 Destroy인 상태에서 변경한 경우) 될 수 도 있습니다. 
 
 이때 도움이 되는 Lifecycle-ktx가 `whenStateAtLeast`입니다. 이어서 살펴보도록 하겠습니다.
 
 먼저 Android Developers 사이트에 기재되어 있는 whenStateAtLeast KTX의 설명을 정리를 하면 아래와 같습니다.
 
 - Main 스레드에서 블록을 실행하고 Lifecycle의 상태가 최소 상태(minState)가 아닐 경우 일시 중단
-- 블록이 실행 중 생명주기가 더 낮은 상태로 이동하면 생명주기가 최소 상태보다 크거나 같은 상태에 도달할 때까지 블록을 일시 중단
+- 블록이 실행 중 생명 주기가 더 낮은 상태로 이동하면 생명 주기가 최소 상태보다 크거나 같은 상태에 도달할 때까지 블록을 일시 중단
 
 > 추가로 자세한 설명은 아래 링크를 참고하세요.
 >
 > - Android Developers : https://developer.android.com/reference/kotlin/androidx/lifecycle/package-summary#whenstateatleast
 > - 실제 코드 : https://cs.android.com/androidx/platform/frameworks/support/+/androidx-master-dev:lifecycle/lifecycle-runtime-ktx/src/main/java/androidx/lifecycle/PausingDispatcher.kt;l=81?q=whenStateAtLeast
 
-즉, Coroutine Scope 함수는 생명주기가 `지정한 범위 내에서만 유효`하며 범위를 벗어난 경우 일시 중단하는 기능입니다. 
+즉, Coroutine Scope 함수는 생명 주기가 `지정한 범위 내에서만 유효`하며 범위를 벗어난 경우 일시 중단하는 기능입니다. 
 
 #### whenStateAtLeast 함수의 종류
 
@@ -46,9 +46,9 @@ suspend fun <T> Lifecycle.whenStateAtLeast(
 ): T
 ```
 
-기본 whenStateAtLeast 함수의 형태는 위와 같이 최소 생명주기 상태와 Coroutine Scope 함수 블록을 파라미터로 전달받는 구조입니다. 
+기본 whenStateAtLeast 함수의 형태는 위와 같이 최소 생명 주기 상태와 Coroutine Scope 함수 블록을 파라미터로 전달받는 구조입니다. 
 
-**생명주기를 기본 정의한 ktx**
+**생명 주기를 기본 정의한 ktx**
 
 개발자는 whenStateAtLeast 함수를 원하는 형태로 사용할 수 있으며, 아래의 3가지 ktx를 제공합니다.
 
@@ -145,14 +145,14 @@ I/[Lifecycle] PausingDispatcherActivity: SaveInstanceState
 
 `whenStarted`의 의도대로 Flow를 수신하는 처리가 Activity의 **onStart()** 시점의 상태를 나타내는 **Lifecycle.State.STARTED** 이후부터 값을 수신합니다. 그리고, Activity의 **onPause()** 시점부터 수신을 일시 중지합니다.
 
-Coroutine 함수를 일정한 생명주기에서만 활성화 상태로 하고 싶은 경우에 유용한 것을 알 수 있습니다.
+Coroutine 함수를 일정한 생명 주기에서만 활성화 상태로 하고 싶은 경우에 유용한 것을 알 수 있습니다.
 
 ## withStateAtLeast
 
 다음으로 Androidx Lifecycle-ktx 2.3.0-alpha06에 추가된 `withStateAtLeast`입니다. withStateAtLeast의 특징은 아래와 같습니다.
 
-- 지정한 생명주기 상태까지 대기하고, 지정한 생명주기 상태보다 크거나 같으면 일시 중단되지 않는 코드 블록을 실행
-- 현재 생명주기가 **Lifecycle.State.DESTROYED**인 경우에 withStateAtLeast 호출 시 LifecycleDestroyedException 발생
+- 지정한 생명 주기 상태까지 대기하고, 지정한 생명 주기 상태보다 크거나 같으면 일시 중단되지 않는 코드 블록을 실행
+- 현재 생명 주기가 **Lifecycle.State.DESTROYED**인 경우에 withStateAtLeast 호출 시 LifecycleDestroyedException 발생
 
 > 추가로 자세한 설명은 아래 링크를 참고하세요.
 >
@@ -176,9 +176,9 @@ public suspend inline fun <R> Lifecycle.withStateAtLeast(
 }
 ```
 
-기본 withStateAtLeast 함수의 형태는 위와 같이 생명주기와 실행할 `함수 블록`을 파라미터로 전달받는 구조입니다. 함수 구조에서도 `whenStateAtLeast` 과 다른점으로 CoroutineScope 함수 대신 일반 함수 블록을 전달받고 있습니다. 그래서 함수의 구조만 보더라도 일시 중단을 지원하지 않는 것을 알 수 있습니다.
+기본 withStateAtLeast 함수의 형태는 위와 같이 생명 주기와 실행할 `함수 블록`을 파라미터로 전달받는 구조입니다. 함수 구조에서도 `whenStateAtLeast` 과 다른점으로 CoroutineScope 함수 대신 일반 함수 블록을 전달받고 있습니다. 그래서 함수의 구조만 보더라도 일시 중단을 지원하지 않는 것을 알 수 있습니다.
 
-**생명주기를 기본 정의한 ktx**
+**생명 주기를 기본 정의한 ktx**
 
 개발자는 withStateAtLeast 함수를 원하는 형태로 사용할 수 있으며, 아래의 3가지 ktx를 제공합니다.
 
@@ -305,6 +305,9 @@ I/[Lifecycle] WithLifecycleStateActivity: Destroyed <---- Flow 종료
 ------
 
 이것으로 1부의 내용으로 whenStateAtLeast와 withStateAtLeast의 개념과 동작 방식을 살펴봤습니다. 이어서 2부에서는 whenStateAtLeast와 withStateAtLeast의 내부 구현 코드를 통해서 어떻게 구현되었는지 살펴보겠습니다.
+
+- 1부 : http://pluu.github.io/blog/android/2021/01/12/androidx-lifecycle-ktx/
+- 2부 : http://pluu.github.io/blog/android/2021/01/14/android-lifecycle-ktx/
 
 ------
 
