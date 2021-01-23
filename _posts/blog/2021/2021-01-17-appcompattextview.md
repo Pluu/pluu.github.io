@@ -111,7 +111,7 @@ class TextViewCompoundDrawablesXmlDetector : LayoutDetector() {
 
 ## 그럼 안전하게 사용해도 될까?
 
-대부분 Lint에서 추천하는 수정은 적용해도 큰 문제는 없지만 경우에 따라서 추가 수정이 필요할 수도 있습니다. 그렇다면 `CompoundDrawable` 관련 Lint는 괜찮을까요? 우리는 개발자이므로 코드로 동작을 확인하겠습니다. 
+대부분 Lint에서 추천하는 수정은 적용해도 큰 문제는 없지만 경우에 따라서 추가 수정이 필요합니다. 그렇다면 `CompoundDrawable` 관련 Lint는 괜찮을까요? 우리는 개발자이므로 코드로 동작을 확인하겠습니다. 
 
 해당 내용에 들어가기 전, 한 가지 살펴볼 사항이 있습니다. 
 
@@ -528,7 +528,7 @@ AppCompatTextHelper는 기존 View에서 처리하던 Style 속성 읽기/사용
   - 호출 시점 : Drawable과 Tint 변경시에 실행
   - 우선 순위 : Left/Right를 처리한 후 Start/End를 처리
 
-이와 같이 최종적으로는 Relative CoompoundDrawables이 반영되므로 TextView에서는 Start/End와 Left/Right 속성을 혼용하지 않도록 주의가 필요합니다.
+이와 같이 최종적으로는 Relative CompoundDrawables이 반영되므로 TextView에서는 Start/End와 Left/Right 속성을 혼용하지 않도록 주의가 필요합니다.
 
 ## 기타
 
