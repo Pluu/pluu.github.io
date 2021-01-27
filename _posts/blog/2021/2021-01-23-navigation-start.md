@@ -66,5 +66,6 @@ findNavController()
 
 NavHostController#navigate
 
-- NavigatorProvider#getNavigator(NavDirections#getNavigatorName) => FragmentNavigator 반환
+- NavigatorProvider#getNavigator(NavDirections#getNavigatorName)
+  - FragmentNavigator 반환
 - FragmentNavigator#navigate
