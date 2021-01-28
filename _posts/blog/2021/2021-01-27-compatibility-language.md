@@ -210,7 +210,7 @@ dependencies {
 
 기본적으로 Kotlin은 Java와의 호환성을 염두에 두고 설계되었습니다. Java와 100% 호환되며 Java와 Kotlin 코드 간의 호출도 원활하게 할 수 있습니다. 더 적은 Kotlin 코드로 기존 코드를 대체 가능하며 Kotlin의 다양한 API 덕분에 더 간결하며 표현력이 높은 개발이 가능하게 되었습니다. 
 
-또한, Google I/O 2019에서 `Kotlin First`의 일관으로 Kotlin을 위한 다양한 기능을 제공한다고 발표했습니다.
+또한, Google I/O 2019에서 `Kotlin First`의 일환으로 Kotlin을 위한 다양한 기능을 제공한다고 발표했습니다.
 
 ### Kotlin First가 의미하는 바는?
 
