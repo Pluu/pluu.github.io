@@ -63,7 +63,7 @@ fun something() {
 
 > \<uses-feature\> : https://developer.android.com/guide/topics/manifest/uses-feature-element
 >
-> 카메라 앱에서는 <uses-feature android:name="android.hardware.camera" /> 를 선언하여 필수 요구 사항 대응 처리를 합니다.
+> 카메라 앱에서는 \<uses-feature android:name="android.hardware.camera" /> 를 선언하여 필수 요구 사항 대응 처리를 합니다.
 
 다만, 일부 센서들의 경우 있으면 사용자에게 더 편리한 기능을 제공할 수 있지만, 그렇다고 없다고 앱 사용에 문제 되지 않는 경우도 많습니다. 그 예로 자이로스코프와 근접 센서가 있습니다. 구글 지도의 경우 자이로스코프가 없는 경우, 나침반 기능을 사용할 수 없습니다. 그리고 나침반 아이콘도 미노출됩니다. 그러나 이 센서가 없더라도 앱 사용에는 문제가 없습니다.
 
