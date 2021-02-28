@@ -97,9 +97,9 @@ Fragment간의 데이터 전달은 앞서 소개한 Listener를 사용하는 방
 
 위 설명을 간단하게 그림으로 표현하면 아래와 같습니다.
 
-<img src="https://developer.android.com/images/training/basics/fragments/fragment-b-to-a.png" width="400" />
+<img src="https://developer.android.com/images/guide/fragments/fragment-a-to-b.png" width="400" />
 
-> 이미지 출처 : https://developer.android.com/training/basics/fragments/pass-data-between
+> 이미지 출처 : https://developer.android.com/guide/fragments/communicate#pass-between-fragments
 
 그림을 통해서 알 수 있는것처럼 FragmentManager를 통해서 Fragment의 결과가 전달된다는 사실을 알 수 있습니다.
 
@@ -261,9 +261,9 @@ FlexibleMasterFragment에 미리 정의한  `requestKey` 를 이용해서 Fragme
 
 앞서 소개한 FragmentResult는 부모의 FragmentManager를 통해서 데이터가 전달가능했습니다. Fragment의 또다른 특성에는 Fragment를 내포할 수 있다는 구조입니다. 그래서 자식 Fragment의 결과를 부모 Fragmetn로 결과를 전달해야하는 케이스도 있습니다.
 
-<img src="https://developer.android.com/images/training/basics/fragments/parent-to-child.png" width="400" />
+<img src="https://developer.android.com/images/guide/fragments/pass-parent-child.png" width="400" />
 
-> 이미지 출처 : https://developer.android.com/training/basics/fragments/pass-data-between#child
+> 이미지 출처 : https://developer.android.com/guide/fragments/communicate#pass-parent-child
 
 앞서 FrgmentResult는 FragmentManager를 통해서 결과를 전달한다는 사실을 소개했습니다. 그리고 Fragment는 [Fragment#getChildFragmentManager()](https://developer.android.com/reference/androidx/fragment/app/Fragment#getChildFragmentManager()) 와 [Fragment#getParentFragmentManager()](https://developer.android.com/reference/androidx/fragment/app/Fragment#getParentFragmentManager()) 를 가지고 있습니다.
 
