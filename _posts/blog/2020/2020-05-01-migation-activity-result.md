@@ -103,7 +103,7 @@ class ActivityResultSampleActivity : AppCompatActivity() {
   
   private fun startSecondView() {
     val intent = Intent(/** context */, ResultSecondActivity::class.java)
-    requestActivity(intent)
+    requestActivity.launch(intent)
   }
 }
 ```
@@ -176,7 +176,7 @@ class ActivityResultSampleFragment : Fragment() {
   
   private fun startSecondView() {
     val intent = Intent(/** context */, ResultSecondActivity::class.java)
-    requestActivity(intent)
+    requestActivity.launch(intent)
   }
 }
 ```
