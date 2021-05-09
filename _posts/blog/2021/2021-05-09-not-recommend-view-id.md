@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[고찰] ViewBinding / DataBinding에서 불안한 ID 정의"
+title: "ViewBinding / DataBinding에서의 불안한 ID 정의(root ... not recommend)"
 date: 2021-05-09 17:00:00 +09:00
 tag: [Android, AndroidX, ViewBinding]
 categories:
