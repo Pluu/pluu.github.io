@@ -35,7 +35,7 @@ categories:
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io21/whats-new-in-android-testing-tools/018.png" }}" /> 
 
 - Android Studio의 설정에서 Gradle Test Runner 사용 옵션을 활성화
-  - Preferences | Build, Execution, Deployment | Testing
+  - Preferences \| Build, Execution, Deployment \| Testing
 
 ### Unified Test Platform
 
