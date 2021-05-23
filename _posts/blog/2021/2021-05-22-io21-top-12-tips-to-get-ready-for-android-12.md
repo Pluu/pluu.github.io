@@ -94,12 +94,12 @@ Foreground service는 멀티태스킹이 필요하고 사용자 작업을 완료
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io21/top-12-tips-to-get-ready-for-android-12/009.png" }}" /> 
 
-- App Component의 exprted 속성이 강화되었다.
+- App Component의 exported 속성이 강화되었다.
 - Android 12를 대상으로 하는 앱은 Intent Filter가 있는 Component에서는 명시적으로 이 속성을 지정해야 한다. Component를 공유할 때는 의도적이고 명시적이야 한다
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "io/io21/top-12-tips-to-get-ready-for-android-12/010.png" }}" /> 
 
-- 올바르게 `exprted`를 지정하지 않으면 위와 같은 오류 메시지가 나타난다. 
+- 올바르게 `exported`를 지정하지 않으면 위와 같은 오류 메시지가 나타난다. 
 
 > 참고 자료 : Safer component exporting https://developer.android.com/about/versions/12/behavior-changes-12#exported
 
