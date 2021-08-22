@@ -139,7 +139,7 @@ Java의 경우에는 Android 7.0 (API Level 24)부터 Java 8 API 기능 중 일�
 
 > 초기에는 Jack Compiler를 통해 Java 8 API를 사용할 수 있었지만, 결국 deprecated 되었습니다.
 >
-> Deperecated the Jack toolchain : https://android-developers.googleblog.com/2017/03/future-of-java-8-language-feature.html
+> Deprecated the Jack toolchain : https://android-developers.googleblog.com/2017/03/future-of-java-8-language-feature.html
 
 <img src="https://developer.android.com/studio/images/write/desugar_diagram.png" />
 

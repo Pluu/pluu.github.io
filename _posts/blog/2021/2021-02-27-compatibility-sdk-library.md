@@ -38,7 +38,7 @@ fun something() {
 
 처음 안드로이드 개발을 접한 사람에게는 왜 위와 같은 버전 분기 처리가 필요한지 의문을 가질 수 있습니다. 대표적인 이유는 아래와 같습니다.
 
-- 신규 API 추가 및 기존 API Deperecated (ex : getColor, getDrawable)
+- 신규 API 추가 및 기존 API Deprecated (ex : getColor, getDrawable)
 - OS 동작의 변경 대응 (ex : runtime-permissions)
 - 특정 버전 버그 대응
 
