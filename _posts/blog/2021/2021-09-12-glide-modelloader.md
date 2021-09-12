@@ -159,7 +159,7 @@ class CustomAssetModelLoader(
       // 
       // Asset 폴더에 있는 이미지를 접근하기 위해서 Uri 모델을 사용할 것 입니다.
       // 샘플에서는 ModelLoader에서는 별도 DataFetcher를 구현하지 않고
-      // Uri를 처리할 수 있는 다른 ModelLoader에 위임하기 위해 ModelLoader#build를 사용했습니다합니다.
+      // Uri를 처리할 수 있는 다른 ModelLoader에 위임하기 위해 ModelLoader#build를 사용합니다.
       return CustomAssetModelLoader(
         multiFactory.build(Uri::class.java, InputStream::class.java)
       )
