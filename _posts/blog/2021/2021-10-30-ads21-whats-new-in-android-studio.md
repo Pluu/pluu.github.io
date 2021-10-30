@@ -50,7 +50,7 @@ categories:
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "ads21/Whats-new-in-Android-Studio/004.png" }}" />
 
-- 프로젝트 빌드 후 Build Analyzer에서 Bulde Configuration 시간을 최적화할 수 있다.
+- 프로젝트 빌드 후 Build Analyzer에서 Build Configuration 시간을 최적화할 수 있다.
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "ads21/Whats-new-in-Android-Studio/005.png" }}" />
 
