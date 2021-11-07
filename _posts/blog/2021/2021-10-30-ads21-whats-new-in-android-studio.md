@@ -36,7 +36,7 @@ categories:
 
 ### Android Studio Chipmunk
 
-<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "ads21/Whats-new-in-Android-Studio/002.jpeg" }}" />
+<img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "ads21/Whats-new-in-Android-Studio/002.png" }}" />
 
 - Android Studio 다음 릴리스의 코드명은 `Chipmunk` 이다.
 
