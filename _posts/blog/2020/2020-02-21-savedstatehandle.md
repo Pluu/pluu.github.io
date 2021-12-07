@@ -62,8 +62,8 @@ implementation 'androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0'
 영어가 어려우니 간단하게 아래와 같이 해석할 수 있습니다.
 
 - Saved State Handle 정보가 ViewModel로 전달됨
-- SavedStateViewModelFactory를 사용해야만 ViewModel을 통해서 SvaedStateHandled을 전달 가능
-- SvaedStateHandled은 Key-Value로 이루어진 Map 형태
+- SavedStateViewModelFactory를 사용해야만 ViewModel을 통해서 SavedStateHandled을 전달 가능
+- SavedStateHandled은 Key-Value로 이루어진 Map 형태
 - 시스템이 프로세스를 종료하더라도 동일한 정보를 유지
 - get(String) ➡ 값 읽기
 - getLiveData(String) ➡ MutableLiveData가 반환, LiveData를 통해 값을 사용 가능
