@@ -31,7 +31,7 @@ implementation 'androidx.fragment:fragment-ktx:1.3.0-alpha02'
 
 ### 기본 지식
 
-[ComponentActivity](https://developer.android.com/reference/androidx/activity/ComponentActivity)와 [Fragment](https://developer.android.com/reference/androidx/fragment/app/Fragment) 에는 요청(request)과 반환(responms)을 일관적인 방법으로 사용하기 위해서 [ActivityResultCaller](https://developer.android.com/reference/androidx/activity/result/ActivityResultCaller) 인터페이스를 구현하도록 추가되었습니다.
+[ComponentActivity](https://developer.android.com/reference/androidx/activity/ComponentActivity)와 [Fragment](https://developer.android.com/reference/androidx/fragment/app/Fragment) 에는 요청(request)과 반환(response)을 일관적인 방법으로 사용하기 위해서 [ActivityResultCaller](https://developer.android.com/reference/androidx/activity/result/ActivityResultCaller) 인터페이스를 구현하도록 추가되었습니다.
 
 #### ActivityResultCaller
 
