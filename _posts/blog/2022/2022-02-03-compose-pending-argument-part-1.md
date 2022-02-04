@@ -27,14 +27,14 @@ categories:
 
 ------
 
-Google에서 Compsoe 발표 이후, 최근 Android 개발 시 Compose를 채택하는 사례가 늘어가고 있습니다. 기존에 운영하는 프로젝트와의 호환성을 위해서 View 시스템과 결합을 위한 도구들도 다양하게 있습니다.
+Google에서 Compose 발표 이후, 최근 Android 개발 시 Compose를 채택하는 사례가 늘어가고 있습니다. 기존에 운영하는 프로젝트와의 호환성을 위해서 View 시스템과 결합을 위한 도구들도 다양하게 있습니다.
 
-- AbstractComposeView / ComposeView : Custom View에서 Compsoe 사용
+- AbstractComposeView / ComposeView : Custom View에서 Compose 사용
 - Compose Theme Adapter
   - [AppCompat Compose Theme Adapter](https://google.github.io/accompanist/appcompat-theme/)
   - [MDC-Android Compose Theme Adapter](https://material-components.github.io/material-components-android-compose-theme-adapter/)
 
-> 기존 앱에 Compsoe 채택 : https://developer.android.com/jetpack/compose/interop
+> 기존 앱에 Compose 채택 : https://developer.android.com/jetpack/compose/interop
 
 ## [서론] 데이터 전달
 
