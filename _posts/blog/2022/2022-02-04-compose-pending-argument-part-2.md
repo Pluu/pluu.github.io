@@ -340,6 +340,12 @@ navController.navigate(
 
 그렇지만 항상 이 케이스가 유효하도록 대응할 수도 있지만, Data Layer이 아닌 UI/Domain Layer에서 파생된 데이터 타입일 수도 있습니다. 이 경우에는 이 해결법은 유효하지 않을 수 있습니다.
 
+## 샘플 코드
+
+본 글에서 언급한 코드는 아래 주소를 참고해주세요.
+
+- http://pluu.github.io/blog/android/2022/02/04/compose-pending-argument-part-2/
+
 ## 읽으면 좋을 자료
 
 - **Part 3 —** [**Passing multi typed of data with Jetpack Compose navigation component.**](https://zivkest.medium.com/passing-multi-typed-data-between-screens-with-jetpack-compose-navigation-component-39ccbcf901ff)
