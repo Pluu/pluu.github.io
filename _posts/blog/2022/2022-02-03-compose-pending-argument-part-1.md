@@ -14,6 +14,9 @@ categories:
 
 1부에서는 데이터 전달의 기본 지식을 살펴보고, 2부에서는 Serializable/Parcelable 전달의 해결법을 다룹니다.
 
+- 1부 : <-- 현재 글
+- [2부 링크]({{ site.url }}/blog/android/2022/02/04/compose-pending-argument-part-2/)
+
 ------
 
 **사전 조건**
@@ -269,7 +272,7 @@ internal fun createHiltViewModelFactory(
 
 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ "2022/0203-compose/005.png" }}" /> 
 
-Navigation/Compose를 사용하면 [LocalViewModelStoreOwner](https://developer.android.com/reference/kotlin/androidx/lifecycle/viewmodel/compose/LocalViewModelStoreOwner)의 값은 실제로 [NavBackStackEntry](https://developer.android.com/reference/kotlin/androidx/navigation/NavBackStackEntry)입니다. NavBackStackEntry가 가리키는 화면은 `NavDestination`에 정의되어 있지만,  나머지는 Android의 화면 단위라는 개념에 필요한 인터페이스를 가지고 있습니다.
+Navigation/Compose를 사용하면 [LocalViewModelStoreOwner](https://developer.android.com/reference/kotlin/androidx/lifecycle/viewmodel/compose/LocalViewModelStoreOwner)의 값은 실제로 [NavBackStackEntry](https://developer.android.com/reference/kotlin/androidx/navigation/NavBackStackEntry)입니다. NavBackStackEntry가 가리키는 화면은 `NavDestination`에 정의되어 있지만, 나머지는 Android의 화면 단위라는 개념에 필요한 인터페이스를 가지고 있습니다.
 
 ```kotlin
 @JvmName("create")
