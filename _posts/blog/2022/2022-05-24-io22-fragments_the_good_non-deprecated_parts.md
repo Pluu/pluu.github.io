@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[요약] Fragments: The good (non-deprecated) parts"
+title: "[요약] Fragments: The good (non-deprecated) parts (Google I/O '22)"
 date: 2022-05-24 23:30:00 +09:00
 tag: [Android]
 categories:

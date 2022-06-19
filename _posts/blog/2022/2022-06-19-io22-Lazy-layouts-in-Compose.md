@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[요약] Lazy layouts in Compose"
+title: "[요약] Lazy layouts in Compose (Google I/O '22)"
 date: 2022-06-19 10:00:00 +09:00
 tag: [Android]
 categories:
