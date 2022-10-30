@@ -26,6 +26,7 @@
 실행 순서 (2)
 
 1. gem install github-pages
+2. bundle add webrick
 
 - - -
 

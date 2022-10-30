@@ -51,4 +51,4 @@ author :
 # Short text about your company. Shown in footer on every page and also separately on Home and Contact page.
 about: "Pluu, Android Developer Blog Site"
 
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
