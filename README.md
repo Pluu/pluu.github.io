@@ -19,7 +19,7 @@
 1. sudo gem install bundler
 2. bundle install
 3. bundle update
-4. bundle exec jekyll serve --watch --skip-initial-build
+4. bundle exec jekyll serve --watch --incremental
 
 - - -
 
