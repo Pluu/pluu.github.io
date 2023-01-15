@@ -38,8 +38,8 @@ collections:
 social:
   - title: github
     url: http://github.com/Pluu
-  - title: google-plus
-    url: http://google.com/+pluulove
+  - title: twitter
+    url: https://twitter.com/pluulove
 
 # Postal address (add as many lines as necessary). Shown in footer and on Contact page.
 author :
