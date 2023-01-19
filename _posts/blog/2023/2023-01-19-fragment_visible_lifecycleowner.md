@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Fragment의 Show/Hide와 함께 Lifecycle 레벨업"
-date: 2023-01-20 01:00:00 +09:00
+date: 2023-01-19 23:00:00 +09:00
 tag: [Android]
 categories:
 - blog
