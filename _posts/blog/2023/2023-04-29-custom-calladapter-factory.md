@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Retrofit에서 API 성공/응답이 분리된 응답으로 반환하는 Custom Adapter 만들기"
+title: "Retrofit에서 API 성공/에러가 분리된 응답으로 반환하는 Custom Adapter 만들기"
 date: 2023-04-29 19:30:00 +09:00
 tag: [Android, Retrofit]
 categories:
