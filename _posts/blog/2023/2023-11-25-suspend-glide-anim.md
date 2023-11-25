@@ -234,7 +234,7 @@ private suspend fun playStep(url: String) {
 
 {% include youtube.html id="Rx71I5EuvLk" %}
 
-> 샘플 코드 : https://github.com/Pluu/SuspendGlideSample.git
+> 샘플 코드 : https://github.com/Pluu/SuspendGlideSample
 
 ## 참고 자료
 
