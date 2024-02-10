@@ -10,7 +10,7 @@ categories:
 
 <!--more-->
 
-- 0부 : [서론]({{ site.url }}/blog/android/2024/02/04/designsystem-plugin-01/)
+- 0부 : [서론]({{ site.url }}/blog/android/2024/02/04/designsystem-plugin-00/)
 - 1부 : [ToolWindow/Configurable]({{ page.url }}) <- 현재 글
 
 ------
