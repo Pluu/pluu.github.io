@@ -182,27 +182,27 @@ class ConfigConfigurable(
    // Singleton 데이터 취득
    private val configSettings = ConfigSettings.getInstance()
    // Settings에 노출할 UI Component
-   private var configComponent: ConfigComponent? = null
+   private lateinit var configComponent: ConfigComponent
 
    override fun createComponent(): JComponent? {
       // 사용자에게 노출할 Component 
       configComponent = ConfigComponent(project, configSettings)
-      return configComponent?.root
+      return configComponent.root
    }
 
    override fun isModified(): Boolean {
       /** 마지막 상태로부터 변경이 발생했는지 여부 */
-      return configComponent!!.isModified()
+      return configComponent.isModified()
    }
 
    override fun apply() {
       /** 현재 상태를 반영 */
-      return configComponent!!.apply()
+      return configComponent.apply()
    }
 
    override fun reset() {
       /** 마지막 저장 상태로 초기화 */
-      return configComponent!!.reset()
+      return configComponent.reset()
    }
 
    // Settings에 노출할 Title
