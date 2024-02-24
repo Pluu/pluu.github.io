@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Android Studio의 UI Code Snippet용 Plugin 제작기 ~ 0부"
+title: "UI Code Snippet용 Plugin 제작기 ~ 0부"
 date: 2024-02-04 14:00:00 +09:00
 tag: [Android]
 categories:

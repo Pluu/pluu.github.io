@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Android Studio의 UI Code Snippet용 Plugin 제작기 ~ 1부 : ToolWindow/Configurable"
+title: "UI Code Snippet용 Plugin 제작기 ~ 1부 : ToolWindow/Configurable"
 date: 2024-02-10 21:30:00 +09:00
 tag: [Android]
 categories:
