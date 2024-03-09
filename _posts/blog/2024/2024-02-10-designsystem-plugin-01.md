@@ -12,12 +12,15 @@ categories:
 
 - 0부 : [서론]({{ site.url }}/blog/android/2024/02/04/designsystem-plugin-00/)
 - 1부 : [ToolWindow/Configurable]({{ page.url }}) <- 현재 글
+- 2부 : [ActionButton/JList]({{ site.url }}/blog/android/2024/02/24/designsystem-plugin-02/)
+- 3부 : [Import]({{ site.url }}/blog/android/2024/03/09/designsystem-plugin-03/)
+- 4부 : 기타 기능
 
 ------
 
 사전 조건
 
-기본적인 Plugin 작업시 IntelliJ에서 제공하는 [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)을 사용하시면 됩니다.
+기본적인 Plugin 작업 시 IntelliJ에서 제공하는 [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)을 사용하시면 됩니다.
 
 ---
 
@@ -39,7 +42,7 @@ categories:
 
 {% include img_assets.html id="/blog/2024/designsystem_plugin/04.png" %}
 
-Android Studio 혹은 Intellij 계열 IDE를 사용해본 개발자라면 별도 창에 노출된 메뉴는 자주 접하는 화면입니다. IntelliJ에서는 해당 컴포넌트가 [Tool Windows](https://plugins.jetbrains.com/docs/intellij/tool-windows.html)입니다
+Android Studio 혹은 Intellij 계열 IDE를 사용해 본 개발자라면 별도 창에 노출된 메뉴는 자주 접하는 화면입니다. IntelliJ에서는 해당 컴포넌트가 [Tool Windows](https://plugins.jetbrains.com/docs/intellij/tool-windows.html)입니다
 
 > Tool Windows 문서 : https://plugins.jetbrains.com/docs/intellij/tool-windows.html
 >
@@ -64,7 +67,7 @@ Tool Windows를 정의하기 위해서는 먼저, [plugin.xml](https://plugins.j
 library.toolWindow에서 정의된 속성은 다음과 같습니다.
 
 - id : Tool Window의 ID
-- anchor : Tool Window가 노출 될 위치 (left/right/bottom)
+- anchor : Tool Window가 노출될 위치 (left/right/bottom)
 - factoryClass : [ToolWindowFactory](https://github.com/JetBrains/intellij-community/blob/idea/233.14015.106/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.kt)를 구현할 클래스
 
 ```kotlin
@@ -75,13 +78,13 @@ class DesignSystemToolWindowFactory : ToolWindowFactory {
 }
 ```
 
-다음으로 ToolWindowFactory#createToolWindowContent 함수를 사용해 Tool Window 위에 그려칠 컨텐츠를 정의합니다.
+다음으로 ToolWindowFactory#createToolWindowContent 함수를 사용해 Tool Window 위에 그려질 컨텐츠를 정의합니다.
 
 ### (2) Tool Windows 노출 옵션 처리
 
 Tool Windows를 사용하더라도 상황에 따라서 사용 여부를 선택적으로 하고 싶은 경우도 있습니다.
 
-기본적으로 `ToolWindowFactory#isApplicable` 함수의 리턴값으로 true/false 를 전달하여 노출 여부를 선택할 수 있습니다.
+기본적으로 `ToolWindowFactory#isApplicable` 함수의 리턴값으로 true/false를 전달하여 노출 여부를 선택할 수 있습니다.
 
 ```kotlin
 class DesignSystemToolWindowFactory : ToolWindowFactory {
@@ -93,7 +96,7 @@ class DesignSystemToolWindowFactory : ToolWindowFactory {
 
 > Tool Windows > Conditional Display﻿ : https://plugins.jetbrains.com/docs/intellij/tool-windows.html#conditional-display
 
-다만, `ToolWindowFactory#isApplicable`은 프로젝트가 로드될 때 한번만 체크합니다. 그러므로 동적으로 노출 여부를 선택하려면 다른 방식으로 해야합니다.
+다만, `ToolWindowFactory#isApplicable`은 프로젝트가 로드될 때 한번만 체크합니다. 그러므로 동적으로 노출 여부를 선택하려면 다른 방식으로 해야 합니다.
 
 샘플에서는 Tool Windows 노출 여부를 Setting에서 노출 여부를 처리하도록 해보겠습니다.
 
@@ -146,7 +149,7 @@ class ConfigSettings : SimplePersistentStateComponent<ConfigSettings.State>(Stat
 
 #### Configurable
 
-상태 클래스를 UI로 표현할 차례입니다. IntelliJ에서 Settings에 노출하기 위해서는 plugin.xml 파일에 [Configurable](https://github.com/JetBrains/intellij-community/blob/idea/233.14015.106/platform/ide-core/src/com/intellij/openapi/options/Configurable.java) 정의를 추가해야합니다. IDE 전역에 필요한 [applicationConfigurable](https://plugins.jetbrains.com/docs/intellij/settings-guide.html#declaring-application-settings)과 프로젝트 단위로 사용될 [projectConfigurable](https://plugins.jetbrains.com/docs/intellij/settings-guide.html#declaring-project-settings)이 있지만, 샘플에서는 applicationConfigurable를 사용하겠습니다.
+상태 클래스를 UI로 표현할 차례입니다. IntelliJ에서 Settings에 노출하기 위해서는 plugin.xml 파일에 [Configurable](https://github.com/JetBrains/intellij-community/blob/idea/233.14015.106/platform/ide-core/src/com/intellij/openapi/options/Configurable.java) 정의를 추가해야 합니다. IDE 전역에 필요한 [applicationConfigurable](https://plugins.jetbrains.com/docs/intellij/settings-guide.html#declaring-application-settings)과 프로젝트 단위로 사용될 [projectConfigurable](https://plugins.jetbrains.com/docs/intellij/settings-guide.html#declaring-project-settings)이 있지만, 샘플에서는 applicationConfigurable를 사용하겠습니다.
 
 ```xml
 <!-- plugin.xml -->
@@ -212,7 +215,7 @@ class ConfigConfigurable(
 
 #### ConfigComponent
 
-샘플에서는 Group과 CheckBox만 존재하는 기본 기능만 대응했습니다. IntelliJ의 UI는 Swing을 사용해야하며, 여기에서는 UI 컴포넌트로 Kotlin UI DSL Version 2을 사용했습니다.
+샘플에서는 Group과 CheckBox만 존재하는 기본 기능만 대응했습니다. IntelliJ의 UI는 Swing을 사용해야 하며, 여기에서는 UI 컴포넌트로 Kotlin UI DSL Version 2를 사용했습니다.
 
 > Kotlin UI DSL Version 2 : https://plugins.jetbrains.com/docs/intellij/kotlin-ui-dsl-version-2.html#ui-dsl-basics
 
@@ -250,12 +253,12 @@ class ConfigComponent(
 
 ### (3) Tool Windows 노출 여부 연결
 
-앞서 선언한 Tool Windows를 구성하는 ToolWindowFactory에서 상태 저장용 ConfigSettings 클래스를 사용해 Tool Windows 노출 여부를 작성해보겠습니다.
+앞서 선언한 Tool Windows를 구성하는 ToolWindowFactory에서 상태 저장용 ConfigSettings 클래스를 사용해 Tool Windows 노출 여부를 작성해 보겠습니다.
 
 ```kotlin
 class DesignSystemToolWindowFactory : ToolWindowFactory {
    override fun isApplicable(project: Project): Boolean {
-      // 프로젝트 로드시 한번만 검증
+      // 프로젝트 로드 시 한 번만 검증
       return ConfigSettings.getInstance().isDesignSystemEnable
    }
   
@@ -273,7 +276,7 @@ class DesignSystemToolWindowFactory : ToolWindowFactory {
 }
 ```
 
-> 참고로 ToolWindowManagerListener를 통해서 상태 변경이 있어 났을때마다 체크하는 코드가 샘플로 사용되었습니다.
+> 참고로 ToolWindowManagerListener를 통해서 상태 변경이 일어났을 때마다 체크하는 코드가 샘플로 사용되었습니다.
 >
 > 다만, 처음 isApplicable 호출의 리턴이 false인 경우에는 이후로 ToolWindow가 노출된 적이 없으므로 ToolWindowManagerListener의 응답이 호출되지 않습니다.
 

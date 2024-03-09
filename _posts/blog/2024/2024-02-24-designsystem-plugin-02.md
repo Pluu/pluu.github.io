@@ -13,6 +13,8 @@ categories:
 - 0부 : [서론]({{ site.url }}/blog/android/2024/02/04/designsystem-plugin-00/)
 - 1부 : [ToolWindow/Configurable]({{ site.url }}/blog/android/2024/02/10/designsystem-plugin-01/)
 - 2부 : [ActionButton/JList]({{ page.url }}) <- 현재 글
+- 3부 : [Import]({{ site.url }}/blog/android/2024/03/09/designsystem-plugin-03/)
+- 4부 : 기타 기능
 
 ------
 
@@ -126,7 +128,7 @@ class DesignSystemExplorerToolbar : JPanel() {
      
       searchTextField.addDocumentListener(object : DocumentAdapter() {
          override fun textChanged(e: DocumentEvent) {
-            // 텍스트 업데이트시 반영 (searchTextField.text)
+            // 텍스트 업데이트 시 반영 (searchTextField.text)
          }
       })
    }
