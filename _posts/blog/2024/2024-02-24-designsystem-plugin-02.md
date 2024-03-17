@@ -14,7 +14,7 @@ categories:
 - 1부 : [ToolWindow/Configurable]({{ site.url }}/blog/android/2024/02/10/designsystem-plugin-01/)
 - 2부 : [ActionButton/JList]({{ page.url }}) <- 현재 글
 - 3부 : [Import]({{ site.url }}/blog/android/2024/03/09/designsystem-plugin-03/)
-- 4부 : 기타 기능
+- 4부 : [기타 기능]({{ site.url }}/blog/android/2024/03/17/designsystem-plugin-04/)
 
 ------
 
