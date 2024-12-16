@@ -79,7 +79,7 @@ inline fun <T> LazyListScope.items(
 
 앞서 소개한 LazyListScope는 인터페이스입니다. 해당 인터페이스를 구현한 [LazyListIntervalContent](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListIntervalContent.kt)도 동일하게 변경합니다. 그리고, `LazyDsl API`의 item/items API 사용 시 내부적으로 **LazyListInterval** 클래스로 인스턴스화한 후 intervals 프로퍼티에 추가합니다. item/items API 함수에서 람다 타입의 `itemContent` 파라미터가 실제 그려야 할 Composable을 가리킵니다. 
 
-최종적으로 **LazyListInterval**을 이용하영 레이아웃 표시에 필요한 key/contentType/content Composable을 얻을 수 있습니다. 
+최종적으로 **LazyListInterval**을 이용하여 레이아웃 표시에 필요한 key/contentType/content Composable을 얻을 수 있습니다. 
 
 ```kotlin
 internal class LazyListIntervalContent(
