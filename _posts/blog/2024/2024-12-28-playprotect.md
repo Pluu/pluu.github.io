@@ -98,3 +98,22 @@ android {
 ```
 
 테스트 단말 및 Target Level 등이 변경됨에 따라서 지정해야 하는 버전은 달라질 수 있습니다.
+
+## (2025.01.03 추가) 체크
+
+> ganachoco(Young-Ho Cha)님이 제공해 주신 정보도 기록으로 남깁니다.
+
+기기마다 앱 설치 시 확인하는 targetSdk의 최소 버전 체크
+
+```shell
+$ adb shell getprop ro.build.version.min_supported_target_sdk
+28
+```
+
+경고 팝업 막기
+
+```shell
+$ adb shell setprop debug.wm.disable_deprecated_target_sdk_dialog 1
+```
+
+> 참고 자료 : [AppWarnings.java](https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/services/core/java/com/android/server/wm/AppWarnings.java;l=212?q=disable_deprecated_target_sdk_dialog&ss=android&start=11&fbclid=IwY2xjawHkz_pleHRuA2FlbQIxMAABHZI9Z-Kur6f7P9ssZuFxhNBpMNVP-dcosktZzk95BxY_ftKxbTaIlKpVmg_aem_cvAiV5VkMpBA7zjxc59vpQ)
