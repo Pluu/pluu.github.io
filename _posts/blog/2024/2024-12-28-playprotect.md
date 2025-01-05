@@ -10,6 +10,8 @@ categories:
 
 최근 Library 모듈에서 Instrumentation Test시에 경험한 기록을 남겨봅니다. 해당 작업은 오랜만에 0부터 작업해서 변경된 부분을 놓쳐서 간단하게 남겨둡니다.
 
+<!--more-->
+
 ---
 
 ## 문제의 현상
