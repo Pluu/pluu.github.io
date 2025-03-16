@@ -10,6 +10,8 @@ categories:
 
 Compose Preview에 노출하는 이미지를 동료 혹은 다른 사람과 공유하고 싶은 경우가 있다.
 
+<!--more-->
+
 Android Studio에는 Compose Preview에서 이미지를 클립보드로 복사하는 기능이 있다.
 
 1. Compose Preview에서 우측 클릭

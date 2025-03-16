@@ -10,6 +10,8 @@ categories:
 
 Android 개발 시 Compose 사용이 늘어남에 따라 다양한 기능들이 요구되고 있습니다. 대표적인 것 중 하나가 Navigation입니다. 구글도 Compose navigation을 제공하고 있지만, 오늘은 Compose Navigation에서 BottomSheet에 관련된 케이스를 다뤄보겠습니다.
 
+<!--more-->
+
 Compose Navigation에서 BottomSheet 사용 시 많이 거론되는 것이 `Accompanist` 라이브러리입니다.
 
 > Accompanist : https://google.github.io/accompanist/
