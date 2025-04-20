@@ -72,7 +72,7 @@ fun BottomSheetNavDemo() {
 
 > Google maven repository : https://maven.google.com/web/m_index.html?q=bom#androidx.compose:compose-bom:2025.03.00
 
-{% include img_assets.html id="/blog/2025/2025-03-16-compose-material-navigation/01.png" %}
+{% include img_assets.html id="/blog/2025/0316-compose-material-navigation/01.png" %}
 
 그리고, 버전업에 맞춰서 API 변경도 진행되고 있습니다.
 

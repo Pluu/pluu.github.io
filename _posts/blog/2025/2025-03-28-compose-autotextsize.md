@@ -97,7 +97,7 @@ fun SampleTextAutoSize(
 
 샘플 결과물처럼 기대와 다르게 AutoTextSize API는 동작하지 않습니다. 기본 Auto Size은 제한된 공간에 텍스트 노출을 위한 스펙인데, 위 샘플은 XML의 wrap_content와 동일하게 가변 영역이기 때문입니다.
 
-{% include img_assets.html id="/blog/2025/2025-03-27-compose-autotextsize/01.png" %}
+{% include img_assets.html id="/blog/2025/0327-compose-autotextsize/01.png" %}
 
 ## 기본 테스트 + maxLines = 1
 
@@ -127,7 +127,7 @@ fun SampleTextAutoSize(
 
 이전 샘플에서 `maxLines을 1로 고정`으로 추가한 경우에는 AutoTextSize API가 유효하게 동작합니다. wrap_content이지만 width가 제한되므로 동작하게 됩니다.
 
-{% include img_assets.html id="/blog/2025/2025-03-27-compose-autotextsize/02.png" %}
+{% include img_assets.html id="/blog/2025/0327-compose-autotextsize/02.png" %}
 
 ## Bounds 고정
 
@@ -158,7 +158,7 @@ fun SampleTextAutoSize(
 
 이번 샘플에서도 Text의 `영역이 고정`되므로 AutoTextSize API가 유효하게 동작합니다.
 
-{% include img_assets.html id="/blog/2025/2025-03-27-compose-autotextsize/03.png" %}
+{% include img_assets.html id="/blog/2025/0327-compose-autotextsize/03.png" %}
 
 ## 커스텀 TextSize 구하기
 

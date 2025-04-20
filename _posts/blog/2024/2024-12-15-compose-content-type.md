@@ -181,6 +181,8 @@ LazyListItemProvider에서 필요한 Key/ContentType은 생성자로 받은 inte
 
 ## LazyLayoutItemContentFactory
 
+{% include img_assets.html id="/blog/2024/1215-compose-content-type/LazyLayoutItemContentFactory.png" %}
+
 [LazyLayoutItemContentFactory](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/layout/LazyLayoutItemContentFactory.kt)는 람다 캐시 및 제공하는 역할 담당하는 Factory 클래스입니다.
 
 LazyLayoutItemContentFactory 클래스의 주석에는 다음과 같이 작성되어 있습니다.
