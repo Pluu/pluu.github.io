@@ -1,0 +1,600 @@
+---
+layout: post
+title: "Jetpack Compose: LazyColumn/LazyRow 내부 코드 분석 ~ 3부 LazyLayout"
+date: 2025-04-20 15:30:00 +09:00
+tag: [Android, AndroidX]
+categories:
+- blog
+- Android
+---
+
+3부는 LazyList에서 호출하는 `LazyLayout` Composable 함수를 살펴볼 예정입니다.
+
+<!--more-->
+
+- 1부 : [LazyColumn/LazyRow]({{ site.url }}/blog/android/androidx/2025/01/10/LazyList-1/)
+- 2부 : [LazyList (1)]({{ site.url }}/blog/android/2025/01/25/LazyList-2/)
+- 2부 : [LazyList (2) rememberLazyListMeasurePolicy]({{ site.url }}/blog/android/2025/02/09/LazyList-3/)
+- 3부 : LazyLayout <-- 현재 글
+
+------
+
+본 글에서 다루는 FlowChart를 빠르게 확인하기 위해서는 아래 링크를 참고해 주세요
+
+- LazyLayout FlowChart : [링크](https://pluu.github.io/assets/img/blog/2025/2025-04-20-LazyList-3/LazyLayout.pdf)
+- LazyList 전체 FlowChart : [링크](https://pluu.github.io/assets/img/blog/2025/2025-04-20-LazyList-3/ComposeLazyLayout.pdf)
+
+---
+
+LazyLayout는 LazyColumn/LazyRow 사용 시 LazyList를 통해서 호출되는 Composable 함수입니다.
+
+```kotlin
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
+internal fun LazyList(
+   state: LazyListState,
+   ...
+) {
+   val itemProviderLambda = rememberLazyListItemProviderLambda(...)
+   val measurePolicy = rememberLazyListMeasurePolicy(...)
+  
+   LazyLayout(
+      modifier = ...,
+      ...
+      prefetchState = state.prefetchState,
+      measurePolicy = measurePolicy,
+      itemProvider = itemProviderLambda
+   )
+}
+```
+
+> [LazyList 소스 출처](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyList.kt;l=55-157)
+
+# LazyLayout
+
+LazyLayout은 필요한 item만 compose 및 배치하는 레이아웃입니다. scrollable layouts을 만드는 데 사용합니다.
+
+- LazyList : LazyColumn, LazyRow
+- LazyGrid : LazyVerticalGrid, LazyHorizontalGrid
+- LazyStaggeredGrid : LazyVerticalStaggeredGrid, LazyHorizontalStaggeredGrid
+- Pager : VerticalPager, HorizontalPager
+
+```kotlin
+@Composable
+fun LazyLayout(
+   /** measurePolicy의 일부로 item을 compose/measure하는데 사용할 수 있는 item에 대한 정보를 제공하는 ItemProvider를 생성 */
+   itemProvider: () -> LazyLayoutItemProvider, 
+   modifier: Modifier = Modifier,
+   /** item을 Prefetch를 정의 */
+   prefetchState: LazyLayoutPrefetchState? = null, 
+   /** 필요한 item만 compose/measure 할 수 있는 MeasurePolicy */
+   measurePolicy: LazyLayoutMeasureScope.(Constraints) -> MeasureResult 
+) {
+  ...
+}
+```
+
+> [LazyLayout 소스 출처](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/layout/LazyLayout.kt;l=32-84)
+
+## LazyLayoutPrefetchState
+
+lazy items Prefetch를 위한 상태로, lazy lazyout에서 prefetcher를 하는 데 사용됩니다. LazyLayout에서는 아래 2개의 프로퍼티가 사용됩니다
+
+```kotlin
+@Stable
+class LazyLayoutPrefetchState(
+   // Prefetch 요청을 실행하는 데 사용할 PrefetchScheduler 구현을 지정
+   // null이 제공되면 플랫폼의 기본 PrefetchScheduler가 사용
+   internal val prefetchScheduler: PrefetchScheduler? = null,
+   ...
+) {
+   // PrefetchHandle, PrefetchRequest 생성을 담당
+   internal var prefetchHandleProvider: PrefetchHandleProvider? = null
+  
+   // 새 item에 대한 precomposition을 예약
+   @Deprecated(
+      "Please use schedulePrecomposition(index) instead",
+      level = DeprecationLevel.WARNING
+   )
+   fun schedulePrefetch(index: Int): PrefetchHandle {
+      return prefetchHandleProvider?.schedulePrecomposition(
+         index,
+         true,
+         prefetchMetrics,
+      ) ?: DummyHandle
+   }
+  
+   // 새 item에 대한 precomposition을 예약
+   fun schedulePrecomposition(index: Int): PrefetchHandle = schedulePrecomposition(index, true)
+
+   internal fun schedulePrecomposition(index: Int, isHighPriority: Boolean): PrefetchHandle {
+      return prefetchHandleProvider?.schedulePrecomposition(
+         index,
+         isHighPriority,
+         prefetchMetrics,
+      ) ?: DummyHandle
+   }
+  
+   // 새 item에 대한 precomposition과 premeasure를 예약
+   @Deprecated(
+      "Please use schedulePremeasure(index, constraints) instead",
+      level = DeprecationLevel.WARNING
+   )
+   fun schedulePrefetch(index: Int, constraints: Constraints): PrefetchHandle =
+      schedulePrecompositionAndPremeasure(index, constraints, null)
+  
+   // 새 item에 대한 precomposition과 premeasure를 예약
+   fun schedulePrecompositionAndPremeasure(
+      index: Int,
+      constraints: Constraints,
+      onItemPremeasured: (LazyLayoutPrefetchResultScope.() -> Unit)? = null
+   ): PrefetchHandle =
+      schedulePrecompositionAndPremeasure(index, constraints, true, onItemPremeasured)
+
+   internal fun schedulePrecompositionAndPremeasure(
+      index: Int,
+      constraints: Constraints,
+      isHighPriority: Boolean,
+      onItemPremeasured: (LazyLayoutPrefetchResultScope.() -> Unit)? = null
+   ): PrefetchHandle {
+      return prefetchHandleProvider?.schedulePremeasure(
+         index,
+         constraints,
+         prefetchMetrics,
+         isHighPriority,
+         onItemPremeasured
+      ) ?: DummyHandle
+   }
+  
+   sealed interface PrefetchHandle {
+      // 이전에 예약된 item이 더 이상 필요하지 않음을 Prefetch에게 알림
+      // item이 이미 precomposed된 경우 해당 item은 폐기
+      fun cancel()
+
+      // Prefetch 요청을 긴급한 것으로 표시하여 요청된 item이 다음 프레임에 필요할 것으로 예상됨을 알림
+      fun markAsUrgent()
+   }
+  
+   ...
+}
+```
+
+> [LazyLayoutPrefetchState 소스 출처](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/layout/LazyLayoutPrefetchState.kt;l=39-197)
+
+### PrefetchScheduler
+
+PrefetchScheduler 인터페이스는 schedulePrefetch를 통해 Prefetch 요청을 수락하고, frame idle 시간 등 사용자 경험에 미치는 영향을 최소화하는 방식으로 실행 시기를 결정합니다. 요청은 PrefetchRequest.execute를 호출하여 실행합니다. 
+
+```kotlin
+interface PrefetchScheduler {
+   // Prefetch 요청을 수락합니다.
+   // 구현은 UX에 미치는 영향을 최소화할 수 있는 실행 시간을 찾아야 함
+   fun schedulePrefetch(prefetchRequest: PrefetchRequest)
+}
+```
+
+> [PrefetchScheduler 소스 출처](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:wear/compose/compose-foundation/src/main/java/androidx/wear/compose/foundation/lazy/layout/PrefetchScheduler.kt;l=45-62)
+
+> 별도 처리없이 기본 LazyColumn을 사용한 경우에는 [LazyLayoutPrefetchState](https://developer.android.com/reference/kotlin/androidx/compose/foundation/lazy/layout/LazyLayoutPrefetchState)에 전달되는 [PrefetchScheduler](https://developer.android.com/reference/kotlin/androidx/compose/foundation/lazy/layout/PrefetchScheduler)는 null입니다. 대신, PrefetchScheduler를 구현한 [LazyListPrefetchStrategy](https://developer.android.com/reference/kotlin/androidx/compose/foundation/lazy/LazyListPrefetchStrategy)를 [rememberLazyListState](https://developer.android.com/reference/kotlin/androidx/compose/foundation/lazy/package-summary#rememberLazyListState(kotlin.Int,kotlin.Int,androidx.compose.foundation.lazy.LazyListPrefetchStrategy))에 전달하면 지정된 PrefetchScheduler가 사용됩니다.
+
+## LazySaveableStateHolderProvider
+
+[LazySaveableStateHolderProvider](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:wear/compose/compose-foundation/src/main/java/androidx/wear/compose/foundation/lazy/layout/LazySaveableStateHolder.kt;l=53-96)는 LazyLayout에서 가장 큰 영역을 차지하는 Composable 함수입니다. 
+
+```kotlin
+@Composable
+fun LazyLayout(...) {
+   ...
+   LazySaveableStateHolderProvider { saveableStateHolder ->
+   }
+}
+```
+
+이 함수는 lazy layout 항목과 함께 사용할 [SaveableStateHolder](https://developer.android.com/reference/kotlin/androidx/compose/runtime/saveable/SaveableStateHolder)를 제공합니다. 이를 통해 LazyRow 스크롤 위치와 같은 item의 상태를 저장/복원할 수 있습니다. 또한, [SaveableStateHolder](https://developer.android.com/reference/kotlin/androidx/compose/runtime/saveable/SaveableStateHolder)가 제공하는 기본 기능 외에도 부모 [SaveableStateRegistry]()가 [SaveableStateRegistry#performSave](https://developer.android.com/reference/kotlin/androidx/compose/runtime/saveable/SaveableStateRegistry#performSave())를 호출할 때에는 현재 보이는 항목만 저장합니다.
+
+> 현재 보이는 item만 저장하여 Bundle에서 사용하는 공간을 절약하여 [TransactionTooLargeException](https://developer.android.com/reference/android/os/TransactionTooLargeException)과 충돌을 방지합니다.
+
+LazySaveableStateHolderProvider 내부에서는 LazySaveableStateHolder 클래스 인스턴스를 생성하여 rememberSaveable한 holder를 만듭니다. 그리고, 이 holder는 CompositionLocalProvider를 통해 content에서 SaveableStateRegistry 접근 시 사용되도록 합니다.
+
+```kotlin
+@Composable
+internal fun LazySaveableStateHolderProvider(content: @Composable (SaveableStateHolder) -> Unit) {
+   val currentRegistry = LocalSaveableStateRegistry.current
+   val wrappedHolder = rememberSaveableStateHolder()
+   val holder =
+      rememberSaveable(
+         currentRegistry,
+         saver = LazySaveableStateHolder.saver(currentRegistry, wrappedHolder)
+      ) {
+         LazySaveableStateHolder(currentRegistry, emptyMap(), wrappedHolder)
+      }
+   CompositionLocalProvider(LocalSaveableStateRegistry provides holder) { content(holder) }
+}
+```
+
+> [LazySaveableStateHolderProvider 소스 출처](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:wear/compose/compose-foundation/src/main/java/androidx/wear/compose/foundation/lazy/layout/LazySaveableStateHolder.kt;l=30-51)
+
+### LazySaveableStateHolder
+
+LazySaveableStateHolder는 [SaveableStateRegistry](https://developer.android.com/reference/kotlin/androidx/compose/runtime/saveable/SaveableStateRegistry)와 [SaveableStateHolder](https://developer.android.com/reference/kotlin/androidx/compose/runtime/saveable/SaveableStateHolder#SaveableStateProvider(kotlin.Any,kotlin.Function0)) 인터페이스를 구현합니다. 또한 Savable에 필요한 [Saver](https://developer.android.com/reference/kotlin/androidx/compose/runtime/saveable/Saver)도 제공하고 있습니다.
+
+생성자 파라미터로 SaveableStateRegistry/SaveableStateHolder를 전달 받고, 이를 통해서 compose의 subtree를 지우기 전에 [rememberSaveable](https://developer.android.com/reference/kotlin/androidx/compose/runtime/saveable/package-summary#rememberSaveable(kotlin.Array,androidx.compose.runtime.saveable.Saver,kotlin.String,kotlin.Function0))로 상태를 저장 및 복원하여 다시 composition할 수 있도록 합니다. 
+
+```kotlin
+private class LazySaveableStateHolder(
+   private val wrappedRegistry: SaveableStateRegistry,
+   private val wrappedHolder: SaveableStateHolder
+) : SaveableStateRegistry by wrappedRegistry, SaveableStateHolder {
+  ...
+  private val previouslyComposedKeys = mutableScatterSetOf<Any>()
+
+  // 등록된 모든 value providers를 실행하고 value를 map으로 반환
+  override fun performSave(): Map<String, List<Any?>> {
+    previouslyComposedKeys.forEach { wrappedHolder.removeState(it) }
+    return wrappedRegistry.performSave()
+  }
+
+  @Composable
+  override fun SaveableStateProvider(key: Any, content: @Composable () -> Unit) {
+    wrappedHolder.SaveableStateProvider(key, content)
+    DisposableEffect(key) {
+      previouslyComposedKeys -= key
+      onDispose { previouslyComposedKeys += key }
+    }
+  }
+
+  // 전달된 key와 연관된 저장된 상태를 제거
+  override fun removeState(key: Any) {
+    wrappedHolder.removeState(key)
+  }
+
+  companion object {
+    fun saver(parentRegistry: SaveableStateRegistry?, wrappedHolder: SaveableStateHolder) =
+      Saver<LazySaveableStateHolder, Map<String, List<Any?>>>(
+        save = { it.performSave().ifEmpty { null } },
+        restore = { restored ->
+          LazySaveableStateHolder(parentRegistry, restored, wrappedHolder)
+        }
+    )
+  }  
+}
+```
+
+> [LazySaveableStateHolder 소스 출처](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:wear/compose/compose-foundation/src/main/java/androidx/wear/compose/foundation/lazy/layout/LazySaveableStateHolder.kt;l=53-96)
+
+## SubcomposeLayoutState
+
+[LazySaveableStateHolderProvider](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:wear/compose/compose-foundation/src/main/java/androidx/wear/compose/foundation/lazy/layout/LazySaveableStateHolder.kt;l=53-96)에 전달되는 content lambda 내부 로직을 볼 차례입니다. 처음 만나는 [LazyLayoutItemContentFactory](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/layout/LazyLayoutItemContentFactory.kt)는 람다 캐시 및 제공하는 역할 담당하는 Factory 클래스입니다. 
+
+> LazyLayoutItemContentFactory/LazyLayoutItemReusePolicy는 [지난 블로그](https://pluu.github.io/blog/android/2024/12/15/compose-content-type/)에서 다루고 있습니다
+
+```kotlin
+@Composable
+fun LazyLayout(
+   itemProvider: () -> LazyLayoutItemProvider,
+   modifier: Modifier = Modifier,
+   prefetchState: LazyLayoutPrefetchState? = null,
+   measurePolicy: LazyLayoutMeasureScope.(Constraints) -> MeasureResult
+) {
+   val currentItemProvider = rememberUpdatedState(itemProvider)
+
+   LazySaveableStateHolderProvider { saveableStateHolder ->
+      val itemContentFactory = remember {
+         LazyLayoutItemContentFactory(saveableStateHolder) { currentItemProvider.value() }
+      }
+      val subcomposeLayoutState = remember {
+         SubcomposeLayoutState(LazyLayoutItemReusePolicy(itemContentFactory))
+      }
+      ...
+   }
+}
+```
+
+그 중 [SubcomposeLayout](https://developer.android.com/reference/kotlin/androidx/compose/ui/layout/package-summary#SubcomposeLayout(androidx.compose.ui.Modifier,kotlin.Function2))을 호출하기 전 상태를 담당하는 [SubcomposeLayoutState](https://developer.android.com/reference/kotlin/androidx/compose/ui/layout/SubcomposeLayoutState)가 있습니다. 레이아웃 재사용을 위해서 slot의 저장을 담당하는 [SubcomposeSlotReusePolicy](https://developer.android.com/reference/kotlin/androidx/compose/ui/layout/SubcomposeSlotReusePolicy)를 생성자 파라미터로 받습니다. 여기까지오면 레이아웃에 따른 아이템 생성, 상태 저장/복원을 하는 추상적인 로직들을 살펴본 것 입니다.
+
+```kotlin
+class SubcomposeLayoutState(
+   private val slotReusePolicy: SubcomposeSlotReusePolicy
+) {
+   ...
+   // slotId에 대한 content를 작성.
+   // content가 이미 compose되어있으면 measure 단계 중 scope.subcompose(slotId) 호출이 더 빨라짐.
+   fun precompose(slotId: Any?, content: @Composable () -> Unit): PrecomposedSlotHandle = 
+      state.precompose(slotId, content)
+   
+   // slotId에 대한 PausedPrecomposition을 호출
+   // 점진적인 방식으로 composition을 수행
+   // 전체 또는 부분 precomposition을 수행하면 content가 이미 composed 되어 있으므로 
+   // measure 단계 중 다음 scope.subcompose(slotId) 호출이 더 빨라짐
+   fun createPausedPrecomposition(
+      slotId: Any?,
+      content: @Composable () -> Unit
+   ): PausedPrecomposition = state.precomposePaused(slotId, content)
+   ...
+}
+```
+
+> [SubcomposeLayoutState 소스 링크](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/layout/SubcomposeLayout.kt;l=171-363)
+
+> LazyLayoutItemReusePolicy는 이전 블로그에서 다루고 있습니다.
+>
+> - [Compose Lazy에서 Content type 지원 살펴보기](https://pluu.github.io/blog/android/2024/12/15/compose-content-type/)
+
+## rememberDefaultPrefetchScheduler
+
+prefetchState가 null이 아닐 때 동작하는 코드 중 prefetchState.prefetchScheduler가 없을 때 제공하는 기본 PrefetchScheduler(rememberDefaultPrefetchScheduler)가 있습니다. 
+
+> 기본 Android PrefetchScheduler가 궁금하면 다음 링크를 참고하세요 : [AndroidPrefetchScheduler 소스](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:compose/foundation/foundation/src/androidMain/kotlin/androidx/compose/foundation/lazy/layout/PrefetchScheduler.android.kt;l=54-262?q=AndroidPrefetchScheduler)
+
+```kotlin
+@Composable
+fun LazyLayout(
+   itemProvider: () -> LazyLayoutItemProvider,
+   modifier: Modifier = Modifier,
+   prefetchState: LazyLayoutPrefetchState? = null,
+   measurePolicy: LazyLayoutMeasureScope.(Constraints) -> MeasureResult
+) {
+   val currentItemProvider = ...
+
+   LazySaveableStateHolderProvider { saveableStateHolder ->
+      val itemContentFactory = ...
+      val subcomposeLayoutState = ...
+      if (prefetchState != null) {
+         val executor = prefetchState.prefetchScheduler ?: rememberDefaultPrefetchScheduler()
+         DisposableEffect(prefetchState, itemContentFactory, subcomposeLayoutState, executor) {
+            // prefetchHandleProvider에 PrefetchHandleProvider 인스턴스 설정
+            prefetchState.prefetchHandleProvider =
+               PrefetchHandleProvider(itemContentFactory, subcomposeLayoutState, executor)
+            onDispose { prefetchState.prefetchHandleProvider = null }
+         }
+      }
+      ...
+   }
+}
+```
+
+AndroidX의 Compose도 Multiplatform 지원으로 rememberDefaultPrefetchScheduler는 expect로 선언되어 있으며, Android에서는 AndroidPrefetchScheduler가 최종 사용되는 구조입니다.
+
+```kotlin
+@ExperimentalFoundationApi
+@Composable
+internal expect fun rememberDefaultPrefetchScheduler(): PrefetchScheduler
+
+// foundation-android-1.8.0-rc03
+@ExperimentalFoundationApi
+@Composable
+internal actual fun rememberDefaultPrefetchScheduler(): PrefetchScheduler {
+   return if (RobolectricImpl != null) {
+      RobolectricImpl
+   } else {
+      val view = LocalView.current
+      remember(view) { AndroidPrefetchScheduler(view) }
+   }
+}
+
+// (2025.04.19) rememberDefaultPrefetchScheduler
+@ExperimentalFoundationApi
+@Composable
+internal actual fun rememberDefaultPrefetchScheduler(): PrefetchScheduler {
+   return if (RobolectricImpl != null) {
+      RobolectricImpl
+   } else {
+      val view = LocalView.current
+      remember(view) {
+         val existing = view.getTag(R.id.compose_prefetch_scheduler) as? PrefetchScheduler
+         if (existing == null) {
+            val scheduler = AndroidPrefetchScheduler(view)
+            view.setTag(R.id.compose_prefetch_scheduler, scheduler)
+            scheduler
+         } else {
+            existing
+         }
+      }
+   }
+}
+```
+
+> [rememberDefaultPrefetchScheduler 소스 출처](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:compose/foundation/foundation/src/androidMain/kotlin/androidx/compose/foundation/lazy/layout/PrefetchScheduler.android.kt;l=34-52)
+
+### PrefetchHandleProvider
+
+PrefetchHandleProvider는 prefetch를 예약하기 위한 API를 제공하는 [LazyLayoutPrefetchState](https://developer.android.com/reference/kotlin/androidx/compose/foundation/lazy/layout/LazyLayoutPrefetchState)를 인덱스에서 key/content를 확인하는 LazyLayoutItemContentFactory, precompose/premeasure 방법을 아는 [SubcomposeLayoutState](https://developer.android.com/reference/kotlin/androidx/compose/ui/layout/SubcomposeLayoutState), 요청을 실행하는 데 사용되는 특정 [PrefetchScheduler](https://developer.android.com/reference/kotlin/androidx/compose/foundation/lazy/layout/PrefetchScheduler)에 연결하는 데 사용됩니다.
+
+```kotlin
+// (2025.04.19) PrefetchHandleProvider
+internal class PrefetchHandleProvider(
+   private val itemContentFactory: LazyLayoutItemContentFactory,
+   private val subcomposeLayoutState: SubcomposeLayoutState,
+   private val executor: PrefetchScheduler
+) {
+   fun schedulePrecomposition(
+      index: Int,
+      isHighPriority: Boolean,
+      prefetchMetrics: PrefetchMetrics,
+   ): PrefetchHandle =
+      HandleAndRequestImpl(index, prefetchMetrics, executor as? PriorityPrefetchScheduler, null)
+         .also { ... }
+  
+   fun schedulePremeasure(
+      index: Int,
+      constraints: Constraints,
+      prefetchMetrics: PrefetchMetrics,
+      isHighPriority: Boolean,
+      onItemPremeasured: (LazyLayoutPrefetchResultScope.() -> Unit)?
+   ): PrefetchHandle =
+      HandleAndRequestImpl(
+         index,
+         constraints,
+         prefetchMetrics,
+         executor as? PriorityPrefetchScheduler,
+         onItemPremeasured
+      ).also { ... }
+
+   ...
+
+   @ExperimentalFoundationApi
+   private inner class HandleAndRequestImpl(
+      override val index: Int,
+      private val prefetchMetrics: PrefetchMetrics,
+      private val priorityPrefetchScheduler: PriorityPrefetchScheduler?,
+      private val onItemPremeasured: (LazyLayoutPrefetchResultScope.() -> Unit)?,
+   ) : PrefetchHandle, PrefetchRequest, LazyLayoutPrefetchResultScope {
+      ...
+   }
+}
+```
+
+> [PrefetchHandleProvider 소스 출처](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/layout/LazyLayoutPrefetchState.kt;l=431-936)
+
+### prefetch 요청 순서
+
+대략적인 prefetch 요청은 아래와 같은 순서로 호출됩니다.
+
+1. 사용자 및 시스템에 의해서 스크롤 시 LazyListState#onScroll 호출 [\[링크\]](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt;l=467-540)
+2. DefaultLazyListPrefetchStrategy#LazyListPrefetchScope.onScroll 호출 [\[링크\]](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListPrefetchStrategy.kt;l=148-189)
+   1. 스크롤 방향에 따라서 `prefetch할 index` 탐색
+3. LazyListState#prefetchScope에서 prefetchState#schedulePrecompositionAndPremeasure 호출 [\[링크\]](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt;l=322-354)
+4. LazyLayoutPrefetchState#schedulePrecompositionAndPremeasure에서 prefetchHandleProvider#schedulePremeasure 호출 [\[링크\]](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/layout/LazyLayoutPrefetchState.kt;l=161-189)
+5. HandleAndRequestImpl 인스턴스 생성하여 PrefetchHandle 반환 [\[링크\]](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/layout/LazyLayoutPrefetchState.kt;l=515-934)
+   1. 생성된 PrefetchHandle는 DefaultLazyListPrefetchStrategy#currentPrefetchHandle에 반영
+
+## SubcomposeLayout
+
+마지막은 LazyLayout 내부에서 호출되는 [SubcomposeLayout](https://developer.android.com/reference/kotlin/androidx/compose/ui/layout/package-summary#SubcomposeLayout(androidx.compose.ui.layout.SubcomposeLayoutState,androidx.compose.ui.Modifier,kotlin.Function2))입니다. LazyLayout에서는 파라미터로 SubcomposeLayoutState, Modifier, measurePolicy를 전달합니다.
+
+```kotlin
+@Composable
+fun LazyLayout(
+   itemProvider: () -> LazyLayoutItemProvider,
+   modifier: Modifier = Modifier,
+   prefetchState: LazyLayoutPrefetchState? = null,
+   measurePolicy: LazyLayoutMeasureScope.(Constraints) -> MeasureResult
+) {
+   val currentItemProvider = ...
+  
+   LazySaveableStateHolderProvider { saveableStateHolder ->
+      val itemContentFactory = ...
+      val subcomposeLayoutState = ...
+      ...
+      SubcomposeLayout(
+         subcomposeLayoutState,
+         modifier.traversablePrefetchState(prefetchState),
+         remember(itemContentFactory, measurePolicy) {
+            { constraints ->
+               with(LazyLayoutMeasureScopeImpl(itemContentFactory, this)) {
+                  measurePolicy(constraints)
+               }
+            }
+         }
+      )
+   }
+}
+```
+
+### Modifier.traversablePrefetchState
+
+```kotlin
+/**
+ * TraversablePrefetchStateNode 횡단을 통해 
+ * LazyLayout의 LazyLayoutPrefetchState를 검색할 수 있도록 하는 Modifier
+ */
+@ExperimentalFoundationApi
+internal fun Modifier.traversablePrefetchState(
+   lazyLayoutPrefetchState: LazyLayoutPrefetchState?
+): Modifier {
+   return lazyLayoutPrefetchState?.let { this then TraversablePrefetchStateModifierElement(it) }
+      ?: this
+}
+
+@ExperimentalFoundationApi
+private class TraversablePrefetchStateNode(
+   var prefetchState: LazyLayoutPrefetchState,
+) : Modifier.Node(), TraversableNode {
+
+   override val traverseKey: String = TraversablePrefetchStateNodeKey
+}
+
+@ExperimentalFoundationApi
+private data class TraversablePrefetchStateModifierElement(
+   private val prefetchState: LazyLayoutPrefetchState,
+) : ModifierNodeElement<TraversablePrefetchStateNode>() {
+   override fun create() = TraversablePrefetchStateNode(prefetchState)
+
+   override fun update(node: TraversablePrefetchStateNode) {
+      node.prefetchState = prefetchState
+   }
+
+   override fun InspectorInfo.inspectableProperties() {
+      name = "traversablePrefetchState"
+      value = prefetchState
+   }
+}
+```
+
+AndroidX 소스 코드를 통해서 살펴본바로 위 설정으로 TraversablePrefetchStateNode를 통해 prefetchState가 사용되는 곳은 nested로 prefetchState한 곳입니다.
+
+```kotlin
+internal class PrefetchHandleProvider(...) {
+   private inner class HandleAndRequestImpl(...) {
+      private var nestedPrefetchController: NestedPrefetchController? = null
+      
+      override fun PrefetchRequestScope.execute(): Boolean {
+         ...
+         nestedPrefetchController = resolveNestedPrefetchStates()
+      }
+      
+      private fun resolveNestedPrefetchStates(): NestedPrefetchController? {
+         ...
+         var nestedStates: MutableList<LazyLayoutPrefetchState>? = null
+         precomposedSlotHandle.traverseDescendants(TraversablePrefetchStateNodeKey) {
+            val prefetchState = (it as TraversablePrefetchStateNode).prefetchState
+            nestedStates =
+               nestedStates?.apply { add(prefetchState) } ?: mutableListOf(prefetchState)
+            TraverseDescendantsAction.SkipSubtreeAndContinueTraversal
+         }
+         return nestedStates?.let { NestedPrefetchController(it) }
+      }
+   }
+}
+```
+
+> [소스 출처](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/layout/LazyLayoutPrefetchState.kt;l=820-834)
+
+### SubcomposeLayout
+
+[SubcomposeLayout](https://developer.android.com/reference/kotlin/androidx/compose/ui/layout/package-summary#SubcomposeLayout(androidx.compose.ui.layout.SubcomposeLayoutState,androidx.compose.ui.Modifier,kotlin.Function2))의 동작은 measure 단계에서 실제 content를 subcompose할 수 있게 해줍니다. 본 글에서는 다루지 않지만 [SubcomposeLayout](https://developer.android.com/reference/kotlin/androidx/compose/ui/layout/package-summary#SubcomposeLayout(androidx.compose.ui.layout.SubcomposeLayoutState,androidx.compose.ui.Modifier,kotlin.Function2))은 커스텀 레이아웃 작업시 자주 사용됩니다.
+
+```kotlin
+@Composable
+@UiComposable
+fun SubcomposeLayout(
+   state: SubcomposeLayoutState,
+   modifier: Modifier = Modifier,
+   measurePolicy: SubcomposeMeasureScope.(Constraints) -> MeasureResult
+) {
+   val compositeKeyHash = currentCompositeKeyHashCode.hashCode()
+   val compositionContext = rememberCompositionContext()
+   val materialized = currentComposer.materialize(modifier)
+   val localMap = currentComposer.currentCompositionLocalMap
+   ReusableComposeNode<LayoutNode, Applier<Any>>(
+      factory = LayoutNode.Constructor,
+      update = {
+         set(state, state.setRoot)
+         set(compositionContext, state.setCompositionContext)
+         set(measurePolicy, state.setMeasurePolicy)
+         set(localMap, SetResolvedCompositionLocals)
+         set(materialized, SetModifier)
+         set(compositeKeyHash, SetCompositeKeyHash)
+      }
+   )
+   if (!currentComposer.skipping) {
+      SideEffect { state.forceRecomposeChildren() }
+   }
+}
+```
+
+> [SubcomposeLayout 소스 출처](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/layout/SubcomposeLayout.kt;l=101-145)
+
+SubcomposeLayout 이해에 도움이 되는 영상
+
+{% include youtube.html id="k1vZcpBh0qhQ6QkG" %}
