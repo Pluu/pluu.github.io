@@ -165,6 +165,12 @@ App 데이터 백업을 생성하고 다른 기기에 복원할 수 있는 기�
 
 ## XR 지원
 
+{% include img_assets.html id="/blog/io/io25/What's_new_in_Android_development_tools/14.png" %}
+
+{% include img_assets.html id="/blog/io/io25/What's_new_in_Android_development_tools/15.png" %}
+
+{% include img_assets.html id="/blog/io/io25/What's_new_in_Android_development_tools/16.png" %}
+
 {% include youtube.html id="8jNWfbkWAs4" %}
 
 - Layout Inspector
@@ -190,6 +196,8 @@ Android Studio Cloud
 - 컴퓨터에 소스 코드를 보관할 수 없는 개발자나 성능이 낮은 머신을 사용하는 개발자에게 유용
 
 Backup & Sync Settings
+
+{% include img_assets.html id="/blog/io/io25/What's_new_in_Android_development_tools/13.png" %}
 
 - Android Studio의 로컬/원격 버전간의 설정 동기화에 유용
 - Google 혹은 Jetbrain 계정으로 로그인하여 설정을 동기화 가능
