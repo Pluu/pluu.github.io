@@ -134,9 +134,7 @@ Android Studio내의 Firebase Crashlytics 탭에서의 신기능
 
 Gemini를 사용한 Compose 미리보기 생성
 
-<video width="100%" preload="auto" muted controls>
-    <source src="https://developer.android.com/static/studio/preview/gemini/images/journey-animation.mp4" type="video/mp4"/>
-</video>
+- 동작 영상 : https://developer.android.com/static/studio/preview/gemini/images/journey-animation.mp4
 
 ## Firebase Device Streaming
 
