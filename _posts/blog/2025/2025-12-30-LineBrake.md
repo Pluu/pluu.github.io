@@ -201,11 +201,11 @@ Box(modifier = Modifier.width(200.dp)) {
 
 |                             기본                             |                     LineBreak.Paragraph                      |
 | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| {% include img_assets.html id="/blog/2025/1229-LineBreak/기본.png" %} | {% include img_assets.html id="/blog/2025/1229-LineBreak/LineBreak.Paragraph.png" %} |
+| {% include img_assets.html id="/blog/2025/1229-LineBreak/01.png" %} | {% include img_assets.html id="/blog/2025/1229-LineBreak/02.png" %} |
 
 |                      LineBreak.Heading                       |
 | :----------------------------------------------------------: |
-| {% include img_assets.html id="/blog/2025/1229-LineBreak/LineBreak.Heading.png" %} |
+| {% include img_assets.html id="/blog/2025/1229-LineBreak/03.png" %} |
 
 Android가 정의하는 언어의 의도와는 별개로 읽기 쉬운 구조로 접근한다면, 예상과 다른 케이스들이 나옵니다. 
 
@@ -263,7 +263,7 @@ Text(
 
 |                        LineBreak 조합                        |
 | :----------------------------------------------------------: |
-| {% include img_assets.html id="/blog/2025/1229-LineBreak/개선_Modifier.png" %} |
+| {% include img_assets.html id="/blog/2025/1229-LineBreak/04.png" %} |
 
 LineBreak 속성을 좀 더 특별하게 다룬 결과는 다음과 같습니다.
 
@@ -290,7 +290,7 @@ LineBreak 속성을 좀 더 특별하게 다룬 결과는 다음과 같습니다
 
 |                          개선 버전                           |
 | :----------------------------------------------------------: |
-| {% include img_assets.html id="/blog/2025/1229-LineBreak/개선.png" %} |
+| {% include img_assets.html id="/blog/2025/1229-LineBreak/05.png" %} |
 
 - "가나다라마바사아자차타파하가나다라마바사아자차타파하"
   - 개선 버전 : ✅
