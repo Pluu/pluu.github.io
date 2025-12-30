@@ -8,8 +8,6 @@ categories:
 - Android
 ---
 
-
-
 [SavedState](https://developer.android.com/reference/androidx/savedstate/SavedState)는 프로세스가 종료될 때 UI 상태를 저장하고 프로세스가 다시 시작될 때 해당 상태를 복원하는 작업을 합니다. 
 
 이는 OS가 프로세스가 애플리케이션의 상태를 유지할 기회를 제공하며, 나중에 애플리케이션이 상태를 복원할 수 있도록 허용한다는 의미입니다. 이는 일반적으로 `상태 복원`이라고 부릅니다.
