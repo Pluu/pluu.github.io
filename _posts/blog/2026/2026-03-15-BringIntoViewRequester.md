@@ -12,7 +12,7 @@ categories:
 
 <!--more-->
 
-Jetpack Compose에서는 `BringIntoViewRequester`를 사용해 이 문제를 아주 우아하게 해결할 수 있습니다. 이번 글에서는 아래와 같은 회원가입 화면에서 사용한 일부분을 예제로 만들어보면서 `BringIntoViewRequester`를 어떻게 실전에 적용하는지 상세하게 파헤쳐 보겠습니다.
+본 글에서는 Jetpack Compose에서 `BringIntoViewRequester`를 사용해 이 문제를 해결하는 방법 중 하나를 소개합니다. 아래와 같은 회원가입 화면에서 사용한 일부분을 예제로 만들어보면서 `BringIntoViewRequester`를 어떻게 실전에 적용하는지 소개하겠습니다.
 
 {% include youtube.html id="ZiliLq9ZxuU" %}
 
@@ -57,7 +57,7 @@ fun Sample() {
 
 ## 3. 핵심 로직: TextField와 BringIntoViewRequester 직접 연결
 
-복잡한 컨테이너 구조 없이, 단일 `TextField`에 직접 `BringIntoViewRequester`를 통해서 동작 원리를 확인해 보겠습니다.
+여기에서는 복잡한 구조대신, 단일 `TextField`에 직접 `BringIntoViewRequester`를 통해서 동작 원리를 확인해 보겠습니다.
 
 ```kotlin
 @Composable
@@ -96,14 +96,14 @@ fun SimpleInput() {
 }
 ```
 
-위의 예제는 가장 기본적인 `BringIntoViewRequester`의 사용 패턴을 보여줍니다. 
+위의 예제는 가장 기본적인 `BringIntoViewRequester`의 사용 패턴입니다.
 
 1. **객체 생성**: `BringIntoViewRequester()`를 `remember`로 생성하고 타깃이 되는 UI 요소(여기서는 `TextField`)의 `Modifier`에 연결합니다.
 2. **이벤트 트리거**: 상태(`text`, `isFocused`, `isImeVisible`) 변화를 감지하여 CoroutineScope 안에서 `bringIntoView()`를 호출합니다.
 
 ## 4. 심화 예제: 휴대폰 번호 입력 필드 상세 구현 (focusGroup의 활용)
 
-`BringIntoViewRequester`는 여러 개의 입력 필드가 하나의 그룹으로 묶일 때도 사용할 수 있습니다. 휴대폰 번호를 입력받는 `CellularPhone` Composable을 통해 여러 입력 필드 사이에서 어떻게 처리하는지 확인해 보겠습니다.
+`BringIntoViewRequester`는 여러 개의 입력 필드가 하나의 그룹으로 묶일 때도 사용할 수 있습니다. 예제로 휴대폰 번호를 입력받는 `CellularPhone` Composable을 통해 여러 입력 필드 사이에서 어떻게 처리하는지 확인해 보겠습니다.
 
 ```kotlin
 @Composable
@@ -163,8 +163,8 @@ fun CellularPhone(modifier: Modifier = Modifier) {
 
 Jetpack Compose에서 복잡한 입력 폼을 다룰 때, 키보드가 UI를 가리는 현상을 효과적으로 제어하는 것은 사용자 경험(UX) 측면에서 매우 중요합니다. 다음 3가지만 기억하시면 됩니다.
 
-1. 화면 최상위에 `imePadding()`과 `verticalScroll()`을 적용하여 기본적인 스크롤 캔버스를 확보한다.
-2. 단일 입력 컴포넌트 또는 입력 필드 그룹에 `Modifier.bringIntoViewRequester()`를 적용하고, 여러 개의 필드가 묶여있다면 `focusGroup()`으로 감싸 포커스를 안정적으로 관리한다.
-3. `WindowInsets.isImeVisible`과 `hasFocus`를 조합하여, 포커스를 가진 상태로 키보드가 나타날 때 `bringIntoView()`를 호출한다.
+1. 화면 최상위에 `imePadding()`과 `verticalScroll()`을 적용하여 기본적인 스크롤 캔버스를 확보
+2. 단일 입력 컴포넌트 또는 입력 필드 그룹에 `Modifier.bringIntoViewRequester()`를 적용하고, 여러 개의 필드가 묶여있다면 `focusGroup()`으로 감싸 포커스를 안정적으로 관리
+3. `WindowInsets.isImeVisible`과 `hasFocus`를 조합하여, 포커스를 가진 상태로 키보드가 나타날 때 `bringIntoView()`를 호출
 
 위 패턴을 도입한다면, 어떠한 긴 가입 폼 화면이라도 사용자가 입력 중인 부분이 키보드에 가려지는 답답한 일을 겪지 않게 될 것입니다.
