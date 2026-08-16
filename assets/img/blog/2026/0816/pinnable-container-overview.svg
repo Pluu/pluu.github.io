@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="820" viewBox="0 0 1120 820" role="img" aria-labelledby="title desc">
+  <title id="title">PinnableContainer overview</title>
+  <desc id="desc">A LazyColumn viewport with one pinned item remaining alive outside the viewport.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#101936"/>
+      <stop offset="1" stop-color="#21386f"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#edf3ff"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#071127" flood-opacity=".24"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#8ea7ff"/>
+    </marker>
+  </defs>
+  <rect width="1120" height="820" rx="38" fill="url(#bg)"/>
+  <circle cx="980" cy="120" r="210" fill="#526ef0" opacity=".13"/>
+  <circle cx="160" cy="720" r="260" fill="#17cbb3" opacity=".09"/>
+  <text x="80" y="92" fill="#fff" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="36" font-weight="800">PinnableContainer</text>
+  <text x="80" y="136" fill="#b9c8f7" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="20">Lazy layout의 수명 관리에 “중요한 아이템”이라는 힌트를 더한다</text>
+
+  <g filter="url(#shadow)">
+    <rect x="92" y="190" width="630" height="520" rx="28" fill="#0b1229" stroke="#6479bd" stroke-width="2"/>
+    <rect x="116" y="214" width="582" height="50" rx="15" fill="#202d55"/>
+    <circle cx="144" cy="239" r="8" fill="#ff6b7a"/><circle cx="170" cy="239" r="8" fill="#ffc857"/><circle cx="196" cy="239" r="8" fill="#45d39c"/>
+    <text x="232" y="246" fill="#dbe5ff" font-family="monospace" font-size="17">LazyColumn { items(...) }</text>
+    <rect x="140" y="286" width="534" height="372" rx="22" fill="#151f3c" stroke="#394b86" stroke-width="2"/>
+    <rect x="162" y="309" width="490" height="72" rx="16" fill="url(#card)"/>
+    <text x="188" y="342" fill="#12224d" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="20" font-weight="700">콘텐츠 01</text>
+    <text x="188" y="368" fill="#53617d" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="15">보이는 아이템</text>
+    <rect x="162" y="395" width="490" height="116" rx="16" fill="#dce6ff" stroke="#6c86f4" stroke-width="3"/>
+    <circle cx="199" cy="432" r="17" fill="#586ff0"/>
+    <path d="M199 421 L199 443 M188 432 L210 432" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+    <text x="232" y="432" fill="#182b63" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="21" font-weight="800">콘텐츠 02 · PINNED</text>
+    <text x="232" y="465" fill="#4d6192" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="15">viewport 밖으로 나가도 composition 유지</text>
+    <rect x="162" y="525" width="490" height="72" rx="16" fill="url(#card)"/>
+    <text x="188" y="558" fill="#12224d" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="20" font-weight="700">콘텐츠 03</text>
+    <text x="188" y="584" fill="#53617d" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="15">보이는 아이템</text>
+    <path d="M420 650 C420 702 476 726 524 726 C574 726 610 701 610 650" fill="none" stroke="#8ea7ff" stroke-width="3" stroke-dasharray="8 10"/>
+    <text x="236" y="692" fill="#8ea7ff" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="16">화면 밖으로 스크롤</text>
+  </g>
+
+  <g>
+    <path d="M770 430 C845 430 850 350 910 350" fill="none" stroke="#8ea7ff" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M770 550 C846 550 850 620 910 620" fill="none" stroke="#53ddbf" stroke-width="4" marker-end="url(#arrow)"/>
+    <rect x="810" y="290" width="270" height="118" rx="22" fill="#273a78" stroke="#7690ff" stroke-width="2"/>
+    <text x="840" y="330" fill="#fff" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="18" font-weight="700">container.pin()</text>
+    <text x="840" y="361" fill="#c4d1ff" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="15">PinnedHandle 획득</text>
+    <text x="840" y="386" fill="#c4d1ff" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="15">중요한 동안 유지</text>
+    <rect x="810" y="560" width="270" height="118" rx="22" fill="#174d54" stroke="#53ddbf" stroke-width="2"/>
+    <text x="840" y="600" fill="#fff" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="18" font-weight="700">handle.release()</text>
+    <text x="840" y="631" fill="#b9f7e8" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="15">더 이상 중요하지 않음</text>
+    <text x="840" y="656" fill="#b9f7e8" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="15">필요하면 dispose 가능</text>
+  </g>
+</svg>

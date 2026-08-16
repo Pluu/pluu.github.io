@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="460" viewBox="0 0 1120 460" role="img" aria-labelledby="title desc">
+  <title id="title">PinnedHandle lifecycle</title>
+  <desc id="desc">The simplified lifecycle from important content to pin and release.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1"><stop stop-color="#f7f9ff"/><stop offset="1" stop-color="#eefbf8"/></linearGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto"><path d="M0 0 L9 4 L0 8 Z" fill="#6475db"/></marker>
+    <filter id="shadow" x="-20%" y="-30%" width="140%" height="170%"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#27366b" flood-opacity=".14"/></filter>
+  </defs>
+
+  <rect width="1120" height="460" rx="34" fill="url(#bg)"/>
+  <text x="68" y="76" fill="#172552" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="30" font-weight="800">PinnableContainer 수명 흐름</text>
+  <text x="68" y="112" fill="#59688f" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="18">중요해질 때 pin하고, 끝나면 release합니다</text>
+
+  <g filter="url(#shadow)">
+    <rect x="68" y="178" width="270" height="150" rx="24" fill="#ffffff"/>
+    <circle cx="116" cy="226" r="23" fill="#e4e9ff"/>
+    <text x="108" y="235" fill="#4d62dd" font-family="sans-serif" font-size="23" font-weight="800">1</text>
+    <text x="154" y="226" fill="#172552" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="20" font-weight="800">중요해짐</text>
+    <text x="100" y="274" fill="#5d6b8a" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="16">expanded / focused</text>
+  </g>
+
+  <path d="M360 253 H430" fill="none" stroke="#6475db" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="452" y="178" width="270" height="150" rx="24" fill="#18265a"/>
+    <circle cx="500" cy="226" r="23" fill="#687cf1"/>
+    <text x="492" y="235" fill="#ffffff" font-family="sans-serif" font-size="23" font-weight="800">2</text>
+    <text x="538" y="226" fill="#ffffff" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="20" font-weight="800">container.pin()</text>
+    <text x="488" y="274" fill="#becbff" font-family="monospace" font-size="16">PinnedHandle 획득</text>
+  </g>
+
+  <path d="M744 253 H814" fill="none" stroke="#6475db" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="836" y="178" width="216" height="150" rx="24" fill="#ffffff"/>
+    <circle cx="882" cy="226" r="23" fill="#d8f6ee"/>
+    <text x="874" y="235" fill="#159b7e" font-family="sans-serif" font-size="23" font-weight="800">3</text>
+    <text x="920" y="226" fill="#172552" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="20" font-weight="800">release()</text>
+    <text x="860" y="274" fill="#5d6b8a" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="16">dispose 가능</text>
+  </g>
+
+  <rect x="170" y="378" width="780" height="44" rx="22" fill="#dce5ff"/>
+  <text x="240" y="407" fill="#3f54c6" font-family="monospace" font-size="16" font-weight="700">pin() → PinnedHandle → release()</text>
+</svg>

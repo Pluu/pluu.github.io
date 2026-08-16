@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="820" viewBox="0 0 1440 820" role="img" aria-labelledby="title desc">
+  <title id="title">유지 필요 여부에 따른 composition 로그 비교</title>
+  <desc id="desc">An item marked as needing to be kept delays DISPOSE until the pin is released, while an item that does not need to be kept can be disposed after leaving the viewport.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101936"/>
+      <stop offset="1" stop-color="#263d78"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#071127" flood-opacity=".22"/>
+    </filter>
+  </defs>
+
+  <rect width="1440" height="820" rx="38" fill="url(#background)"/>
+  <circle cx="1280" cy="120" r="220" fill="#526ef0" opacity=".14"/>
+  <circle cx="120" cy="760" r="250" fill="#17cbb3" opacity=".08"/>
+
+  <text x="80" y="88" fill="#ffffff" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="36" font-weight="800">유지 필요 여부에 따른 composition 로그</text>
+  <text x="80" y="128" fill="#bdcaf4" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="19">PIN / RELEASE와 ENTER / DISPOSE를 함께 보면 아이템 수명 변화를 확인할 수 있다</text>
+
+  <g filter="url(#shadow)">
+    <rect x="80" y="184" width="610" height="492" rx="28" fill="#f6f8ff"/>
+    <rect x="80" y="184" width="610" height="88" rx="28" fill="#dce5ff"/>
+    <rect x="80" y="244" width="610" height="28" fill="#dce5ff"/>
+    <circle cx="124" cy="228" r="15" fill="#5067e8"/>
+    <path d="M124 218 V238 M114 228 H134" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+    <text x="158" y="222" fill="#172552" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="23" font-weight="800">유지 필요</text>
+    <text x="158" y="250" fill="#4d6192" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="16">shouldKeep = true</text>
+
+    <text x="122" y="326" fill="#53617d" font-family="monospace" font-size="20">ENTER key=0</text>
+    <text x="122" y="374" fill="#16836d" font-family="monospace" font-size="20">PIN key=0</text>
+    <text x="122" y="422" fill="#53617d" font-family="monospace" font-size="20">ENTER key=1</text>
+    <text x="122" y="470" fill="#d55b67" font-family="monospace" font-size="20">DISPOSE key=1</text>
+    <text x="122" y="518" fill="#16836d" font-family="monospace" font-size="20">RELEASE key=0</text>
+    <path d="M122 544 H638" stroke="#cfd8f2" stroke-width="2"/>
+    <text x="122" y="578" fill="#263d78" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="19" font-weight="700">key=0</text>
+    <text x="218" y="578" fill="#53617d" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="18">화면 밖에서도 유지</text>
+    <rect x="122" y="594" width="494" height="42" rx="16" fill="#e5f8f2"/>
+    <text x="148" y="621" fill="#16836d" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="16" font-weight="700">DISPOSE는 RELEASE 이후</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="750" y="184" width="610" height="492" rx="28" fill="#f9fbff"/>
+    <rect x="750" y="184" width="610" height="88" rx="28" fill="#edf0f8"/>
+    <rect x="750" y="244" width="610" height="28" fill="#edf0f8"/>
+    <circle cx="794" cy="228" r="15" fill="#9aa5bd"/>
+    <path d="M786 228 H802" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+    <text x="828" y="222" fill="#26324f" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="23" font-weight="800">유지 불필요</text>
+    <text x="828" y="250" fill="#65708a" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="16">shouldKeep = false</text>
+
+    <text x="792" y="326" fill="#53617d" font-family="monospace" font-size="20">ENTER key=2</text>
+    <text x="792" y="374" fill="#d55b67" font-family="monospace" font-size="20">DISPOSE key=2</text>
+    <path d="M792 422 H1308" stroke="#cfd8f2" stroke-width="2"/>
+    <text x="792" y="468" fill="#26324f" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="19" font-weight="700">key=2</text>
+    <text x="888" y="468" fill="#53617d" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="18">화면 밖에서 정리 가능</text>
+    <rect x="792" y="520" width="494" height="86" rx="16" fill="#fff0f1"/>
+    <text x="818" y="557" fill="#b34d5a" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="17" font-weight="700">PIN이 없으면</text>
+    <text x="818" y="584" fill="#b34d5a" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="17">viewport 밖에서 dispose될 수 있음</text>
+  </g>
+
+  <rect x="80" y="728" width="1280" height="52" rx="26" fill="#dce5ff"/>
+  <text x="120" y="761" fill="#3f54c6" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="17" font-weight="700">PIN / RELEASE는 pin 핸들 로그, ENTER / DISPOSE는 composition 수명 로그다</text>
+</svg>
