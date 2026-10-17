@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Jetpack Compose로 구현하는 인터랙티브 카드 홀로그램 효과"
+title: "Jetpack Compose로 구현하는 포켓몬 카드 홀로그램 효과"
 date: 2026-10-17 18:00:00 +09:00
 tag: [Android, Compose, UI]
 categories:
