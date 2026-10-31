@@ -455,7 +455,7 @@ Compose에서 부드러운 렌더링 성능을 유지하기 위한 최적화하�
 
 ### ① 렌더링 결과물 비교
 
-<div style="display: flex; gap: 8px; text-align: center;">
+<div class="video-compare-grid">
   <div style="flex: 1; min-width: 0;">
     <p style="font-weight: bold; margin-bottom: 6px;">Compose</p>
     {% include youtube.html id="8V4rvGXGALc" ratio="124.4%" %}

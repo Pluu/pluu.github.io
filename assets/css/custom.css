@@ -1,12 +1,103 @@
+/* 기본 전체 화면 가로 스크롤 방지 및 모바일 Chrome 폰트 부스팅 방지 */
+html, body {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* 인라인 코드 및 코드 블록 처리
+   Bootstrap 3의 code { white-space: nowrap; } 때문에 모바일 화면에서 긴 명령어/코드가 줄바꿈되지 않아
+   페이지 전체 폭이 가로로 늘어나는 문제를 해결 */
+code {
+  white-space: normal;
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+
+pre code {
+  white-space: pre;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+pre {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 테이블이 컨테이너 폭을 초과할 때 페이지 레이아웃이 깨지지 않고 부드럽게 가로 스크롤되도록 개선 */
+table {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 20px;
+}
+
+th, td {
+  min-width: 80px;
+  word-break: break-word;
+}
+
+/* 긴 단어, 링크, 본문 텍스트가 뷰포트를 벗어나지 않도록 방어 */
+p, li, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+a {
+  word-break: break-all;
+}
+
+/* 이미지 및 미디어 요소 반응형 방어 */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 타이틀 영역(#blue) 상하단 균형 및 좌우 15px 정렬
+   네비게이션 높이(min-height: 70px)에 맞춰 margin-top을 70px로 설정하여
+   배너 상단이 네비게이션에 10px 가려져 상하 여백이 불일치하던 문제 해결 */
+#blue {
+  margin-top: 70px;
+}
+
+#blue h3 {
+  margin: 0 15px;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* 모바일 뷰포트 (767px 이하) 최적화 */
 @media (max-width: 767px) {
-  table {
-    overflow: auto;
+  /* 상단 네비게이션 아래 타이틀 영역(#blue) 여백 최적화 */
+  #blue {
+    margin-top: 70px;
+    margin-bottom: 30px;
+    padding-top: 25px;
+    padding-bottom: 25px;
   }
-  a {
-    word-break: break-all;
+  #blue h3 {
+    font-size: 20px;
+    line-height: 1.35;
+    margin: 0 15px;
+  }
+
+  /* 본문 컨테이너 여백 최적화 */
+  .container.mtb {
+    margin-top: 25px;
+    margin-bottom: 30px;
+  }
+
+  .ctitle {
+    font-size: 22px;
+    line-height: 1.3;
   }
 }
 
+/* 유튜브 반응형 임베드 */
 .youtube {
   position: relative;
   max-width: 100%;
@@ -18,4 +109,17 @@
   right: 0;
   width: 100%;
   height: 100%;
+}
+
+/* 동영상 또는 카드 비교 그리드 (데스크톱에서는 가로 배치, 모바일에서는 세로 1열 배치) */
+.video-compare-grid {
+  display: flex;
+  gap: 12px;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .video-compare-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
