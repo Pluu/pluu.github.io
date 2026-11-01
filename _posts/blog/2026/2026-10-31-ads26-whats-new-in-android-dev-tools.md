@@ -9,17 +9,17 @@ categories:
 - AndroidDevSummit
 ---
 
+{% include youtube.html id="w-auFZP5gJo" %}
+
+<!--more-->
+
 기존 안드로이드 CLI 도구는 사용자 대화형 입력(Interactive Prompt)을 요구해 AI 에이전트가 자동으로 처리하기 어려웠습니다.
 
 Android Dev Summit 2026의 "The latest in Android dev tools" 세션에서는 터미널, 데스크톱 에이전트 앱, Android Studio에서 AI 에이전트가 직접 제어할 수 있는 새로운 안드로이드 도구 체인을 발표했습니다.
 
-<!--more-->
-
-{% include youtube.html id="w-auFZP5gJo" %}
+> 본 글은 Gemini를 사용하여 초안을 작성한 후 검수하였습니다.
 
 - - -
-
-> 본 글은 Gemini를 사용하여 초안을 작성한 후 검수하였습니다.
 
 # 개요: AI 코딩 에이전트 시대의 안드로이드 개발 도구
 
