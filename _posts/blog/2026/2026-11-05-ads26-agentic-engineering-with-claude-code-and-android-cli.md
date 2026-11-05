@@ -19,19 +19,17 @@ categories:
 
 # 1. 에이전틱 엔지니어링 패러다임과 개발자의 새로운 역할
 
-안드로이드 개발자 관계팀(DevRel)의 Ben Trengrove와 안드로이드 스튜디오 제품 매니저(PM) Stephen Jenkins는 Claude Code와 Android CLI를 활용하여 자율 에이전트 기반으로 앱을 개발하는 방법과 엔지니어링 접근법을 공유했습니다.
-
 {% include img_assets.html id="/blog/ads26/agentic-engineering-with-claude-code-and-android-cli/01.png" %}
 
-발표자들은 AI 생태계의 변화 속도가 너무 빨라 발표 내용 중 일부는 시청 시점에 이미 구식이 되었을 수도 있다고 솔직히 언급했습니다. 따라서 발표 내용은 미래를 내다보는 전향적인 관점을 담되, 세션에서 선보이는 데모들은 현재 시점에서도 안정적으로 재현되도록 현실적인 기반 위에서 구성했습니다. 또한 Claude Code를 대표적인 예시로 사용하지만, 제시하는 원칙들은 특정 도구에 얽매이지 않고 모든 에이전트 하네스에 공통으로 적용되는 개발자의 사고방식(Mindset)입니다.
+AI 생태계의 변화 속도가 너무 빨라 발표 내용 중 일부는 시청 시점에 이미 구식이 되었을 수도 있습니다. 발표 내용은 미래를 내다보는 전향적인 관점을 담되, 세션에서 선보이는 데모들은 현재 시점에서도 안정적으로 재현되도록 현실적인 기반 위에서 구성했습니다. 또한 Claude Code를 대표적인 예시로 사용하지만, 제시하는 원칙들은 특정 도구에 얽매이지 않고 모든 에이전트 하네스에 공통으로 적용되는 개발자의 사고방식(Mindset)입니다.
 
 {% include img_assets.html id="/blog/ads26/agentic-engineering-with-claude-code-and-android-cli/02.png" %}
 
-개발자의 역할은 자율 에이전트(Autonomous Agents) 팀을 지휘하고 이들이 성공할 수 있는 환경을 조성하는 방향으로 전환되고 있습니다. 에이전트가 특정 기능 구현에 실패했을 때 "AI는 아직 이것을 못한다"라며 작업을 포기하는 대신, 일반 소프트웨어 버그를 다루듯 "에이전트에게 어떤 정보가 누락되었는가?"를 되돌아보고 원인을 분석해야 합니다. 실제로 Claude Code, Codex, Antigravity 등을 만드는 엔지니어링 팀들도 자체 도구를 바로 이러한 방식으로 개발하고 있습니다.
+개발자의 역할은 자율 에이전트(Autonomous Agents) 팀을 지휘하고 이들이 성공할 수 있는 환경을 조성하는 방향으로 전환되고 있습니다. 에이전트가 특정 기능 구현에 실패했을 때 "AI는 아직 이것을 못한다"라며 작업을 포기하는 대신, 일반 소프트웨어 버그를 다루듯 "에이전트에게 어떤 정보가 누락되었는가?"를 되돌아보고 원인을 분석해야 합니다.
 
 {% include img_assets.html id="/blog/ads26/agentic-engineering-with-claude-code-and-android-cli/03.png" %}
 
-안드로이드 빌더로서 지금보다 흥미진진한 시기는 없지만, 한편으로는 어디에 집중해야 할지 갈피를 잡기 어려울 수 있습니다. 핵심은 새로운 프론티어 모델이 출시될 때마다 지금까지 들인 노력이 헛수고(Redundant)가 되지 않도록 방지하는 데 있습니다. 모델의 발전과 함께 지능적으로 확장되는(Scale with intelligence) 도구와 워크플로우를 갖추어야 모델의 개선이 에이전트 워크플로우의 고도화로 이어지고, 궁극적으로 최종 사용자에게 더 나은 결과(Better outcomes)를 제공하는 미래 대비(Future-proof) 체계가 완성됩니다.
+안드로이드 개발자에게 지금보다 흥미진진한 시기는 없었을거지만, 한편으로는 어디에 집중해야 할지 갈피를 잡기 어려울 수 있습니다. 핵심은 새로운 프론티어 모델이 출시될 때마다 지금까지 들인 노력이 헛수고가 되지 않도록 방지하는 데 있습니다. 모델의 발전과 함께 지능적으로 확장되는 도구와 워크플로우를 갖추어야 모델의 개선이 에이전트 워크플로우의 고도화로 이어지고, 궁극적으로 최종 사용자에게 더 나은 결과를 제공하는 미래 대비 체계가 완성됩니다.
 
 {% include img_assets.html id="/blog/ads26/agentic-engineering-with-claude-code-and-android-cli/04.png" %}
 
@@ -77,11 +75,11 @@ categories:
 
 # 3. 실전 사례 1 : Android CLI를 통한 크래시 및 ANR 해결
 
-환경 구축의 중요성을 증명하기 위해 자체 제작한 상용 프로덕션 앱 'Sideline'을 실증 예시로 소개했습니다.
+환경 구축의 중요성을 증명하기 위해 자체 제작한 상용 프로덕션 앱 'Sideline'을 실증 예시로 소개합니다.
 
 {% include img_assets.html id="/blog/ads26/agentic-engineering-with-claude-code-and-android-cli/10.png" %}
 
-Android CLI를 활용하여 실제 프로덕션 환경의 크래시를 해결하는 과정을 시연했습니다.
+Android CLI를 활용하여 실제 프로덕션 환경의 크래시를 해결하는 과정할 수 있습니다.
 
 {% include img_assets.html id="/blog/ads26/agentic-engineering-with-claude-code-and-android-cli/11.png" %}
 
@@ -90,7 +88,9 @@ Sideline은 테니스 선수를 위한 안드로이드 앱으로, 공과 선수�
 {% include img_assets.html id="/blog/ads26/agentic-engineering-with-claude-code-and-android-cli/12.png" %}
 
 ### Crashlytics 연동과 ANR 발견
-발표팀은 "존재하는지조차 모르는 문제는 해결할 수 없다"고 강조했습니다. Android CLI를 통해 개발 환경에 Firebase Crashlytics를 연동하자, 로컬 에뮬레이터에서는 전혀 재현되지 않던 Pixel 11 Pro Fold 단말 전용의 ANR(Application Not Responding) 결함이 발견되었습니다.
+> 존재하는지조차 모르는 문제는 해결할 수 없습니다
+
+Android CLI를 사용하여 개발 환경에 Firebase Crashlytics 연동을 통해, 로컬 에뮬레이터에서는 전혀 재현되지 않던 Pixel 11 Pro Fold 단말 전용의 ANR(Application Not Responding) 문제들을 발견할 수 있었습니다.
 
 {% include img_assets.html id="/blog/ads26/agentic-engineering-with-claude-code-and-android-cli/13.png" %}
 
@@ -102,26 +102,26 @@ Sideline은 테니스 선수를 위한 안드로이드 앱으로, 공과 선수�
 
 {% include img_assets.html id="/blog/ads26/agentic-engineering-with-claude-code-and-android-cli/14.png" %}
 
-배포된 1.0 빌드에서 Crashlytics 콘솔을 통해 해당 결함이 완전히 해결되었음을 확인했습니다. 개발 환경에 적절한 도구와 권한을 주지 않았다면 문제 발견과 검증 자체가 불가능했을 것이라고 설명했습니다.
+Crashlytics 콘솔을 통해 해당 결함이 완전히 해결되었음을 확인했습니다.
 
 - - -
 
 # 4. 컨텍스트(Context) 관리와 150k 토큰의 법칙
 
-약 1년 반에서 2년 전 AI 업계에서는 더 큰 컨텍스트 윈도우를 확보하기 위한 경쟁이 치열했습니다. 당시에는 모델에 최대한 많은 정보를 넣으면 더 좋은 결과가 나올 것이라는 기대로 공식 개발자 문서(developer.android.com) 전체를 프롬프트에 넣는 시도까지 있었으나 효과가 없었습니다.
+약 1년 반에서 2년 전 AI 업계에서는 더 큰 컨텍스트 윈도우를 확보하기 위한 경쟁이 치열했습니다. 모델에 최대한 많은 정보를 넣으면 더 좋은 결과가 나올 것이라는 기대로 [공식 개발자 문서](developer.android.com) 전체를 프롬프트에 넣는 시도를 했으나 효과가 없었습니다.
 
 {% include img_assets.html id="/blog/ads26/agentic-engineering-with-claude-code-and-android-cli/15.png" %}
 
-컨텍스트 윈도우 크기는 대략 100만(1M) 토큰 선에서 정체(Plateau)되었지만, 모델의 코딩 추론 능력은 계속해서 가파르게 상승하고 있습니다.
+컨텍스트 윈도우 크기는 대략 100만(1M) 토큰 선에서 정체되었지만, 모델의 코딩 추론 능력은 계속해서 가파르게 상승하고 있습니다.
 
 {% include img_assets.html id="/blog/ads26/agentic-engineering-with-claude-code-and-android-cli/16.png" %}
 
-실제 개발 현장의 안드로이드 구현 과제를 평가하는 Android Bench 1.0 벤치마크 결과, 100만 토큰 환경에서 모델의 코드 작성 성공률은 지속적으로 향상되었습니다.
+Android Bench 1.0 벤치마크 결과, 100만 토큰 환경에서 모델의 코드 작성 성공률은 지속적으로 향상되었습니다.
 
 {% include img_assets.html id="/blog/ads26/agentic-engineering-with-claude-code-and-android-cli/17.png" %}
 
 ### 컨텍스트 부패(Context Rot)와 15만 토큰 한계선
-컨텍스트는 여전히 엄격한 고정 예산(Fixed budget)입니다. 당면한 문제와 직접 관련이 없는 정보를 넣으면 모델의 주의 집중력이 흐려집니다. 많은 에이전트 하네스들이 100만 토큰 전체를 사용자에게 노출하지 않는 이유도 무작정 토큰을 늘리면 결과가 나빠지기 때문입니다. 
+컨텍스트는 여전히 엄격한 고정 예산입니다. 지금 문제와 직접 관련이 없는 정보를 넣으면 모델의 주의 집중력이 흐려집니다. 많은 에이전트 하네스들이 100만 토큰 전체를 사용자에게 노출하지 않는 이유도 무작정 토큰을 늘리면 결과가 나빠지기 때문입니다. 
 
 모델에 따라 다르지만, 단일 대화 세션을 약 15만 토큰(150k) 이내로 유지할 때 컨텍스트 손실 없이 모델의 최고 성능을 온전히 활용할 수 있습니다.
 
@@ -140,13 +140,13 @@ Sideline은 테니스 선수를 위한 안드로이드 앱으로, 공과 선수�
 
 ### 장황한 Gradle 로그의 위험성
 
-Gradle 빌드 로그는 매우 길고 상세하지만 대부분은 문제 해결에 불필요한 노이즈입니다. 따라서 Gradle 실행 시 quiet 모드(`./gradlew assembleDebug --quiet`)를 활용하는 것을 추천한다.
+Gradle 빌드 로그는 매우 길고 상세하지만 대부분은 문제 해결에 불필요한 노이즈입니다. 따라서 Gradle 실행 시 quiet 모드(`./gradlew assembleDebug --quiet`)를 활용하는 것을 추천합니다.
 
 {% include img_assets.html id="/blog/ads26/agentic-engineering-with-claude-code-and-android-cli/21.png" %}
 
 ### 150k 세션 워크플로우
 
-15만 토큰이라는 마법의 창을 넘기지 않기 위해 Matt Pocock이 고안한 워크플로우 Skill을 소개했습니다:
+15만 토큰이라는 마법의 창을 넘기지 않기 위해 Matt Pocock이 고안한 워크플로우 Skill
 
 1. 역질문 정렬(`/grill-me`) : 프로젝트나 기능을 시작할 때 실행. 에이전트가 개발자에게 세부 구현 방식과 위치 등을 역으로 질문하여 머릿속의 모호성을 제거하고 이슈로 구체화
 2. 명세서 작성(`/write-a-prd`) : 대형 스펙 문서를 작성하여 요구사항 영속화
@@ -171,7 +171,6 @@ Gradle 빌드 로그는 매우 길고 상세하지만 대부분은 문제 해결
 {% include img_assets.html id="/blog/ads26/agentic-engineering-with-claude-code-and-android-cli/23.png" %}
 
 ### 실제 Sideline 저장소의 AGENTS.md 구조
-앱에 실제 적용된 `AGENTS.md`를 화면에 공유하며 두 가지 핵심을 강조했습니다
 - 명확한 아키텍처 정의 : 모듈 구조와 의존성 흐름을 명문화하면 에이전트가 코드베이스 전체를 불필요하게 뒤지는 동작을 방지하여 토큰과 컨텍스트 절약
 - 비공개 소스(Closed-source) 앱 관리 : 외부 모델이 해당 코드를 학습한 적이 없으므로, `AGENTS.md`를 지속적으로 정제하고 개선하는 작업이 장기적인 생산성 향상의 핵심
 
@@ -208,7 +207,7 @@ Android CLI 스킬의 설명문(Description)에서는 해당 도구가 언제 �
 
 {% include img_assets.html id="/blog/ads26/agentic-engineering-with-claude-code-and-android-cli/28.png" %}
 
-Skills의 본문(Body)은 화면을 가득 채울 정도로 방대합니다. 이처럼 거대한 본문을 평소에는 제외하고, 필요한 순간에만 선택적으로 로드할 수 있게 해줍니다.
+Skills의 본문은 화면을 가득 채울 정도로 방대합니다. 이처럼 거대한 본문을 평소에는 제외하고, 필요한 순간에만 선택적으로 로드할 수 있게 해줍니다.
 
 {% include img_assets.html id="/blog/ads26/agentic-engineering-with-claude-code-and-android-cli/29.png" %}
 
@@ -285,7 +284,7 @@ Claude Code에 30 FPS 요구사항을 부여했을 때 나타난 두 가지 핵�
 
 Claude Fable 5.1 모델을 대상으로 동일한 Navigation 마이그레이션 과제를 수행한 결과
 - 자연어 프롬프트만 제공 : 성공률 22%
-- 사전에 실패하는 테스트 스위트(Failing Test Suite)만 제공 : 성공률 **90%**
+- 사전에 실패하는 테스트 스위트(Failing Test Suite)만 제공 : `성공률 90%`
 
 최신 모델들은 대부분의 안드로이드 구현 능력을 갖추고 있으나 "무엇이 완료인지"를 모를 뿐입니다. 실패하는 테스트 스위트를 제공하면 통과할 때까지 코드를 수정하며 성공률을 극대화합니다.
 
